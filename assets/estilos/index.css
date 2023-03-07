@@ -1,0 +1,126 @@
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Expletus Sans', cursive;
+
+}
+
+body{
+
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 700px 1fr 200px;
+    grid-template-areas: 
+        "zheader"
+        "znav"
+        "zsection"
+        "zfooter";
+}
+
+header{
+
+    width: 100%;
+    grid-area: zheader;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: solid rgba(0, 0, 0, 0.295);
+    
+    
+}
+
+#nombre{
+
+    line-height: 100px;
+    font-size: 30px;
+    width: 50%;
+
+}
+
+#nombre>p{
+
+    margin-left: 60px ;
+
+}
+
+#info{
+
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    place-content: center;
+    gap: 2%;
+}
+
+#sn{
+
+    display: grid;
+    place-content: center;
+    width: 20%;
+
+}
+
+#tr{
+
+    display: grid;
+    place-content: center;
+    width: 20%;
+    background-color: #ffb11a;
+    color: rgb(0, 0, 0);
+    border-radius: 40px;
+
+}
+
+#em{
+
+    display: grid;
+    place-content: center;
+    width: 20%;
+    background-color: white;
+    border: solid black;
+    color: black;
+    border-radius: 40px;
+
+}
+
+#user{
+
+    display: grid;
+    place-content: center;
+    width: 20%;
+    
+}
+
+
+#user>i{
+
+    font-size: 50px;
+    
+}
+
+nav{
+
+    grid-area: znav;
+    width: 100%;
+    background-image: url(/assets/img/header.jpg);
+    background-size: cover;
+    background-position-y: -200px;
+
+}
+
+section{
+
+    grid-area: zsection;
+    border: solid rgb(255, 0, 0);
+
+}
+
+footer{
+
+    grid-area: zfooter;
+    border: solid green;
+    
+
+}
