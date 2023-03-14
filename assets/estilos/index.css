@@ -1,5 +1,4 @@
 *{
-
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -17,42 +16,6 @@ body{
         "znav"
         "zsection"
         "zfooter";
-}
-
-header{
-
-    width: 100%;
-    grid-area: zheader;
-    display: flex;
-    flex-wrap: wrap;
-    border-bottom: solid rgba(0, 0, 0, 0.397);
-   
-
-}
-
-#nombre{
-
-    display: flex;
-    font-size: 40px;
-    width: 75%;
-    align-items: center;
-    justify-content: left;
-    font-weight: bold;
-
-    
-
-}
-#nombre > p{
-    display: grid;
-    place-content: center;
-    
-    width: 300px;
-    margin-left: 60px ;
-    
-}
-
-marquee{
-    z-index: 200;
 }
 
 /* 
@@ -74,112 +37,6 @@ marquee{
     top: 0;
     
 } */
-.logo{
-    width: 130px;
-    height: 90px;
-    margin-left: 10px;
-    background-image: url(/assets/img/LogoP.png);
-    background-size: cover;
-    background-position:45% 50%;
-    /* position: relative;
-    top: 24px; */
-}
-
-
-.hover-3 {
-    --b: 0.1em;   /* the thickness of the line */
-    --c: #ffb11a; /* the color */
-    
-    color: #0000;
-    padding-block: var(--b);
-    background: 
-      linear-gradient(var(--c) 50%,#000 0) 0% calc(100% - var(--_p,0%))/100% 200%,
-      linear-gradient(var(--c) 0 0) 0% var(--_p,0%)/var(--_p,0%) var(--b) no-repeat;
-    -webkit-background-clip: text,padding-box;
-            background-clip: text,padding-box;
-    transition: .3s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));
-  }
-  .hover-3:hover {
-    --_p: 100%;
-    --_s: .3s;
-  }
-
-
-#info{
-
-    width: 25%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center ;
-    justify-content:  right;
-    gap: 2%;
-
-
-}
-#box_info{
-
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center ;
-    justify-content: center;
-    gap: 2%;
-
-
-}
-
-#sn{
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 25%;
-
-}
-
-#tr{
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 25%;
-    height: 45px;
-    background-color: #ffb11a;
-    color: rgb(0, 0, 0);
-    border-radius: 40px;
-
-}
-
-#em{
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 25%;
-    height: 45px;
-    background-color: white;
-    border: 2px solid black;
-    color: black;
-    border-radius: 40px;
-
-}
-
-#user{
-
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    width: 15%;
-    
-}
-
-#user>i{
-
-    font-size: 45px;
-  
-}
-
 
 nav{
 
