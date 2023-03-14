@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Expletus Sans', cursive;
+}
+body{
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 200px 1fr 200px;
+    grid-template-areas: 
+        "zheader"
+        "znav"
+        "zsection"
+        "zfooter";
+}
+nav{
+    grid-area: znav;
+    background-image: url(/assets/img/header.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    filter: contrast(30%);
+}
+
+section{
+    grid-area: zsection;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
