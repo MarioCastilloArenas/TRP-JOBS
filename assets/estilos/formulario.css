@@ -33,3 +33,32 @@ section{
     width: 100%;
     height: 100%;
 }
+
+#formulario{
+
+    border: solid blue;
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+#progreso{
+    border: solid red;
+    width: 30%;
+
+}
+
+#relleno{
+    border: solid rgb(255, 0, 242);
+    width: 70%;
+
+}
+
+
+#container{
+
+    display: flex;
+    flex-wrap: wrap;
+
+}
