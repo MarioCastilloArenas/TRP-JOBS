@@ -31,14 +31,11 @@ section{
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
 }
 
 #formulario{
-
     border: 1px solid black;
     width: 100%;
-    height: 500px;
     display: flex;
     flex-wrap: wrap;
     margin: 50px 10%;
@@ -47,8 +44,6 @@ section{
 }
 
 #progreso{
-    
-
     background-image: url(/assets/img/orange-wave-background-henrik-lehnerer.jpg);
     background-position-x: -25px;
     display: flex;
@@ -74,7 +69,6 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
- 
 }
 
 .numerito{
@@ -87,7 +81,6 @@ section{
 }
 
 .infoPaso{
-  
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -115,59 +108,109 @@ section{
 
 }
 
-#contenido{
-    
+.contenido{
     width: 70%;
     border-left: 1px  solid rgba(0, 0, 0, 0.719);
-    
+    display: flex;
+}
+.fieldset{
+    display: none;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
 }
 
-.tituloRelleno{
-
+.activo {
     width: 100%;
-    height: 20%;
-    border-bottom:  1px solid rgba(0, 0, 0, 0.719);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.rellenar{
-
-    width: 100%;
-    height: 80%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-form{
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-
-}
-.label{
-
-    width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 15px;
+}
+
+.tituloRelleno{
+    height: 20%;
+    width: 100%;
+    border-bottom:  1px solid rgba(0, 0, 0, 0.719);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rellenar{
+    width: 80%;
+    height: 100%;
+    padding: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.form-item{
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-item label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.form-item input {
+    display: block;
+    width: 100%;
+    font-family: inherit;
+    
+}
+
+.form-item select,textarea,input::file-selector-button {
+    width: 100%;
+}
+.form-item #logo{
+    font-size: 14px;
+}
+
+.form-item input[type=text]{
+    
+}
+.form-item input[type=number]{
 
 }
 
-input{
-    margin: 5px;
+.form-item input[type=password]{
+
+}
+.form-item textarea{
+    
+}
+.form-item input[type=file]{
+    width: 100%;
+}
+.form-item input:focus {
+    outline: 0;
+    /*border-color: red;*/
 }
 
-form>div>button{
+.form-item i {
+    visibility: hidden; 
+    position: absolute;
+    top: 30px;
+    right: 10px;
+}
 
-    width: 80px;
-    height: 40px;
 
+.form-item small {
+    color: #100707;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+button{
+   
 }
