@@ -36,29 +36,138 @@ section{
 
 #formulario{
 
-    border: solid blue;
-    width: 60%;
+    border: 1px solid black;
+    width: 100%;
+    height: 500px;
     display: flex;
     flex-wrap: wrap;
-
+    margin: 50px 10%;
+    border-radius: 10px;
+    
 }
 
 #progreso{
-    border: solid red;
+    
+
+    background-image: url(/assets/img/orange-wave-background-henrik-lehnerer.jpg);
+    background-position-x: -25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     width: 30%;
+    border-radius: 10px;
 
 }
 
-#relleno{
-    border: solid rgb(255, 0, 242);
+.container{
+
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.numeroPaso{
+
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+.numerito{
+
+    border: solid #ffb11a;
+    width: 30%;
+    text-align: center;
+    border-radius: 110px;
+
+}
+
+.infoPaso{
+  
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.paso{
+
+    color: rgba(0, 0, 0, 0.719);
+
+}
+
+.nombrePaso{
+
+    font-weight: bold;
+
+}
+
+.infoPaso>div{
+    
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 50%;
+
+}
+
+#contenido{
+    
     width: 70%;
+    border-left: 1px  solid rgba(0, 0, 0, 0.719);
+    
+}
+
+.tituloRelleno{
+
+    width: 100%;
+    height: 20%;
+    border-bottom:  1px solid rgba(0, 0, 0, 0.719);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
+.rellenar{
 
-#container{
+    width: 100%;
+    height: 80%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form{
 
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+.label{
+
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+
+}
+
+input{
+    margin: 5px;
+}
+
+form>div>button{
+
+    width: 80px;
+    height: 40px;
 
 }
