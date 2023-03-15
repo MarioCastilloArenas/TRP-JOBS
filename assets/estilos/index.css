@@ -17,6 +17,9 @@ body{
         "zsection"
         "zfooter";
 }
+html{
+    scroll-behavior: smooth;
+}
 
 /* 
 #cap1{
@@ -273,6 +276,7 @@ section{
     color: #ffb11a;
     border: 2px solid #ffb11a;
     margin-bottom: 10px;
+    padding: 0 5px;
 }
 .textarea_field{
     width: 300px;

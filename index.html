@@ -11,8 +11,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Expletus+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     
     <script src='main.js'></script>
+    <!-- <script src="index.js"></script> -->
 </head>
 <body>
     <header>
@@ -29,13 +31,40 @@
                 <div id="trabajadores"> Trabajadores </div>
                 <div id="empresas"> Empresas </div>
                 <div id="logoUser"> <i class='bx bx-user-circle'></i> </div>
+                <div id="navMenu">
+                    <div class="btn-menu">
+                        <label for="btn-menu">
+                            <span class="material-symbols-outlined">
+                                menu
+                            </span>
+                        </label>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
+    <input type="checkbox" id="btn-menu">
+    <div id="container_menu">
+        <div class="cont_menu">
+            <nav>
+                <nav id="nav_sesion">
+                    <a href="">SOBRE NOSOTROS</a>
+                    <a href="">TRABAJADORES</a>
+                    <a href="">EMPRESAS</a>
+                </nav>
+            </nav>
+            <label for="btn-menu" class="">
+                <span class="material-symbols-outlined">
+                    close
+                </span>
+            </label>
+        </div>
+    </div>
+    <input type="checkbox" id="btn-sesion">
     <nav>
         <div id="banner">
             <div id="flechasNav">
-                <i class='bx bx-chevrons-down' ></i>
+                <a href="#boxUbicaciones"><i class='bx bx-chevrons-down'></i></a>
             </div>
         </div>
     </nav>
