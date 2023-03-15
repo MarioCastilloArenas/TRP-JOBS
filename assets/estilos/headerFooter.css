@@ -407,11 +407,29 @@ a:hover , .footer_contacto > p:hover , .footer_social>a>i:hover{
     #navMenu{
         display: flex;
     }
-    /* #logo{
-        width: 50%;
-        font-size: 30px;
+    .footer_contacto > p{
+        /* font-size: 12px; */
+        /* font-weight: bold; */
+        /* margin-bottom: 15px; */
     }
-    #info{
-        width: 50%;
+    /* .footer_social > a > i{
+        font-size: 1.1em;
     } */
+    .footer_opcion > a{ 
+        /* font-size: 12px; */
+        /* font-weight: bold; */
+    }
+    /* #texto_tdr{
+        font-size: 1.2em;
+    } */
+    .footer_logo{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    footer{
+        flex-wrap: wrap;
+    }
 }
