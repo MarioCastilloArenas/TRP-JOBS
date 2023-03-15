@@ -105,12 +105,13 @@
                 </div>          
             </div>
             <div class="contenido">
-                <div class="fieldset activo" id="paso1">
+                <div class="fieldset " id="paso1">
                     <!-- paso1  -->
                     <div class="tituloRelleno">
                         <h2>información personal</h2>
                     </div>
                     <div class="rellenar">
+                            <h3 id="mensaje1"></h3>
                             <div class="form-item">
                                 <label for="email">Email:</label>
                                 <input type="text" id="email" >
@@ -132,7 +133,7 @@
                                 <i id="error"  class='bx bx-error-circle'></i>
                                 <small>Rellene este campo</small>
                             </div>
-                            <button id="botonSiguiente" onclick="formularioEmpresa_informacionProfesional()"> Siguiente </button>
+                            <button onclick="formEmpresa_log()"> Siguiente </button>
                         </div>
                 </div>
                 <div class="fieldset" id="paso2">
@@ -141,6 +142,7 @@
                         <h2>información personal</h2>
                     </div>
                     <div class="rellenar">
+                            <h3 id="mensaje2"></h3>
                             <div class="form-item">
                                 <label for="cif">CIF:</label>
                                 <input type="text" id="cif" required>
@@ -168,21 +170,21 @@
                                 <small>Rellene este campo</small>
                             </div>
                             <div class="form-item">
+                                <label for="provincia">Provincia:</label>
+                                <select id="provincia">
+                                </select>
+                            </div>
+                            <div class="form-item">
                                 <label for="codigoPostal">Codigo Postal:</label>
                                 <input type="number" id="codigoPostal" required>
                                 <i id="good" class='bx bx-check-circle'></i>
                                 <i id="error"  class='bx bx-error-circle'></i>
                                 <small>Rellene este campo</small>
                             </div>
-                            <div class="form-item">
-                                <label for="provincia">Provincia:</label>
-                                <select id="provincia">
-                                </select>
-                            </div>
-                            <button id="botonSiguiente"> Siguiente </button>
+                            <button onclick="formEmpresa_informacionProfesional()"> Siguiente </button>
                     </div>
                 </div>
-                <div class="fieldset" id="paso3">
+                <div class="fieldset " id="paso3">
                     <!-- paso3  -->
                     <div class="tituloRelleno">
                         <h2>información personal</h2>
@@ -197,7 +199,7 @@
                             </div>
                             <div class="form-item">
                                 <label for="descripcion">Descripcion:</label>
-                                <textarea type="text" id="descripcion" required></textarea>
+                                <input type="text" id="descripcion" required></input>
                                 <i id="good" class='bx bx-check-circle'></i>
                                 <i id="error"  class='bx bx-error-circle'></i>
                                 <small>Rellene este campo</small>
@@ -210,25 +212,30 @@
                                 <small>Rellene este campo</small>
                             </div>
                             <div class="form-item">
-                                <label for="logo">Imagen de Empresa:</label>
-                                <input type="file" id="logo">
-                                <img src="" alt="" id="preview">
+                                <label for="telefono">Telefono:</label>
+                                <input type="text" id="telefono" required>
                                 <i id="good" class='bx bx-check-circle'></i>
                                 <i id="error"  class='bx bx-error-circle'></i>
                                 <small>Rellene este campo</small>
                             </div>
-                            <button id="botonSiguiente"> Siguiente </button>
+                            <div class="form-item">
+                                <label for="logo">Imagen de Empresa:</label>
+                                <input type="file" id="logo">
+                                <img src="" alt="" id="preview">
+                            </div>
+                            <button onclick="formEmpresa_webEmpresarial()"> Siguiente </button>
                     </div>
                 </div>
-                <div class="fieldset" id="paso4">
+                <div class="fieldset activo" id="paso4">
                     <!-- paso4  -->
                     <div class="tituloRelleno">
                         <h2>Resumen</h2>
                     </div>
                     <div class="rellenar">
-                        <form action="">
-                            
-                        </form>
+                        <h3 id="mensaje3"> ¡Estamos felices de que ya forma parte de nuestro equipo! </h3>
+
+                        ?????????
+                        
                     </div>
                 </div>
             </div>
