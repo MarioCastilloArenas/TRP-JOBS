@@ -86,7 +86,7 @@
                 </div>          
             </div>
             <div class="contenido">
-                <div class="fieldset activo" id="paso1">
+                <div class="fieldset" id="paso1">
                     <!-- paso1  -->
                     <div class="tituloRelleno">
                         <h2>información personal</h2>
@@ -117,7 +117,7 @@
                             <button id="botonSiguiente" onclick="formEmpresa_log()"> Siguiente </button>
                         </div>
                 </div>
-                <div class="fieldset" id="paso2">
+                <div class="fieldset " id="paso2">
                     <!-- paso2  -->
                     <div class="tituloRelleno">
                         <h2>información personal</h2>
@@ -173,6 +173,7 @@
                         <h2>información personal</h2>
                     </div>
                     <div class="rellenar">
+                        <h3 id="mensaje3"></h3>
                             <div class="form-item">
                                 <label for="nomComercial">Nombre Comercial:</label>
                                 <input type="text" id="nomComercial" required>
@@ -209,16 +210,36 @@
                             <button onclick="formEmpresa_webEmpresarial()"> Siguiente </button>
                     </div>
                 </div>
-                <div class="fieldset " id="paso4">
+                <div class="fieldset activo " id="paso4">
                     <!-- paso4  -->
                     <div class="tituloRelleno">
                         <h2>Resumen</h2>
                     </div>
                     <div class="rellenar">
-                        <h3 id="mensaje3"> ¡Estamos felices de que ya forma parte de nuestro equipo! </h3>
-
-                        ?????????
-                        
+                        <h3 id="mensaje4"> ¡Estamos felices de que ya forma parte de nuestro equipo! </h3>
+                        <h4>Te mostraremos los datos de tu empresa, los cuales podran ver los trabajadores.</h4>
+                        <h4>Te recordamos que podras modificar cualquiera de los datos de tu empresa, en el apartado <b>Mis Datos</b>.</h4>
+                        <h4>Esperamos que formes el mejor equipo posible en el menor tiempo posible.</h4>
+                        <div class="">
+                            <b>Nombre Comercial</b>
+                            <p id="NombreEmpresa"></p>
+                        </div>
+                        <div class="">
+                            <b>Actividad Empresarial</b>
+                            <p id="actividadEmpresa"></p>
+                        </div>
+                        <div class="">
+                            <b>Descripcion</b>
+                            <p id="infoEmpresa"></p>
+                        </div>
+                        <div class="">
+                            <b>Provincia</b>
+                            <p id="provinciaEmpresa"></p>
+                        </div>
+                        <div class="">
+                            <b>Sitio Web</b>
+                            <p id="sitioWebEmpresa"></p>
+                        </div>
                     </div>
                 </div>
             </div>
