@@ -36,6 +36,7 @@ section{
 #formulario{
     border: 1px solid black;
     width: 100%;
+    height: fit-content;
     display: flex;
     flex-wrap: wrap;
     margin: 50px 10%;
@@ -44,8 +45,9 @@ section{
 }
 
 #progreso{
-    background-image: url(/assets/img/orange-wave-background-henrik-lehnerer.jpg);
-    background-position-x: -25px;
+    background-image: url(/assets/img/orange-wave-background-henrik-lehnerer.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -63,22 +65,7 @@ section{
 
 }
 
-.numeroPaso{
 
-    width: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.numerito{
-
-    border: solid #ffb11a;
-    width: 30%;
-    text-align: center;
-    border-radius: 110px;
-
-}
 
 .infoPaso{
     width: 80%;
@@ -115,10 +102,6 @@ section{
 }
 .fieldset{
     display: none;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
 }
 
 .activo {
@@ -130,7 +113,7 @@ section{
 }
 
 .tituloRelleno{
-    height: 20%;
+    height: 200px;
     width: 100%;
     border-bottom:  1px solid rgba(0, 0, 0, 0.719);
     display: flex;
@@ -139,15 +122,20 @@ section{
 }
 
 .rellenar{
-    width: 80%;
+
+    width: fit-content;
     height: 100%;
-    padding: 20%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+
 }
 
 .form-item{
+
+    width: 300px;
     margin-bottom: 10px;
     padding-bottom: 20px;
     position: relative;
@@ -160,15 +148,54 @@ section{
     margin-bottom: 5px;
 }
 
-.form-item input {
-    display: block;
-    width: 100%;
-    font-family: inherit;
-    
+.form-item>select{
+    width: 50%;
+    background-color: #ffb11a;
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+    border-bottom: transparent;
+
 }
 
-.form-item select,textarea,input::file-selector-button {
+.form-item>input {
+
     width: 100%;
+    font-family: inherit;
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+    border-bottom: solid #ffb11a;
+}
+
+#botonSiguiente {
+    background-color: #ffb11a;
+    color: white;
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+    border-bottom: transparent; 
+    width: 100px;
+    height: 50px;
+
+}
+
+#botonSiguiente2 {
+    background-color: #ffb11a;
+    color: white;
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+    border-bottom: transparent; 
+    width: 133px;
+    height: 50px;
+
+}
+.form-item select,textarea,input::file-selector-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
 }
 .form-item #logo{
     font-size: 14px;
@@ -192,7 +219,7 @@ section{
 }
 .form-item input:focus {
     outline: 0;
-    /*border-color: red;*/
+
 }
 
 .form-item i {
@@ -211,6 +238,122 @@ section{
     visibility: hidden;
 }
 
-button{
-   
+/*paso 2*/
+
+.rellenar2{
+
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+
+    
 }
+
+.form-item2{
+
+    width: 300px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+  
+}
+
+.form-boton-item2{
+
+    width: 300px;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+
+  
+}
+
+.form-item2 label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.form-item2>select{
+    width: 50%;
+    background-color: #ffb11a;
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+    border-bottom: transparent;
+
+}
+
+.form-item2>input {
+
+    width: 100%;
+    font-family: inherit;
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+    border-bottom: solid #ffb11a;/* solid rgb(238,94,10); 
+    border-bottom: solid linear-gradient(90deg, rgba(238,94,10,1) 0%, rgba(241,156,17,1) 35%, rgba(255,235,0,1) 100%); */
+
+}
+
+#pasoAColor1{
+
+    color: #ffb11a;
+
+}
+
+.form-item2 select,textarea,input::file-selector-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+}
+.form-item2 #logo{
+    font-size: 14px;
+}
+
+.form-item2 input[type=text]{
+    
+}
+.form-item2 input[type=number]{
+
+}
+
+.form-item2 input[type=password]{
+
+}
+.form-item2 textarea{
+    
+}
+.form-item2 input[type=file]{
+    width: 100%;
+}
+.form-item2 input:focus {
+    outline: 0;
+}
+
+.form-item2 i {
+    visibility: hidden; 
+    position: absolute;
+    top: 30px;
+    right: 10px;
+}
+
+
+.form-item2 small {
+    color: #100707;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+

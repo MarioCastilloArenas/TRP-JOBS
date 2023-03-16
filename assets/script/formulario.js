@@ -103,8 +103,12 @@ function formEmpresa_log(){
         localStorage.setItem('empresa',JSON.stringify(empresa))
         fieldset.className = 'fieldset';
         let fieldset2 = document.getElementById('paso2');
-        fieldset2.classList = 'fieldset activo' 
+        fieldset2.classList = 'fieldset activo';
+        document.getElementById("pasoAColor1").style.color="#1a9e00";
+        document.getElementById("pasoAColor2").style.color="#ffb11a";
         }
+
+      
     } 
 
 }
@@ -185,6 +189,10 @@ function formEmpresa_informacionProfesional(){
         fieldset3.classList = 'fieldset activo'
         localStorage.removeItem('TipoActividadEmpresarial')
         localStorage.removeItem('provincia')
+        // document.getElementById("pasoAColor1").style.color="#1a9e00";
+        // document.getElementById("pasoAColor2").style.color="#1a9e00";
+        // document.getElementById("pasoAColor2").style.color="#ffb11a";
+        
         }
     } 
 
@@ -250,6 +258,8 @@ function formEmpresa_webEmpresarial(){
         localStorage.setItem('empresa',JSON.stringify(empresa));
         //añadirbbddEmpresa();
     } 
+
+    
 }
 
 function añadirbbddEmpresa(){

@@ -44,13 +44,8 @@
         <div id="formulario">
             <div id="progreso">
                 <div class="container">
-                    <div class="numeroPaso">
-                        <div class="numerito">
-                            1
-                        </div>  
-                    </div>
                     <div class="infoPaso">
-                        <div class="paso">
+                        <div class="paso" id="pasoAColor1">
                             Paso 1
                         </div>
                         <div class="nombrePaso">
@@ -59,14 +54,10 @@
                     </div>
                 </div>       
                 <div class="container">
-                    <div class="numeroPaso">
-                        <div class="numerito">
-                            2
-                        </div>  
-                    </div>
+                   
                     <div class="infoPaso">
-                        <div class="paso">
-                            Paso 1
+                        <div class="paso" id="pasoAColor2">
+                            Paso 2
                         </div>
                         <div class="nombrePaso">
                             Datos empresa
@@ -74,14 +65,9 @@
                     </div>
                 </div>        
                 <div class="container">
-                    <div class="numeroPaso">
-                        <div class="numerito">
-                            3
-                        </div>  
-                    </div>
                     <div class="infoPaso">
-                        <div class="paso">
-                            Paso 1
+                        <div class="paso" id="pasoAColor3">
+                            Paso 3
                         </div>
                         <div class="nombrePaso">
                             Información empresa
@@ -89,14 +75,9 @@
                     </div>
                 </div>     
                 <div class="container">
-                    <div class="numeroPaso">
-                        <div class="numerito">
-                            4
-                        </div>  
-                    </div>
                     <div class="infoPaso">
                         <div class="paso">
-                            Paso 1
+                            Paso 4
                         </div>
                         <div class="nombrePaso">
                             Resumen
@@ -105,7 +86,7 @@
                 </div>          
             </div>
             <div class="contenido">
-                <div class="fieldset " id="paso1">
+                <div class="fieldset activo" id="paso1">
                     <!-- paso1  -->
                     <div class="tituloRelleno">
                         <h2>información personal</h2>
@@ -133,7 +114,7 @@
                                 <i id="error"  class='bx bx-error-circle'></i>
                                 <small>Rellene este campo</small>
                             </div>
-                            <button onclick="formEmpresa_log()"> Siguiente </button>
+                            <button id="botonSiguiente" onclick="formEmpresa_log()"> Siguiente </button>
                         </div>
                 </div>
                 <div class="fieldset" id="paso2">
@@ -141,47 +122,49 @@
                     <div class="tituloRelleno">
                         <h2>información personal</h2>
                     </div>
-                    <div class="rellenar">
+                    <div class="rellenar2">
                             <h3 id="mensaje2"></h3>
-                            <div class="form-item">
+                            <div class="form-item2">
                                 <label for="cif">CIF:</label>
                                 <input type="text" id="cif" required>
                                 <i id="good" class='bx bx-check-circle'></i>
                                 <i id="error"  class='bx bx-error-circle'></i>
                                 <small>Rellene este campo</small>
                             </div>
-                            <div class="form-item">
+                            <div class="form-item2">
                                 <label for="nomFiscal">Nombre Fiscal:</label>
                                 <input type="text" id="nomFiscal" required>
                                 <i id="good" class='bx bx-check-circle'></i>
                                 <i id="error"  class='bx bx-error-circle'></i>
                                 <small>Rellene este campo</small>
                             </div>
-                            <div class="form-item">
+                            <div class="form-item2">
                                 <label for="TipoActividadEmpresa">Tipo Actividad Empresarial:</label>
                                 <select id="TipoActividadEmpresa">
                                 </select>
                             </div>
-                            <div class="form-item">
+                            <div class="form-item2">
                                 <label for="direccion">Dirección:</label>
                                 <input type="text" id="direccion" required>
                                 <i id="good" class='bx bx-check-circle'></i>
                                 <i id="error"  class='bx bx-error-circle'></i>
                                 <small>Rellene este campo</small>
                             </div>
-                            <div class="form-item">
+                            <div class="form-item2">
                                 <label for="provincia">Provincia:</label>
                                 <select id="provincia">
                                 </select>
                             </div>
-                            <div class="form-item">
+                            <div class="form-item2">
                                 <label for="codigoPostal">Codigo Postal:</label>
                                 <input type="number" id="codigoPostal" required>
                                 <i id="good" class='bx bx-check-circle'></i>
                                 <i id="error"  class='bx bx-error-circle'></i>
                                 <small>Rellene este campo</small>
+                            </div> 
+                            <div class="form-boton-item2">
+                                <button id="botonSiguiente2" onclick="formEmpresa_informacionProfesional()"> Siguiente </button>
                             </div>
-                            <button onclick="formEmpresa_informacionProfesional()"> Siguiente </button>
                     </div>
                 </div>
                 <div class="fieldset " id="paso3">
@@ -226,7 +209,7 @@
                             <button onclick="formEmpresa_webEmpresarial()"> Siguiente </button>
                     </div>
                 </div>
-                <div class="fieldset activo" id="paso4">
+                <div class="fieldset " id="paso4">
                     <!-- paso4  -->
                     <div class="tituloRelleno">
                         <h2>Resumen</h2>
