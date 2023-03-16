@@ -3,12 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if(URLactual == '/empresaFormulario.html'){
         provincias();
         tipoActividadEmpresarial();
-        let empresa = JSON.parse(localStorage.getItem('empresa'));
-        let NombreEmpresa = document.getElementById('NombreEmpresa').innerHTML = empresa.nombreComercial;;
-                let actividadEmpresa = document.getElementById('actividadEmpresa').innerHTML = empresa.tipoActividadEmpresarial.actividad;
-                let infoEmpresa = document.getElementById('infoEmpresa').innerHTML = empresa.descripcionEmpresa;
-                let provinciaEmpresa = document.getElementById('provinciaEmpresa').innerHTML = empresa.provincia.provincia;
-                let sitioWebEmpresa = document.getElementById('sitioWebEmpresa').innerHTML = empresa.sitioWeb;
     }
 
 });
