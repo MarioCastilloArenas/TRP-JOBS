@@ -48,7 +48,7 @@ html{
 }
 
 #flechasBanner{
-    color: #ffb11a;
+    color: #ffffff;
 
 }
 #flechasBanner{
@@ -157,8 +157,8 @@ section{
 }
 
 .oferta{
-    border: 3px solid black;
-    border-radius: 10px;
+
+    border-radius: 5px;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -167,19 +167,23 @@ section{
 }
 
 .oferta:hover{
-    border: 3px solid black;
-    border-radius: 10px;
-    width: 105%;
-    display: flex;
-    flex-wrap: wrap;
-    height: 210px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border: 2px solid black;
+ 
 }
 
 
+.oferta>.informacionEmpresa>div:hover{
+
+
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.739);
+
+}
+
 .ofertaDestacada{
-    border: 3px solid #ffb11a;
-    border-radius: 10px;
+  
+
+    border-radius: 5px;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -188,19 +192,20 @@ section{
 
 }
 
-
-
-
 .ofertaDestacada:hover{
-    border: 3px solid #ffb11a;
-    border-radius: 10px;
-    width: 105%;
-    display: flex;
-    flex-wrap: wrap;
-    height: 210px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  
+    border:  2px solid #ffb11a;
+  
 
 }
+
+.ofertaDestacada>.informacionEmpresa>div:hover{
+
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.739);
+
+}
+
 
 .image{
     width: 25%;
@@ -391,6 +396,127 @@ form>#div2>div>input{
     background-color: white;
 
 } 
+
+#cuadrosSeccion{
+
+    width: 100%;
+    background-image: url(/assets/img/pexels-matt-hardy-2624031.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    filter: blur();
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+}
+
+#cuadrosSeccion>div{
+
+    background-color: #ffffff;
+    border-radius: 5px;
+    width: 40%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.cuadroConductor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding: 20px;
+    border: solid #ffb11a;
+    width: 100%;
+    height: 12.5%;
+    border-bottom: transparent;
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+}
+
+.cuadroConductor>p{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding: 40px;
+   
+}
+
+
+.cuadroConductor>i{
+
+    font-size: 60px;
+}
+
+.cuadroConductor>h4{
+
+color: #ffb11a;
+
+}
+
+
+.cuadroEmpresas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding: 20px;
+    border: solid #ffb11a;
+    width: 100%;
+    height: 12.5%;
+    border-bottom: transparent;
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+}
+
+.cuadroEmpresas>p{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding: 40px;
+   
+}
+
+.cuadroEmpresas>i{
+
+    font-size: 60px;
+
+}
+
+.cuadroEmpresas>h4{
+
+    color: #ffb11a;
+    
+    }
+    
+@media (max-width:900px) {
+
+    #cuadrosSeccion{
+
+        height: 800px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+  
+    }
+    
+    #cuadrosSeccion>div{
+    
+        height: 360px;
+        width: 70%;
+  
+    
+    }
+    
+}
 
 /*------------------Footer-------------*/
 footer{
