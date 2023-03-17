@@ -54,7 +54,6 @@
                     </div>
                 </div>       
                 <div class="container">
-                   
                     <div class="infoPaso">
                         <div class="paso" id="pasoAColor2">
                             Paso 2
@@ -76,7 +75,7 @@
                 </div>     
                 <div class="container">
                     <div class="infoPaso">
-                        <div class="paso">
+                        <div class="paso"  id="pasoAColor4">
                             Paso 4
                         </div>
                         <div class="nombrePaso">
@@ -86,7 +85,7 @@
                 </div>          
             </div>
             <div class="contenido">
-                <div class="fieldset" id="paso1">
+                <div class="fieldset " id="paso1">
                     <!-- paso1  -->
                     <div class="tituloRelleno">
                         <h2>información personal</h2>
@@ -124,50 +123,50 @@
                     </div>
                     <div class="rellenar2">
                             <h3 id="mensaje2"></h3>
-                            <div class="form-item2">
+                            <div class="form-item">
                                 <label for="cif">CIF:</label>
                                 <input type="text" id="cif" required>
                                 <i id="good" class='bx bx-check-circle'></i>
                                 <i id="error"  class='bx bx-error-circle'></i>
                                 <small>Rellene este campo</small>
                             </div>
-                            <div class="form-item2">
+                            <div class="form-item">
                                 <label for="nomFiscal">Nombre Fiscal:</label>
                                 <input type="text" id="nomFiscal" required>
                                 <i id="good" class='bx bx-check-circle'></i>
                                 <i id="error"  class='bx bx-error-circle'></i>
                                 <small>Rellene este campo</small>
                             </div>
-                            <div class="form-item2">
+                            <div class="form-item">
                                 <label for="TipoActividadEmpresa">Tipo Actividad Empresarial:</label>
                                 <select id="TipoActividadEmpresa">
                                 </select>
                             </div>
-                            <div class="form-item2">
+                            <div class="form-item">
                                 <label for="direccion">Dirección:</label>
                                 <input type="text" id="direccion" required>
                                 <i id="good" class='bx bx-check-circle'></i>
                                 <i id="error"  class='bx bx-error-circle'></i>
                                 <small>Rellene este campo</small>
                             </div>
-                            <div class="form-item2">
+                            <div class="form-item">
                                 <label for="provincia">Provincia:</label>
                                 <select id="provincia">
                                 </select>
                             </div>
-                            <div class="form-item2">
+                            <div class="form-item">
                                 <label for="codigoPostal">Codigo Postal:</label>
                                 <input type="number" id="codigoPostal" required>
                                 <i id="good" class='bx bx-check-circle'></i>
                                 <i id="error"  class='bx bx-error-circle'></i>
                                 <small>Rellene este campo</small>
                             </div> 
-                            <div class="form-boton-item2">
+                            <div class="form-boton-item">
                                 <button id="botonSiguiente2" onclick="formEmpresa_informacionProfesional()"> Siguiente </button>
                             </div>
                     </div>
                 </div>
-                <div class="fieldset " id="paso3">
+                <div class="fieldset activo" id="paso3">
                     <!-- paso3  -->
                     <div class="tituloRelleno">
                         <h2>información personal</h2>
@@ -205,12 +204,11 @@
                             <div class="form-item">
                                 <label for="logo">Imagen de Empresa:</label>
                                 <input type="file" id="logo">
-                                <img src="" alt="" id="preview">
                             </div>
                             <button onclick="formEmpresa_webEmpresarial()"> Siguiente </button>
                     </div>
                 </div>
-                <div class="fieldset activo " id="paso4">
+                <div class="fieldset " id="paso4">
                     <!-- paso4  -->
                     <div class="tituloRelleno">
                         <h2>Resumen</h2>

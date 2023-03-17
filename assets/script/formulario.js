@@ -200,9 +200,9 @@ async function formEmpresa_informacionProfesional(){
         fieldset3.classList = 'fieldset activo'
         localStorage.removeItem('TipoActividadEmpresarial')
         localStorage.removeItem('provincia')
-        // document.getElementById("pasoAColor1").style.color="#1a9e00";
-        // document.getElementById("pasoAColor2").style.color="#1a9e00";
-        // document.getElementById("pasoAColor2").style.color="#ffb11a";
+        document.getElementById("pasoAColor1").style.color="#1a9e00";
+        document.getElementById("pasoAColor2").style.color="#1a9e00";
+        document.getElementById("pasoAColor3").style.color="#ffb11a";
         
     } 
     
@@ -279,13 +279,16 @@ async function formEmpresa_webEmpresarial(){
                 let fieldset4 = document.getElementById('paso4');
                 fieldset3.className = 'fieldset';
                 fieldset4.classList = 'fieldset activo'
+                document.getElementById("pasoAColor1").style.color="#1a9e00";
+                document.getElementById("pasoAColor2").style.color="#1a9e00";
+                document.getElementById("pasoAColor3").style.color="#1a9e00";
+                document.getElementById("pasoAColor4").style.color="#1a9e00";
                 document.getElementById('mensaje4').innerHTML = '¡Estamos felices de que ya forma parte de nuestro equipo!'
-                let NombreEmpresa = document.getElementById('NombreEmpresa').innerHTML = empresa.nomComercial;;
-                let actividadEmpresa = document.getElementById('actividadEmpresa').innerHTML = empresa.actividadEmpresa.actividad;
-                let infoEmpresa = document.getElementById('infoEmpresa').innerHTML = empresa.descripcionEmpresa;
-                let provinciaEmpresa = document.getElementById('provinciaEmpresa').innerHTML = empresa.provincia.provincia;
-                let sitioWebEmpresa = document.getElementById('sitioWebEmpresa').innerHTML = empresa.sitioWeb;
-                        
+                document.getElementById('NombreEmpresa').innerHTML = empresa.nomComercial;;
+                document.getElementById('actividadEmpresa').innerHTML = empresa.actividadEmpresa.actividad;
+                document.getElementById('infoEmpresa').innerHTML = empresa.descripcionEmpresa;
+                document.getElementById('provinciaEmpresa').innerHTML = empresa.provincia.provincia;
+                document.getElementById('sitioWebEmpresa').innerHTML = empresa.sitioWeb;
             }
         } catch (error) {
             throw new Error('Ha ocurrido un error');
