@@ -1,23 +1,26 @@
-let ubicacionPrincipal = window.pageYOffset;
-window.onscroll = function(){
-    let Desplazamiento_Actual = window.pageYOffset;
-
-    if(ubicacionPrincipal >= Desplazamiento_Actual){
-        this.document.getElementById('navHeader').style.top = '0';
-    } else {
-        this.document.getElementById('navHeader').style.top = '-100px';
-    }
-    ubicacionPrincipal = Desplazamiento_Actual;
-    // console.log(ubicacionPrincipal);
-    this.document.getElementById('container_menu').style.top = Desplazamiento_Actual;
+function enviarInicioTrabajadores(){
+    document.location = "login.html";
 }
-// function disableScroll(){
-//     var x = window.scrollX;
-//     var y = window.scrollY;
-//     window.onscroll = function(){
-//         window.scrollTo(x,y)
-//     };
-// }
-function enableScroll(){
-    window.onscroll = null;
+function enviarInicioEmpresas(){
+    document.location = "login.html";
+    var x = document.getElementById("login");
+    var y = document.getElementById("registrar");
+    var z = document.getElementById("opcion");
+    x.style.left = "-400px";
+    y.style.left = "50px";
+    z.style.left = "120px";
+    // function registrar_btn(){
+    //     x.style.left = "-400px";
+    //     y.style.left = "50px";
+    //     z.style.left = "120px";
+    // }
+    // document.getElementById("registrar").style.left = "50";
+    // #login{
+    //     left: 50px;
+    //     top: 150px;
+    // }
+    // #registrar{
+    //     top: 150px;
+    //     left: 450px;
+    // }
 }

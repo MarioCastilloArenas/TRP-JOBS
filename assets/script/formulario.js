@@ -36,7 +36,7 @@ function tipoActividadEmpresarial (){
     })
 }
 
-function formEmpresa_log(){
+async function formEmpresa_log(){
     let fieldset = document.getElementById('paso1');
     let email = document.getElementById('email');
     let contraseña = document.getElementById('password');
@@ -52,7 +52,18 @@ function formEmpresa_log(){
     } else if (!correcionEmail(emailValor)) { 
         enviarError(email, 'Email invalido');
     } else {
-        funciona(email);
+        try {
+            let empresabb = await buscarExistenciaEmpresa(emailValor.toLowerCase());
+            if (empresabb == null) {
+                funciona(email);
+            }else {
+                enviarError(email, 'Email Existente');
+                document.getElementById('mensaje1').innerHTML = 'Esta empresa ya forma parte de nuestro equipo, prueba a iniciar sesion.'
+                bolean = false;
+            }
+        } catch (error) {
+            throw new Error('Ha ocurrido un error');
+        }
     }
     
     if (contraseñaValor === '') {
@@ -76,11 +87,7 @@ function formEmpresa_log(){
     }
     if (bolean==true) {
         let password = md5(contraseña2Valor);
-        if (buscarExistenciaEmpresa(emailValor)){
-            document.getElementById('mensaje1').innerHTML = 'Esta empresa ya forma parte de nuestro equipo, prueba a iniciar sesion.'
-        } else {
         let empresa = {
-            cif: "",
             codigoPostal: 00000,
             contrasena: password,
             descripcionEmpresa: "",
@@ -88,17 +95,18 @@ function formEmpresa_log(){
             email: emailValor,
             logo: null,
             nombreComercial: "",
-            nombreFiscal: "",
-            sitioWeb: "",
-            telefono: 000000000,
+            nombreFiscal: "",   
             provincia: {
                 idProvincia: 0,
                 provincia: ""
             },
+            sitioWeb: "",
+            telefono: 000000000,
             tipoActividadEmpresarial: {
                 idActividad: 0,
                 actividad: ""
-            }
+            },
+            cif: ""
         }
         localStorage.setItem('empresa',JSON.stringify(empresa))
         fieldset.className = 'fieldset';
@@ -106,14 +114,10 @@ function formEmpresa_log(){
         fieldset2.classList = 'fieldset activo';
         document.getElementById("pasoAColor1").style.color="#1a9e00";
         document.getElementById("pasoAColor2").style.color="#ffb11a";
-        }
+    }
+} 
 
-      
-    } 
-
-}
-
-function formEmpresa_informacionProfesional(){
+async function formEmpresa_informacionProfesional(){
     let fieldset = document.getElementById('paso2');
     let cif = document.getElementById('cif');
     let nomFiscal = document.getElementById('nomFiscal');
@@ -133,7 +137,19 @@ function formEmpresa_informacionProfesional(){
     } else if (!validarCIF(cifValor)) { 
         enviarError(cif, 'Cif invalido');
     } else {
-        funciona(cif);
+        try {
+            let empresabb = await buscarEmpresa(cifValor);
+            console.log(empresabb);
+            if (empresabb == null ) {
+                funciona(cif);
+            }else {
+                enviarError(cif, 'Cif existente');
+                document.getElementById('mensaje2').innerHTML = 'Esta empresa ya forma parte de nuestro equipo, prueba a iniciar sesion.'
+                bolean = false;
+            }
+        } catch (error) {
+            throw new Error('Ha ocurrido un error');
+        }
     }
 
     if (nomFiscalValor === '') {
@@ -155,10 +171,8 @@ function formEmpresa_informacionProfesional(){
     }else{
         funciona(direccion);
     }
-    alert(TipoActividadEmpresa);
-
-    buscarProvincia(provincia);
-    let provinciaL = JSON.parse(localStorage.getItem('provincia'))
+    let provinciaL;
+    try {provinciaL = await buscarProvincia(provincia);} catch (error) {throw new Error('Ha ocurrido un error');}
 
     if (codigoPostalValor === '') {
         enviarError(codigoPostal,"Rellene este campo");
@@ -169,13 +183,10 @@ function formEmpresa_informacionProfesional(){
         funciona(codigoPostal);
     }
 
-    buscarTipoActividadEmpresa(TipoActividadEmpresa);
-    let TipoActividadEmpresaL = JSON.parse(localStorage.getItem('TipoActividadEmpresarial'))
+    let TipoActividadEmpresaL;
+    try {TipoActividadEmpresaL = await buscarTipoActividadEmpresa(TipoActividadEmpresa);} catch (error) {throw new Error('Ha ocurrido un error');}
 
     if (bolean==true) {
-        if (buscarEmpresa(cifValor)){
-            document.getElementById('mensaje2').innerHTML = 'Esta empresa ya forma parte de nuestro equipo, prueba a iniciar sesion.'
-        } else {
         let empresa = JSON.parse(localStorage.getItem('empresa'));
         empresa.cif = cifValor;
         empresa.codigoPostal = codigoPostalValor;
@@ -189,16 +200,16 @@ function formEmpresa_informacionProfesional(){
         fieldset3.classList = 'fieldset activo'
         localStorage.removeItem('TipoActividadEmpresarial')
         localStorage.removeItem('provincia')
-        // document.getElementById("pasoAColor1").style.color="#1a9e00";
-        // document.getElementById("pasoAColor2").style.color="#1a9e00";
-        // document.getElementById("pasoAColor2").style.color="#ffb11a";
+        document.getElementById("pasoAColor1").style.color="#1a9e00";
+        document.getElementById("pasoAColor2").style.color="#1a9e00";
+        document.getElementById("pasoAColor3").style.color="#ffb11a";
         
-        }
     } 
+    
 
 }
 
-function formEmpresa_webEmpresarial(){
+async function formEmpresa_webEmpresarial(){
     let nomComercial = document.getElementById('nomComercial');
     let nomComercialValor = nomComercial.value.trim();
     let descripcion = document.getElementById('descripcion');
@@ -255,35 +266,55 @@ function formEmpresa_webEmpresarial(){
         empresa.nombreComercial = nomComercialValor;
         empresa.sitioWeb = sitioWebValor;
         empresa.telefono = telefonoValor;
-        localStorage.setItem('empresa',JSON.stringify(empresa));
-        //añadirbbddEmpresa();
+        localStorage.setItem('empresa',JSON.stringify(empresa))
+        adddbddEmpresa();
+        let addEmpresa;
+        try {
+            addEmpresa = await adddbddEmpresa();
+            console.log(addEmpresa,empresa);
+            if(addEmpresa.cif == null){
+                document.getElementById('mensaje3').innerHTML = '¡Ups, ya existe un usuario con su cuenta, pruebe iniciar sesion!'
+            } else {
+                let fieldset3 = document.getElementById('paso3');
+                let fieldset4 = document.getElementById('paso4');
+                fieldset3.className = 'fieldset';
+                fieldset4.classList = 'fieldset activo'
+                document.getElementById("pasoAColor1").style.color="#1a9e00";
+                document.getElementById("pasoAColor2").style.color="#1a9e00";
+                document.getElementById("pasoAColor3").style.color="#1a9e00";
+                document.getElementById("pasoAColor4").style.color="#1a9e00";
+                document.getElementById('mensaje4').innerHTML = '¡Estamos felices de que ya forma parte de nuestro equipo!'
+                document.getElementById('NombreEmpresa').innerHTML = empresa.nomComercial;;
+                document.getElementById('actividadEmpresa').innerHTML = empresa.actividadEmpresa.actividad;
+                document.getElementById('infoEmpresa').innerHTML = empresa.descripcionEmpresa;
+                document.getElementById('provinciaEmpresa').innerHTML = empresa.provincia.provincia;
+                document.getElementById('sitioWebEmpresa').innerHTML = empresa.sitioWeb;
+            }
+        } catch (error) {
+            throw new Error('Ha ocurrido un error');
+        }
     } 
 
-    
 }
 
-function añadirbbddEmpresa(){
+
+function adddbddEmpresa() {
     let empresa = JSON.parse(localStorage.getItem('empresa'));
-    const URL = "http://localhost:8080/registroEmpresa/";
+    return new Promise((resolve, reject) => {
+        const URL = "http://localhost:8080/registroEmpresa/";
         fetch(URL, {
-            headers: {
+        headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
-            },
-            method: "POST",
-            body: JSON.stringify(empresa)
+        },
+        method: "POST",
+        body: JSON.stringify(empresa)
         })
-        .then(res => res.json())
-        .then((data) => {
-            let fieldset3 = document.getElementById('paso3');
-            let fieldset4 = document.getElementById('paso4');
-            fieldset3.className = 'fieldset';
-            fieldset4.classList = 'fieldset activo'
-            document.getElementById('mensaje3').innerHTML = '¡Estamos felices de que ya forma parte de nuestro equipo!'
-
-        })
+        .then((response) => response.json())
+        .then((empresa) => {resolve(empresa);})
+        .catch((error) => reject(error));;
+    });
 }
-
 
 function addLogo(){
     let logo = document.getElementById('logo');
@@ -348,7 +379,6 @@ function funciona(input) {
     let error = formControl.querySelector('#error');
         error.style.visibility = 'hidden';
     let small = formControl.querySelector('small');
-    console.log(error)
         small.style.visibility = 'hidden';
     let good = formControl.querySelector('#good');
         good.style.color = 'green'
@@ -400,7 +430,6 @@ function validarCodigoPostal(cp, provincia) {
     // Obtener los dos primeros dígitos del código postal
     var provinciaCP = cp.substr(0, 2);
     let cdprov = provincia.toString().padStart(2, '0');
-    console.log(provinciaCP,cdprov);
     // Comprobar si los dos primeros dígitos corresponden a la provincia indicada
     if (provinciaCP !== cdprov) {
         return false;
@@ -423,41 +452,56 @@ function esSitioWeb(cadena) {
 /*------- FUNCION BUSQUEDA EN LA BBDD ------ */
 function buscarProvincia(id){   
     const URL = "http://localhost:8080/Provincia/"+ id;
-    fetch(URL)
-    .then((response) => response.json())
-    .then((data) => {
-        console.log(data);
-        localStorage.setItem('provincia', JSON.stringify(data));
-    })
+    return new Promise((resolve, reject) => {
+        fetch(URL)
+        .then((response) => response.json())
+        .then((provincia) => {resolve(provincia);})
+        .catch((error) => reject(error));
+    });
+
 }
 function buscarTipoActividadEmpresa(id) {
     const URL = "http://localhost:8080/TipoActividadEmpresarial/"+ id;
-    fetch(URL)
-    .then((response) => response.json())
-    .then((data) => {
-        localStorage.setItem('TipoActividadEmpresarial', JSON.stringify(data));
-    })
+    return new Promise((resolve, reject) => {
+        fetch(URL)
+        .then((response) => response.json())
+        .then((TipoActividadEmpresarial) => {resolve(TipoActividadEmpresarial);})
+        .catch((error) => reject(error));
+    });
 }
 
 function buscarExistenciaEmpresa(emailv) {
-    const URL = "http://localhost:8080/Empresa/email="+emailv;
-    fetch(URL)
-    .then((response) => response.json())
-    .then((empresa) => {
-        if (empresa.email == emailv){
-            return true;
-        } 
-    })
+
+    const URL = "http://localhost:8080/Empresa/email=" + emailv;
+    return new Promise((resolve, reject) => {
+        fetch(URL)
+        .then((response) => response.json())
+        .then((empresa) => {
+            if (empresa.email === emailv) {
+            resolve(empresa.email);
+            } else {
+            resolve(null);
+            }
+        })
+        .catch((error) => reject(error));
+    });
 }
 function buscarEmpresa(cifv) {
     const URL = "http://localhost:8080/Empresa/cif="+cifv;
-    fetch(URL)
-    .then((response) => response.json())
-    .then((empresa) => {
-        if (empresa == null || empresa == ""){
-            return true;
-        } 
-    })
+    return new Promise((resolve, reject) => {
+        fetch(URL)
+        .then((response) => response.text())
+        .then((empresa) => {
+            if (empresa == "") {
+                resolve(null);
+            } else {
+                empresa = JSON.parse(empresa)
+                console.log(empresa);
+                resolve(empresa);
+            }
+        })
+        .catch((error) => reject(error));
+    });
 }
 
 
