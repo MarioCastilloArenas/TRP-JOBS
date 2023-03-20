@@ -67,7 +67,7 @@ html{
 #TxtBannerConductor{
     font-weight: bold;
     height: 50%;
-    width: 20%;
+    width: 30%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -81,7 +81,7 @@ html{
 #TxtBannerEmpresa{
     font-weight: bold;
     height: 50%;
-    width: 20%; 
+    width: 30%; 
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
