@@ -46,7 +46,7 @@ html{
 
     height: 40%;
     width: 100%;
-    font-size: 50px;
+    font-size: 65px;
     display: flex;
     justify-content: center;
     align-items: end;
@@ -67,7 +67,7 @@ html{
 #TxtBannerConductor{
     font-weight: bold;
     height: 50%;
-    width: 30%;
+    width: 20%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -81,7 +81,7 @@ html{
 #TxtBannerEmpresa{
     font-weight: bold;
     height: 50%;
-    width: 30%; 
+    width: 20%; 
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -145,25 +145,52 @@ html{
 @media (max-width: 600px) {
     #banner>#TxtTitulo{
 
-        font-size: 30px;
+        font-size: 35px;
         
     }   
 
     #containerTxtBanner{
 
-        gap: 0%;
+        gap: 3%;
 
     }
     #TxtBannerConductor{
         font-weight: bold;
         height: 50%;
-        width: 40%;
+        width: 50%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        font-size: 13px;
+      
     }
+
+    #TxtBannerConductor>div>p{
+       
+        font-size: 10px;
+      
+    }
+
+    #TxtBannerConductor>div>i{
+       
+        font-size: 30px;
+      
+    }
+
+
+    
+    #TxtBannerEmpresa>div>p{
+       
+        font-size: 10px;
+      
+    }
+
+    #TxtBannerEmpresa>div>i{
+       
+        font-size: 30px;
+      
+    }
+
 
 
 
@@ -175,7 +202,7 @@ html{
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        font-size: 13px;
+      
     } 
  } 
 
@@ -187,7 +214,7 @@ html{
     }   
     #containerTxtBanner{
         
-        gap: 0%;
+        gap: 3%;
 
     }
     #TxtBannerConductor{
@@ -217,6 +244,38 @@ html{
 
 }
 
+
+@media (max-width: 1000px) {
+    #TxtTitulo{
+
+        font-size: 45px;
+        
+    }
+
+    #TxtBannerConductor{
+        font-weight: bold;
+        height: 50%;
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 13px;
+    }
+
+
+
+    #TxtBannerEmpresa{
+        font-weight: bold;
+        height: 50%;
+        width: 30%; 
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        font-size: 13px;
+    } 
+}
 section{
 
     grid-area: zsection;
