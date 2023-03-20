@@ -52,6 +52,7 @@ html{
     align-items: end;
     font-weight: bold;
     color: #ffb11a;
+ 
 }
 #containerTxtBanner{
    height:  20%;
@@ -66,21 +67,27 @@ html{
 #TxtBannerConductor{
     font-weight: bold;
     height: 50%;
-    width: 20%;
+    width: 30%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
    align-items: center;
+   font-size: 15px;
+
 }
+
+
 
 #TxtBannerEmpresa{
     font-weight: bold;
     height: 50%;
-    width: 20%; 
+    width: 30%; 
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+   font-size: 15px;
+
 }
 
 .emojiBenner {
@@ -101,6 +108,13 @@ html{
     align-items: center;
     
 }
+
+.parrafoBanner:hover {
+
+    color: #ffb11a;
+    cursor: pointer;
+}
+
 #flechasNav{
     /* position: relative;
     top: 160px; */
@@ -118,14 +132,90 @@ html{
     color: #ffb11a;
 
 }
-#flechasBanner{
+/* #flechasBanner{
     -webkit-animation: tiembla 1s infinite;
   }
-  /* @-webkit-keyframes tiembla{
+   @-webkit-keyframes tiembla{
     0%  { -webkit-transform:rotateZ(-5deg); }
     50% { -webkit-transform:rotateZ( 0deg) scale(.8); }
     100%{ -webkit-transform:rotateZ( 5deg); }
-  } */
+  }  */
+
+
+@media (max-width: 600px) {
+    #banner>#TxtTitulo{
+
+        font-size: 30px;
+        
+    }   
+
+    #containerTxtBanner{
+
+        gap: 0%;
+
+    }
+    #TxtBannerConductor{
+        font-weight: bold;
+        height: 50%;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 13px;
+    }
+
+
+
+    #TxtBannerEmpresa{
+        font-weight: bold;
+        height: 50%;
+        width: 50%; 
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        font-size: 13px;
+    } 
+ } 
+
+@media (max-width: 800px) {
+    #TxtTitulo{
+
+        font-size: 45px;
+        
+    }   
+    #containerTxtBanner{
+        
+        gap: 0%;
+
+    }
+    #TxtBannerConductor{
+        font-weight: bold;
+        height: 50%;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 13px;
+    }
+
+
+
+    #TxtBannerEmpresa{
+        font-weight: bold;
+        height: 50%;
+        width: 40%; 
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        font-size: 13px;
+    } 
+
+
+}
 
 section{
 
@@ -629,13 +719,14 @@ color: #ffb11a;
 
         height:1000px;
         gap: 0.5%;
-   
+        background-position-x: -590px;
     }
     
     #cuadrosSeccion>div{
     
         height: 49%;
         width: 60%;
+      
   
     
     }
