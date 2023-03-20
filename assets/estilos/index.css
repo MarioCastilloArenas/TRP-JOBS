@@ -13,7 +13,7 @@ body{
     grid-template-rows: 100px 840px 1fr 200px;
     grid-template-areas: 
         "zheader"
-        "znav"
+        "znav"    
         "zsection"
         "zfooter";
 }
@@ -33,22 +33,24 @@ html{
 
 }
 #banner{
-
+    background-color: rgba(0,0,0,0.6);
     width: 100%;
     height: 100%;
     display: grid;
     place-content: center;
     
+    
 }
 #flechasNav{
-
+    position: relative;
+    top: 160px;
     color: white;
     font-size: 60px;
     width: fit-content;
 }
 
 #flechasBanner{
-    color: #ffffff;
+    color: #ffb11a;
 
 }
 #flechasBanner{
@@ -157,18 +159,20 @@ section{
 }
 
 .oferta{
-
-    border-radius: 5px;
-    width: 100%;
+    
+    border-radius: 10px;
+    width: 95%;
     display: flex;
     flex-wrap: wrap;
-    height: 200px;
+    height: 150px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: rgba(0, 0, 0, 0.737);
 }
 
 .oferta:hover{
-    border: 2px solid black;
- 
+  
+    box-shadow: rgba(29, 29, 29, 0.228) 0px 5px 8px 8px;
+    
 }
 
 
@@ -182,20 +186,19 @@ section{
 
 .ofertaDestacada{
   
-
-    border-radius: 5px;
-    width: 100%;
+    border: 2px solid #ffb11a;
+    border-radius: 10px;
+    width: 95%;
     display: flex;
     flex-wrap: wrap;
-    height: 200px;
+    height: 150px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
+    color: rgba(0, 0, 0, 0.737);
 }
 
 .ofertaDestacada:hover{
   
-    border:  2px solid #ffb11a;
-  
+    box-shadow: rgba(29, 29, 29, 0.228) 0px 5px 8px 8px;
 
 }
 
@@ -409,14 +412,14 @@ form>#div2>div>input{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 2%;
+    gap: 1%;
 }
 
 #cuadrosSeccion>div{
-
-    background-color: #ffffff;
-    border-radius: 5px;
-    width: 40%;
+    box-shadow: rgba(0, 0, 0, 0.7) 0px 5px 15px;
+    background-color: #ffffffbb;
+    border-radius: 10px;
+    width: 450px;
     height: 500px;
     display: flex;
     flex-direction: column;
@@ -432,10 +435,7 @@ form>#div2>div>input{
     border: solid #ffb11a;
     width: 100%;
     height: 12.5%;
-    border-bottom: transparent;
-    border-top: transparent;
-    border-left: transparent;
-    border-right: transparent;
+    border: none;
 }
 
 .cuadroConductor>p{
@@ -450,7 +450,7 @@ form>#div2>div>input{
 
 .cuadroConductor>i{
 
-    font-size: 60px;
+    font-size: 50px;
 }
 
 .cuadroConductor>h4{
@@ -469,11 +469,10 @@ color: #ffb11a;
     border: solid #ffb11a;
     width: 100%;
     height: 12.5%;
-    border-bottom: transparent;
-    border-top: transparent;
-    border-left: transparent;
-    border-right: transparent;
+   border: none;
 }
+
+
 
 .cuadroEmpresas>p{
     display: flex;
@@ -486,7 +485,7 @@ color: #ffb11a;
 
 .cuadroEmpresas>i{
 
-    font-size: 60px;
+    font-size: 50px;
 
 }
 
@@ -496,27 +495,112 @@ color: #ffb11a;
     
     }
     
-@media (max-width:900px) {
+.cuadroBot>div{
+   
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#cuadrosSeccion>div>div>div>button{
+
+    border-radius: 5px;
+    background-color: #ffb11a;
+    width: 130px;
+    height: 40px;
+    border: none;
+    
+
+}
+
+@media (max-width:1000px) {
 
     #cuadrosSeccion{
 
-        height: 800px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-  
+        height: 600px;
+
+   
     }
     
     #cuadrosSeccion>div{
     
-        height: 360px;
-        width: 70%;
+        height: 500px;
+        width: 40%;
   
+    
+    }
+
+    #cuadrosSeccion>div>div{
+        
+        width: 100%;
+        font-size: 13px;
+  
+    }
+
+    .cuadroBot>div{
+   
+        width: 400;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    
+    }
+
+    #cuadrosSeccion>div>div>div>button{
+
+        font-size: 10px;
+        width: 80px;
+        height: 20px;        
     
     }
     
 }
+
+@media (max-width:600px) {
+
+    #cuadrosSeccion{
+
+        height:1000px;
+        gap: 0.5%;
+   
+    }
+    
+    #cuadrosSeccion>div{
+    
+        height: 49%;
+        width: 60%;
+  
+    
+    }
+
+    #cuadrosSeccion>div>div{
+        
+        width: 100%;
+        font-size: 13px;
+  
+    }
+
+    .cuadroBot>div{
+   
+        width: 400;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    
+    }
+
+    #cuadrosSeccion>div>div>div>button{
+
+        font-size: 10px;
+        width: 80px;
+        height: 20px;        
+    
+    }
+    
+}
+
 
 /*------------------Footer-------------*/
 footer{
