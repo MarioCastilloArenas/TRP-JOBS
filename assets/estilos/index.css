@@ -39,6 +39,7 @@ html{
     display: flex;
     flex-direction: column;
     color: white;
+    font-style: oblique;
     
 }
 
@@ -52,6 +53,7 @@ html{
     align-items: end;
     font-weight: bold;
     color: #ffb11a;
+
  
 }
 #containerTxtBanner{
@@ -132,14 +134,14 @@ html{
     color: #ffb11a;
 
 }
-/* #flechasBanner{
+#flechasBanner{
     -webkit-animation: tiembla 1s infinite;
   }
    @-webkit-keyframes tiembla{
     0%  { -webkit-transform:rotateZ(-5deg); }
     50% { -webkit-transform:rotateZ( 0deg) scale(.8); }
     100%{ -webkit-transform:rotateZ( 5deg); }
-  }  */
+  } 
 
 
 @media (max-width: 600px) {
