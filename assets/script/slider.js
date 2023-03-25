@@ -2,7 +2,7 @@ const slider = document.querySelector(".sliderAnimate");
 
 let maxSliderLeft = slider.scrollWidth - slider.clientWidth;
 let intervalo = null;
-let step = 1;
+let step = 0.3;
 
 const start = () => {
     intervalo = setInterval( function() {
@@ -28,3 +28,6 @@ slider.addEventListener("mouseout", () => {
 });
 
 start();
+// var slider = document.querySelector(".carruselBox");
+
+// slider.innerHTML += slider.innerHTML;

@@ -616,9 +616,67 @@ form>#div2>div>input{
 
 } 
 
+/* #carruselContainer{
+    width: 80vw;
+    border: 5px solid blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.carrusel {
+    height: 100px;
+    overflow: hidden;
+    width: 70%;
+    border: 5px solid red;
+  }
+  
+  .carruselBox {
+    display: inline-flex;
+    -moz-animation: slider 20s infinite linear;
+    -webkit-animation: slider 20s infinite linear;
+    animation: slider 20s infinite linear;
+    height: 100%;
+    width: auto;
+    gap: 10px;
+  }
+
+  .carruselBox:hover{
+    animation: slider 100s infinite linear;
+    
+
+  }
+  .boxImg:hover{
+    background-color: red;
+    cursor: pointer;
+    
+  }
+  
+  .boxImg {
+    background: #CCC;
+    border: 1px solid #FFF;
+    color: #FFF;
+    font-family: Arial;
+    font-size: 16px;
+    line-height: 100px;
+    height: 100%;
+    flex: 0 0 auto;
+    text-align: center;
+    width: 150px;
+  }
+  
+  @keyframes slider {
+    to {
+      -moz-transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+    }
+  } */
+
+
 .slider{
-    width: 1200px;
-    background-color: gray;
+    width: 90vw;
+    background-color: #ffb11a;
     height: 200px;
     display: flex;
     justify-content: center;
@@ -628,7 +686,7 @@ form>#div2>div>input{
 
 .sliderAnimate{
     /* border: 5px solid red; */
-    width: 80%;
+    width: 100%;
     display: flex;
     overflow-x: scroll;
     overflow-y: hidden;
@@ -649,6 +707,7 @@ form>#div2>div>input{
 
 .sliderBox:hover{
     transform: scale(1.2);
+    cursor: pointer;
 }
 
 #cuadrosSeccion{
