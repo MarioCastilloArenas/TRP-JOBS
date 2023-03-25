@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>REGISTRO TRANSPORTISTA EN TRP JOBS</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="assets/estilos/headerFooter.css">
+    <link rel="stylesheet" href="assets/estilos/formulario.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Expletus+Sans&display=swap" rel="stylesheet">
+    <script src="assets/script/formulario.js"></script>
+</head>
+<body>
+    <header>
+        <div id="logo" >
+            <p class="animacionLogo">TRP JOBS</p>
+            <marquee behavior="" direction="right">
+                <div class="logoCamion">
+                </div>
+            </marquee>
+                <!-- <div id="cap1">
+                    <img src="assets/img/capa1.png" width="100px" height="100px" alt="">
+                </div>
+                <div id="cap2">
+                    <img src="assets/img/capa2.png" width="100px" height="100px" alt="">
+                </div> -->
+        </div>
+        <div id="info">
+            <div id="boxInfo">
+                <div id="sobreNosotros"> Sobre nosotros</div>
+                <div id="trabajadores"> Trabajadores </div>
+                <div id="empresas"> Empresas </div>
+                <div id="logoUser"> <i class='bx bx-user-circle'></i> </div>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <h1>Regístrate en TRP JOBS - Encuentra tu trabajo ideal en el sector del transporte </h1>
+        <p>Nuestra plataforma ofrece un buscador de empleo especializado en el sector del transporte, donde podrás encontrar ofertas de trabajo relevantes y atractivas en función de tus habilidades y experiencia. Además, podrás crear un perfil personalizado para mostrar tus habilidades y experiencia a las empresas que buscan candidatos en el sector del transporte.<br><b>¡Regístrate ahora y comienza a buscar tu trabajo ideal en TRP JOBS!</b></p>
+    </nav>
+    <section>        
+        <div id="formulario">
+            <div id="progreso">
+                <div class="container">
+                    <div class="infoPaso">
+                        <div class="paso" id="pasoAColor1">
+                            Paso 1
+                        </div>
+                        <div class="nombrePaso">
+                            Cuenta
+                        </div>
+                    </div>
+                </div>       
+                <div class="container">
+                    <div class="infoPaso">
+                        <div class="paso" id="pasoAColor2">
+                            Paso 2
+                        </div>
+                        <div class="nombrePaso">
+                            Datos empresa
+                        </div>
+                    </div>
+                </div>        
+                <div class="container">
+                    <div class="infoPaso">
+                        <div class="paso" id="pasoAColor3">
+                            Paso 3
+                        </div>
+                        <div class="nombrePaso">
+                            Información empresa
+                        </div>
+                    </div>
+                </div>     
+                <div class="container">
+                    <div class="infoPaso">
+                        <div class="paso"  id="pasoAColor4">
+                            Paso 4
+                        </div>
+                        <div class="nombrePaso">
+                            Resumen
+                        </div>
+                    </div>
+                </div>          
+            </div>
+            <div class="contenido">
+                <div class="fieldset " id="paso1">
+                    <!-- paso1  -->
+                    <div class="tituloRelleno">
+                        <h2>información personal</h2>
+                    </div>
+                    <div class="rellenar">
+                            <h3 id="mensaje1"></h3>
+                            <div class="form-item">
+                                <label for="email">Email:</label>
+                                <input type="text" id="email" >
+                                <i id="good" class='bx bx-check-circle'></i>
+                                <i id="error"  class='bx bx-error-circle'></i>
+                                <small>Rellene este campo</small>
+                            </div>
+                            <div class="form-item">
+                                <label for="password">Clave:</label>
+                                <input type="password" id="password" required>
+                                <i id="good" class='bx bx-check-circle'></i>
+                                <i id="error"  class='bx bx-error-circle'></i>
+                                <small>Rellene este campo</small>
+                            </div>
+                            <div class="form-item">
+                                <label for="password2">Confirme su clave:</label>
+                                <input type="password" id="password2" required>
+                                <i id="good" class='bx bx-check-circle'></i>
+                                <i id="error"  class='bx bx-error-circle'></i>
+                                <small>Rellene este campo</small>
+                            </div>
+                            <button id="botonSiguiente" onclick="formTrabajador_log()"> Siguiente </button>
+                        </div>
+                </div>
+                <div class="fieldset activo" id="paso2">
+                    <!-- paso2  -->
+                    <div class="tituloRelleno">
+                        <h2>información personal</h2>
+                    </div>
+                    <div class="rellenar2">
+                            <h3 id="mensaje2"></h3>
+                            <div class="form-item">
+                                <label for="dni">DNI:</label>
+                                <input type="text" id="cif" required>
+                                <i id="good" class='bx bx-check-circle'></i>
+                                <i id="error"  class='bx bx-error-circle'></i>
+                                <small>Rellene este campo</small>
+                            </div>
+                            <div class="form-item">
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" id="nombre" required>
+                                <i id="good" class='bx bx-check-circle'></i>
+                                <i id="error"  class='bx bx-error-circle'></i>
+                                <small>Rellene este campo</small>
+                            </div>
+                            <div class="form-item">
+                                <label for="apellidos">Apellidos:</label>
+                                <input type="text" id="apellidos" required>
+                                <i id="good" class='bx bx-check-circle'></i>
+                                <i id="error"  class='bx bx-error-circle'></i>
+                                <small>Rellene este campo</small>
+                            </div>
+                            <div class="form-item">
+                                <label for="fechaNacimiento">Fecha Nacimiento</label>
+                                <input type="date" id="fechaNacimiento">
+                                <i id="good" class="fa-solid fa-circle-check"></i>
+                                <i id="error" class="fa-solid fa-circle-exclamation"></i>
+                                <small>Rellene este campo</small>
+                            </div>
+                            <div class="form-item">
+                                <label for="nacionalidad">Nacionalidad:</label>
+                                <input type="text" id="nacionalidad" required>
+                                <i id="good" class='bx bx-check-circle'></i>
+                                <i id="error"  class='bx bx-error-circle'></i>
+                                <small>Rellene este campo</small>
+                            </div>
+                            <div class="form-item">
+                                <label for="provincia">Provincia:</label>
+                                <select id="provincia">
+                                </select>
+                            </div>
+                            <div class="form-item">
+                                <label for="codigoPostal">Codigo Postal:</label>
+                                <input type="number" id="codigoPostal" required>
+                                <i id="good" class='bx bx-check-circle'></i>
+                                <i id="error"  class='bx bx-error-circle'></i>
+                                <small>Rellene este campo</small>
+                            </div> 
+                            <div class="form-item">
+                                <label for="presentacion">Presentación:</label>
+                                <input type="number" id="presentacion">
+                                <i id="good" class="fa-solid fa-circle-check"></i>
+                                <i id="error" class="fa-solid fa-circle-exclamation"></i>
+                                <small>Rellene este campo</small>
+                            </div>
+                            <div class="form-item">
+                                <label for="logo">Imagen:</label>
+                                <input type="file" id="logo">
+                            </div>
+                            <div class="form-boton-item">
+                                <button id="botonSiguiente2" onclick="formEmpresa_informacionProfesional()"> Siguiente </button>
+                            </div>
+                    </div>
+                </div>
+                <div class="fieldset" id="paso3">
+                    <!-- paso3  -->
+                    <div class="tituloRelleno">
+                        <h2>información personal</h2>
+                    </div>
+                    <div class="rellenar">
+                        <h3 id="mensaje3"></h3>
+                            <div class="form-item">
+                                <label for="nomComercial">Nombre Comercial:</label>
+                                <input type="text" id="nomComercial" required>
+                                <i id="good" class='bx bx-check-circle'></i>
+                                <i id="error"  class='bx bx-error-circle'></i>
+                                <small>Rellene este campo</small>
+                            </div>
+                            <div class="form-item">
+                                <label for="descripcion">Descripcion:</label>
+                                <input type="text" id="descripcion" required></input>
+                                <i id="good" class='bx bx-check-circle'></i>
+                                <i id="error"  class='bx bx-error-circle'></i>
+                                <small>Rellene este campo</small>
+                            </div>
+                            <div class="form-item">
+                                <label for="sitioWeb">Sitio Web:</label>
+                                <input type="text" id="sitioWeb" required>
+                                <i id="good" class='bx bx-check-circle'></i>
+                                <i id="error"  class='bx bx-error-circle'></i>
+                                <small>Rellene este campo</small>
+                            </div>
+                            <div class="form-item">
+                                <label for="telefono">Telefono:</label>
+                                <input type="text" id="telefono" required>
+                                <i id="good" class='bx bx-check-circle'></i>
+                                <i id="error"  class='bx bx-error-circle'></i>
+                                <small>Rellene este campo</small>
+                            </div>
+                            <div class="form-item">
+                                <label for="logo">Imagen de Empresa:</label>
+                                <input type="file" id="logo">
+                            </div>
+                            <button onclick="formEmpresa_webEmpresarial()"> Siguiente </button>
+                    </div>
+                </div>
+                <div class="fieldset " id="paso4">
+                    <!-- paso4  -->
+                    <div class="tituloRelleno">
+                        <h2>Resumen</h2>
+                    </div>
+                    <div class="rellenar">
+                        <h3 id="mensaje4"> ¡Estamos felices de que ya forma parte de nuestro equipo! </h3>
+                        <h4>Te mostraremos los datos de tu empresa, los cuales podran ver los trabajadores.</h4>
+                        <h4>Te recordamos que podras modificar cualquiera de los datos de tu empresa, en el apartado <b>Mis Datos</b>.</h4>
+                        <h4>Esperamos que formes el mejor equipo posible en el menor tiempo posible.</h4>
+                        <div class="">
+                            <b>Nombre Comercial</b>
+                            <p id="NombreEmpresa"></p>
+                        </div>
+                        <div class="">
+                            <b>Actividad Empresarial</b>
+                            <p id="actividadEmpresa"></p>
+                        </div>
+                        <div class="">
+                            <b>Descripcion</b>
+                            <p id="infoEmpresa"></p>
+                        </div>
+                        <div class="">
+                            <b>Provincia</b>
+                            <p id="provinciaEmpresa"></p>
+                        </div>
+                        <div class="">
+                            <b>Sitio Web</b>
+                            <p id="sitioWebEmpresa"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer_logo">
+            <h2 id="texto_tdr" data-text="&nbsp;TDR Jobs&nbsp;">&nbsp;TDR Jobs&nbsp;</h2>
+        </div> 
+        <div class="footer_opcion">
+            <a href="">para conductores</a>
+            <a href="">para empresas</a>
+            <a href="">ver ofertas</a>
+        </div>
+        <div class="footer_contacto">
+            <p> contacto</p>
+            <p><i class='bx bx-phone-call'></i> 666 666 666</p>
+            <p><i class='bx bx-envelope' ></i> info@trpjobs.com </p>
+        </div>
+        <div class="footer_social">
+            <a href="https://www.whatsapp.com/"><i class='bx bxl-whatsapp'></i></a>
+            <a href="https://es.linkedin.com/"><i class='bx bxl-linkedin' ></i></a>
+            <a href="https://es-es.facebook.com/"><i class='bx bxl-facebook-circle' ></i></a>
+        </div>
+    </footer>
+</body>
+</html>
