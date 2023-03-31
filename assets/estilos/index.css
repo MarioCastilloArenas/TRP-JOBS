@@ -334,6 +334,29 @@ section{
     align-items: center;
     height: 400px;
     width: 400px;
+    position: relative;
+}
+
+.tituloImagenesUbi{
+    position: absolute;
+    font-size: 2em;
+    top: 70px;
+    color: black;
+
+}
+
+.imagenesUbicacionButton{
+    width: 120px;
+    height: 40px;
+    position: absolute;
+    font-size: 1.2em;
+    top: 300px;
+    border-radius: 25px;
+    background-color: white;
+    border: 2px solid grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #imagenesUbicaciones>div:first-child>img{
@@ -388,6 +411,7 @@ section{
 .oferta:hover{
   
     box-shadow: rgba(29, 29, 29, 0.228) 0px 5px 8px 8px;
+    cursor: pointer;
     
 }
 
@@ -410,11 +434,26 @@ section{
     height: 150px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     color: rgba(0, 0, 0, 0.737);
+    position: relative;
+}
+
+.circleDestacada{
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    border: 3px solid #ffb11a;
+    background-color: #ffb11a;
+    border-radius: 25px;
+    top: -15px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 .ofertaDestacada:hover{
   
     box-shadow: rgba(29, 29, 29, 0.228) 0px 5px 8px 8px;
+    cursor: pointer;
 
 }
 

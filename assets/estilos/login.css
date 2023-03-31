@@ -117,6 +117,7 @@ section{
     border: 0px;
     outline: none;
     border-radius: 30px;
+    margin-bottom: 10px;
 }
 .check_box{
     margin: 30px 10px 30px 0;
@@ -125,21 +126,21 @@ section{
 #terminos{
     color: black;
     font-size: 12px;
-    bottom: 64px;
+    bottom: 123.5px;
     position: absolute;
 }
 
-#login{
+#loginUsuario{
     left: 50px;
-    top: 150px;
+    top: 140px;
 }
 input::placeholder{
     color: black;
 }
 
 
-#registrar{
-    top: 150px;
+#loginEmpresa{
+    top: 140px;
     left: 450px;
 }
 input{
