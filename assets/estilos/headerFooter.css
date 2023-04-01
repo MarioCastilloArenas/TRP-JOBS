@@ -370,6 +370,23 @@ a:hover , .footer_contacto > p:hover , .footer_social>a>i:hover{
         width: 40%;
     }
 
+    #sobreNosotros{
+        display: flex;
+        font-size: 13px;
+
+    }
+    #trabajadores{
+        display: flex;
+        font-size: 13px;
+    }
+    #empresas{
+        display: flex;
+        font-size: 13px;
+    }
+    #logoUser{
+        display: flex;
+    }
+
     
 }
 @media (max-width: 1050px){
@@ -380,6 +397,26 @@ a:hover , .footer_contacto > p:hover , .footer_social>a>i:hover{
     #info{
         width: 50%;
     }
+
+    #sobreNosotros{
+        display: flex;
+        font-size: 13px;
+
+    }
+    #trabajadores{
+        display: flex;
+        font-size: 13px;
+    }
+    #empresas{
+        display: flex;
+        font-size: 13px;
+    }
+    #logoUser{
+        display: flex;
+    }
+    /* #navMenu{
+        display: flex;
+    } */
 }
 @media (max-width: 820px){
     #logo{
