@@ -1,14 +1,18 @@
 function enviarInicioTrabajadores(){
-    document.location = "login.html";
+    document.location = "loginUsuario.html";
 }
 function enviarInicioEmpresas(){
-    document.location = "login.html";
-    var x = document.getElementById("login");
-    var y = document.getElementById("registrar");
-    var z = document.getElementById("opcion");
-    x.style.left = "-400px";
-    y.style.left = "50px";
-    z.style.left = "120px";
+    document.location = "loginEmpresa.html";
+    let html = "";
+        html += "<div>Error vuelve a intentarlo</div>";
+    document.getElementById("loginUsuario").innerHTML = html;
+    
+    // var x = document.getElementById("login");
+    // var y = document.getElementById("registrar");
+    // var z = document.getElementById("opcion");
+    // x.style.left = "-400px";
+    // y.style.left = "50px";
+    // z.style.left = "120px";
     // function registrar_btn(){
     //     x.style.left = "-400px";
     //     y.style.left = "50px";
