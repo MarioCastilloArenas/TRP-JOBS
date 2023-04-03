@@ -119,7 +119,7 @@ marquee{
     justify-content: center;
     width: 100px;
     height: 45px;
-    background-color: white;
+    background-color: transparent;
     border: 2px solid black;
     color: black;
     border-radius: 40px;

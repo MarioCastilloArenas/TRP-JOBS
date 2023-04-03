@@ -25,11 +25,14 @@ nav{
     align-items: center;
     font-size: 40px;
     color: #ffb11a;
+    background-color: whitesmoke;
+
 }
 section{
     grid-area: zsection;
     display: flex;
     flex-direction: column;
+    background-color: whitesmoke;
     align-items: center;
 }
 /* #section1{
@@ -78,7 +81,7 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
-
+    background-color: whitesmoke;
 }
 
 #sectionImg2{
