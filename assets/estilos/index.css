@@ -16,6 +16,8 @@ body{
         "znav"    
         "zsection"
         "zfooter";
+
+    overflow-x: hidden;
 }
 
 html{
@@ -726,7 +728,7 @@ form>#div2>div>input{
 
 
 .slider{
-    width: 100%;
+    width: 90%;
     height: 200px;
     display: flex;
     justify-content: center;
@@ -880,12 +882,12 @@ color: #ffb11a;
 
 @media (max-width:1000px) {
 
-    #cuadrosSeccion{
+    /* #cuadrosSeccion{
 
         height: 600px;
 
    
-    }
+    } */
     
     #cuadrosSeccion>div{
     
@@ -925,14 +927,14 @@ color: #ffb11a;
 
     #cuadrosSeccion{
 
-        height:1000px;
+        height: 1100px;
         gap: 0.5%;
         background-position-x: -590px;
     }
     
     #cuadrosSeccion>div{
     
-        height: 49%;
+        
         width: 60%;
       
   
@@ -1015,6 +1017,13 @@ footer{
             "znav"
             "zsection"
             "zfooter";
+    }
+
+    #conductores{
+        margin: 10px 0;
+    }
+    #empresas{
+        margin-bottom: 10px;
     }
     /* nav{
 
