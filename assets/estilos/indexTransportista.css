@@ -1,0 +1,172 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Expletus Sans', cursive;
+}
+
+body{
+
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr 200px;
+    grid-template-areas: 
+        "zheader"   
+        "zsection"
+        "zfooter";
+}   
+section{
+    grid-area: zsection;
+}
+
+#UsuarioLogin{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    background-color: orange;
+}
+#logoIndexTransportista{
+    width: 100px;
+    font-size: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+
+}
+#UsuarioLogin > h2{
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#boxIndexUsuario{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+#boxNavUsuario{
+    width: 100%;
+    /* justify-content: center; */
+}
+.navUsuario{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.navUsuario > div{
+    background-color: #ffb11a;
+    width: 200px;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    
+}.navUsuario > div:hover{
+    cursor: pointer;
+}
+
+.opcionesUsuario{
+    border-radius: 25px;
+}
+#boxUsuario{
+    border-top: 2px solid #ffb11a;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.usuarioContenido{
+    margin: 20px 20px;
+}
+.usuarioContenidoTitutlo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+.usuarioContenidoOpciones{
+    background-color: whitesmoke;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* border: 5px solid purple; */
+}
+.usuarioContenidoOpcionesBtn{
+    height: 80px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+.btnMenuUsuario{
+    border-radius: 25px;
+    background-color: #ffb11a;
+    height: 40px;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* font-size: 1.2em; */
+    
+}
+
+.btnMenuUsuario:hover{
+    cursor: pointer;
+}
+
+.usuarioConteidoOpcionesTxt{
+    width: 98%;
+    margin: 20px 1%;
+    padding-bottom: 20px;
+}
+
+
+
+@media (min-width: 600px){
+    .navUsuario{
+        width: 90%;
+        display: block;
+        /* width: 165px; */
+        margin-top: 20px;
+    }
+    .navUsuario > div{
+        background-color: orange;
+        width: none;
+        text-align: center;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        width: 100%;
+        
+    }
+    #boxUsuario{
+        border-top: 0px;
+        border-left: 2px solid orange;
+        width: 65%;
+    }
+    #boxNavUsuario{
+        width: 35%;
+        display: flex;
+        justify-content: center;
+    }
+}
+@media (min-width: 900px){
+    #boxUsuario{ 
+        width: 80%;
+    }
+    #boxNavUsuario{
+    
+        width: 20%;
+    }
+    .btnMenuUsuario{
+        width: 15%;
+        
+    }
+}
