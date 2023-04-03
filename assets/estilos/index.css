@@ -343,7 +343,7 @@ section{
     position: absolute;
     font-size: 2em;
     top: 70px;
-    color: black;
+    color: whitesmoke;
 
 }
 
@@ -733,7 +733,7 @@ form>#div2>div>input{
 
 
 .slider{
-    width: 100vw;
+    width: 90vw;
     background-color: #ffffff;
     height: 200px;
     display: flex;
