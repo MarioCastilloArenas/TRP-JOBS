@@ -50,7 +50,7 @@
                             Paso 1
                         </div>
                         <div class="nombrePaso">
-                            Cuenta
+                            Datos de registro.
                         </div>
                     </div>
                 </div>       
@@ -60,7 +60,7 @@
                             Paso 2
                         </div>
                         <div class="nombrePaso">
-                            Datos empresa
+                            Información personal.
                         </div>
                     </div>
                 </div>        
@@ -70,7 +70,7 @@
                             Paso 3
                         </div>
                         <div class="nombrePaso">
-                            Información empresa
+                            Experiencia Laboral.
                         </div>
                     </div>
                 </div>     
@@ -89,7 +89,7 @@
                 <div class="fieldset " id="paso1">
                     <!-- paso1  -->
                     <div class="tituloRelleno">
-                        <h2>información personal</h2>
+                        <h2>DATOS DE REGISTRO</h2>
                     </div>
                     <div class="rellenar">
                             <h3 id="mensaje1"></h3>
@@ -120,7 +120,7 @@
                 <div class="fieldset " id="paso2">
                     <!-- paso2  -->
                     <div class="tituloRelleno">
-                        <h2>información personal</h2>
+                        <h2>INFORMACIÓN PROFESIONAL</h2>
                     </div>
                     <div class="rellenar2">
                             <h3 id="mensaje2"></h3>
@@ -187,13 +187,16 @@
                             </div>
                     </div>
                 </div>
-                <div class="fieldset " id="paso3">
+                <div class="fieldset activo" id="paso3">
                     <!-- paso3  -->
                     <div class="tituloRelleno">
-                        <h2>información personal</h2>
+                        <h2>EXPERIENCIA LABORAL</h2>
                     </div>
                     <div class="rellenar">
                         <h3 id="mensaje3"></h3>
+                        <label> no tengo experiencia </label>
+                        <input type="checkbox">
+                        <div>
                             <div class="form-item">
                                 <label for="nomComercial">Nombre Comercial:</label>
                                 <input type="text" id="nomComercial" required>
@@ -226,13 +229,85 @@
                                 <label for="logo">Imagen de Empresa:</label>
                                 <input type="file" id="logo">
                             </div>
-                            <button onclick="formEmpresa_webEmpresarial()"> Siguiente </button>
+                            <button></button>
+                        </div>
+                        <div>
+                            <div class="form-item">
+                                <label for="nomComercial">Nombre Comercial:</label>
+                                <input type="text" id="nomComercial" required>
+                                <i id="good" class='bx bx-check-circle'></i>
+                                <i id="error"  class='bx bx-error-circle'></i>
+                                <small>Rellene este campo</small>
+                            </div>
+                            <div class="form-item">
+                                <label for="descripcion">Descripcion:</label>
+                                <input type="text" id="descripcion" required></input>
+                                <i id="good" class='bx bx-check-circle'></i>
+                                <i id="error"  class='bx bx-error-circle'></i>
+                                <small>Rellene este campo</small>
+                            </div>
+                            <div class="form-item">
+                                <label for="sitioWeb">Sitio Web:</label>
+                                <input type="text" id="sitioWeb" required>
+                                <i id="good" class='bx bx-check-circle'></i>
+                                <i id="error"  class='bx bx-error-circle'></i>
+                                <small>Rellene este campo</small>
+                            </div>
+                            <div class="form-item">
+                                <label for="telefono">Telefono:</label>
+                                <input type="text" id="telefono" required>
+                                <i id="good" class='bx bx-check-circle'></i>
+                                <i id="error"  class='bx bx-error-circle'></i>
+                                <small>Rellene este campo</small>
+                            </div>
+                            <div class="form-item">
+                                <label for="logo">Imagen de Empresa:</label>
+                                <input type="file" id="logo">
+                            </div>
+                            <button></button>
+                        </div>
+                        <div>
+                            <div class="form-item">
+                                <label for="nomComercial">Nombre Comercial:</label>
+                                <input type="text" id="nomComercial" required>
+                                <i id="good" class='bx bx-check-circle'></i>
+                                <i id="error"  class='bx bx-error-circle'></i>
+                                <small>Rellene este campo</small>
+                            </div>
+                            <div class="form-item">
+                                <label for="descripcion">Descripcion:</label>
+                                <input type="text" id="descripcion" required></input>
+                                <i id="good" class='bx bx-check-circle'></i>
+                                <i id="error"  class='bx bx-error-circle'></i>
+                                <small>Rellene este campo</small>
+                            </div>
+                            <div class="form-item">
+                                <label for="sitioWeb">Sitio Web:</label>
+                                <input type="text" id="sitioWeb" required>
+                                <i id="good" class='bx bx-check-circle'></i>
+                                <i id="error"  class='bx bx-error-circle'></i>
+                                <small>Rellene este campo</small>
+                            </div>
+                            <div class="form-item">
+                                <label for="telefono">Telefono:</label>
+                                <input type="text" id="telefono" required>
+                                <i id="good" class='bx bx-check-circle'></i>
+                                <i id="error"  class='bx bx-error-circle'></i>
+                                <small>Rellene este campo</small>
+                            </div>
+                            <div class="form-item">
+                                <label for="logo">Imagen de Empresa:</label>
+                                <input type="file" id="logo">
+                            </div>
+                            <button></button>
+                        </div>
+                        <button onclick="formEmpresa_webEmpresarial()"> Siguiente </button>
                     </div>
                 </div>
-                <div class="fieldset activo" id="paso4">
+                <div class="fieldset " id="paso4">
                     <!-- paso4  -->
                     <div class="tituloRelleno">
-                        <h2>Resumen</h2>
+                        <h2>RESUMEN</h2>
                     </div>
                     <div class="rellenar">
                         <h3 id="mensaje4"> ¡Estamos felices de que ya forma parte de nuestro equipo! </h3>

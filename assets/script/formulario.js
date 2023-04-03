@@ -300,7 +300,7 @@ async function formEmpresa_webEmpresarial(){
 function adddbddEmpresa() {
     let empresa = JSON.parse(localStorage.getItem('empresa'));
     return new Promise((resolve, reject) => {
-        const URL = "http://localhost:8080/registroEmpresa/";
+        const URL = "http://localhost:8080/empresa/registro/";
         fetch(URL, {
         headers: {
             'Accept': 'application/json',
@@ -408,7 +408,7 @@ async function formTrabajador_log(){
     }
     if (bolean==true) {
         let password = md5(contraseña2Valor);
-        let trabajador = {
+        let transportista = {
             dni: null,
             apellidos: null,
             codigoPostal: 0,
@@ -426,7 +426,7 @@ async function formTrabajador_log(){
             }
         }
 
-        localStorage.setItem('trabajador',JSON.stringify(trabajador))
+        localStorage.setItem('transportista',JSON.stringify(transportista))
         fieldset.className = 'fieldset';
         let fieldset2 = document.getElementById('paso2');
         fieldset2.classList = 'fieldset activo';
@@ -537,32 +537,51 @@ async function formTrabajador_informacionProfesional(){
         trabajador.provincia = provinciaL;
         trabajador.codigoPostal = codigoPostalValor;
         trabajador.presentacion = presentacionValor;
-        localStorage.setItem('trabajador',JSON.stringify(trabajador));
-        /**
-         * 
-         * 
-         * 
-         * 
-         * 
-         * 
-         * 
-         * 
-         * addd BBBDDD TRABAJADOR
-         */
-        fieldset.className = 'fieldset';
-        let fieldset3 = document.getElementById('paso3');
-        fieldset3.classList = 'fieldset activo'
-        localStorage.removeItem('TipoActividadEmpresarial')
-        localStorage.removeItem('provincia')
-        document.getElementById("pasoAColor1").style.color="#1a9e00";
-        document.getElementById("pasoAColor2").style.color="#1a9e00";
-        document.getElementById("pasoAColor3").style.color="#ffb11a";
+        localStorage.setItem('transportista',JSON.stringify(trabajador));
+        addbbTransportista();
+        let addbbTransportista;
+        try {
+            addbbTransportista = await addbbTransportista();
+            console.log(addbbTransportista,transportista);
+            if(addbbTransportista.dni == null){
+                document.getElementById('mensaje3').innerHTML = '¡Ups, ya existe un usuario con su cuenta, pruebe iniciar sesion!'
+            } else {
+            fieldset.className = 'fieldset';
+            let fieldset3 = document.getElementById('paso3');
+            fieldset3.classList = 'fieldset activo'
+            localStorage.removeItem('TipoActividadEmpresarial')
+            localStorage.removeItem('provincia')
+            document.getElementById("pasoAColor1").style.color="#1a9e00";
+            document.getElementById("pasoAColor2").style.color="#1a9e00";
+            document.getElementById("pasoAColor3").style.color="#ffb11a";
+            }
+        } catch (error) {
+            throw new Error('Ha ocurrido un error');
+        }
         
     } 
     
 
 }
 
+
+function addbbTransportista() {
+    let transportista = JSON.parse(localStorage.getItem('transportista'));
+    return new Promise((resolve, reject) => {
+        const URL = "http://localhost:8080/transportista/registro/";
+        fetch(URL, {
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        method: "POST",
+        body: JSON.stringify(transportista)
+        })
+        .then((response) => response.json())
+        .then((transportista) => {resolve(transportista);})
+        .catch((error) => reject(error));;
+    });
+}
 /* ------ METODOS DE COMPROBACIÓN ----------- */
 
 function enviarError(input, mensaje) {
@@ -713,7 +732,7 @@ function buscarTipoActividadEmpresa(id) {
 }
 function buscarExistenciaEmpresa(emailv) {
 
-    const URL = "http://localhost:8080/Empresa/email=" + emailv;
+    const URL = "http://localhost:8080/empresa/email=" + emailv;
     return new Promise((resolve, reject) => {
         fetch(URL)
         .then((response) => response.json())
@@ -728,7 +747,7 @@ function buscarExistenciaEmpresa(emailv) {
     });
 }
 function buscarEmpresa(cifv) {
-    const URL = "http://localhost:8080/Empresa/cif="+cifv;
+    const URL = "http://localhost:8080/empresa/cif="+cifv;
     return new Promise((resolve, reject) => {
         fetch(URL)
         .then((response) => response.text())
@@ -746,7 +765,7 @@ function buscarEmpresa(cifv) {
 }
 function buscarExistenciaTrabajador(emailv) {
 
-    const URL = "http://localhost:8080/Trabajador/email=" + emailv;
+    const URL = "http://localhost:8080/transportista/email=" + emailv;
     return new Promise((resolve, reject) => {
         fetch(URL)
         .then((response) => response.json())
@@ -762,7 +781,7 @@ function buscarExistenciaTrabajador(emailv) {
 }
 function buscarTrabajador(dniv) {
     
-    const URL = "http://localhost:8080/Trabajador/dni="+dniv;
+    const URL = "http://localhost:8080/transportista/dni="+dniv;
     return new Promise((resolve, reject) => {
         fetch(URL)
         .then((response) => response.text())
