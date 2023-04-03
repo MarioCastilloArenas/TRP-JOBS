@@ -6,6 +6,7 @@ header{
     display: flex;
     flex-wrap: wrap;
     border-bottom: solid rgba(0, 0, 0, 0.397);
+    background-color: whitesmoke;
 
 }
 
@@ -89,27 +90,17 @@ marquee{
     justify-content: center;
     gap: 2%;
 }
-
-
 #boxInfo>div{
-
     width: 20%;
-
 }
-
 #sobreNosotros{
-
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 120px;
-    /* border: 5px solid yellow; */
-
 }
-
 #trabajadores{
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -118,16 +109,11 @@ marquee{
     background-color: #ffb11a;
     color: rgb(0, 0, 0);
     border-radius: 40px;
-    /* border: 5px solid yellow; */
-
 }
 #trabajadores:hover{
     cursor: pointer;
-
 }
-
 #empresas{
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -137,23 +123,14 @@ marquee{
     border: 2px solid black;
     color: black;
     border-radius: 40px;
-    /* border: 5px solid yellow; */
-
 }
 #empresas:hover{
     cursor: pointer;
-
 }
-
-
-
 #logoUser>i{
-
     font-size: 45px;
-  
 }
 /**---------------------Header--------------------**/
-
 /*-------------------------Menu Lateral--------------------------*/
 #navMenu{
     display: none;
@@ -181,7 +158,6 @@ marquee{
     opacity: 1;
     visibility: visible;
 }
-
 .cont_menu{
     width: 100%;
     max-width: 250px;
@@ -191,11 +167,9 @@ marquee{
     transition: all 500ms ease;
     transform: translateX(-100%);
 }
-
 #btn-menu:checked ~ #container_menu .cont_menu{
     transform: translateX(0%);
 }
-
 .cont_menu nav{
     transform: translateY(15%);
 }
@@ -221,11 +195,6 @@ marquee{
     cursor: pointer;
     font-size: 18px;
 }
-
-
-
-
-
 #btn-sesion{
     display: none;
 }
@@ -246,7 +215,6 @@ marquee{
     opacity: 1;
     visibility: visible;
 }
-
 .cont_sesion{
     width: 100%;
     max-width: 250px;
@@ -291,11 +259,8 @@ marquee{
 .cont_sesion{
     border: 5px solid purple;
 }
-
 /*-------------------------Menu Lateral--------------------------*/
-
 /**-------------------------Footer---------------------------*/
-
 footer{
     background-color:  #ffb11a;
     grid-area: zfooter;
@@ -305,8 +270,7 @@ footer{
     width: 100%;
     height: 100%;
     text-transform: uppercase;
-    color: #222;
-    
+    color: #222;   
 }
 .footer_opcion{
     display: flex;
@@ -324,7 +288,6 @@ footer{
     color: #222;
     gap: 10px;
 }
-
 .footer_social > a > i{
     color: #222;
     font-size: 1.5em;
@@ -350,7 +313,6 @@ a:hover , .footer_contacto > p:hover , .footer_social>a>i:hover{
     border-right: 4px solid #ffb11a;
     animation: animate 8s linear infinite;
 }
-
 @keyframes animate{
     0%,10%,100%{
         width: 0;
@@ -359,7 +321,6 @@ a:hover , .footer_contacto > p:hover , .footer_social>a>i:hover{
         width: 100%;
     }
 }
-
 /**-------------------------Footer---------------------------*/
 /*  */
 @media (max-width: 1340px){
