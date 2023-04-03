@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
         provincias();
         tipoActividadEmpresarial();
     }
-
 });
 /* ------ METODOS FORMULARIO EMPRESAAAAA----------- */
 function provincias (){
@@ -36,7 +35,7 @@ function tipoActividadEmpresarial (){
     })
 }
 
-async function formEmpresa_log(){
+async function LoginEmpresa(){
     let fieldset = document.getElementById('paso1');
     let email = document.getElementById('email');
     let contraseña = document.getElementById('password');
@@ -117,7 +116,7 @@ async function formEmpresa_log(){
     }
 } 
 
-async function formEmpresa_informacionProfesional(){
+async function infoProfesionalEmpresa(){
     let fieldset = document.getElementById('paso2');
     let cif = document.getElementById('cif');
     let nomFiscal = document.getElementById('nomFiscal');
@@ -209,7 +208,7 @@ async function formEmpresa_informacionProfesional(){
 
 }
 
-async function formEmpresa_webEmpresarial(){
+async function webEmpresarial(){
     let nomComercial = document.getElementById('nomComercial');
     let nomComercialValor = nomComercial.value.trim();
     let descripcion = document.getElementById('descripcion');

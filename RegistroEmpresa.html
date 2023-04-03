@@ -17,24 +17,6 @@
     <header>
         <div id="logo" >
             <p class="animacionLogo">TRP JOBS</p>
-            <!-- <marquee behavior="" direction="right">
-                <div class="logoCamion">
-                </div>
-            </marquee> -->
-                <!-- <div id="cap1">
-                    <img src="assets/img/capa1.png" width="100px" height="100px" alt="">
-                </div>
-                <div id="cap2">
-                    <img src="assets/img/capa2.png" width="100px" height="100px" alt="">
-                </div> -->
-        </div>
-        <div id="info">
-            <div id="boxInfo">
-                <div id="sobreNosotros"> Sobre nosotros</div>
-                <div id="trabajadores"> Trabajadores </div>
-                <div id="empresas"> Empresas </div>
-                <div id="logoUser"> <i class='bx bx-user-circle'></i> </div>
-            </div>
         </div>
     </header>
     <nav>
@@ -114,7 +96,7 @@
                                 <i id="error"  class='bx bx-error-circle'></i>
                                 <small>Rellene este campo</small>
                             </div>
-                            <button id="botonSiguiente" onclick="formEmpresa_log()"> Siguiente </button>
+                            <button id="botonSiguiente" onclick="LoginEmpresa()"> Siguiente </button>
                         </div>
                 </div>
                 <div class="fieldset  " id="paso2">
@@ -163,7 +145,7 @@
                                 <small>Rellene este campo</small>
                             </div> 
                             <div class="form-boton-item">
-                                <button id="botonSiguiente2" onclick="formEmpresa_informacionProfesional()"> Siguiente </button>
+                                <button id="botonSiguiente2" onclick="infoProfesionalEmpresa()"> Siguiente </button>
                             </div>
                     </div>
                 </div>
@@ -206,7 +188,7 @@
                                 <label for="logo">Imagen de Empresa:</label>
                                 <input type="file" id="logo">
                             </div>
-                            <button onclick="formEmpresa_webEmpresarial()"> Siguiente </button>
+                            <button onclick="webEmpresarial()"> Siguiente </button>
                     </div>
                 </div>
                 <div class="fieldset " id="paso4">
@@ -239,6 +221,7 @@
                             <b>Sitio Web</b>
                             <p id="sitioWebEmpresa"></p>
                         </div>
+                        <button> <a href="IndexEmpresa.html"> ¡Empezar ahora!</a></button>
                     </div>
                 </div>
             </div>

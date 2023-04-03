@@ -194,112 +194,36 @@
                     </div>
                     <div class="rellenar">
                         <h3 id="mensaje3"></h3>
-                        <label> no tengo experiencia </label>
-                        <input type="checkbox">
+                        <label><input type="checkbox" id="no_experiencia" value="no_experiencia">No tengo experiencia.</label>
                         <div>
                             <div class="form-item">
-                                <label for="nomComercial">Nombre Comercial:</label>
-                                <input type="text" id="nomComercial" required>
+                                <label for="nomEmpresa">Nombre Empresa:</label>
+                                <input type="text" id="nomEmpresa" required>
                                 <i id="good" class='bx bx-check-circle'></i>
                                 <i id="error"  class='bx bx-error-circle'></i>
                                 <small>Rellene este campo</small>
                             </div>
                             <div class="form-item">
-                                <label for="descripcion">Descripcion:</label>
-                                <input type="text" id="descripcion" required></input>
-                                <i id="good" class='bx bx-check-circle'></i>
-                                <i id="error"  class='bx bx-error-circle'></i>
-                                <small>Rellene este campo</small>
+                                <label for="fechaInicio">Fecha Inicio:</label>
+                                <input type="month" name="fechaInicio" id="fechaInicio" required >
+                                <small>rellene este campo</small>
                             </div>
                             <div class="form-item">
-                                <label for="sitioWeb">Sitio Web:</label>
-                                <input type="text" id="sitioWeb" required>
-                                <i id="good" class='bx bx-check-circle'></i>
-                                <i id="error"  class='bx bx-error-circle'></i>
-                                <small>Rellene este campo</small>
+                                <label for="fechaFin">Fecha Fin:</label>
+                                <input type="month" name="fechaFin" id="fechaFin" required >
+                                <small>rellene este campo</small>
                             </div>
                             <div class="form-item">
-                                <label for="telefono">Telefono:</label>
-                                <input type="text" id="telefono" required>
-                                <i id="good" class='bx bx-check-circle'></i>
-                                <i id="error"  class='bx bx-error-circle'></i>
-                                <small>Rellene este campo</small>
+                                <label for="TipoCarnet">Carnet Tipo:</label>
+                                <select id="TipoCarnet">
+                                </select>
                             </div>
                             <div class="form-item">
-                                <label for="logo">Imagen de Empresa:</label>
-                                <input type="file" id="logo">
+                                <label for="TipoEspecialidad">Tipo Especialidad:</label>
+                                <select id="TipoEspecialidad">
+                                </select>
                             </div>
-                            <button></button>
-                        </div>
-                        <div>
-                            <div class="form-item">
-                                <label for="nomComercial">Nombre Comercial:</label>
-                                <input type="text" id="nomComercial" required>
-                                <i id="good" class='bx bx-check-circle'></i>
-                                <i id="error"  class='bx bx-error-circle'></i>
-                                <small>Rellene este campo</small>
-                            </div>
-                            <div class="form-item">
-                                <label for="descripcion">Descripcion:</label>
-                                <input type="text" id="descripcion" required></input>
-                                <i id="good" class='bx bx-check-circle'></i>
-                                <i id="error"  class='bx bx-error-circle'></i>
-                                <small>Rellene este campo</small>
-                            </div>
-                            <div class="form-item">
-                                <label for="sitioWeb">Sitio Web:</label>
-                                <input type="text" id="sitioWeb" required>
-                                <i id="good" class='bx bx-check-circle'></i>
-                                <i id="error"  class='bx bx-error-circle'></i>
-                                <small>Rellene este campo</small>
-                            </div>
-                            <div class="form-item">
-                                <label for="telefono">Telefono:</label>
-                                <input type="text" id="telefono" required>
-                                <i id="good" class='bx bx-check-circle'></i>
-                                <i id="error"  class='bx bx-error-circle'></i>
-                                <small>Rellene este campo</small>
-                            </div>
-                            <div class="form-item">
-                                <label for="logo">Imagen de Empresa:</label>
-                                <input type="file" id="logo">
-                            </div>
-                            <button></button>
-                        </div>
-                        <div>
-                            <div class="form-item">
-                                <label for="nomComercial">Nombre Comercial:</label>
-                                <input type="text" id="nomComercial" required>
-                                <i id="good" class='bx bx-check-circle'></i>
-                                <i id="error"  class='bx bx-error-circle'></i>
-                                <small>Rellene este campo</small>
-                            </div>
-                            <div class="form-item">
-                                <label for="descripcion">Descripcion:</label>
-                                <input type="text" id="descripcion" required></input>
-                                <i id="good" class='bx bx-check-circle'></i>
-                                <i id="error"  class='bx bx-error-circle'></i>
-                                <small>Rellene este campo</small>
-                            </div>
-                            <div class="form-item">
-                                <label for="sitioWeb">Sitio Web:</label>
-                                <input type="text" id="sitioWeb" required>
-                                <i id="good" class='bx bx-check-circle'></i>
-                                <i id="error"  class='bx bx-error-circle'></i>
-                                <small>Rellene este campo</small>
-                            </div>
-                            <div class="form-item">
-                                <label for="telefono">Telefono:</label>
-                                <input type="text" id="telefono" required>
-                                <i id="good" class='bx bx-check-circle'></i>
-                                <i id="error"  class='bx bx-error-circle'></i>
-                                <small>Rellene este campo</small>
-                            </div>
-                            <div class="form-item">
-                                <label for="logo">Imagen de Empresa:</label>
-                                <input type="file" id="logo">
-                            </div>
-                            <button></button>
+                            <button onclick="añadirExperiencia()"></button>
                         </div>
                         <button onclick="formEmpresa_webEmpresarial()"> Siguiente </button>
                     </div>

@@ -1,15 +1,11 @@
 /**---------------------Header--------------------**/
 header{
-
-    width: 100vw;
     grid-area: zheader;
     display: flex;
     flex-wrap: wrap;
     border-bottom: solid rgba(0, 0, 0, 0.397);
     background-color: whitesmoke;
-
 }
-
 #logo{
     display: flex;
     font-size: 40px;
@@ -18,70 +14,27 @@ header{
     justify-content: left;
     font-weight: bold;
 }
-
 #logoUser{
-
     display: flex;
     flex-wrap: wrap;
     align-items: left ;
     justify-content:  left;
 }
-
 #logo > p{
     display: grid;
     place-content: center;
     width: 300px;
-    margin-left: 60px ;
-    
+    margin-left: 60px ; 
 }
-
-marquee{
-    z-index: 200;
-}
-.logoCamion{
-    width: 130px;
-    height: 90px;
-    margin-left: 10px;
-    background-image: url(/assets/img/LogoP.png);
-    background-size: cover;
-    background-position:45% 50%;
-    /* position: relative;
-    top: 24px; */
-}
-.animacionLogo {
-    --b: 0.1em;   /* the thickness of the line */
-    --c: #ffb11a; /* the color */
-    
-    color: #0000;
-    padding-block: var(--b);
-    background: 
-      linear-gradient(var(--c) 50%,#000 0) 0% calc(100% - var(--_p,0%))/100% 200%,
-      linear-gradient(var(--c) 0 0) 0% var(--_p,0%)/var(--_p,0%) var(--b) no-repeat;
-    -webkit-background-clip: text,padding-box;
-            background-clip: text,padding-box;
-    transition: .3s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));
-}
-.animacionLogo:hover {
-    --_p: 100%;
-    --_s: .3s;
-}
-
 #info{
-
     width: 50%;
     display: flex;
     flex-wrap: wrap;
     align-items: center ;
     justify-content:  right;
     gap: 2%;
-    /* border: 5px solid blue; */
-
-
 }
-
-
 #boxInfo{
-
     width: 100%;
     height: 100%;
     display: flex;
@@ -130,7 +83,6 @@ marquee{
 #logoUser>i{
     font-size: 45px;
 }
-/**---------------------Header--------------------**/
 /*-------------------------Menu Lateral--------------------------*/
 #navMenu{
     display: none;
@@ -225,11 +177,9 @@ marquee{
     transform: translateX(-100%);
     border: 5px solid red;
 }
-
 #btn-sesion:checked ~ #container_sesion .cont_sesion{
     transform: translateX(0%);
 }
-
 .cont_sesion nav{
     transform: translateY(15%);
 }
@@ -259,22 +209,20 @@ marquee{
 .cont_sesion{
     border: 5px solid purple;
 }
-/*-------------------------Menu Lateral--------------------------*/
 /**-------------------------Footer---------------------------*/
 footer{
-    background-color:  #ffb11a;
     grid-area: zfooter;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 100vw;
-    height: 100%;
     text-transform: uppercase;
-    color: #222;   
+    color: #222;  
+    border-top: solid rgba(0, 0, 0, 0.397); 
 }
 .footer_opcion{
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 10px;
 }
 .footer_opcion > a{ 
@@ -284,7 +232,7 @@ footer{
 .footer_contacto{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
     color: #222;
     gap: 10px;
 }
@@ -306,7 +254,7 @@ a:hover , .footer_contacto > p:hover , .footer_social>a>i:hover{
 #texto_tdr::before{
     content: attr(data-text);
     position: absolute;
-    color: #ffffff;
+    color: #ffb11a;
     width: 350px;
     overflow: hidden;
     white-space: nowrap;
@@ -321,20 +269,17 @@ a:hover , .footer_contacto > p:hover , .footer_social>a>i:hover{
         width: 100%;
     }
 }
-/**-------------------------Footer---------------------------*/
-/*  */
-@media (max-width: 1340px){
+
+@media (min-width: 1340px){
     #logo{
         width:60%;
     }
     #info{
         width: 40%;
     }
-
     #sobreNosotros{
         display: flex;
         font-size: 13px;
-
     }
     #trabajadores{
         display: flex;
@@ -347,8 +292,6 @@ a:hover , .footer_contacto > p:hover , .footer_social>a>i:hover{
     #logoUser{
         display: flex;
     }
-
-    
 }
 @media (max-width: 1050px){
     #logo{
@@ -358,11 +301,9 @@ a:hover , .footer_contacto > p:hover , .footer_social>a>i:hover{
     #info{
         width: 50%;
     }
-
     #sobreNosotros{
         display: flex;
         font-size: 13px;
-
     }
     #trabajadores{
         display: flex;
@@ -375,9 +316,6 @@ a:hover , .footer_contacto > p:hover , .footer_social>a>i:hover{
     #logoUser{
         display: flex;
     }
-    /* #navMenu{
-        display: flex;
-    } */
 }
 @media (max-width: 820px){
     #logo{
@@ -396,7 +334,6 @@ a:hover , .footer_contacto > p:hover , .footer_social>a>i:hover{
     }
     #empresas{
         display: none;
-
     }
     #logoUser{
         display: none;
@@ -404,29 +341,49 @@ a:hover , .footer_contacto > p:hover , .footer_social>a>i:hover{
     #navMenu{
         display: flex;
     }
-    .footer_contacto > p{
-        /* font-size: 12px; */
-        /* font-weight: bold; */
-        /* margin-bottom: 15px; */
-    }
-    /* .footer_social > a > i{
-        font-size: 1.1em;
-    } */
-    .footer_opcion > a{ 
-        /* font-size: 12px; */
-        /* font-weight: bold; */
-    }
-    /* #texto_tdr{
-        font-size: 1.2em;
-    } */
     .footer_logo{
-        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-
     }
     footer{
-        flex-wrap: wrap;
+        display: flex;
+        flex-direction: row;
+    }
+}
+@media (max-width: 580px){
+    .footer_logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    footer{
+        height: 350px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #logo{
+        width: 80%;
+        font-size: 30px;
+    }
+    #info{
+        width: 20%;
+    }
+    #sobreNosotros{
+        display: none;
+
+    }
+    #trabajadores{
+        display: none;
+    }
+    #empresas{
+        display: none;
+    }
+    #logoUser{
+        display: none;
+    }
+    #navMenu{
+        display: flex;
     }
 }
