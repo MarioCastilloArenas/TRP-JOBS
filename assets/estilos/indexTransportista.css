@@ -36,7 +36,7 @@ section{
 
 }
 #UsuarioLogin > h2{
-    width: 200px;
+    /* width: 200px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,9 +80,18 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 5px solid green;
+    
 }
-.usuarioContenido{
+#usuarioContenido1{
     margin: 20px 20px;
+    border: 5px solid red;
+    width: 100%;
+}
+#usuarioContenido2{
+    margin: 20px 20px;
+    border: 5px solid red;
+    width: 100%;
 }
 .usuarioContenidoTitutlo{
     display: flex;
@@ -126,6 +135,15 @@ section{
     width: 98%;
     margin: 20px 1%;
     padding-bottom: 20px;
+}
+
+.fieldset{
+    display: none;
+    flex-direction: column;
+}
+.activo{
+    display: flex;
+    flex-direction: column;
 }
 
 
