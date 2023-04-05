@@ -69,14 +69,14 @@
             <div id="boxIndexEmpresa">
                 <div id="boxNavEmpresa">
                     <div class="navEmpresa">
-                        <div class="opcionesEmpresa">MIS DATOS</div>
-                        <div class="opcionesEmpresa">MIS OFERTAS</div>
-                        <div class="opcionesEmpresa">PUBLICAR OFERTA</div>
-                        <div class="opcionesEmpresa">CERRAR SESION</div>
+                        <div class="opcionesEmpresa" onclick="fMostrarMisDatos();">MIS DATOS</div>
+                        <div class="opcionesEmpresa" onclick="fMostrarMisOfertas();">MIS OFERTAS</div>
+                        <div class="opcionesEmpresa" onclick="fPublicarOferta();">PUBLICAR OFERTA</div>
+                        <div class="opcionesEmpresa" onclick="fCerrarSesion();">CERRAR SESION</div>
                     </div>
                 </div>
                 <div id="boxEmpresa">
-                    <div id="empresaContenido" class="boxEmpresa activo">
+                    <div id="empresaContenido1" class="boxEmpresa activo">
                         <div class="empresaContenidoTitutlo">
                             <h3>Mis datos</h3>
                         </div>
@@ -220,9 +220,9 @@
                         </div>
                         <div class="empresaContenidoOpciones">
                             <div class="empresaContenidoOpcionesBtn">
-                                <div class="btnMenuUsuario" onclick="fMostrarCuenta();">Cuenta</div>
-                                <div class="btnMenuUsuario" onclick="fMostrarDatos();">Datos</div>
-                                <div class="btnMenuUsuario" onclick="fMostrarInformacion();">Información</div>
+                                <div class="btnMenuUsuario" onclick="fMostrarTodas();">Todas</div>
+                                <div class="btnMenuUsuario" onclick="fMostrarPendientes();">Pendientes</div>
+                                <div class="btnMenuUsuario" onclick="fMostrarFinalizadas();">Finalizadas</div>
                             </div>
                             <div class="empresaContenidoOpcionesTxt">
                                 <div class="fieldset activo" id="paso1">
