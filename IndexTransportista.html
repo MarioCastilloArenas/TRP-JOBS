@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Expletus+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="index.js"></script>
+    <script src="assets/script/indexTransportista.js"></script>
 </head>
 <body>
     <header>
@@ -65,14 +66,14 @@
             <div id="boxIndexUsuario">
                 <div id="boxNavUsuario">
                     <div class="navUsuario">
-                        <div class="opcionesUsuario">MIS DATOS</div>
-                        <div class="opcionesUsuario">MIS INSCRIPCIONES</div>
-                        <div class="opcionesUsuario">MIS ALERTAS</div>
-                        <div class="opcionesUsuario">CERRAR SESION</div>
+                        <div class="opcionesUsuario" onclick="fMostrarMisDatos();">MIS DATOS</div>
+                        <div class="opcionesUsuario" onclick="fMostrarMisInscripciones();">MIS INSCRIPCIONES</div>
+                        <div class="opcionesUsuario" onclick="fMostrarMisAlertas();">MIS ALERTAS</div>
+                        <div class="opcionesUsuario" onclick="fCerrarSesion();">CERRAR SESION</div>
                     </div>
                 </div>
                 <div id="boxUsuario">
-                    <div class="usuarioContenido">
+                    <div id="usuarioContenido1" class="fieldset activo">
                         <div class="usuarioContenidoTitutlo">
                             <h3>Mis datos</h3>
                         </div>
@@ -83,26 +84,22 @@
                                 <div class="btnMenuUsuario">Experiencia</div>
                             </div>
                             <div class="usuarioConteidoOpcionesTxt">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae, quas repellendus? Quasi, dolore animi. Officiis, quia quis odio laborum labore similique sit reprehenderit, esse veniam incidunt, architecto atque. Vel, quasi.
-                                Adipisci odio natus rem odit alias nihil ea voluptatibus omnis nisi laudantium aliquid ut, consequuntur numquam deleniti perferendis earum facilis voluptas! Officiis, ea expedita consequuntur eius beatae animi accusantium aliquid?
-                                Delectus expedita vero voluptatem cumque placeat consequatur labore repudiandae nobis nesciunt, molestias, facere corrupti rem dicta deserunt sint tempore! Rem assumenda tenetur quos commodi placeat. Ut alias reiciendis soluta ea!
-                                Consectetur voluptas mollitia facilis dolorum neque enim tenetur, reprehenderit quam, perferendis hic vero ad aut facere veritatis dignissimos, voluptates commodi deleniti. Consequatur magnam provident laboriosam eum iusto repellendus saepe exercitationem.
-                                Eveniet officia voluptates assumenda autem velit temporibus, hic aliquid asperiores cupiditate vero dolores explicabo aperiam commodi quis, impedit suscipit maxime esse harum? Architecto minus molestiae voluptatum aperiam sequi libero quisquam.
-                                Nihil dignissimos facere, placeat reiciendis odit sequi nostrum repellat consequatur magnam fuga fugit sit, consectetur modi deleniti laboriosam atque eveniet inventore dolor ab soluta? Consectetur illum perspiciatis cupiditate aspernatur libero!
-                                Odit, neque? Quis molestiae eaque repudiandae itaque voluptas dolorem illo quisquam, totam doloremque qui cum dolor eligendi temporibus, voluptates id nesciunt ad officiis iusto rem quam nulla labore quibusdam perspiciatis.
-                                Libero dolor consectetur, sed alias perferendis eos nostrum? Nostrum accusantium fugit repudiandae quo quam officiis molestiae adipisci nulla, consectetur incidunt asperiores necessitatibus sequi, itaque sit reiciendis corrupti eveniet laboriosam dicta?
-                                Sint, assumenda rem laborum nulla laboriosam dolor quidem? Odit sequi totam asperiores harum obcaecati enim, voluptatem, officia non tempore aliquid soluta ullam recusandae numquam temporibus. Velit rem fugiat natus culpa.
-                                Dolor nesciunt delectus ut, est eligendi soluta, nulla obcaecati impedit totam corporis blanditiis. Et voluptatem, dolorum reprehenderit officiis modi amet autem laborum vitae consequatur quae, deserunt, minima commodi soluta animi.
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae, quas repellendus? Quasi, dolore animi. Officiis, quia quis odio laborum labore similique sit reprehenderit, esse veniam incidunt, architecto atque. Vel, quasi.
-                                Adipisci odio natus rem odit alias nihil ea voluptatibus omnis nisi laudantium aliquid ut, consequuntur numquam deleniti perferendis earum facilis voluptas! Officiis, ea expedita consequuntur eius beatae animi accusantium aliquid?
-                                Delectus expedita vero voluptatem cumque placeat consequatur labore repudiandae nobis nesciunt, molestias, facere corrupti rem dicta deserunt sint tempore! Rem assumenda tenetur quos commodi placeat. Ut alias reiciendis soluta ea!
-                                Consectetur voluptas mollitia facilis dolorum neque enim tenetur, reprehenderit quam, perferendis hic vero ad aut facere veritatis dignissimos, voluptates commodi deleniti. Consequatur magnam provident laboriosam eum iusto repellendus saepe exercitationem.
-                                Eveniet officia voluptates assumenda autem velit temporibus, hic aliquid asperiores cupiditate vero dolores explicabo aperiam commodi quis, impedit suscipit maxime esse harum? Architecto minus molestiae voluptatum aperiam sequi libero quisquam.
-                                Nihil dignissimos facere, placeat reiciendis odit sequi nostrum repellat consequatur magnam fuga fugit sit, consectetur modi deleniti laboriosam atque eveniet inventore dolor ab soluta? Consectetur illum perspiciatis cupiditate aspernatur libero!
-                                Odit, neque? Quis molestiae eaque repudiandae itaque voluptas dolorem illo quisquam, totam doloremque qui cum dolor eligendi temporibus, voluptates id nesciunt ad officiis iusto rem quam nulla labore quibusdam perspiciatis.
-                                Libero dolor consectetur, sed alias perferendis eos nostrum? Nostrum accusantium fugit repudiandae quo quam officiis molestiae adipisci nulla, consectetur incidunt asperiores necessitatibus sequi, itaque sit reiciendis corrupti eveniet laboriosam dicta?
-                                Sint, assumenda rem laborum nulla laboriosam dolor quidem? Odit sequi totam asperiores harum obcaecati enim, voluptatem, officia non tempore aliquid soluta ullam recusandae numquam temporibus. Velit rem fugiat natus culpa.
-                                Dolor nes
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit
+                            </div>
+                        </div>
+                    </div>
+                    <div id="usuarioContenido2" class="fieldset">
+                        <div class="usuarioContenidoTitutlo">
+                            <h3>Mis Inscripciones</h3>
+                        </div>
+                        <div class="usuarioContenidoOpciones">
+                            <div class="usuarioContenidoOpcionesBtn">
+                                <div class="btnMenuUsuario">Básicos</div>
+                                <div class="btnMenuUsuario">Profesionales</div>
+                                <div class="btnMenuUsuario">Experiencia</div>
+                            </div>
+                            <div class="usuarioConteidoOpcionesTxt">
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit Hola como estas
                             </div>
                         </div>
                     </div>

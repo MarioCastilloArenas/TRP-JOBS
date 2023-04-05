@@ -1,0 +1,334 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Expletus Sans', cursive;
+}
+
+body{
+
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr 200px;
+    grid-template-areas: 
+        "zheader"   
+        "zsection"
+        "zfooter";
+}   
+section{
+    grid-area: zsection;
+}
+
+#UsuarioEmpresa{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    background-color: orange;
+}
+#logoIndexEmpresa{
+    width: 100px;
+    font-size: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+
+}
+#UsuarioEmpresa > h2{
+    /* width: 200px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#boxIndexEmpresa{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+#boxNavEmpresa{
+    width: 100%;
+    /* justify-content: center; */
+}
+.navEmpresa{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.navEmpresa > div{
+    background-color: #ffb11a;
+    width: 200px;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    
+    
+}.navEmpresa > div:hover{
+    cursor: pointer;
+}
+
+.opcionesEmpresa{
+    border-radius: 25px;
+}
+#boxEmpresa{
+    border-top: 2px solid #ffb11a;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 5px solid purple; */
+}
+.empresaContenido{
+    margin: 20px 20px;
+    /* border: 5px solid purple; */
+    width: 100%;
+}
+.empresaContenidoTitutlo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+.empresaContenidoOpciones{
+    background-color: whitesmoke;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* border: 5px solid purple; */
+    /* border: 5px solid purple; */
+    
+}
+.empresaContenidoOpcionesBtn{
+    height: 80px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    border-bottom: 2px solid #ffb11a;
+    
+
+}
+.btnMenuUsuario{
+    border-radius: 25px;
+    background-color: #ffb11a;
+    height: 40px;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* font-size: 1.2em; */
+    
+    
+}
+
+.btnMenuUsuario:hover{
+    cursor: pointer;
+}
+
+.empresaContenidoOpcionesTxt{
+    width: 98%;
+    margin: 20px 1%;
+    padding-bottom: 20px;
+}
+.fieldset{
+    display: none;
+}
+.activo{
+    display: flex;
+}
+
+#paso1{
+    /* border: 5px solid red; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#paso2{
+    /* border: 5px solid red; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+#paso3{
+    /* border: 5px solid red; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.rellenar{
+
+    width: 70%;
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.rellenar2{
+
+    width: 70%;
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.rellenar3{
+
+    width: 70%;
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-item{
+    width: 70%;
+    margin-bottom: 30px;
+    display: flex;
+
+    flex-direction: column;
+    /* border: 5px solid red; */
+}
+
+.form-item label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.form-item>select{
+    width: 50%;
+    background-color: #ffb11a;
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+    border-bottom: transparent;
+
+}
+
+.form-item>input {
+
+    width: 100%;
+    font-family: inherit;
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+    border-bottom: solid #ffb11a;
+    background-color: whitesmoke;
+}
+
+#botonSiguiente {
+    background-color: #ffb11a;
+    color: white;
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+    border-bottom: transparent; 
+    width: 100px;
+    height: 50px;
+
+}
+
+.form-item select,textarea,input::file-selector-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+.form-item #logo{
+    font-size: 14px;
+}
+
+.form-item input[type=text]{
+    
+}
+.form-item input[type=number]{
+
+}
+
+.form-item input[type=password]{
+
+}
+.form-item textarea{
+    
+}
+.form-item input[type=file]{
+    width: 100%;
+}
+.form-item input:focus {
+    outline: 0;
+
+}
+
+.form-item i {
+    visibility: hidden; 
+    position: absolute;
+    top: 30px;
+    right: 10px;
+}
+
+
+.form-item small {
+    color: #100707;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+
+
+@media (min-width: 600px){
+    .navEmpresa{
+        width: 90%;
+        display: block;
+        /* width: 165px; */
+        margin-top: 20px;
+    }
+    .navEmpresa > div{
+        background-color: orange;
+        width: none;
+        text-align: center;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        width: 100%;
+        
+    }
+    #boxEmpresa{
+        border-top: 0px;
+        border-left: 2px solid orange;
+        width: 65%;
+    }
+    #boxNavEmpresa{
+        width: 35%;
+        display: flex;
+        justify-content: center;
+    }
+}
+@media (min-width: 900px){
+    #boxEmpresa{ 
+        width: 80%;
+    }
+    #boxNavEmpresa{
+    
+        width: 20%;
+    }
+    .btnMenuUsuario{
+        width: 15%;
+        
+    }
+}
