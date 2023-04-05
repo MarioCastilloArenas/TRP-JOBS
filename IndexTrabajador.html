@@ -73,22 +73,192 @@
                     </div>
                 </div>
                 <div id="boxUsuario">
-                    <div id="usuarioContenido1" class="fieldset activo">
+                    <div id="usuarioContenido1" class="boxUsuario activo">
                         <div class="usuarioContenidoTitutlo">
                             <h3>Mis datos</h3>
                         </div>
                         <div class="usuarioContenidoOpciones">
                             <div class="usuarioContenidoOpcionesBtn">
-                                <div class="btnMenuUsuario">Básicos</div>
-                                <div class="btnMenuUsuario">Profesionales</div>
-                                <div class="btnMenuUsuario">Experiencia</div>
+                                <div class="btnMenuUsuario" onclick="fMostrarBasicos();">Básicos</div>
+                                <div class="btnMenuUsuario" onclick="fMostrarProfesionales();">Profesionales</div>
+                                <div class="btnMenuUsuario" onclick="fMostrarExperiencia();">Experiencia</div>
                             </div>
-                            <div class="usuarioConteidoOpcionesTxt">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit
+                            <div class="usuarioContenidoOpcionesTxt">
+                                <div class="fieldset activo" id="paso1"><!--Poner contraseña-->
+                                    <!-- paso2  -->
+                                    <!-- <div class="tituloRelleno">
+                                        <h2>INFORMACIÓN PROFESIONAL</h2>
+                                    </div> -->
+                                    <div class="rellenar2">
+                                        <h3 id="mensaje2"></h3>
+                                        <div class="form-item">
+                                            <label for="dni">DNI:</label>
+                                            <input type="text" id="cif" required>
+                                            <i id="good" class='bx bx-check-circle'></i>
+                                            <i id="error"  class='bx bx-error-circle'></i>
+                                            <small>Rellene este campo</small>
+                                        </div>
+                                        <div class="form-item">
+                                            <label for="nombre">Nombre:</label>
+                                            <input type="text" id="nombre" required>
+                                            <i id="good" class='bx bx-check-circle'></i>
+                                            <i id="error"  class='bx bx-error-circle'></i>
+                                            <small>Rellene este campo</small>
+                                        </div>
+                                        <div class="form-item">
+                                            <label for="apellidos">Apellidos:</label>
+                                            <input type="text" id="apellidos" required>
+                                            <i id="good" class='bx bx-check-circle'></i>
+                                            <i id="error"  class='bx bx-error-circle'></i>
+                                            <small>Rellene este campo</small>
+                                        </div>
+                                        <div class="form-item">
+                                            <label for="password">Clave:</label>
+                                            <input type="password" id="password" required>
+                                            <i id="good" class='bx bx-check-circle'></i>
+                                            <i id="error"  class='bx bx-error-circle'></i>
+                                            <small>Rellene este campo</small>
+                                        </div>
+                                        <div class="form-item">
+                                            <label for="password2">Confirme su clave:</label>
+                                            <input type="password" id="password2" required>
+                                            <i id="good" class='bx bx-check-circle'></i>
+                                            <i id="error"  class='bx bx-error-circle'></i>
+                                            <small>Rellene este campo</small>
+                                        </div>
+                                        <div class="form-item">
+                                            <label for="fechaNacimiento">Fecha Nacimiento</label>
+                                            <input type="date" id="fechaNacimiento">
+                                            <i id="good" class="fa-solid fa-circle-check"></i>
+                                            <i id="error" class="fa-solid fa-circle-exclamation"></i>
+                                            <small>Rellene este campo</small>
+                                        </div>
+                                        <div class="form-item">
+                                            <label for="nacionalidad">Nacionalidad:</label>
+                                            <input type="text" id="nacionalidad" required>
+                                            <i id="good" class='bx bx-check-circle'></i>
+                                            <i id="error"  class='bx bx-error-circle'></i>
+                                            <small>Rellene este campo</small>
+                                        </div>
+                                        <div class="form-item">
+                                            <label for="provincia">Provincia:</label>
+                                            <select id="provincia">
+                                            </select>
+                                        </div>
+                                        <div class="form-item">
+                                            <label for="codigoPostal">Codigo Postal:</label>
+                                            <input type="number" id="codigoPostal" required>
+                                            <i id="good" class='bx bx-check-circle'></i>
+                                            <i id="error"  class='bx bx-error-circle'></i>
+                                            <small>Rellene este campo</small>
+                                        </div> 
+                                        <div class="form-item">
+                                            <label for="presentacion">Presentación:</label>
+                                            <input type="number" id="presentacion">
+                                            <i id="good" class="fa-solid fa-circle-check"></i>
+                                            <i id="error" class="fa-solid fa-circle-exclamation"></i>
+                                            <small>Rellene este campo</small>
+                                        </div>
+                                        <div class="form-item">
+                                            <label for="fotoTrabajador">Imagen:</label>
+                                            <input type="file" id="fotoTrabajador">
+                                        </div>
+                                        <div class="form-boton-item">
+                                            <button id="botonSiguiente2" onclick="infoPersonalTrabajador()"> Siguiente </button>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <div class="fieldset" id="paso2">
+                                    <!-- <div class="tituloRelleno">
+                                        <h2>DATOS LABORALES</h2>
+                                    </div> -->
+                                    <div class="rellenar">
+                                        <h3 id="mensaje3"></h3>
+                                            <div class="form-item">
+                                                <p id="identificador">Tipo profesional</p>
+                                                <label><input type="radio" name="tipoProfesion" value="Asaliariado" checked> Asaliariado</label>
+                                                <label><input type="radio" name="tipoProfesion" value="Autonomo">Autonomo</label>
+                                            </div>
+                                            <div class="form-item">
+                                                <label for="ambitosGeograficos">Ambitos Geograficos:</label>
+                                                <select id="ambitosGeograficos">
+                                                </select>
+                                            </div>
+                                            <div class="form-item">
+                                                <p id="identificador">Tarjeta tacografo</p>
+                                                <label><input type="radio" name="tarjetaTacografo" value="si" checked>Si</label>
+                                                <label><input type="radio" name="tarjetaTacografo" value="no">No</label>
+                                            </div>
+                                            <div class="form-item">
+                                                <p id="identificador">Certificado CAP</p>
+                                                <label><input type="radio" name="certificadoCap" value="si" checked>Si</label>
+                                                <label><input type="radio" name="certificadoCap" value="no">No</label>
+                                            </div>
+                                            <div class="form-item">
+                                                <p id="identificador">Mercancías peligrosas</p>
+                                                <label><input type="radio" name="mercanciasPeligrosas" value="si">Si</label>
+                                                <label><input type="radio" name="mercanciasPeligrosas" value="no" checked>No</label>
+                                            </div>
+                                            <div class="form-item">
+                                                <label for="tipoCarnet">Tipo Carnet:</label>
+                                                <select id="tipoCarnet">
+                                                </select>
+                                            </div>
+                                            <div class="form-item">
+                                                <label for="paisCarnet">Pais del carnet:</label>
+                                                <input type="text" id="paisCarnet" required>
+                                                <i id="good" class='bx bx-check-circle'></i>
+                                                <i id="error"  class='bx bx-error-circle'></i>
+                                                <small>Rellene este campo</small>
+                                            </div>
+                                            
+                                        <button onclick="infoProfesionalTrabajador()">Actualizar</button>
+                                    </div>
+                                </div>
+                                <div class="fieldset" id="paso3">
+                                    <!-- <div class="tituloRelleno">
+                                        <h2>EXPERIENCIA LABORAL</h2>
+                                    </div> -->
+                                    <div class="rellenar">
+                                        <h3 id="mensaje3"></h3>
+                                        <label><input type="checkbox" id="no_experiencia" value="no_experiencia">No tengo experiencia.</label>
+                                        <div>
+                                            <div class="form-item">
+                                                <label for="nomEmpresa">Nombre Empresa:</label>
+                                                <input type="text" id="nomEmpresa" required>
+                                                <i id="good" class='bx bx-check-circle'></i>
+                                                <i id="error"  class='bx bx-error-circle'></i>
+                                                <small>Rellene este campo</small>
+                                            </div>
+                                            <div class="form-item">
+                                                <label for="fechaInicio">Fecha Inicio:</label>
+                                                <input type="month" name="fechaInicio" id="fechaInicio" required >
+                                                <small>rellene este campo</small>
+                                            </div>
+                                            <div class="form-item">
+                                                <label for="fechaFin">Fecha Fin:</label>
+                                                <input type="month" name="fechaFin" id="fechaFin" required >
+                                                <small>rellene este campo</small>
+                                            </div>
+                                            <div class="form-item">
+                                                <label for="TipoCarnet">Carnet Tipo:</label>
+                                                <select id="TipoCarnet">
+                                                </select>
+                                            </div>
+                                            <div class="form-item">
+                                                <label for="TipoEspecialidad">Tipo Especialidad:</label>
+                                                <select id="TipoEspecialidad">
+                                                </select>
+                                            </div>
+                                            <button onclick="añadirExperiencia()"></button>
+                                        </div>
+                                        <button onclick="formEmpresa_webEmpresarial()"> Siguiente </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div id="usuarioContenido2" class="fieldset">
+                    <div id="usuarioContenido2" class="boxUsuario">
                         <div class="usuarioContenidoTitutlo">
                             <h3>Mis Inscripciones</h3>
                         </div>
@@ -114,7 +284,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="usuarioContenido3" class="fieldset">
+                    <div id="usuarioContenido3" class="boxUsuario">
                         <div class="usuarioContenidoTitutlo">
                             <h3>Mis Alertas</h3>
                         </div>
