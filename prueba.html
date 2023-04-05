@@ -139,7 +139,52 @@ function guardarImagen() {
             <div id="resultado"></div>
         </div>
         <script>
+        function calcularDiferenciaFechas() {
+        var fechaInicio = new Date(document.getElementById("fechaInicio").value);
+        var fechaFin = new Date(document.getElementById("fechaFin").value);
 
+        
+        if (fechaInicio > fechaFin) {
+            alert("La fecha de inicio debe ser anterior o igual a la fecha de fin.");
+            return;
+        }
+
+        var anios = fechaFin.getFullYear() - fechaInicio.getFullYear();
+        var meses = fechaFin.getMonth() - fechaInicio.getMonth();
+        var dias = fechaFin.getDate() - fechaInicio.getDate();
+
+        
+        if (meses < 0 || (meses == 0 && dias < 0)) {
+            anios--;
+            meses += 12;
+        }
+        
+    
+        if (dias < 0) {
+            var ultimoDiaMesAnterior = new Date(fechaFin.getFullYear(), fechaFin.getMonth(), 0).getDate();
+            dias += ultimoDiaMesAnterior;
+            meses--;
+        }
+
+    
+        var totalDias = Math.floor((fechaFin - fechaInicio) / (1000 * 60 * 60 * 24));
+        var diasDelMesInicio = new Date(fechaInicio.getFullYear(), fechaInicio.getMonth() + 1, 0).getDate();
+        var diasDelMesFin = new Date(fechaFin.getFullYear(), fechaFin.getMonth() + 1, 0).getDate();
+        var diasDelAnioInicio = esBisiesto(fechaInicio.getFullYear()) ? 366 : 365;
+
+        var diasDeDiferencia = totalDias % diasDelAnioInicio % diasDelMesInicio % diasDelMesFin;
+        var mesesDeDiferencia = Math.floor((totalDias % diasDelAnioInicio - diasDeDiferencia) / diasDelMesInicio) % 12;
+        var aniosDeDiferencia = Math.floor((totalDias % diasDelAnioInicio - diasDeDiferencia - mesesDeDiferencia * diasDelMesInicio) / (diasDelAnioInicio));
+
+
+        var resultado = document.getElementById("resultado");
+        resultado.innerHTML = "Diferencia: " + anios + " años, " + meses + " meses, " + dias + " días.<br>";
+        resultado.innerHTML += "Diferencia exacta: " + aniosDeDiferencia + " años, " + mesesDeDiferencia + " meses, " + diasDeDiferencia + " días.";
+        }
+
+        function esBisiesto(anio) {
+        return ((anio % 4 == 0) && (anio % 100 != 0)) || (anio % 400 == 0);
+        }
         </script>
 </body>
 </html>
