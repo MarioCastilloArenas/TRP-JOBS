@@ -70,14 +70,24 @@
                             Paso 3
                         </div>
                         <div class="nombrePaso">
-                            Experiencia Laboral.
+                            Datos laborales.
                         </div>
                     </div>
                 </div>     
                 <div class="container">
                     <div class="infoPaso">
-                        <div class="paso"  id="pasoAColor4">
+                        <div class="paso" id="pasoAColor4">
                             Paso 4
+                        </div>
+                        <div class="nombrePaso">
+                            Experiencia laboral.
+                        </div>
+                    </div>
+                </div>  
+                <div class="container">
+                    <div class="infoPaso">
+                        <div class="paso"  id="pasoAColor5">
+                            Paso 5
                         </div>
                         <div class="nombrePaso">
                             Resumen
@@ -114,7 +124,7 @@
                                 <i id="error"  class='bx bx-error-circle'></i>
                                 <small>Rellene este campo</small>
                             </div>
-                            <button id="botonSiguiente" onclick="formTrabajador_log()"> Siguiente </button>
+                            <button id="botonSiguiente" onclick="LoginTrabajador()"> Siguiente </button>
                         </div>
                 </div>
                 <div class="fieldset " id="paso2">
@@ -179,16 +189,62 @@
                                 <small>Rellene este campo</small>
                             </div>
                             <div class="form-item">
-                                <label for="logo">Imagen:</label>
-                                <input type="file" id="logo">
+                                <label for="fotoTrabajador">Imagen:</label>
+                                <input type="file" id="fotoTrabajador">
                             </div>
                             <div class="form-boton-item">
-                                <button id="botonSiguiente2" onclick="formEmpresa_informacionProfesional()"> Siguiente </button>
+                                <button id="botonSiguiente2" onclick="infoPersonalTrabajador()"> Siguiente </button>
                             </div>
                     </div>
                 </div>
                 <div class="fieldset activo" id="paso3">
-                    <!-- paso3  -->
+                    <div class="tituloRelleno">
+                        <h2>DATOS LABORALES</h2>
+                    </div>
+                    <div class="rellenar">
+                        <h3 id="mensaje3"></h3>
+                            <div class="form-item">
+                                <p id="identificador">Tipo profesional</p>
+                                <label><input type="radio" name="tipoProfesion" value="Asaliariado" checked> Asaliariado</label>
+                                <label><input type="radio" name="tipoProfesion" value="Autonomo">Autonomo</label>
+                            </div>
+                            <div class="form-item">
+                                <label for="ambitosGeograficos">Ambitos Geograficos:</label>
+                                <select id="ambitosGeograficos">
+                                </select>
+                            </div>
+                            <div class="form-item">
+                                <p id="identificador">Tarjeta tacografo</p>
+                                <label><input type="radio" name="tarjetaTacografo" value="si" checked>Si</label>
+                                <label><input type="radio" name="tarjetaTacografo" value="no">No</label>
+                            </div>
+                            <div class="form-item">
+                                <p id="identificador">Certificado CAP</p>
+                                <label><input type="radio" name="certificadoCap" value="si" checked>Si</label>
+                                <label><input type="radio" name="certificadoCap" value="no">No</label>
+                            </div>
+                            <div class="form-item">
+                                <p id="identificador">Mercancías peligrosas</p>
+                                <label><input type="radio" name="mercanciasPeligrosas" value="si">Si</label>
+                                <label><input type="radio" name="mercanciasPeligrosas" value="no" checked>No</label>
+                            </div>
+                            <div class="form-item">
+                                <label for="tipoCarnet">Tipo Carnet:</label>
+                                <select id="tipoCarnet">
+                                </select>
+                            </div>
+                            <div class="form-item">
+                                <label for="paisCarnet">Pais del carnet:</label>
+                                <input type="text" id="paisCarnet" required>
+                                <i id="good" class='bx bx-check-circle'></i>
+                                <i id="error"  class='bx bx-error-circle'></i>
+                                <small>Rellene este campo</small>
+                            </div>
+                            
+                        <button onclick="infoProfesionalTrabajador()"> Siguiente </button>
+                    </div>
+                </div>
+                <div class="fieldset" id="paso4">
                     <div class="tituloRelleno">
                         <h2>EXPERIENCIA LABORAL</h2>
                     </div>
@@ -228,8 +284,7 @@
                         <button onclick="formEmpresa_webEmpresarial()"> Siguiente </button>
                     </div>
                 </div>
-                <div class="fieldset " id="paso4">
-                    <!-- paso4  -->
+                <div class="fieldset " id="paso5"> 
                     <div class="tituloRelleno">
                         <h2>RESUMEN</h2>
                     </div>
