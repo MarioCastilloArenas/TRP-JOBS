@@ -80,17 +80,17 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 5px solid green;
-    
 }
 #usuarioContenido1{
     margin: 20px 20px;
-    border: 5px solid red;
     width: 100%;
 }
 #usuarioContenido2{
     margin: 20px 20px;
-    border: 5px solid red;
+    width: 100%;
+}
+#usuarioContenido3{
+    margin: 20px 20px;
     width: 100%;
 }
 .usuarioContenidoTitutlo{
@@ -127,7 +127,34 @@ section{
     
 }
 
+.btnMenuUsuario2{
+    border-radius: 25px;
+    /* background-color: #ffb11a; */
+    height: 40px;
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* font-size: 1.2em; */
+    
+}
+#logoActivo{
+    color: green; 
+}
+#logoFinalizado{
+    color: red; 
+}
+
+.btnMenuUsuario2 > p{
+    margin-left: 5px;
+    
+}
+
 .btnMenuUsuario:hover{
+    cursor: pointer;
+}
+.btnMenuUsuario2:hover{
     cursor: pointer;
 }
 
@@ -185,6 +212,17 @@ section{
     }
     .btnMenuUsuario{
         width: 15%;
+        
+    }
+    .btnMenuUsuario2{
+        width: 25%;
+        
+    }
+}
+
+@media (min-width: 1200px){
+    .btnMenuUsuario2{
+        width: 20%;
         
     }
 }

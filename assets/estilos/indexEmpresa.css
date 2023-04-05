@@ -83,10 +83,11 @@ section{
     align-items: center;
     /* border: 5px solid purple; */
 }
-.empresaContenido{
+#empresaContenido{
     margin: 20px 20px;
     /* border: 5px solid purple; */
     width: 100%;
+    display: flex;
 }
 .empresaContenidoTitutlo{
     display: flex;
@@ -288,6 +289,15 @@ section{
     bottom: 0;
     left: 0;
     visibility: hidden;
+}
+
+.boxOferta{
+    display: none;
+    flex-direction: column;
+}
+.activo{
+    display: flex;
+    flex-direction: column;
 }
 
 
