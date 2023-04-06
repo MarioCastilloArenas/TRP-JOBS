@@ -1,5 +1,9 @@
 function enviarInicioTrabajadores(){
-    document.location = "loginUsuario.html";
+    if(JSON.parse(localStorage.getItem("usuario")) == null){
+        document.location = "loginUsuario.html";
+    } else{
+        document.location = "IndexTrabajador.html"; 
+    }
 }
 function enviarInicioEmpresas(){
     document.location = "loginEmpresa.html";

@@ -15,6 +15,7 @@ function provincias (){
     fetch(URL)
     .then((response) => response.json())
     .then((data) => {
+        console.log(data);
         let provincias=document.getElementById('provincia');
         data.forEach(element => { 
             let opcion = document.createElement('option')

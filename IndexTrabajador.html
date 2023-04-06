@@ -16,7 +16,7 @@
     <script src="index.js"></script>
     <script src="assets/script/indexTransportista.js"></script>
 </head>
-<body>
+<body onload="fcargarDatosIndexTrabajador();">
     <header>
         <div id="logo" >
             <p class="animacionLogo">TRP JOBS</p>
@@ -93,7 +93,7 @@
                                         <h3 id="mensaje2"></h3>
                                         <div class="form-item">
                                             <label for="dni">DNI:</label>
-                                            <input type="text" id="cif" required>
+                                            <input type="text" id="cif" required value="hola">
                                             <i id="good" class='bx bx-check-circle'></i>
                                             <i id="error"  class='bx bx-error-circle'></i>
                                             <small>Rellene este campo</small>
@@ -154,7 +154,7 @@
                                         </div> 
                                         <div class="form-item">
                                             <label for="presentacion">Presentación:</label>
-                                            <input type="number" id="presentacion">
+                                            <input type="text" id="presentacion">
                                             <i id="good" class="fa-solid fa-circle-check"></i>
                                             <i id="error" class="fa-solid fa-circle-exclamation"></i>
                                             <small>Rellene este campo</small>
@@ -164,7 +164,7 @@
                                             <input type="file" id="fotoTrabajador">
                                         </div>
                                         <div class="form-boton-item">
-                                            <button id="botonSiguiente2" onclick="infoPersonalTrabajador()"> Siguiente </button>
+                                            <button id="botonSiguiente2" onclick="fActualizarDatosBasicos()"> Actualizar </button>
                                         </div> 
                                     </div>
                                 </div>

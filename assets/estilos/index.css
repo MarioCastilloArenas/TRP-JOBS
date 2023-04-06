@@ -28,7 +28,7 @@ html{
 #bannerBox{
 
     grid-area: znav;
-    background-image: url(/assets/img/header.jpg);
+    background-image: url(/assets/img/header_A.jpg);
     background-size: cover;
     background-position: center;
     width: 100%;
