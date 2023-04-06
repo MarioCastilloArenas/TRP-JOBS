@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Expletus Sans', cursive;
+}
+
+body{
+
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 100px 1fr 200px;
+    grid-template-areas: 
+        "zheader"
+        "znav"    
+        "zsection"
+        "zfooter";
+}

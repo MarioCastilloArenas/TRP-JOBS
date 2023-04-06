@@ -64,7 +64,7 @@ section{
     align-items: end;
 }
 #texto{
-    width: 30%;
+    width: 40%;
     text-align: center;
     color: rgb(255, 255, 255);
     font-size: 20px;
@@ -104,7 +104,7 @@ section{
     align-items: end;
 }
 #texto2{
-    width: 30%;
+    width: 40%;  
     text-align: center;
     color: white;
     font-size: 20px;
@@ -142,6 +142,36 @@ section{
     }
     #texto2{
         width: 30%;
+        text-align: center;
+        color: rgb(255, 255, 255);
+        font-size: 16px;
+    }
+}
+
+
+@media (max-width: 600px){
+
+    #txtImg1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #texto{
+        width: 50%;
+        margin: 0;
+        text-align: center;
+        color: rgb(255, 255, 255);
+        font-size: 16px;
+    }
+    
+    #txtImg2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #texto2{
+        width: 50%;
+        margin: 0;
         text-align: center;
         color: rgb(255, 255, 255);
         font-size: 16px;
