@@ -1,0 +1,187 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Expletus Sans', cursive;
+}
+body{
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr 200px;
+    grid-template-areas: 
+        "zheader"
+        "zsection"
+        "zfooter";
+    overflow-x: hidden;
+}
+.banner{
+    padding: 5% 10%;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(253,187,45,1) 64%);
+}
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#boxFiltos{
+    display: flex;
+    align-items: flex-start;
+}
+#botones{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 1%;
+}
+button, select {
+    display: inline-block;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    color: rgb(20, 20, 20);
+    padding: 8px 24px;
+    border-radius: 50px;
+    background-image: linear-gradient(180deg,#fff,#f5f5fa);
+    box-shadow: 0 4px 11px 0 rgb(37 44 97 / 15%), 0 1px 3px 0 rgb(93 100 148 / 20%);
+    transition: all .2s ease-out;
+}
+button:hover , select:hover{
+    box-shadow: 0 8px 22px 0 rgb(37 44 97 / 15%), 0 4px 6px 0 rgb(93 100 148 / 20%);
+}
+.ordenarpor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+span{
+    border: #ffb11a solid;
+    position: absolute;  
+    display: inline-block;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+#filtros{
+    display: flex;
+    flex-direction:column ;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 80%;
+}
+#filtros>div{
+    border: solid pink;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#filtros>div>div{
+    width: 50%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: solid rgb(192, 203, 255);
+}
+#filtros>div>div>p{
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+#unfiltro{
+    display: flex;
+    flex-direction: row;
+}
+
+#boxOfertas{
+    padding-top: 20px;
+    padding-bottom: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.oferta{
+    background-color: white;
+    border-radius: 10px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: rgba(0, 0, 0, 0.737);
+    padding: 40px 10px;
+    gap:20px
+}
+.oferta:hover{
+    box-shadow: rgba(29, 29, 29, 0.228) 0px 5px 8px 8px;
+    cursor: pointer;
+}
+
+.datosOferta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+    text-align: justify;
+}
+.datosOferta>div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+.puesto{
+    width: 100%;
+}
+#nombrEmpresa{
+    color: rgba(0, 0, 0, 0.5);
+}
+#informacionEmpresa{ 
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+}
+.oferta>.informacionEmpresa>div:hover{
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.739);
+}
+.destacada{
+    background-color: white;
+    border: 2px solid #ffb11a;
+    border-radius: 10px;
+    position: relative;
+}
+.circleDestacada{
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    border: 3px solid #ffb11a;
+    background-color: #ffb11a;
+    border-radius: 25px;
+    top: -15px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+}
+.destacada:hover{
+    box-shadow: rgba(29, 29, 29, 0.228) 0px 5px 8px 8px;
+    cursor: pointer;
+
+}
+.img{
+    width: 25%;
+    display: grid;
+    place-content: center;
+}
