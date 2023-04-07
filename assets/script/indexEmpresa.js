@@ -57,8 +57,100 @@ function fPublicarOferta(){
     fieldset3.style.display = 'flex';
     
 }
+
+function fcargarDatosIndexEmpresa(){
+    cifEmp = JSON.parse(localStorage.getItem("empresa"));
+    const URL = "http://localhost:8083/empresa/cif=" + cifEmp;
+    fetch(URL)
+    .then((response) => response.json())
+    .then((empresa) => {
+        var idProv = empresa.provincia.idProvincia;
+        var idActiv = empresa.tipoActividadEmpresarial.idActividad;
+        let html = "";
+            html += "<div id='logoIndexEmpresa'><i class='bx bx-user-circle'></i></div>";
+            html += "<h2> " + empresa.nombreFiscal + "</h2>";
+        document.getElementById("UsuarioEmpresa").innerHTML = html;
+
+        document.getElementById("email").value = empresa.email;
+        document.getElementById("password").value = empresa.dni;
+        document.getElementById("password2").value = empresa.dni;
+
+
+
+        document.getElementById("cif").value = empresa.cif;
+        document.getElementById("nomFiscal").value = empresa.nombreFiscal;
+        tipoActividadEmpresarial(idActiv);
+        document.getElementById("direccion").value = empresa.direccion;
+        provincias(idProv);
+        document.getElementById("codigoPostal").value = empresa.codigoPostal;
+
+
+
+        document.getElementById("nomComercial").value = empresa.nombreComercial;
+        document.getElementById("descripcion").value = empresa.descripcionEmpresa;
+        document.getElementById("sitioWeb").value = empresa.sitioWeb;
+        document.getElementById("telefono").value = empresa.telefono;
+    });
+}
+
+function tipoActividadEmpresarial(idActiv){ 
+    const URL = "http://localhost:8083/tipoActividadEmpresa/";
+    fetch(URL)
+    .then((response) => response.json())
+    .then((data) => {
+        // let TipoActividadEmpresas=document.getElementById('TipoActividadEmpresa');
+        data.forEach(element => { 
+            if(element.idActividad == idActiv){
+                let select = document.getElementById("TipoActividadEmpresa");
+                // let opcion = new Option(element.provincia,element.provincia);
+                let opcion = document.createElement('option');
+                opcion.value = element.idActividad
+                opcion.innerHTML = element.actividad
+                opcion.selected = "true";
+                select.appendChild(opcion);
+            } else{
+                let select = document.getElementById("TipoActividadEmpresa");
+                // let opcion = new Option(element.provincia,element.provincia);
+                let opcion = document.createElement('option');
+                opcion.value = element.idActividad
+                opcion.innerHTML = element.actividad
+                select.appendChild(opcion);
+            }
+        });
+    })
+}
+
+function provincias (idProv){
+    const URL = "http://localhost:8083/provincias/";
+    fetch(URL)
+    .then((response) => response.json())
+    .then((data) => {
+        data.forEach(element => { 
+            if(element.idProvincia == idProv){
+                let select = document.getElementById("provincia");
+                // let opcion = new Option(element.provincia,element.provincia);
+                let opcion = document.createElement('option');
+                opcion.value = element.idProvincia
+                opcion.innerHTML = element.provincia
+                opcion.selected = "true";
+                select.appendChild(opcion);
+            } else{
+                let select = document.getElementById("provincia");
+                // let opcion = new Option(element.provincia,element.provincia);
+                let opcion = document.createElement('option');
+                opcion.value = element.idProvincia
+                opcion.innerHTML = element.provincia
+                select.appendChild(opcion);
+            }
+        });
+        // document.getElementById("usuarioContenidoOpcionesTxt").innerHTML = html2 
+    })
+}
+
+
 function fCerrarSesion(){
-    
+    localStorage.removeItem("empresa");
+    document.location = "index.html";
 }
 
 // div class:empresaContenidoOpcionesBtn;

@@ -12,6 +12,7 @@
     justify-content: center;
     align-items: center;
     margin: 40px 0;
+    border: 5px solid blue;
 }
 
 .sliderAnimate{
@@ -23,11 +24,13 @@
     overflow-x: hidden;
     padding: 30px 0px;
     gap: 20px;
+    border: 5px solid black;
 }
 .sliderBox{
     min-width: 200px;
     max-width: 200px;
     height: 100px;
+    border: 5px solid red;
 }
 .sliderBox img{
     width: 100%;
