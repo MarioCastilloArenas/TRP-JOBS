@@ -995,7 +995,6 @@ footer{
     white-space: nowrap;
     border-right: 4px solid #ffb11a;
     animation: animate 8s linear infinite;
-    filter: drop-shadow(0 0 10px #a87716) drop-shadow(0 0 10px #a87716);
 }
 @keyframes animate{
     0%,10%,100%{

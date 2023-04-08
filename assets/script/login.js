@@ -4,6 +4,7 @@ function fEnviarRegistroUsuario(){
 function fEnviarRegistroEmpresa(){
     document.location = "RegistroEmpresa.html";
 }
+<<<<<<< Updated upstream
 function fIniciarSesionTrabajador(){
 
 }
@@ -124,3 +125,6 @@ function fIniciarSesionEmpresa(){
         document.getElementById("UsuarioLogin").innerHTML = html;
     });
 }
+=======
+
+>>>>>>> Stashed changes

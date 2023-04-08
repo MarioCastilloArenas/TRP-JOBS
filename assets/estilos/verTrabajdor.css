@@ -200,7 +200,6 @@ section{
         margin-top: 20px;
     }
 }
-
 @media (max-width: 900px){
     .ejemplo>div>h3{
         font-size: 15px;
@@ -219,9 +218,8 @@ section{
         height: 100px;
     }
     .datosDeContacto{
-        font-size: 10px;
+        font-size: 9px;
     }
-    
     .titulo{
         color: rgb(0, 0, 0);
         margin-left: 20px;

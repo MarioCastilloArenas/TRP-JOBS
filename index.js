@@ -11,3 +11,6 @@ function enviarInicioEmpresas(){
 function fEnviarSobreNosotros(){
     document.location = "sobreNosotros.html";   
 }
+function fverOferta(){
+    window.location.href = "verOferta.html";
+}
