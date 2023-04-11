@@ -17,13 +17,16 @@ body{
         "zsection"
         "zfooter";
 }
-
+nav{
+    grid-area: znav;
+        background: rgb(255,255,255);
+        background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(253,187,45,1) 64%);
+}
 section{
     grid-area: zsection;
 }
 #paquete{
     width: 100%;
-    border: solid blue;
     display: flex;
     justify-content: center;
     align-items: center;

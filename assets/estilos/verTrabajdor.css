@@ -228,8 +228,7 @@ section{
     }
     .ejemplo{
         display: flex;
-        flex-direction: column;
-        
+        flex-direction: column;       
     }
     .ejemplo>div{
         margin-top: 20px;
@@ -245,7 +244,6 @@ section{
         margin-top: 20px;
     }
 }
-
 @media (max-width: 600px){
     .nombre{
         font-size: 20px;

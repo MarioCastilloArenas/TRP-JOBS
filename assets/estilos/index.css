@@ -765,9 +765,11 @@ form>#div2>div>input{
 #cuadrosSeccion{
 
     width: 100%;
-    background-image: url(/assets/img/pexels-matt-hardy-2624031.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    /* background-image: url(/assets/img/pexels-matt-hardy-2624031.jpg); */
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(253,187,45,1) 64%);
     height: 600px;
     filter: blur();
     display: flex;
