@@ -6,12 +6,12 @@ document.addEventListener("DOMContentLoaded", () => {
         ambitosGeograficos();
         experiencia();
         tipoContrato();
+        verOfertas();
     }
 
 });
 function provincias (){
     const URL = "http://localhost:8080/oferta/provinciasEnOfertas";
-    // const URL = "http://localhost:8080/provincias/";
     fetch(URL)
     .then((response) => response.json())
     .then((data) => {
@@ -19,9 +19,10 @@ function provincias (){
         var div1 = document.createElement("div");
         data.forEach(element => { 
             var div = document.createElement("div");
-            div.id = 'unfiltro'; 
+            div.className = 'unfiltro'; 
             var x = document.createElement("input");
             x.setAttribute("type", "checkbox");
+            x.name = 'provincia';
             x.value = element.idProvincia
             var y = document.createElement("p");
             y.innerHTML = element.provincia
@@ -40,7 +41,7 @@ function tipoDeCarnet (){
         let TipoCarnet=document.getElementById('tipoCarnet');
         data.forEach(element => { 
             var div = document.createElement("div");
-            div.id = 'unfiltro'; 
+            div.className = 'unfiltro'; 
             var x = document.createElement("input");
             x.setAttribute("type", "checkbox");
             x.value = element.idCarnet
@@ -60,7 +61,7 @@ function ambitosGeograficos(){
         let ambitosGeograficos=document.getElementById('ambitosGeograficos');
         data.forEach(element => { 
             var div = document.createElement("div");
-            div.id = 'unfiltro'; 
+            div.className = 'unfiltro'; 
             var x = document.createElement("input");
             x.setAttribute("type", "checkbox");
             x.value = element.idAmbito
@@ -76,9 +77,8 @@ function experiencia(){
         data = ['No requiere experiencia', 'Al menos dos años de experiencia', 'Más de 5 años de experiencia']
         let experiencia=document.getElementById('experiencia');
         for (const key of data) {
-            console.log(key);
             var div = document.createElement("div");
-            div.id = 'unfiltro'; 
+            div.className = 'unfiltro'; 
             var x = document.createElement("input");
             x.setAttribute("type", "checkbox");
             x.value = key
@@ -90,14 +90,13 @@ function experiencia(){
         }
     
 }
-
 function tipoContrato(){ 
     data = ['Indefinido', 'Por obra y servicio', 'Autonomo']
     let tipoContrato=document.getElementById('tipoContrato');
     for (const key of data) {
         console.log(key);
         var div = document.createElement("div");
-        div.id = 'unfiltro'; 
+        div.className = 'unfiltro'; 
         var x = document.createElement("input");
         x.setAttribute("type", "checkbox");
         x.value = key
@@ -109,15 +108,37 @@ function tipoContrato(){
     }
 
 }
-
 function filtros(){
     let filtros = document.getElementById('filtros');
-    filtros.style.display ='flex';
-    filtros.onclick = ocultarFiltros;
+    if (filtros.style.display=='none'){
+        filtros.style.display ='flex';
+    }else{
+        filtros.style.display ='none';
+    }
 }
-function ocultarFiltros(){
-    let filtros = document.getElementById('filtros');
-    filtros.style.display ='none';
+function verOfertas(){
+    
+    const URL = "http://localhost:8080/oferta/noCaducadas";
+    fetch(URL)
+    .then((response) => response.json())
+    .then((oferta) => {
+        let div = document.getElementById('boxOfertas')
+        for (const key of oferta) {
+        let oferta = document.createElement('div');
+            oferta.className = 'oferta'
+            key.id = key.idOferta;
+            let html ='<div class="datos_oferta"><img src="assets/img/empresas/'+key.empresa.logo +'" alt="" width="180px" height="100px"></div>'
+            html+='<div class="datos_oferta">'
+            html+='<div class="puesto"><p>'+key.descripcion+'</p></div>'
+            html+='<div class="nombreEmpresa"><p>'+ key.empresa.nombreComercial+'</p></div></div>'
+            html+='<div class="datos_oferta">'
+            html+='<div class="mapa"><i class="bx bx-location-plus"></i><br><p>('+key.provincia.provincia +')</p></div>' 
+            html+='<div class="caducidad"><i class="bx bx-calendar"></i><br><p>'+key.fechaPublicacion+'</p></div></div>'
+            oferta.innerHTML= html;
+            div.appendChild(oferta)  
+        }
+    });
+
 }
 
 
