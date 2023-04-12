@@ -118,6 +118,7 @@ function tipoActividadEmpresarial(idActiv){
                     opcion.value = element.idActividad
                     opcion.innerHTML = element.actividad
                     select.appendChild(opcion);
+                    
                 }
             });
         })
