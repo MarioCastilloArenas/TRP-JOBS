@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 function provincias (){
-    const URL = "http://localhost:8080/oferta/provinciasEnOfertas";
+    const URL = "http://localhost:8083/oferta/provinciasEnOfertas";
     fetch(URL)
     .then((response) => response.json())
     .then((data) => {
@@ -34,7 +34,7 @@ function provincias (){
     })
 }
 function tipoDeCarnet (){ 
-    const URL = "http://localhost:8080/tipoCarnets/";
+    const URL = "http://localhost:8083/tipoCarnets/";
     fetch(URL)
     .then((response) => response.json())
     .then((data) => {
@@ -54,7 +54,7 @@ function tipoDeCarnet (){
     })
 }
 function ambitosGeograficos(){ 
-    const URL = "http://localhost:8080/ambitosGeograficos/";
+    const URL = "http://localhost:8083/ambitosGeograficos/";
     fetch(URL)
     .then((response) => response.json())
     .then((data) => {
@@ -118,7 +118,7 @@ function filtros(){
 }
 function verOfertas(){
     
-    const URL = "http://localhost:8080/oferta/noCaducadas";
+    const URL = "http://localhost:8083/oferta/noCaducadas";
     fetch(URL)
     .then((response) => response.json())
     .then((oferta) => {

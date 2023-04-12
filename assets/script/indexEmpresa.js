@@ -46,6 +46,8 @@ function fMostrarMisOfertas(){
     fieldset2.style.display = 'flex';
     let fieldset3 = document.getElementById('empresaContenido3');
     fieldset3.style.display = 'none';
+
+
     
 }
 function fPublicarOferta(){
@@ -90,6 +92,7 @@ function fcargarDatosIndexEmpresa(){
         document.getElementById("descripcion").value = empresa.descripcionEmpresa;
         document.getElementById("sitioWeb").value = empresa.sitioWeb;
         document.getElementById("telefono").value = empresa.telefono;
+        document.getElementById("logo").value = empresa.logo;
     });
 }
 
