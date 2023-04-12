@@ -1,190 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/estilos/prueba.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/estilos/prueba.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="slider">
-        <div class="sliderAnimate">
-            <div class="sliderBox">
-                <img src="/assets/img/OIP.jpg" alt="">
-            </div>
-            <div class="sliderBox">
-                <img src="/assets/img/FedEx-Embleme.png" alt="">
-            </div>
-            <div class="sliderBox">
-                <img src="/assets/img/OIP.jpg" alt="">
-            </div>
-            <div class="sliderBox">
-                <img src="/assets/img/FedEx-Embleme.png" alt="">
-            </div>
-            <div class="sliderBox">
-                <img src="/assets/img/OIP.jpg" alt="">
-            </div>
-            <div class="sliderBox">
-                <img src="/assets/img/FedEx-Embleme.png" alt="">
-            </div>
-            <div class="sliderBox">
-                <img src="/assets/img/OIP.jpg" alt="">
-            </div>
-
-
-            <div class="sliderBox">
-                <img src="/assets/img/FedEx-Embleme.png" alt="">
-            </div>
-            <div class="sliderBox">
-                <img src="/assets/img/OIP.jpg" alt="">
-            </div>
-            <div class="sliderBox">
-                <img src="/assets/img/FedEx-Embleme.png" alt="">
-            </div>
-            <div class="sliderBox">
-                <img src="/assets/img/OIP.jpg" alt="">
-            </div>
-            <div class="sliderBox">
-                <img src="/assets/img/FedEx-Embleme.png" alt="">
-            </div>
-            <div class="sliderBox">
-                <img src="/assets/img/OIP.jpg" alt="">
-            </div>
-            <div class="sliderBox">
-                <img src="/assets/img/FedEx-Embleme.png" alt="">
-            </div>
+      <div class="sliderAnimate">
+        <div class="sliderBox">
+          <img src="/assets/img/OIP.jpg" alt="" />
+        </div>
+        <div class="sliderBox">
+          <img src="/assets/img/FedEx-Embleme.png" alt="" />
+        </div>
+        <div class="sliderBox">
+          <img src="/assets/img/OIP.jpg" alt="" />
+        </div>
+        <div class="sliderBox">
+          <img src="/assets/img/FedEx-Embleme.png" alt="" />
+        </div>
+        <div class="sliderBox">
+          <img src="/assets/img/OIP.jpg" alt="" />
+        </div>
+        <div class="sliderBox">
+          <img src="/assets/img/FedEx-Embleme.png" alt="" />
+        </div>
+        <div class="sliderBox">
+          <img src="/assets/img/OIP.jpg" alt="" />
         </div>
 
+        <div class="sliderBox">
+          <img src="/assets/img/FedEx-Embleme.png" alt="" />
+        </div>
+        <div class="sliderBox">
+          <img src="/assets/img/OIP.jpg" alt="" />
+        </div>
+        <div class="sliderBox">
+          <img src="/assets/img/FedEx-Embleme.png" alt="" />
+        </div>
+        <div class="sliderBox">
+          <img src="/assets/img/OIP.jpg" alt="" />
+        </div>
+        <div class="sliderBox">
+          <img src="/assets/img/FedEx-Embleme.png" alt="" />
+        </div>
+        <div class="sliderBox">
+          <img src="/assets/img/OIP.jpg" alt="" />
+        </div>
+        <div class="sliderBox">
+          <img src="/assets/img/FedEx-Embleme.png" alt="" />
+        </div>
+      </div>
     </div>
     <script src="assets/script/slider.js"></script>
-    
+
     <div>
-        <script>
-function guardarImagen() { 
-        var arc = document.getElementById("logo");
-        var arcv = arc.value.trim();
-        var img = document.getElementById("img");
-        img.innerHTML = arcv;
-        // Obtener el archivo de entrada
-        var archivo = document.getElementById("logo").files[0];
-        // Verificar si se seleccionó un archivo
-        if (archivo) {
+      <script>
+        function guardarImagen() {
+          var arc = document.getElementById("logo");
+          var arcv = arc.value.trim();
+          var img = document.getElementById("img");
+          img.innerHTML = arcv;
+          // Obtener el archivo de entrada
+          var archivo = document.getElementById("logo").files[0];
+          // Verificar si se seleccionó un archivo
+          if (archivo) {
             // Crear un objeto FormData
             var formData = new FormData();
             // Agregar el archivo al objeto FormData
             formData.append("archivo", archivo);
             // Crear un objeto XMLHttpRequest
-        var xhr = new XMLHttpRequest();
-        // Configurar la solicitud
-        xhr.open("POST", "http://localhost:8083/empresa/subir/logo");
-        // Enviar el objeto FormData al servidor
-        xhr.send(formData);
-        // Manejar la respuesta del servidor
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
+            var xhr = new XMLHttpRequest();
+            // Configurar la solicitud
+            xhr.open("POST", "http://localhost:8080/empresa/subir/logo");
+            // Enviar el objeto FormData al servidor
+            xhr.send(formData);
+            // Manejar la respuesta del servidor
+            xhr.onreadystatechange = function () {
+              if (xhr.readyState === XMLHttpRequest.DONE) {
                 if (xhr.status === 200) {
-                console.log("Archivo subido correctamente");
-                console.log(xhr.responseText);
+                  console.log("Archivo subido correctamente");
+                  console.log(xhr.responseText);
                 } else {
-                console.log("Error al subir el archivo");
+                  console.log("Error al subir el archivo");
                 }
-            }
-        };
-    }
-}
-        </script>
-        <div class="form-item">
-            <label for="logo">Imagen de Empresa:</label>
-            <input type="file" id="logo">
-            <button onclick="guardarImagen()">enviar</button>
-            <div id="img"></div>
-        </div>
-    </div>
-    <div>
-        <script>
-            function hola(){
-            
-            var certificadoCap = document.querySelectorAll('input[name="certificadoCap"]');
-            let certificadoCapValor;
-            for (var i = 0; i < certificadoCap.length; i++) {
-                
-                if (certificadoCap[i].checked) {
-                    console.log(certificadoCap[i].value);
-                    certificadoCapValor = certificadoCap[i].value;
-                    
-                }
+              }
             };
-            }
-        </script>
-        <div class="form-item">
-            <p id="identificador">Certificado CAP</p>
-            <label><input type="radio" name="certificadoCap" value="si" checked>Si</label>
-            <label><input type="radio" name="certificadoCap" value="no">No</label>
-        </div>
-        <button onclick="hola()">next</button>
+          }
+        }
+      </script>
+      <div class="form-item">
+        <label for="logo">Imagen de Empresa:</label>
+        <input type="file" id="logo" />
+        <button onclick="guardarImagen()">enviar</button>
+        <div id="img"></div>
+      </div>
     </div>
     <div>
-        <div class="form-item">
-            <label for="fechaInicio">Fecha Inicio:</label>
-            <input type="date" name="fechaInicio" id="fechaInicio" required >
-            <small>rellene este campo</small>
-            </div>
-            <div class="form-item">
-            <label for="fechaFin">Fecha Fin:</label>
-            <input type="date" name="fechaFin" id="fechaFin" required >
-            <small>rellene este campo</small>
-            </div>
-            <button onclick="calcularDiferenciaFechas()">Calcular diferencia</button>
-            <div id="resultado"></div>
-        </div>
-        <script>
-        function calcularDiferenciaFechas() {
-        var fechaInicio = new Date(document.getElementById("fechaInicio").value);
+      <script>
+        function hola() {
+          var certificadoCap = document.querySelectorAll(
+            'input[name="certificadoCap"]'
+          );
+          let certificadoCapValor;
+          for (var i = 0; i < certificadoCap.length; i++) {
+            if (certificadoCap[i].checked) {
+              console.log(certificadoCap[i].value);
+              certificadoCapValor = certificadoCap[i].value;
+            }
+          }
+        }
+      </script>
+      <div class="form-item">
+        <p id="identificador">Certificado CAP</p>
+        <label
+          ><input
+            type="radio"
+            name="certificadoCap"
+            value="si"
+            checked
+          />Si</label
+        >
+        <label><input type="radio" name="certificadoCap" value="no" />No</label>
+      </div>
+      <button onclick="hola()">next</button>
+    </div>
+    <div>
+      <div class="form-item">
+        <label for="fechaInicio">Fecha Inicio:</label>
+        <input type="date" name="fechaInicio" id="fechaInicio" required />
+        <small>rellene este campo</small>
+      </div>
+      <div class="form-item">
+        <label for="fechaFin">Fecha Fin:</label>
+        <input type="date" name="fechaFin" id="fechaFin" required />
+        <small>rellene este campo</small>
+      </div>
+      <button onclick="calcularDiferenciaFechas()">Calcular diferencia</button>
+      <div id="resultado"></div>
+    </div>
+    <script>
+      function calcularDiferenciaFechas() {
+        var fechaInicio = new Date(
+          document.getElementById("fechaInicio").value
+        );
         var fechaFin = new Date(document.getElementById("fechaFin").value);
 
-        
         if (fechaInicio > fechaFin) {
-            alert("La fecha de inicio debe ser anterior o igual a la fecha de fin.");
-            return;
+          alert(
+            "La fecha de inicio debe ser anterior o igual a la fecha de fin."
+          );
+          return;
         }
 
         var anios = fechaFin.getFullYear() - fechaInicio.getFullYear();
         var meses = fechaFin.getMonth() - fechaInicio.getMonth();
         var dias = fechaFin.getDate() - fechaInicio.getDate();
 
-        
         if (meses < 0 || (meses == 0 && dias < 0)) {
-            anios--;
-            meses += 12;
+          anios--;
+          meses += 12;
         }
-        
-    
+
         if (dias < 0) {
-            var ultimoDiaMesAnterior = new Date(fechaFin.getFullYear(), fechaFin.getMonth(), 0).getDate();
-            dias += ultimoDiaMesAnterior;
-            meses--;
+          var ultimoDiaMesAnterior = new Date(
+            fechaFin.getFullYear(),
+            fechaFin.getMonth(),
+            0
+          ).getDate();
+          dias += ultimoDiaMesAnterior;
+          meses--;
         }
 
-    
-        var totalDias = Math.floor((fechaFin - fechaInicio) / (1000 * 60 * 60 * 24));
-        var diasDelMesInicio = new Date(fechaInicio.getFullYear(), fechaInicio.getMonth() + 1, 0).getDate();
-        var diasDelMesFin = new Date(fechaFin.getFullYear(), fechaFin.getMonth() + 1, 0).getDate();
-        var diasDelAnioInicio = esBisiesto(fechaInicio.getFullYear()) ? 366 : 365;
+        var totalDias = Math.floor(
+          (fechaFin - fechaInicio) / (1000 * 60 * 60 * 24)
+        );
+        var diasDelMesInicio = new Date(
+          fechaInicio.getFullYear(),
+          fechaInicio.getMonth() + 1,
+          0
+        ).getDate();
+        var diasDelMesFin = new Date(
+          fechaFin.getFullYear(),
+          fechaFin.getMonth() + 1,
+          0
+        ).getDate();
+        var diasDelAnioInicio = esBisiesto(fechaInicio.getFullYear())
+          ? 366
+          : 365;
 
-        var diasDeDiferencia = totalDias % diasDelAnioInicio % diasDelMesInicio % diasDelMesFin;
-        var mesesDeDiferencia = Math.floor((totalDias % diasDelAnioInicio - diasDeDiferencia) / diasDelMesInicio) % 12;
-        var aniosDeDiferencia = Math.floor((totalDias % diasDelAnioInicio - diasDeDiferencia - mesesDeDiferencia * diasDelMesInicio) / (diasDelAnioInicio));
-
+        var diasDeDiferencia =
+          ((totalDias % diasDelAnioInicio) % diasDelMesInicio) % diasDelMesFin;
+        var mesesDeDiferencia =
+          Math.floor(
+            ((totalDias % diasDelAnioInicio) - diasDeDiferencia) /
+              diasDelMesInicio
+          ) % 12;
+        var aniosDeDiferencia = Math.floor(
+          ((totalDias % diasDelAnioInicio) -
+            diasDeDiferencia -
+            mesesDeDiferencia * diasDelMesInicio) /
+            diasDelAnioInicio
+        );
 
         var resultado = document.getElementById("resultado");
-        resultado.innerHTML = "Diferencia: " + anios + " años, " + meses + " meses, " + dias + " días.<br>";
-        resultado.innerHTML += "Diferencia exacta: " + aniosDeDiferencia + " años, " + mesesDeDiferencia + " meses, " + diasDeDiferencia + " días.";
-        }
+        resultado.innerHTML =
+          "Diferencia: " +
+          anios +
+          " años, " +
+          meses +
+          " meses, " +
+          dias +
+          " días.<br>";
+        resultado.innerHTML +=
+          "Diferencia exacta: " +
+          aniosDeDiferencia +
+          " años, " +
+          mesesDeDiferencia +
+          " meses, " +
+          diasDeDiferencia +
+          " días.";
+      }
 
-        function esBisiesto(anio) {
-        return ((anio % 4 == 0) && (anio % 100 != 0)) || (anio % 400 == 0);
-        }
-        </script>
-</body>
+      function esBisiesto(anio) {
+        return (anio % 4 == 0 && anio % 100 != 0) || anio % 400 == 0;
+      }
+    </script>
+  </body>
 </html>

@@ -1,28 +1,58 @@
-function verTrabajador(){
+document.addEventListener("DOMContentLoaded", () => {
+    fverEmpresa("A28985992")
+});
 
-    let url = "";
+function fverEmpresa(cifv) {
 
-    section = document.getElementById("section");
+    let url = "http://localhost:8080/empresa/cif=" + cifv;
     fetch(url)
-    .then(res => res.json())
-    .then(data => {       
-        console.log(data)
-       
+        .then(res => res.json())
+        .then(empresa => {
+            console.log(empresa)
+            let logoEmpresa = document.getElementById("logoEmpresa");
+            let img = document.createElement("img");
+            img.src="assets/img/empresas/"+empresa.logo
+            logoEmpresa.appendChild(img);
 
-        section.innerHTML+=
-        '<div id="paquete">' 
-            +'<div id="paqueteEmpresa">'
-            +   '<div id="logoEmpresa">' + data.LOGO +'</div>'
-            +   '<div id="tipoEmpresa">'+'<div> Tipo de Actividad: </div>'+ '<div>'+data.TIPODEACTIVIDAD+'</div>'
-            +   '<div id="nombreEmpresa">'+'<div> Nombre: </div>'+ '<div>'+data.NOMBRE+'</div>'
-            +   '<div id="direccionEmpresa">'+'<div> Dirección: </div>'+ '<div>'+data.DIRECCION+'</div>'
-            +   '<div id="provinciaEmpresa">'+'<div> Provincia:   </div>'+ '<div>'+data.PROVINCIA+'</div>'
-            +   '<div id="codigoPostal">'+'<div>  Codigo Postal:  </div>'+ '<div>'+data.CODGIO_POSTAL+'</div>'
-            +   '<div id="webSite">'+'<div>  Sitio web:  </div>'+ '<div>'+data.WEBSITE+'</div>'
-            +   '<div id="telefono">'+'<div>  tlf:  </div>'+ '<div>'+data.TELEFONO+'</div>'
-            +   '<div id="listadoDeOfertas">'+'</div>'
-            +'</div>'
-        +'</div>'
-        
-    })
+            let tipoEmpresaM = document.getElementById("tipoEmpresaM");
+            tipoEmpresaM.innerHTML = empresa.tipoActividadEmpresarial.actividad
+            let nombreEmpresaN = document.getElementById("nombreEmpresaN");
+            nombreEmpresaN.innerHTML = empresa.nombreComercial
+            let direccionEmpresaD = document.getElementById("direccionEmpresaD");
+            direccionEmpresaD.innerHTML = empresa.direccion
+            let provinciaP = document.getElementById("provinciaP");
+            provinciaP.innerHTML = empresa.provincia.provincia
+            let cp = document.getElementById("cp");
+            cp.innerHTML = empresa.codigoPostal
+            let webSiteW = document.getElementById("webSiteW");
+            webSiteW.innerHTML = empresa.sitioWeb
+            let tlf = document.getElementById("tlf");
+            tlf.innerHTML = empresa.telefono
+            let descripcionD = document.getElementById("descripcionD");
+            descripcionD.innerHTML = empresa.descripcionEmpresa
+            
+
+        })
+
+    // const URL = "http://localhost:8080/oferta/noCaducadas";
+    // fetch(URL)
+    // .then((response) => response.json())
+    // .then((oferta) => {
+    //     let div = document.getElementById('boxOfertas')
+    //     for (const key of oferta) {
+    //     let oferta = document.createElement('div');
+    //         oferta.className = 'oferta'
+    //         key.id = key.idOferta;
+    //         let html ='<div class="datos_oferta"><img src="assets/img/empresas/'+key.empresa.logo +'" alt="" width="180px" height="100px"></div>'
+    //         html+='<div class="datos_oferta">'
+    //         html+='<div class="puesto"><p>'+key.descripcion+'</p></div>'
+    //         html+='<div class="nombreEmpresa"><p>'+ key.empresa.nombreComercial+'</p></div></div>'
+    //         html+='<div class="datos_oferta">'
+    //         html+='<div class="mapa"><i class="bx bx-location-plus"></i><br><p>('+key.provincia.provincia +')</p></div>' 
+    //         html+='<div class="caducidad"><i class="bx bx-calendar"></i><br><p>'+key.fechaPublicacion+'</p></div></div>'
+    //         oferta.innerHTML= html;
+    //         div.appendChild(oferta)  
+    //     }
+    // });
+
 }
