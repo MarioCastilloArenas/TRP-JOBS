@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    //let cif = localStorage.getItem('cif');
-    //fverEmpresa(cif)
-    fverEmpresa("A28985992")
+    let cif = localStorage.getItem('cif');
+    fverEmpresa(cif)
+    //fverEmpresa("A28985992")
 });
 
 function fverEmpresa(cifv) {
