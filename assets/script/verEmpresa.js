@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+    //let cif = localStorage.getItem('cif');
+    //fverEmpresa(cif)
     fverEmpresa("A28985992")
 });
 

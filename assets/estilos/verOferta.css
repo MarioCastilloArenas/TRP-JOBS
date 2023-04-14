@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Expletus Sans', cursive;
+}
+body{
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr 200px;
+    grid-template-areas: 
+        "zheader"
+        "zsection"
+        "zfooter";
+    overflow-x: hidden;
+}
+.banner{
+    padding: 5% 10%;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(253,187,45,1) 64%);
+}
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: 30px;
+    gap: 30px;
+}
+#boxOferta{
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column ;
+    align-items: flex-start;
+    justify-content:center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: rgba(0, 0, 0, 0.737);
+    padding: 50px 40px;
+}
+
+#boxOferta>div:first-child{
+    padding-bottom: 30px;
+    border: none;
+}
+#boxOferta>div{
+    border-bottom: solid rgba(128, 128, 128, 0.174) 1px;
+    width: 100%;
+    padding: 10px;
+}
+.oscuro{
+    background-color: rgba(207, 207, 207, 0.267);
+}
+
+h1{
+    padding: 20px 0;
+}
+.boxEmpresa{
+    display: flex;
+    flex-direction: row;
+    
+}
+.boxEmpresa>div{
+    width: 50%;
+}
+.titulo{
+    font-weight: 700;
+    color: black;
+}
+button,#botonInscripcion {
+    margin-top: 20px;
+    width: 100%;
+    display: inline-block;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 12px;
+    color: rgb(20, 20, 20);
+    padding: 8px 24px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    background-image: linear-gradient(180deg,#fff,#f5f5fa);
+    box-shadow: 0 4px 11px 0 rgb(37 44 97 / 15%), 0 1px 3px 0 rgb(93 100 148 / 20%);
+    transition: all .2s ease-out;
+}
+#botonInscripcion{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    background-image: linear-gradient(180deg,#ff8903,#7a7a7b0f); 
+}
+#botonInscripcion:hover{
+    box-shadow: 0 8px 22px 0 rgb(37 44 97 / 15%), 0 4px 6px 0 rgb(93 100 148 / 20%);
+    background-image: linear-gradient(180deg,#ff0303,#7a7a7b0f); 
+}
+button:hover {
+    box-shadow: 0 8px 22px 0 rgb(37 44 97 / 15%), 0 4px 6px 0 rgb(93 100 148 / 20%);
+}
+
+#boxInscripción{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+#contador{
+    width: 100%;
+    display: flex;
+    gap: 9px;
+}
+.boxContador{
+    width: 100%;
+    border-radius: 4px;
+    border: solid rgba(238, 229, 229, 0.08) 1px;
+    background-color: rgba(207, 207, 207, 0.267);
+    box-shadow: rgba(121, 121, 120, 0.35) 0px 1px 5px;
+    display: flex;
+    flex-direction: column;
+}
+span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.758);
+}
+.boxContador>p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:  rgba(253,187,45,1);
+}
+/* Ordenadores de sobremesa y portátiles */
+@media (min-width : 1100px) {
+.contenedor{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    margin: 30px;
+    gap: 30px;
+}
+#boxInscripción{
+    border: solid pink;
+    width: 30%;
+    padding: 10px;
+}
+#boxOferta{
+    width: 70%;
+    padding: 40px;
+}
+#botonInscripcion{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    background-image: linear-gradient(180deg,#ff8903,#7a7a7b0f); 
+    margin-top: 5px;
+}
+
+}

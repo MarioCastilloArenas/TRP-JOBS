@@ -8,6 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
         tipoContrato();
         verOfertas();
     }
+    if(URLactual == '/verOferta.html'){
+        let idOferta = localStorage.getItem('idOferta');
+        verOferta(idOferta)
+    }
 });
 function provincias (){
     const URL = "http://localhost:8080/oferta/provinciasEnOfertas";
@@ -16,19 +20,44 @@ function provincias (){
     .then((data) => {
         let provincias=document.getElementById('provincias');
         var div1 = document.createElement("div");
-        data.forEach(element => { 
-            var div = document.createElement("div");
-            div.className = 'unfiltro'; 
-            var x = document.createElement("input");
-            x.setAttribute("type", "checkbox");
-            x.name = 'provincia';
-            x.value = JSON.stringify(element)
-            var y = document.createElement("p");
-            y.innerHTML = element.provincia
-            div.appendChild(x);
-            div.appendChild(y);
-            div1.appendChild(div)
-        });
+        let i = 0;
+        for (const element of data) {
+            if (i<3){
+                console.log(i);
+                var div = document.createElement("div");
+                div.className = 'unfiltro'; 
+                var x = document.createElement("input");
+                x.setAttribute("type", "checkbox");
+                x.name = 'provincia';
+                x.value = JSON.stringify(element)
+                var y = document.createElement("p");
+                y.innerHTML = element.provincia
+                div.appendChild(x);
+                div.appendChild(y);
+                div1.appendChild(div)
+            }else{
+                var divm = document.createElement("div");
+                divm.id = 'enlace';
+                divm.innerHTML = 'Mostrar más.'
+                divm.onclick = function() {
+                    divm.innerHTML=''
+                    divm.style.padding = 0;
+                    var div = document.createElement("div");
+                    div.className = 'unfiltro'; 
+                    var x = document.createElement("input");
+                    x.setAttribute("type", "checkbox");
+                    x.name = 'provincia';
+                    x.value = JSON.stringify(element)
+                    var y = document.createElement("p");
+                    y.innerHTML = element.provincia
+                    div.appendChild(x);
+                    div.appendChild(y);
+                    div1.appendChild(div)
+                }
+                div1.appendChild(divm)
+            }
+            i++;
+        }
         provincias.appendChild(div1);
     })
 }
@@ -38,7 +67,8 @@ function tipoDeCarnet (){
     .then((response) => response.json())
     .then((data) => {
         let TipoCarnet=document.getElementById('tipoCarnet');
-        data.forEach(element => { 
+        var div1 = document.createElement("div");
+        for (const element of data) {
             var div = document.createElement("div");
             div.className = 'unfiltro'; 
             var x = document.createElement("input");
@@ -49,8 +79,9 @@ function tipoDeCarnet (){
             y.innerHTML = element.carnet
             div.appendChild(x);
             div.appendChild(y);
-            TipoCarnet.appendChild(div)
-        });
+            div1.appendChild(div)
+        }
+        TipoCarnet.appendChild(div1)
     })
 }
 function ambitosGeograficos(){ 
@@ -227,7 +258,10 @@ function pintar(ofertasFiltradas){
     for (const key of ofertasFiltradas) {
     let oferta = document.createElement('div');
         oferta.className = 'oferta'
-        key.id = key.idOferta;
+        oferta.onclick = function() {
+            localStorage.setItem ('idOferta', key.idOferta)
+            window.location = '/verOferta.html';
+        }
         let html ='<div class="datos_oferta"><img src="assets/img/empresas/'+key.empresa.logo +'" alt="" width="180px" height="100px"></div>'
         html+='<div class="datos_oferta">'
         html+='<div class="puesto"><p>'+key.descripcion+'</p></div>'
@@ -239,4 +273,98 @@ function pintar(ofertasFiltradas){
         div1.appendChild(oferta)
     }
     cont.appendChild(div1);
+}
+
+function contadorFecha(fecha){
+    let fe = new Date(fecha)
+    const DATE_TARGET =fe;
+    // DOM for render
+    const SPAN_DAYS = document.querySelector('span#days');
+    const SPAN_HOURS = document.querySelector('span#hours');
+    const SPAN_MINUTES = document.querySelector('span#minutes');
+    const SPAN_SECONDS = document.querySelector('span#seconds');
+    // Milliseconds for the calculations
+    const MILLISECONDS_OF_A_SECOND = 1000;
+    const MILLISECONDS_OF_A_MINUTE = MILLISECONDS_OF_A_SECOND * 60;
+    const MILLISECONDS_OF_A_HOUR = MILLISECONDS_OF_A_MINUTE * 60;
+    const MILLISECONDS_OF_A_DAY = MILLISECONDS_OF_A_HOUR * 24
+
+    //===
+    // FUNCTIONS
+    //===
+
+    /**
+    * Method that updates the countdown and the sample
+    */
+    function updateCountdown() {
+        // Calcs
+        const NOW = new Date()
+        const DURATION = DATE_TARGET - NOW;
+        const REMAINING_DAYS = Math.floor(DURATION / MILLISECONDS_OF_A_DAY);
+        const REMAINING_HOURS = Math.floor((DURATION % MILLISECONDS_OF_A_DAY) / MILLISECONDS_OF_A_HOUR);
+        const REMAINING_MINUTES = Math.floor((DURATION % MILLISECONDS_OF_A_HOUR) / MILLISECONDS_OF_A_MINUTE);
+        const REMAINING_SECONDS = Math.floor((DURATION % MILLISECONDS_OF_A_MINUTE) / MILLISECONDS_OF_A_SECOND);
+       
+
+        // Render
+        SPAN_DAYS.textContent = REMAINING_DAYS;
+        SPAN_HOURS.textContent = REMAINING_HOURS;
+        SPAN_MINUTES.textContent = REMAINING_MINUTES;
+        SPAN_SECONDS.textContent = REMAINING_SECONDS;
+    }
+
+    //===
+    // INIT
+    //===
+    updateCountdown();
+    // Refresh every second
+    setInterval(updateCountdown, MILLISECONDS_OF_A_SECOND);
+
+}
+
+function verOferta(id){
+    fetch(URL = " http://localhost:8080/oferta/"+id )
+    .then((response) => response.json())
+    .then((oferta) => {
+        let tituloof= document.getElementById('tituloof');
+            tituloof.innerHTML=oferta.tituloOferta;
+            contadorFecha(oferta.fechaCaducidad);
+        let logo= document.getElementById('logoEmpresa');
+            logo.innerHTML='<img src="assets/img/empresas/'+oferta.empresa.logo +'" alt="" width="180px" height="100px">'
+
+                const months = ["Enero", "Febrero", "Marzo","Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+                const formatDate = (date)=>{
+                    let formatted_date = date.getDate() + " " + months[date.getMonth()] + " " + date.getFullYear()
+                    return formatted_date;
+                }
+
+        let fechaPublicacion= document.querySelector('#fechaPublicacion > p');
+        let fecha = new Date(oferta.fechaPublicacion);
+        fechaPublicacion.innerHTML= formatDate(fecha);
+
+        let fechaCaducidad= document.querySelector('#fechaCaducidad > p');
+        let fechai = new Date(oferta.fechaCaducidad);
+        fechaCaducidad.innerHTML= formatDate(fechai)
+
+        let localidad= document.querySelector('#localidad > p');
+        localidad.innerHTML= oferta.localidad
+        let tipoCandidato= document.querySelector('#tipoCandidato > p');
+        tipoCandidato.innerHTML= oferta.tipoCandidato
+        let ambitosGeograficos= document.querySelector('#ambitosGeograficos > p');
+        ambitosGeograficos.innerHTML= oferta.ambitoGeografico.ambito
+        let tipoCarnet= document.querySelector('#tipoCarnet > p');
+        tipoCarnet.innerHTML= oferta.tipoCarnet.carnet
+        let descripcion= document.querySelector('#descripcion > p');
+        descripcion.innerHTML= oferta.descripcion
+        let tipoContrato= document.querySelector('#tipoContrato > p');
+        tipoContrato.innerHTML= oferta.tipoContrato
+        let empresa= document.querySelector('#empresa > p');
+        empresa.innerHTML= oferta.empresa.nombreFiscal
+        let botonEmpresa= document.querySelector('#botonEmpresa');
+        botonEmpresa.onclick = function() {
+            localStorage.setItem ('cif', oferta.empresa.cif)
+            window.location = '/verEmpresa.html';
+        }
+    });
+
 }
