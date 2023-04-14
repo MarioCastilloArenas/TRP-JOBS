@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded",() => {
     var URLactual = window.location.pathname;
     if(URLactual == '/verOfertas.html'){
         provincias();
@@ -6,13 +6,50 @@ document.addEventListener("DOMContentLoaded", () => {
         ambitosGeograficos();
         experiencia();
         tipoContrato();
-        verOfertas();
+        let ciudad = localStorage.getItem('ciudad')
+        if(ciudad){
+            buscar();
+        }else{
+            verOfertas();
+        }
     }
     if(URLactual == '/verOferta.html'){
         let idOferta = localStorage.getItem('idOferta');
         verOferta(idOferta)
     }
 });
+
+async function buscar(){
+    let ciudad = localStorage.getItem('ciudad')
+    let ofertas;
+    try {
+        ofertas = await fetchOfertas();
+        ofertasFiltradas=[]
+        for (const oferta of ofertas) {
+            console.log(oferta.provincia.provincia + " -----------" + ciudad);
+            if(oferta.provincia.provincia === ciudad) {
+            console.log(oferta.provincia.provincia);
+                ofertasFiltradas.push(oferta)
+            }
+        }
+        console.log(ofertasFiltradas);
+        pintar(ofertasFiltradas)
+        var checkboxes = document.getElementsByName("provincia");
+        // Recorrer los checkboxes
+        for (var i = 0; i < checkboxes.length; i++) {
+            // Obtener el valor del checkbox actual
+            var valor = checkboxes[i].value;
+
+            // Verificar si el valor contiene la ciudad
+            if (valor.indexOf(ciudad) !== -1) {
+                checkboxes[i].checked = true;
+            }
+        }
+        localStorage.removeItem('ciudad')
+    } catch (error) {
+        throw new Error('Ha ocurrido un error');
+    }
+}
 function provincias (){
     const URL = "http://localhost:8080/oferta/provinciasEnOfertas";
     fetch(URL)
@@ -124,7 +161,7 @@ function experiencia(){
     
 }
 function tipoContrato(){ 
-    data = ['Indefinido', 'Por obra y servicio', 'Autonomo']
+    data = ['Indefinido', 'Por obra y servicio', 'Autónomo']
     let tipoContrato=document.getElementById('tipoContrato');
     for (const key of data) {
         console.log(key);
@@ -192,7 +229,7 @@ async function aplicarFiltros(){
         }
         valoresSeleccionados.push(valor)
     }
-    console.log(valoresSeleccionados);
+
     let ofertas;
     try {
         ofertas = await fetchOfertas();
@@ -220,7 +257,6 @@ async function aplicarFiltros(){
         }else {
         pintar(ofertasFiltradas);
         }
-
     } catch (error) {
         throw new Error('Ha ocurrido un error');
     }

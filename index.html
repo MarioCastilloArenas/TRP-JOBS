@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Expletus+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <script src="index.js"></script>
+    <script src="/assets/script/index.js"></script>
     <script></script>
 </head>
 <body>
@@ -67,8 +67,7 @@
                     <div class="parrafoBanner"> <p> Para conductores que buscan trabajo  </p> </div>
                 </div>
                 <div  id="TxtBannerEmpresa">
-                   <div  class="emojiBenner"> <i class='bx bx-dollar-circle'></i> </div>
-                
+                    <div  class="emojiBenner"> <i class='bx bx-dollar-circle'></i> </div>
                     <div class="parrafoBanner"> <p> para empresas que buscan nuevos conductores</p> </div>
                 </div>
             </div>
@@ -85,33 +84,30 @@
             <div id="textoUbicaciones">
                 <p>Busca las ofertas de trabajo de las localidades más populares</p>
             </div>
-
             <div id="imagenesUbicaciones">
                 <div id="barcelona">
                     <h4 class="tituloImagenesUbi">BARCELONA</h4>
                     <img src="assets/img/barcelona2_A.jpg" alt="">
-                    <div class="imagenesUbicacionButton">Ver más</div>
+                    <div class="imagenesUbicacionButton" onclick="vermas('barcelona');">Ver más</div>
                 </div>
                 <div>
                     <h4 class="tituloImagenesUbi">BILBAO</h4>
                     <img src="assets/img/bilbao1_A.jpg">
-                    <div class="imagenesUbicacionButton">Ver más</div>
+                    <div class="imagenesUbicacionButton"onclick="vermas('bilbao');" >Ver más</div>
                 </div>
                 <div>
                     <h4 class="tituloImagenesUbi">MADRID</h4>
                     <img loading="lazy" src="assets/img/madrid2_A.jpg" alt="">
-                    <div class="imagenesUbicacionButton">Ver más</div>
+                    <div class="imagenesUbicacionButton" onclick="vermas('madrid');">Ver más</div>
                 </div>
             </div>
         </div>
         <div id="boxOfertas">
             <div class="tituloOferta">
-             <h3>Ofertas</h3> 
-             <p>En la sección de ofertas podrás disfrutar de todos tipos de ofertas de trabajo para conductores de camión. <br> <br> En esta sección ecncontrarás nuestra ofertas destacadas <br><br> <p id="aprovecha">¡Aprovecha la oportunidad! </p> </p> 
+                <h3>Ofertas</h3> 
+                <p>En la sección de ofertas podrás disfrutar de todos tipos de ofertas de trabajo para conductores de camión. <br> <br> En esta sección ecncontrarás nuestra ofertas destacadas <br><br> <p id="aprovecha">¡Aprovecha la oportunidad! </p> </p> 
             </div>
-            
-            <div class="oferta" onclick="fverOferta();">
-               
+            <!-- <div class="oferta" onclick="fverOferta();">
                     <div class="image">
                         <img src="assets/img/OIP.jpg" alt="" width="180px" height="100px">
                     </div>
@@ -133,7 +129,7 @@
                             <p>28-10-2025</p>
                         </div>
                     </div>
-                </a>
+
             </div>
             <div class="ofertaDestacada">
                 <div class="circleDestacada">Destacada</div>
@@ -254,7 +250,7 @@
                         <p>28-10-2025</p>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <!-- <div id="boxContacto">
             <div class="tituloContacto">
