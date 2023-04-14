@@ -97,7 +97,7 @@ function fcargarDatosIndexEmpresa() {
 }
 
 function tipoActividadEmpresarial(idActiv){ 
-    const URL = "http://localhost:8083/tipoActividadEmpresa/";
+    const URL = "http://localhost:8080/tipoActividadEmpresa/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {

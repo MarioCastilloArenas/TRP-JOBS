@@ -51,8 +51,8 @@ function fIniciarSesionUsuario() {
     } else {
         contrasenai.style.borderColor = 'black';
     }
-    // const URL = "http://localhost:8080/trabajador/email=" + emailv + "&contrasena=" + contrasenamd;
-    const URL = "http://localhost:8080/trabajador/" + emailv + "/" + contrasenamd;
+
+    const URL = "http://localhost:8080/trabajador/email=" + emailv + "/contrasena=" + contrasenamd;
     console.log("hola");
     fetch(URL)
         .then((response) => response.json())
@@ -60,10 +60,8 @@ function fIniciarSesionUsuario() {
             if (trabajador.email == emailv && trabajador.contrasena == contrasenamd) {
                 localStorage.setItem("usuario", JSON.stringify(trabajador.dni))
                 window.location.href = "IndexTrabajador.html"
-                let html = "";
                 html += "<div id='logoIndexTransportista'><i class='bx bx-user-circle'></i></div>";
                 html += "<h2> " + trabajador.nombre + " " + trabajador.apellido + "</h2>";
-
             } else if (trabajador.email == null) {
                 let msg = document.getElementById('msg');
                 msg.innerHTML = '<p>Usuario no existe, puede registrarse</p>'
@@ -106,8 +104,7 @@ function fIniciarSesionEmpresa() {
     } else {
         contrasenai.style.borderColor = 'black';
     }
-    // const URL = "http://localhost:8080/trabajador/email=" + emailv + "&contrasena=" + contrasenamd;
-    const URL = "http://localhost:8080/empresa/login/" + emailv + "/" + contrasenamd;
+    const URL = "http://localhost:8080/empresa/email=" + emailv + "/contrasena=" + contrasenamd;
     console.log("hola");
     fetch(URL)
         .then((response) => response.json())

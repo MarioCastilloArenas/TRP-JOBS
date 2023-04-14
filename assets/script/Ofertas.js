@@ -8,10 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
         tipoContrato();
         verOfertas();
     }
-
 });
 function provincias (){
-    const URL = "http://localhost:8083/oferta/provinciasEnOfertas";
+    const URL = "http://localhost:8080/oferta/provinciasEnOfertas";
     fetch(URL)
     .then((response) => response.json())
     .then((data) => {
@@ -23,7 +22,7 @@ function provincias (){
             var x = document.createElement("input");
             x.setAttribute("type", "checkbox");
             x.name = 'provincia';
-            x.value = element.idProvincia
+            x.value = JSON.stringify(element)
             var y = document.createElement("p");
             y.innerHTML = element.provincia
             div.appendChild(x);
@@ -34,7 +33,7 @@ function provincias (){
     })
 }
 function tipoDeCarnet (){ 
-    const URL = "http://localhost:8083/tipoCarnets/";
+    const URL = "http://localhost:8080/tipoCarnets/";
     fetch(URL)
     .then((response) => response.json())
     .then((data) => {
@@ -44,7 +43,8 @@ function tipoDeCarnet (){
             div.className = 'unfiltro'; 
             var x = document.createElement("input");
             x.setAttribute("type", "checkbox");
-            x.value = element.idCarnet
+            x.name = 'tipoCarnet';
+            x.value = JSON.stringify(element)
             var y = document.createElement("p");
             y.innerHTML = element.carnet
             div.appendChild(x);
@@ -54,7 +54,7 @@ function tipoDeCarnet (){
     })
 }
 function ambitosGeograficos(){ 
-    const URL = "http://localhost:8083/ambitosGeograficos/";
+    const URL = "http://localhost:8080/ambitosGeograficos/";
     fetch(URL)
     .then((response) => response.json())
     .then((data) => {
@@ -64,7 +64,8 @@ function ambitosGeograficos(){
             div.className = 'unfiltro'; 
             var x = document.createElement("input");
             x.setAttribute("type", "checkbox");
-            x.value = element.idAmbito
+            x.name = 'ambitosGeograficos';
+            x.value = JSON.stringify(element)
             var y = document.createElement("p");
             y.innerHTML = element.ambito
             div.appendChild(x);
@@ -74,13 +75,14 @@ function ambitosGeograficos(){
     })
 }
 function experiencia(){ 
-        data = ['No requiere experiencia', 'Al menos dos años de experiencia', 'Más de 5 años de experiencia']
+        data = ['No se requiere experiencia previa', 'Se requiere minimo 2 años de experiencia', 'Más de 5 años de experiencia']
         let experiencia=document.getElementById('experiencia');
         for (const key of data) {
             var div = document.createElement("div");
             div.className = 'unfiltro'; 
             var x = document.createElement("input");
             x.setAttribute("type", "checkbox");
+            x.name = 'experiencia';
             x.value = key
             var y = document.createElement("p");
             y.innerHTML = key
@@ -99,6 +101,7 @@ function tipoContrato(){
         div.className = 'unfiltro'; 
         var x = document.createElement("input");
         x.setAttribute("type", "checkbox");
+        x.name = 'tipoContrato';
         x.value = key
         var y = document.createElement("p");
         y.innerHTML = key
@@ -108,6 +111,7 @@ function tipoContrato(){
     }
 
 }
+
 function filtros(){
     let filtros = document.getElementById('filtros');
     if (filtros.style.display=='none'){
@@ -117,31 +121,121 @@ function filtros(){
     }
 }
 function verOfertas(){
-    
-    const URL = "http://localhost:8083/oferta/noCaducadas";
+    const URL = "http://localhost:8080/oferta/noCaducadas";
     fetch(URL)
     .then((response) => response.json())
     .then((oferta) => {
-        let div = document.getElementById('boxOfertas')
-        for (const key of oferta) {
-        let oferta = document.createElement('div');
-            oferta.className = 'oferta'
-            key.id = key.idOferta;
-            let html ='<div class="datos_oferta"><img src="assets/img/empresas/'+key.empresa.logo +'" alt="" width="180px" height="100px"></div>'
-            html+='<div class="datos_oferta">'
-            html+='<div class="puesto"><p>'+key.descripcion+'</p></div>'
-            html+='<div class="nombreEmpresa"><p>'+ key.empresa.nombreComercial+'</p></div></div>'
-            html+='<div class="datos_oferta">'
-            html+='<div class="mapa"><i class="bx bx-location-plus"></i><br><p>('+key.provincia.provincia +')</p></div>' 
-            html+='<div class="caducidad"><i class="bx bx-calendar"></i><br><p>'+key.fechaPublicacion+'</p></div></div>'
-            oferta.innerHTML= html;
-            div.appendChild(oferta)  
-        }
+        pintar(oferta)
     });
 
+}  
+
+async function aplicarFiltros(){
+    var provincia = document.querySelectorAll('input[name="provincia"]:checked');
+    var valoresSeleccionados = [];
+    for (var i = 0; i < provincia.length; i++) {
+        valor = JSON.parse(provincia[i].value);
+    valoresSeleccionados.push(valor);
+    }
+    var tipoCarnet = document.querySelectorAll('input[name="tipoCarnet"]:checked');
+    for (var i = 0; i < tipoCarnet.length; i++) {
+        valor = JSON.parse(tipoCarnet[i].value);
+        valoresSeleccionados.push(valor);
+    }
+    var ambitosGeograficos = document.querySelectorAll('input[name="ambitosGeograficos"]:checked');
+    for (var i = 0; i < ambitosGeograficos.length; i++) {
+        valor = JSON.parse(ambitosGeograficos[i].value);
+        valoresSeleccionados.push(valor);
+    }
+    var tipoContrato = document.querySelectorAll('input[name="tipoContrato"]:checked');
+    for (var i = 0; i < tipoContrato.length; i++) {
+        valor = {
+            tipoContrato: tipoContrato[i].value
+        }
+    valoresSeleccionados.push(valor);
+    }
+    var experiencia = document.querySelectorAll('input[name="experiencia"]:checked');
+    for (var i = 0; i < experiencia.length; i++) {
+        valor = {
+            experiencia: experiencia[i].value
+        }
+        valoresSeleccionados.push(valor)
+    }
+    console.log(valoresSeleccionados);
+    let ofertas;
+    try {
+        ofertas = await fetchOfertas();
+            ofertasFiltradas=[]
+            ofertas.filter(oferta => {
+            // Verificamos si la provincia de la oferta está en valoresSeleccionados
+            if (valoresSeleccionados.find(val => val.idProvincia === oferta.provincia.idProvincia)) {
+                ofertasFiltradas.push(oferta)
+            }
+            if (valoresSeleccionados.find(val => val.idCarnet === oferta.tipoCarnet.idCarnet)) {
+                ofertasFiltradas.push(oferta)
+            }
+            if (valoresSeleccionados.find(val => val.idAmbito === oferta.ambitoGeografico.idAmbito)) {
+                ofertasFiltradas.push(oferta)
+            }
+            if (valoresSeleccionados.find(val => val.tipoContrato === oferta.tipoContrato)) {
+                ofertasFiltradas.push(oferta)
+            }
+            if (valoresSeleccionados.find(val => val.experiencia === oferta.experiencia)) {
+                ofertasFiltradas.push(oferta)
+            }   
+        });
+        
+        
+        pintar(ofertasFiltradas);
+
+
+    } catch (error) {
+        throw new Error('Ha ocurrido un error');
+    }
 }
 
+async function fetchOfertas() {
+        const URL = "http://localhost:8080/oferta/noCaducadas";
+        try {
+            const response = await fetch(URL);
+            const ofertas = await response.json();
+            return ofertas;
+        } catch (error) {
+            throw new Error('Error al obtener las ofertas');
+        }
+}
 
-
-
-
+function fBuscar(texto){
+    console.log(texto);
+    if (texto.length == 0){
+        verOfertas();
+    }else{
+    fetch(URL = " http://localhost:8080/oferta/buscar/"+texto )
+    .then((response) => response.json())
+    .then((data) => {
+        pintar(data);
+    });
+    }
+}
+function pintar(ofertasFiltradas){
+    let div = document.getElementById('boxOfertas')
+    let cont = document.getElementById('cont');
+    cont.removeChild(div)
+    let div1 = document.createElement('div')
+    div1.id = 'boxOfertas'
+    for (const key of ofertasFiltradas) {
+    let oferta = document.createElement('div');
+        oferta.className = 'oferta'
+        key.id = key.idOferta;
+        let html ='<div class="datos_oferta"><img src="assets/img/empresas/'+key.empresa.logo +'" alt="" width="180px" height="100px"></div>'
+        html+='<div class="datos_oferta">'
+        html+='<div class="puesto"><p>'+key.descripcion+'</p></div>'
+        html+='<div class="nombreEmpresa"><p>'+ key.empresa.nombreComercial+'</p></div></div>'
+        html+='<div class="datos_oferta">'
+        html+='<div class="mapa"><i class="bx bx-location-plus"></i><br><p>('+key.provincia.provincia +')</p></div>' 
+        html+='<div class="caducidad"><i class="bx bx-calendar"></i><br><p>'+key.fechaPublicacion+'</p></div></div>'
+        oferta.innerHTML= html;
+        div1.appendChild(oferta)
+    }
+    cont.appendChild(div1);
+}

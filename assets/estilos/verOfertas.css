@@ -37,7 +37,7 @@ body{
     gap: 20px;
     padding: 1%;
 }
-button, select {
+button, input[type=text] {
     display: inline-block;
     outline: 0;
     border: 0;
@@ -123,7 +123,6 @@ span{
     align-items: center;
     gap: 20px;
 }
-
 .oferta{
     background-color: white;
     border-radius: 10px;
@@ -189,24 +188,28 @@ img{
         flex-direction: row;
         align-items: start;
         padding-top: 50px;
+        padding-bottom: 100px;
     }
     #boxFiltos{
         position: absolute;
         right: 10%;
     }
     #filtros{
+        width: 100%;
         display: flex;
         flex-direction:column ;
         justify-content: center;
         flex-wrap: wrap;
         width: 20%;
-        padding-top: 50px;
+        padding-left: 20px;
+        padding-top: 25px;
     }
     #filtros>div{
         display: flex;
         flex-wrap: wrap;
         align-items: start;
         padding: 20px;
+        width: 100%;
     }
     #filtros>div>div:first-child>div{
         width: 100%;
@@ -227,10 +230,16 @@ img{
     }
 
     #boxOfertas{
-        border: salmon solid;
         width: 80%;
     }
-
+    .oferta{
+        width: 90%;
+    }
+    .unfiltro {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+    }
     .datos_oferta:first-child{
         width: 20%;
     }

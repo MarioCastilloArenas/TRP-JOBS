@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Expletus+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <script src="/assets/script/Ofertas.js"></script>
+    <script src="/assets/script/ofertas.js"></script>
 </head>
 <body>
     <header>
@@ -59,20 +59,13 @@
     <div class="banner">
         <h1>Ofertas de empleo</h1>
     </div>
-    <div class="contenedor">
+    <div id="cont" class="contenedor">
         <div id="boxFiltos">
             <div id="botones">
                 <button onclick="filtros()">Filtros</button>
             </div>   
             <div class="ordenarpor">
-                <span>Ordenar por:</span>
-                <select name="orden" id="orden">
-                    <option value="" selected></option>
-                    <option value="rdate">Fecha más reciente</option>
-                    <option value="date">Fecha más antigua</option>
-                    <option value="expiry">Vencimiento más próximo</option>
-                    <option value="rexpiry">Vencimiento más tarde</option>
-                </select>
+                <input type="text" placeholder="criterio de busqueda" id="buscar" onkeyup="fBuscar(this.value)">
             </div>
         </div>
         <div id="filtros">
@@ -93,7 +86,7 @@
                     <p>Tipo de carnet</p>
                 </div>    
             </div>
-            <button>Aplicar filtros</button>
+            <button onclick="aplicarFiltros()">Aplicar filtros</button>
         </div>
         <div id="boxOfertas">
             
