@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function fverEmpresa(cifv) {
 
-    let url = "http://localhost:8080/empresa/cif=" + cifv;
+    let url = "http://localhost:8080/empresa/" + cifv;
     fetch(url)
         .then(res => res.json())
         .then(empresa => {
