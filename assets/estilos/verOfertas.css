@@ -192,7 +192,7 @@ img{
     }
     #boxFiltos{
         position: absolute;
-        right: 10%;
+        right: 5%;
     }
     #filtros{
         width: 100%;
@@ -208,10 +208,14 @@ img{
         display: flex;
         flex-wrap: wrap;
         align-items: start;
-        padding: 20px;
+        padding: 0;
+        width: 100%;
+    }
+    button{
         width: 100%;
     }
     #filtros>div>div:first-child>div{
+        
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -221,6 +225,9 @@ img{
         padding: 10px;
         display: flex;
         flex-direction: column;
+    }
+    #filtros>div>div>div{
+        width: 100%;
     }
     
     .unfiltro{

@@ -184,10 +184,11 @@ async function aplicarFiltros(){
                 ofertasFiltradas.push(oferta)
             }   
         });
-        
-        
+        if(ofertasFiltradas.length == 0){
+            pintar(ofertas);
+        }else {
         pintar(ofertasFiltradas);
-
+        }
 
     } catch (error) {
         throw new Error('Ha ocurrido un error');
