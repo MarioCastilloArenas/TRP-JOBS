@@ -4,26 +4,18 @@
     box-sizing: border-box;
     font-family: 'Expletus Sans', cursive;
 }
-
-html{
-
-    scroll-behavior: smooth;
-
-}
-
 body{
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 100px 200px 1fr 200px;
+    grid-template-rows: 100px 1fr 200px;
     grid-template-areas: 
         "zheader"
-        "znav"
         "zsection"
         "zfooter";
 }
-nav{
-    grid-area: znav;
+
+.banner{
     background-image: url(/assets/img/header.jpg);
     background-size: cover;
     background-position: center;
@@ -33,346 +25,308 @@ nav{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 50px;
-    gap: 10px;
+    padding: 50px;
+    gap: 20px;
 }
-
-nav > h1 , 
-nav > p {
+.banner > h1 , 
+.banner > p {
     color: white;
     text-align: justify;
 }
-
-
-
-section{
-    grid-area: zsection;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
 #formulario{
-    border: 1px solid black;
-    width: 70%;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    border-radius: 10px;
-    
+    flex-direction: column ;
+    align-items: flex-start;
+    justify-content:center;
 }
-
 #progreso{
-    background-image: url(/assets/img/orange-wave-background-henrik-lehnerer.jpg) ;
+    /* background-image: url(/assets/img/orange-wave-background-henrik-lehnerer.jpg) ;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
+    padding: 10px 20px ;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
-    width: 30%;
-    border-radius: 10px;
-
+    width: 100%;
+    gap: 10px;
 }
-
 .container{
-
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-
+    width: 20%;
 }
-
-
 
 .infoPaso{
-    width: 80%;
+    border-radius: 4px;
+    background-image: linear-gradient(180deg,#fff,#f5f5fa);
+    box-shadow: rgba(121, 121, 120, 0.35) 0px 1px 5px;
+    height: 100px;
     display: flex;
     flex-direction: column;
-
-}
-
-.paso{
-
-    color: rgba(0, 0, 0, 0.719);
-
-}
-
-.nombrePaso{
-
-    font-weight: bold;
-
-}
-
-.infoPaso>div{
-    
-    display: flex;
-    justify-content: left;
     align-items: center;
-    height: 50%;
-
+    justify-content: center;
+}
+.pass{
+    border-radius: 4px;
+    background-image: linear-gradient(180deg,#ea8b0e22,#e8ccb11e);;
+    box-shadow: 0 8px 22px 0 rgba(38, 22, 14, 0.199), 0 4px 6px 0 rgba(42, 42, 44, 0.445);
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ff8903;
+    text-align: center;
+}
+.activate{
+    border-radius: 4px;
+    background-image: linear-gradient(180deg,#ea8b0e22,#e8ccb11e);;
+    box-shadow: 0 8px 22px 0 rgba(38, 22, 14, 0.199), 0 4px 6px 0 rgba(42, 42, 44, 0.445);
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #32d32f;
+    font-weight: 800;
+    text-align: center;
 }
 
-.contenido{
-    width: 70%;
-    border-left: 1px  solid rgba(0, 0, 0, 0.719);
+.infoPaso>div, .activate>div, .pass>div{
     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.paso{ 
+    height: 40%;
+}
+.nombrePaso{
+    height: 60%;
+    width: 100%;
+    text-align: center;
+}
+.contenido{
+    padding: 20px ;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
 }
 .fieldset{
     display: none;
 }
-
 .activo {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.tituloRelleno{
-    height: 200px;
-    width: 100%;
-    border-bottom:  1px solid rgba(0, 0, 0, 0.719);
+    padding: 20px 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    border-radius: 4px;
+    background-image: linear-gradient(180deg,#ffffff2f,#f5f5fa21);
+    box-shadow: rgba(226, 135, 8, 0.253) 0px 1px 5px;
+}
+.tituloRelleno{
+    padding-bottom: 10px;
+}
+h3{
+    color: red;
+    font-weight: 100;
+    font-size: 15px;
+}
+.rellenar{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: first baseline;
+    gap: 20px;
+}
+.rellenar>div{
+    padding: 0 20px;
     
 }
-
-.rellenar{
-
+.form-item {
+    height: 100px;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
     width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.form-item{
-    width: 70%;
-    margin-bottom: 30px;
-    display: flex;
-
-    flex-direction: column;
+    position: relative;
 }
 
 .form-item label {
     display: inline-block;
     margin-bottom: 5px;
+    color: #000000;
 }
 
-.form-item>select{
-    width: 50%;
-    background-color: #ffb11a;
-    border-top: transparent;
-    border-left: transparent;
-    border-right: transparent;
-    border-bottom: transparent;
-
-}
-
-.form-item>input {
-
-    width: 100%;
+.form-item input , select {
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
     font-family: inherit;
-    border-top: transparent;
-    border-left: transparent;
-    border-right: transparent;
-    border-bottom: solid #ffb11a;
-}
-
-#botonSiguiente {
-    background-color: #ffb11a;
-    color: white;
-    border-top: transparent;
-    border-left: transparent;
-    border-right: transparent;
-    border-bottom: transparent; 
-    width: 100px;
-    height: 50px;
-
-}
-
-#botonSiguiente2 {
-    background-color: #ffb11a;
-    color: white;
-    border-top: transparent;
-    border-left: transparent;
-    border-right: transparent;
-    border-bottom: transparent; 
-    width: 133px;
-    height: 50px;
-
-}
-.form-item select,textarea,input::file-selector-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-}
-.form-item #logo{
     font-size: 14px;
-}
-
-.form-item input[type=text]{
-    
-}
-.form-item input[type=number]{
-
-}
-
-.form-item input[type=password]{
-
-}
-.form-item textarea{
-    
-}
-.form-item input[type=file]{
+    padding: 10px;
     width: 100%;
 }
+
 .form-item input:focus {
     outline: 0;
-
+    /*border-color: red;*/
 }
 
 .form-item i {
     visibility: hidden; 
     position: absolute;
-    top: 30px;
-    right: 10px;
+    top: 40px;
+    right: 25px;
 }
 
 
 .form-item small {
     color: #100707;
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: 10px;
+    left: 30px;
     visibility: hidden;
 }
 
-/*paso 2*/
-
-.rellenar2{
-
-    width: 70%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-
-    
-}
-
-.form-item2{
-
+button {
+    margin-top: 20px;
     width: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-  
-}
-
-.form-boton-item2{
-
-    width: 300px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-    align-items: center;
-    justify-content: center;
-
-  
-}
-
-.form-item2 label {
     display: inline-block;
-    margin-bottom: 5px;
-}
-
-.form-item2>select{
-    width: 50%;
-    background-color: #ffb11a;
-    border-top: transparent;
-    border-left: transparent;
-    border-right: transparent;
-    border-bottom: transparent;
-
-}
-
-.form-item2>input {
-
-    width: 100%;
-    font-family: inherit;
-    border-top: transparent;
-    border-left: transparent;
-    border-right: transparent;
-    border-bottom: solid #ffb11a;/* solid rgb(238,94,10); 
-    border-bottom: solid linear-gradient(90deg, rgba(238,94,10,1) 0%, rgba(241,156,17,1) 35%, rgba(255,235,0,1) 100%); */
-
-}
-
-#pasoAColor1{
-
-    color: #ffb11a;
-
-}
-
-.form-item2 select,textarea,input::file-selector-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-}
-.form-item2 #logo{
-    font-size: 14px;
-}
-
-.form-item2 input[type=text]{
-    
-}
-.form-item2 input[type=number]{
-
-}
-
-.form-item2 input[type=password]{
-
-}
-.form-item2 textarea{
-    
-}
-.form-item2 input[type=file]{
-    width: 100%;
-}
-.form-item2 input:focus {
     outline: 0;
+    border: 0;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 12px;
+    color: rgb(20, 20, 20);
+    padding: 8px 24px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    background-image: linear-gradient(180deg,#fff,#f5f5fa);
+    box-shadow: 0 4px 11px 0 rgb(37 44 97 / 15%), 0 1px 3px 0 rgb(93 100 148 / 20%);
+    transition: all .2s ease-out;
+}
+button:hover {
+    background-image: linear-gradient(180deg,#ff8903,#7a7a7b0f); 
+    box-shadow: 0 8px 22px 0 rgb(37 44 97 / 15%), 0 4px 6px 0 rgb(93 100 148 / 20%);
 }
 
-.form-item2 i {
-    visibility: hidden; 
-    position: absolute;
-    top: 30px;
-    right: 10px;
-}
+@media (min-width : 1100px) {
+    section{
+        grid-area: zsection;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    #formulario{
+        width: 90%;
+        margin-top:50px ;
+        margin-bottom: 50px;
+        display: flex;
+        flex-direction: row ;
+        align-items: center;
+        justify-content:center;
+        border-radius: 4px;
+        background-image: linear-gradient(180deg,#ffffff2f,#f5f5fa21);
+        box-shadow: rgba(226, 135, 8, 0.253) 0px 1px 5px;
+    }
 
+    #progreso{
+        background-image: url(/assets/img/orange-wave-background-henrik-lehnerer.jpg) ;
+            background-repeat: no-repeat;
+            background-size: cover; 
+        width: 100%;
+        display: flex;
+        flex-direction:column ;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        width: 20%;
+        height: 100%;
+        padding-left: 20px;
+        border-radius: 4px;
+        background-image: white;
+        box-shadow: none;
+    }
+    
+    .container{
+        width: 100%;
+        height: 100px;
+        
+    }
 
-.form-item2 small {
-    color: #100707;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    visibility: hidden;
-}
-
- 
-
-
+    .contenido{
+        padding: 20px ;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 80%;
+    }
+    
+    .infoPaso{
+        border-radius: 0;
+        background-image: linear-gradient(180deg,#9090900f,#ff7f080f);;
+        box-shadow: 0 8px 22px 0 rgba(14, 17, 38, 0.066), 0 4px 6px 0 rgba(163, 163, 168, 0.043);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .activate{
+        border-radius: 0;
+        background-image: linear-gradient(180deg,#ff770009,#ff7f0821);;
+        box-shadow: 0 8px 22px 0 rgba(14, 17, 38, 0.379), 0 4px 6px 0 rgba(177, 177, 181, 0.043);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .activo {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 4px;
+        background-image: none;
+        box-shadow: none;
+    }
+    .rellenar{
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    .form-item{
+        position: relative;
+        margin-bottom: 20px;
+        height: 90px;
+    }
+    .form-item i {
+        visibility: hidden; 
+        position: absolute;
+        top: 40px;
+        right: 30px;
+    }
+    .form-item small {
+        color: #100707;
+        position: absolute;
+        bottom: 0px;
+        left: 30px;
+        visibility: hidden;
+    }
+} 
