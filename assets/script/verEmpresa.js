@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function fverEmpresa(cifv) {
 
-    let url = "http://localhost:8080/empresa/" + cifv;
+    let url = "http://localhost:8083/empresa/" + cifv;
     fetch(url)
         .then(res => res.json())
         .then(empresa => {
@@ -36,7 +36,7 @@ function fverEmpresa(cifv) {
 
         })
 
-    // const URL = "http://localhost:8080/oferta/noCaducadas";
+    // const URL = "http://localhost:8083/oferta/noCaducadas";
     // fetch(URL)
     // .then((response) => response.json())
     // .then((oferta) => {

@@ -62,7 +62,7 @@ function fPublicarOferta() {
 
 function fcargarDatosIndexEmpresa() {
     cifEmp = JSON.parse(localStorage.getItem("empresa"));
-    const URL = "http://localhost:8080/empresa/cif=" + cifEmp;
+    const URL = "http://localhost:8083/empresa/" + cifEmp;
     fetch(URL)
         .then((response) => response.json())
         .then((empresa) => {
@@ -94,10 +94,11 @@ function fcargarDatosIndexEmpresa() {
         document.getElementById("telefono").value = empresa.telefono;
         document.getElementById("logo").value = empresa.logo;
     });
+    fMostrarTodas();
 }
 
 function tipoActividadEmpresarial(idActiv){ 
-    const URL = "http://localhost:8080/tipoActividadEmpresa/";
+    const URL = "http://localhost:8083/tipoActividadEmpresa/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -125,7 +126,7 @@ function tipoActividadEmpresarial(idActiv){
 }
 
 function tipoActividadEmpresarial(idActiv) {
-    const URL = "http://localhost:8080/tipoActividadEmpresa/";
+    const URL = "http://localhost:8083/tipoActividadEmpresa/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -152,7 +153,7 @@ function tipoActividadEmpresarial(idActiv) {
 }
 
 function provincias(idProv) {
-    const URL = "http://localhost:8080/provincias/";
+    const URL = "http://localhost:8083/provincias/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -186,11 +187,115 @@ function fCerrarSesion() {
 
 // div class:empresaContenidoOpcionesBtn;
 function fMostrarTodas() {
+    cifEmp = JSON.parse(localStorage.getItem("empresa"));
+    fotoEmp = JSON.parse(localStorage.getItem("empresaFoto"));
+    const URL = "http://localhost:8083/oferta/todasOfertas/"+ cifEmp;
+    fetch(URL)
+        .then((response) => response.json())
+        .then((data) => {
+            let html = "";
+            data.forEach(element => {
+                html += "<div class='ofertaDestacada'>";
+                html += "   <div class='circleDestacada'>Todas</div>";
+                html += "   <div class='image'>";
+                html += "       <img src='assets/img/empresas/seur.png' alt='' width='180px' height='100px'>";
+                html += "   </div>";
+                html += "   <div class='informacionEmpresa'>";
+                html += "       <div class='puesto'>";
+                html += "           " + element.tituloOferta + "";
+                html += "       </div>";
+                html += "       <div class='nombrEmpresa'>";
+                html += "           " + element.tituloOferta + "";
+                html += "       </div>";
+                html += "   </div>";
+                html += "   <div class='localidad'>";
+                html += "       <div class='mapa'>";
+                html += "           <i class='bx bx-location-plus' ></i> <br>";
+                html += "           <p>" + element.localidad + "</p>";
+                html += "       </div>";
+                html += "       <div class='caducidad'>";
+                html += "           <i class='bx bx-calendar'></i><br>";
+                html += "           <p>" + element.fechaCaducidad + "</p>";
+                html += "       </div>";
+                html += "   </div>";
+                html += "</div>";
+            });
+            document.querySelector("#boxOfertas").innerHTML = html;
+        });
 
 }
-function fMostrarPendientes() {
+function fMostrarActivas() {
+    cifEmp = JSON.parse(localStorage.getItem("empresa"));
+    fotoEmp = JSON.parse(localStorage.getItem("empresaFoto"));
+    const URL = "http://localhost:8083/oferta/todasOfertasNoCaducadas/"+ cifEmp;
+    fetch(URL)
+        .then((response) => response.json())
+        .then((data) => {
+            let html = "";
+            data.forEach(element => {
+                html += "<div class='ofertaDestacada'>";
+                html += "   <div class='circleDestacada'>Activas</div>";
+                html += "   <div class='image'>";
+                html += "       <img src='assets/img/empresas/seur.png' alt='' width='180px' height='100px'>";
+                html += "   </div>";
+                html += "   <div class='informacionEmpresa'>";
+                html += "       <div class='puesto'>";
+                html += "           " + element.tituloOferta + "";
+                html += "       </div>";
+                html += "       <div class='nombrEmpresa'>";
+                html += "           " + element.tituloOferta + "";
+                html += "       </div>";
+                html += "   </div>";
+                html += "   <div class='localidad'>";
+                html += "       <div class='mapa'>";
+                html += "           <i class='bx bx-location-plus' ></i> <br>";
+                html += "           <p>" + element.localidad + "</p>";
+                html += "       </div>";
+                html += "       <div class='caducidad'>";
+                html += "           <i class='bx bx-calendar'></i><br>";
+                html += "           <p>" + element.fechaCaducidad + "</p>";
+                html += "       </div>";
+                html += "   </div>";
+                html += "</div>";
+            });
+            document.querySelector("#boxOfertas").innerHTML = html;
+        });
 
 }
 function fMostrarFinalizadas() {
-
+    cifEmp = JSON.parse(localStorage.getItem("empresa"));
+    fotoEmp = JSON.parse(localStorage.getItem("empresaFoto"));
+    const URL = "http://localhost:8083/oferta/todasOfertasCaducadas/"+ cifEmp;
+    fetch(URL)
+        .then((response) => response.json())
+        .then((data) => {
+            let html = "";
+            data.forEach(element => {
+                html += "<div class='ofertaDestacada'>";
+                html += "   <div class='circleDestacada'>Finalizadas</div>";
+                html += "   <div class='image'>";
+                html += "       <img src='assets/img/empresas/seur.png' alt='' width='180px' height='100px'>";
+                html += "   </div>";
+                html += "   <div class='informacionEmpresa'>";
+                html += "       <div class='puesto'>";
+                html += "           " + element.tituloOferta + "";
+                html += "       </div>";
+                html += "       <div class='nombrEmpresa'>";
+                html += "           " + element.tituloOferta + "";
+                html += "       </div>";
+                html += "   </div>";
+                html += "   <div class='localidad'>";
+                html += "       <div class='mapa'>";
+                html += "           <i class='bx bx-location-plus' ></i> <br>";
+                html += "           <p>" + element.localidad + "</p>";
+                html += "       </div>";
+                html += "       <div class='caducidad'>";
+                html += "           <i class='bx bx-calendar'></i><br>";
+                html += "           <p>" + element.fechaCaducidad + "</p>";
+                html += "       </div>";
+                html += "   </div>";
+                html += "</div>";
+            });
+            document.querySelector("#boxOfertas").innerHTML = html;
+        });
 }

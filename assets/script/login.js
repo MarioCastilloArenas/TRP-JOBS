@@ -52,7 +52,7 @@ function fIniciarSesionUsuario() {
         contrasenai.style.borderColor = 'black';
     }
 
-    const URL = "http://localhost:8080/trabajador/email=" + emailv + "/contrasena=" + contrasenamd;
+    const URL = "http://localhost:8083/trabajador/email=" + emailv + "/contrasena=" + contrasenamd;
     console.log("hola");
     fetch(URL)
         .then((response) => response.json())
@@ -104,13 +104,14 @@ function fIniciarSesionEmpresa() {
     } else {
         contrasenai.style.borderColor = 'black';
     }
-    const URL = "http://localhost:8080/empresa/email=" + emailv + "/contrasena=" + contrasenamd;
+    const URL = "http://localhost:8083/empresa/email=" + emailv + "/contrasena=" + contrasenamd;
     console.log("hola");
     fetch(URL)
         .then((response) => response.json())
         .then((empresa) => {
             if (empresa.email == emailv && empresa.contrasena == contrasenamd) {
                 localStorage.setItem("empresa", JSON.stringify(empresa.cif))
+                localStorage.setItem("empresaFoto", JSON.stringify(empresa.logo))
                 window.location.href = "IndexEmpresa.html"
                 let html = "";
                 html += "<div id='logoIndexTransportista'><i class='bx bx-user-circle'></i></div>";

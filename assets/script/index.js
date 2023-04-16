@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+    contenidoSlider();
     verOfertas();
 });
 function enviarInicioTrabajadores(){
@@ -19,7 +20,7 @@ function fverOferta(){
 }
 
 function verOfertas(){
-    const URL = "http://localhost:8080/oferta/noCaducadas";
+    const URL = "http://localhost:8083/oferta/noCaducadas";
     fetch(URL)
     .then((response) => response.json())
     .then((oferta) => {
@@ -88,4 +89,28 @@ function vermas(ciudad){
         break;
     }
     window.location.href = "verOfertas.html";
+}
+
+function contenidoSlider(){
+    const URL = "http://localhost:8083/empresa/todas";
+    fetch(URL)
+        .then((response) => response.json())
+        .then((data) => {
+            let html = "";
+            for(let i=0; i < 3; i++){
+                data.forEach(element => {
+                    html += "<div class='sliderBox' onclick='fverEmpresa(\"" + element.cif + "\")'>";
+                    html += "<img src='assets/img/empresas/" + element.logo + "' alt=''>";
+                    html += "</div>";
+                });
+                document.querySelector(".sliderAnimate").innerHTML += html;
+            }
+        });
+}
+
+function fverEmpresa(cifv) {
+    var cifEmpresa=cifv;
+    console.log(cifEmpresa);
+    localStorage.setItem ('cif', cifEmpresa)
+    document.location = "verEmpresa.html";
 }
