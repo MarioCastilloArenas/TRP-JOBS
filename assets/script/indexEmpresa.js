@@ -93,6 +93,10 @@ function fcargarDatosIndexEmpresa() {
         document.getElementById("sitioWeb").value = empresa.sitioWeb;
         document.getElementById("telefono").value = empresa.telefono;
         document.getElementById("logo").value = empresa.logo;
+
+        provinciasTodas();
+        carnetTodos();
+        geograficoTodos();
     });
     fMostrarTodas();
 }
@@ -179,6 +183,57 @@ function provincias(idProv) {
         })
 }
 
+function provinciasTodas() {
+    const URL = "http://localhost:8083/provincias/";
+    fetch(URL)
+        .then((response) => response.json())
+        .then((data) => {
+            data.forEach(element => {
+                let select = document.getElementById("provincia2");
+                // let opcion = new Option(element.provincia,element.provincia);
+                let opcion = document.createElement('option');
+                opcion.value = element.idProvincia
+                opcion.innerHTML = element.provincia
+                select.appendChild(opcion);
+            });
+            // document.getElementById("usuarioContenidoOpcionesTxt").innerHTML = html2 
+        })
+}
+
+function carnetTodos() {
+    const URL = "http://localhost:8083/tipoCarnets/";
+    fetch(URL)
+        .then((response) => response.json())
+        .then((data) => {
+            data.forEach(element => {
+                let select = document.getElementById("carnet");
+                // let opcion = new Option(element.provincia,element.provincia);
+                let opcion = document.createElement('option');
+                opcion.value = element.idCarnet
+                opcion.innerHTML = element.carnet
+                select.appendChild(opcion);
+            });
+            // document.getElementById("usuarioContenidoOpcionesTxt").innerHTML = html2 
+        })
+}
+
+function geograficoTodos() {
+    const URL = "http://localhost:8083/ambitosGeograficos/";
+    fetch(URL)
+        .then((response) => response.json())
+        .then((data) => {
+            data.forEach(element => {
+                let select = document.getElementById("geografico");
+                // let opcion = new Option(element.provincia,element.provincia);
+                let opcion = document.createElement('option');
+                opcion.value = element.idAmbito
+                opcion.innerHTML = element.ambito
+                select.appendChild(opcion);
+            });
+            // document.getElementById("usuarioContenidoOpcionesTxt").innerHTML = html2 
+        })
+}
+
 
 function fCerrarSesion() {
     localStorage.removeItem("empresa");
@@ -219,6 +274,7 @@ function fMostrarTodas() {
                 html += "       </div>";
                 html += "   </div>";
                 html += "</div>";
+                html += "<div class='txtTrabajadoresIns'>Ver trabajadores inscritos a la oferta</div>";
             });
             document.querySelector("#boxOfertas").innerHTML = html;
         });
@@ -257,6 +313,7 @@ function fMostrarActivas() {
                 html += "       </div>";
                 html += "   </div>";
                 html += "</div>";
+                html += "<div class='txtTrabajadoresIns'>Ver trabajadores inscritos a la oferta</div>";
             });
             document.querySelector("#boxOfertas").innerHTML = html;
         });
