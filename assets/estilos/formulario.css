@@ -218,6 +218,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     width: 100%;
+    text-align: justify;
 }
 .rellenar>h3, .rellenar>h4,.rellenar>a{
     padding: 0 20px;
@@ -228,7 +229,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    text-align: justify;
 }
 .infoclass>b{
     background-image: linear-gradient(180deg,#f8f8f8,#f5f5fa);
