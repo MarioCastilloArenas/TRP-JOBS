@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    fverTrabajador("12345678A")
+    let dni = localStorage.getItem('dni');
+    fverTrabajador(dni)
+    //fverTrabajador("12345678A")
 });
 
 function fverTrabajador(dniv) {
@@ -13,7 +15,6 @@ function fverTrabajador(dniv) {
             let img = document.createElement("img");
             img.src = "assets/img/trabajadores/" + trabajador.fotoTrabajador;
             fotoCurr.appendChild(img);
-
             let nombre2 = document.getElementById("nombre2");
             nombre2.innerHTML = trabajador.nombre
             let apellido2 = document.getElementById("apellido2");
