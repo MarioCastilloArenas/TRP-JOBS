@@ -1,19 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
     let cif = localStorage.getItem('cif');
     fverEmpresa(cif)
+    verOfertas(cif)
     //fverEmpresa("A28985992")
 });
 
-function fverEmpresa(cifv) {
+function fverEmpresa(cif) {
 
-    let url = "http://localhost:8083/empresa/" + cifv;
+    let url = "http://localhost:8080/empresa/" + cif;
     fetch(url)
         .then(res => res.json())
         .then(empresa => {
             console.log(empresa)
             let logoEmpresa = document.getElementById("logoEmpresa");
             let img = document.createElement("img");
-            img.src="assets/img/empresas/"+empresa.logo
+            img.src = "assets/img/empresas/" + empresa.logo
             logoEmpresa.appendChild(img);
 
             let tipoEmpresaM = document.getElementById("tipoEmpresaM");
@@ -32,29 +33,58 @@ function fverEmpresa(cifv) {
             tlf.innerHTML = empresa.telefono
             let descripcionD = document.getElementById("descripcionD");
             descripcionD.innerHTML = empresa.descripcionEmpresa
+
             
 
         })
 
-    // const URL = "http://localhost:8083/oferta/noCaducadas";
-    // fetch(URL)
-    // .then((response) => response.json())
-    // .then((oferta) => {
-    //     let div = document.getElementById('boxOfertas')
-    //     for (const key of oferta) {
-    //     let oferta = document.createElement('div');
-    //         oferta.className = 'oferta'
-    //         key.id = key.idOferta;
-    //         let html ='<div class="datos_oferta"><img src="assets/img/empresas/'+key.empresa.logo +'" alt="" width="180px" height="100px"></div>'
-    //         html+='<div class="datos_oferta">'
-    //         html+='<div class="puesto"><p>'+key.descripcion+'</p></div>'
-    //         html+='<div class="nombreEmpresa"><p>'+ key.empresa.nombreComercial+'</p></div></div>'
-    //         html+='<div class="datos_oferta">'
-    //         html+='<div class="mapa"><i class="bx bx-location-plus"></i><br><p>('+key.provincia.provincia +')</p></div>' 
-    //         html+='<div class="caducidad"><i class="bx bx-calendar"></i><br><p>'+key.fechaPublicacion+'</p></div></div>'
-    //         oferta.innerHTML= html;
-    //         div.appendChild(oferta)  
-    //     }
-    // });
+}
 
+function verOfertas(cif) {
+    const URL = "http://localhost:8080/oferta/todasOfertas/"+cif;
+    fetch(URL)
+        .then((response) => response.json())
+        .then((oferta) => {
+            pintar(oferta)
+        });
+}
+function pintar(ofertasFiltradas) {
+    let div = document.getElementById('listadoDeOfertas')
+    let i = 0;
+    for (const key of ofertasFiltradas) {
+        if (i < 10) {
+            let oferta = document.createElement('div');
+            oferta.onclick = function () {
+                localStorage.setItem('idOferta', key.idOferta)
+                window.location = '/verOferta.html';
+            }
+            let html = '<div class="image">'
+            if (key.valoracion == 's') {
+                oferta.className = 'ofertaDestacada'
+                html += ' <div class="circleDestacada">Destacada</div>'
+            } else {
+                oferta.className = 'oferta'
+            }
+            html += '<img src="assets/img/empresas/' + key.empresa.logo + '" alt="" width="180px" height="100px">'
+            html += '</div>'
+            html += '<div class="informacionEmpresa">'
+            html += '<div class="puesto">' + key.descripcion + '</div>'
+            html += '<div class="nombrEmpresa">' + '</div>'
+            html += '</div>'
+            html += '<div class="localidad">'
+            html += '<div class="mapa">'
+            html += '<i class="bx bx-location-plus"></i> <br>'
+            html += '<p>(' + key.provincia.provincia + ')</p>'
+            html += '</div>'
+            html += '<div class="caducidad">'
+            html += ' <i class="bx bx-calendar"></i><br>'
+            html += '<p>' + key.fechaPublicacion + '</p>'
+            html += '</div>'
+            html += '</div>'
+            oferta.innerHTML = html;
+            div.appendChild(oferta)
+        }
+        i++;
+    }
+    
 }

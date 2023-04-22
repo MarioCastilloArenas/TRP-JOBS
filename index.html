@@ -58,17 +58,18 @@
     <input type="checkbox" id="btn-sesion">
     <div id="bannerBox">
         <div id="banner">
+            <!-- <video autoplay="autoplay" loop="loop" id="video_background" preload="auto" volume="50">
+                    <source src="/assets/img/transporte.mp4" type="video/mp4" />
+            </video> -->
             <div id="TxtTitulo">
                 OFERTAS DE EMPLEO PARA <br> CONDUCTOR DE CAMION
             </div>
             <div id="containerTxtBanner">
                 <div id="TxtBannerConductor">
-                    <div class="emojiBenner"> <i class='bx bx-id-card'></i>  </div>
                     <div class="parrafoBanner"> <p> Para conductores que buscan trabajo  </p> </div>
                 </div>
                 <div  id="TxtBannerEmpresa">
-                    <div  class="emojiBenner"> <i class='bx bx-dollar-circle'></i> </div>
-                    <div class="parrafoBanner"> <p> para empresas que buscan nuevos conductores</p> </div>
+                    <div class="parrafoBanner"> <p> Para empresas que buscan conductores</p> </div>
                 </div>
             </div>
             <div id="flechasNav">
@@ -77,7 +78,14 @@
         </div>
     </div>
     <section>
-        <div id="boxUbicaciones">
+        
+        <div id="boxOfertas">
+            <div class="tituloOferta">
+                <h3>Ofertas destacadas</h3> 
+                <p>En la sección de ofertas podrás disfrutar de todos tipos de ofertas de trabajo para conductores de camión. <br> <br> En esta sección encontrarás nuestra ofertas destacadas <br><br> <p id="aprovecha">¡Aprovecha la oportunidad! </p> </p> 
+            </div>
+        </div>
+        <!-- <div id="boxUbicaciones">
             <div id="tituloUbicaciones">
                 <h3>Ubicaciones</h3>
             </div>
@@ -101,202 +109,6 @@
                     <div class="imagenesUbicacionButton" onclick="vermas('madrid');">Ver más</div>
                 </div>
             </div>
-        </div>
-        <div id="boxOfertas">
-            <div class="tituloOferta">
-                <h3>Ofertas</h3> 
-                <p>En la sección de ofertas podrás disfrutar de todos tipos de ofertas de trabajo para conductores de camión. <br> <br> En esta sección ecncontrarás nuestra ofertas destacadas <br><br> <p id="aprovecha">¡Aprovecha la oportunidad! </p> </p> 
-            </div>
-            <!-- <div class="oferta" onclick="fverOferta();">
-                    <div class="image">
-                        <img src="assets/img/OIP.jpg" alt="" width="180px" height="100px">
-                    </div>
-                    <div class="informacionEmpresa">
-                        <div class="puesto">
-                            CONDUCTOR MERCANCIAS PELIGROSAS
-                        </div>
-                        <div class="nombrEmpresa">
-                            Predition Truck
-                        </div>
-                    </div>
-                    <div class="localidad">
-                        <div class="mapa">
-                            <i class='bx bx-location-plus' ></i> <br>
-                            <p>(Madrid)</p>
-                        </div>
-                        <div class="caducidad">
-                            <i class='bx bx-calendar'></i><br>
-                            <p>28-10-2025</p>
-                        </div>
-                    </div>
-
-            </div>
-            <div class="ofertaDestacada">
-                <div class="circleDestacada">Destacada</div>
-                <div class="image">
-                    <img src="assets/img/FedEx-Embleme.png" alt="" width="150px" height="100px">
-                </div>
-                <div class="informacionEmpresa">
-                    <div class="puesto">
-                        CONDUCTOR MERCANCIAS PELIGROSAS
-                    </div>
-                    <div class="nombrEmpresa">
-                        FedEx
-                    </div>
-                </div>
-                <div class="localidad">
-                    <div class="mapa">
-                        <i class='bx bx-location-plus' ></i> <br>
-                        <p>(Madrid)</p>
-                    </div>
-                    <div class="caducidad">
-                        <i class='bx bx-calendar'></i><br>
-                        <p>28-10-2025</p>
-                    </div>
-                </div>
-            </div>
-            <div class="ofertaDestacada">
-                <div class="circleDestacada">Destacada</div>
-                <div class="image">
-                    <img src="assets/img/FedEx-Embleme.png" alt="" width="150px" height="100px">
-                </div>
-                <div class="informacionEmpresa">
-                    <div class="puesto">
-                        CONDUCTOR MERCANCIAS PELIGROSAS
-                    </div>
-                    <div class="nombrEmpresa">
-                        FedEx
-                    </div>
-                </div>
-                <div class="localidad">
-                    <div class="mapa">
-                        <i class='bx bx-location-plus' ></i> <br>
-                        <p>(Madrid)</p>
-                    </div>
-                    <div class="caducidad">
-                        <i class='bx bx-calendar'></i><br>
-                        <p>28-10-2025</p>
-                    </div>
-                </div>
-            </div>
-            <div class="ofertaDestacada">
-                <div class="circleDestacada">Destacada</div>
-                <div class="image">
-                    <img src="assets/img/FedEx-Embleme.png" alt="" width="150px" height="100px">
-                </div>
-                <div class="informacionEmpresa">
-                    <div class="puesto">
-                        CONDUCTOR MERCANCIAS PELIGROSAS
-                    </div>
-                    <div class="nombrEmpresa">
-                        FedEx
-                    </div>
-                </div>
-                <div class="localidad">
-                    <div class="mapa">
-                        <i class='bx bx-location-plus' ></i> <br>
-                        <p>(Madrid)</p>
-                    </div>
-                    <div class="caducidad">
-                        <i class='bx bx-calendar'></i><br>
-                        <p>28-10-2025</p>
-                    </div>
-                </div>
-            </div>
-            <div class="oferta">
-                <div class="image">
-                    <img src="assets/img/OIP.jpg" alt="" width="180px" height="100px">
-                </div>
-                <div class="informacionEmpresa">
-                    <div class="puesto">
-                        CONDUCTOR MERCANCIAS PELIGROSAS
-                    </div>
-                    <div class="nombrEmpresa">
-                        Predition Truck
-                    </div>
-                </div>
-                <div class="localidad">
-
-                    <div class="mapa">
-                        <i class='bx bx-location-plus' ></i> <br>
-                        <p>(Madrid)</p>
-                    </div>
-                    <div class="caducidad">
-                        <i class='bx bx-calendar'></i><br>
-                        <p>28-10-2025</p>
-                    </div>
-                </div>
-            </div>
-            <div class="ofertaDestacada">
-                <div class="circleDestacada">Destacada</div>
-                <div class="image">
-                    <img src="assets/img/FedEx-Embleme.png" alt="" width="150px" height="100px">
-                </div>
-                <div class="informacionEmpresa">
-                    <div class="puesto">
-                        CONDUCTOR MERCANCIAS PELIGROSAS
-                    </div>
-                    <div class="nombrEmpresa">
-                        FedEx
-                    </div>
-                </div>
-                <div class="localidad">
-                    <div class="mapa">
-                        <i class='bx bx-location-plus' ></i> <br>
-                        <p>(Madrid)</p>
-                    </div>
-                    <div class="caducidad">
-                        <i class='bx bx-calendar'></i><br>
-                        <p>28-10-2025</p>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-        <!-- <div id="boxContacto">
-            <div class="tituloContacto">
-                <h3>Contacto</h3>
-            </div>
-            <div class="boxFormulario">
-                    <div class="tituloFormulario">
-                        <p>Solicita Información</p>
-                    </div>
-                    <form action="">
-                        <div id="div1">
-                            <div>
-                                <label for="fnombre">Nombre:</label> <br>
-                                <input id="nombre" type="text" required class="input_field">
-                            </div>
-                            <div>
-                                <label for="ftelefono">Telefono:</label> <br>
-                                <input id="telefono" type="text" required class="input_field">
-                            </div>
-                        </div>
-                        <div id="div2">
-                            <div>
-                                <label for="femail">Email:</label> <br>
-                                <input id="email" type="text" required class="input_field">
-                            </div>
-                        </div>
-                        <div id="div3">
-                       
-                            <textarea placeholder="mensaje" name="mensaje" id="mensaje" cols="30" rows="50" class="textarea_field"></textarea> <br>
-                            <button type="submit" class="submit_btn">Enviar Solicitud</button> <br>
-                        </div>
-                    </form>
-            </div>
-        </div> -->
-
-        <!-- <div id="carruselContainer">
-            <div class="carrusel">
-                <div class="carruselBox">
-                  <div class="boxImg">01</div>
-                  <div class="boxImg">02</div>
-                  <div class="boxImg">03</div>
-                  <div class="boxImg">04</div>
-                  <div class="boxImg">05</div>
-                  <div class="boxImg">06</div>
-                </div>
-              </div>
         </div> -->
         <div class="slider">
             <div class="sliderAnimate">
@@ -369,7 +181,7 @@
                 </div>
                 <div class="cuadroBot">
                     <div>
-                        <button onclick="enviarInicioTrabajadores();"> CONDUCTOTES</button>
+                        <button onclick="enviarInicioTrabajadores();"> CONDUCTORES</button>
                     </div>
                 </div>
             </div>

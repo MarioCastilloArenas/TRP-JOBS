@@ -17,6 +17,7 @@ body{
 }
 .banner{
     padding: 5% 10%;
+    height: 150px;
     background: rgb(255,255,255);
     background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(253,187,45,1) 64%);
 }
