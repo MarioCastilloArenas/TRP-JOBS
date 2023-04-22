@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Expletus Sans', cursive;
+}
+body{
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr 200px;
+    grid-template-areas: 
+        "zheader"
+        "zsection"
+        "zfooter";
+    overflow-x: hidden;
+}
+.banner{
+    width: 100%;
+    padding: 5% 10%;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(253,187,45,1) 64%);
+}
+#boxOfertas{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.oferta{
+    background-color: white;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    justify-content:center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: rgba(0, 0, 0, 0.737);
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.oferta:hover{
+    box-shadow: rgba(29, 29, 29, 0.228) 0px 5px 8px 8px;
+}
+
+.datos_oferta{
+    text-align:justify ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    width: 100%;
+}
+.datos_oferta:nth-child(3){
+    display: flex;
+    flex-direction: column;
+}
+.datos_oferta:nth-child(3)>div{
+    padding: 0 40px;
+}
+textarea{
+    width: 80%;
+    max-width: 100%;
+    height: 50px;
+}
+
+img{
+    height:150px;
+    width: 150px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+img:hover{
+    box-shadow: rgba(29, 29, 29, 0.228) 0px 5px 8px 8px;
+}
+p{
+    text-transform: uppercase;
+}
+.contenedor{
+    width: 80%;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+@media (min-width : 1000px) {
+    .contenedor{
+        padding: 0px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    #boxOfertas{
+        margin-top: 50px;
+        margin-bottom: 50px;
+        width: 90%;
+        padding: 0 5%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .oferta{
+        border-radius: 10px;
+        width: 30%;
+        display: flex;
+        flex-direction: column ;
+        align-items: center;
+        justify-content:center;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        color: rgba(0, 0, 0, 0.737);
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+}
+
