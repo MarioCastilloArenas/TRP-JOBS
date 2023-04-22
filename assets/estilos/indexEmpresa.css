@@ -446,9 +446,6 @@ section{
     color: #ffb11a;
     margin-bottom: 20px;
 }
-.txtTrabajadoresIns{
-    cursor: pointer;
-}
 /* Ofertas */
 
 @media (min-width: 600px){
