@@ -62,7 +62,7 @@ function fPublicarOferta() {
 
 function fcargarDatosIndexEmpresa() {
     cifEmp = JSON.parse(localStorage.getItem("empresa"));
-    const URL = "http://localhost:8080/empresa/" + cifEmp;
+    const URL = "http://localhost:8083/empresa/" + cifEmp;
     fetch(URL)
         .then((response) => response.json())
         .then((empresa) => {
@@ -102,7 +102,7 @@ function fcargarDatosIndexEmpresa() {
 }
 
 function tipoActividadEmpresarial(idActiv){ 
-    const URL = "http://localhost:8080/tipoActividadEmpresa/";
+    const URL = "http://localhost:8083/tipoActividadEmpresa/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -130,7 +130,7 @@ function tipoActividadEmpresarial(idActiv){
 }
 
 function tipoActividadEmpresarial(idActiv) {
-    const URL = "http://localhost:8080/tipoActividadEmpresa/";
+    const URL = "http://localhost:8083/tipoActividadEmpresa/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -157,7 +157,7 @@ function tipoActividadEmpresarial(idActiv) {
 }
 
 function provincias(idProv) {
-    const URL = "http://localhost:8080/provincias/";
+    const URL = "http://localhost:8083/provincias/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -184,7 +184,7 @@ function provincias(idProv) {
 }
 
 function provinciasTodas() {
-    const URL = "http://localhost:8080/provincias/";
+    const URL = "http://localhost:8083/provincias/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -201,7 +201,7 @@ function provinciasTodas() {
 }
 
 function carnetTodos() {
-    const URL = "http://localhost:8080/tipoCarnets/";
+    const URL = "http://localhost:8083/tipoCarnets/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -218,7 +218,7 @@ function carnetTodos() {
 }
 
 function geograficoTodos() {
-    const URL = "http://localhost:8080/ambitosGeograficos/";
+    const URL = "http://localhost:8083/ambitosGeograficos/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -244,7 +244,7 @@ function fCerrarSesion() {
 function fMostrarTodas() {
     cifEmp = JSON.parse(localStorage.getItem("empresa"));
     fotoEmp = JSON.parse(localStorage.getItem("empresaFoto"));
-    const URL = "http://localhost:8080/oferta/todasOfertas/"+ cifEmp;
+    const URL = "http://localhost:8083/oferta/todasOfertas/"+ cifEmp;
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -253,7 +253,7 @@ function fMostrarTodas() {
                 html += "<div class='ofertaDestacada'>";
                 html += "   <div class='circleDestacada'>Todas</div>";
                 html += "   <div class='image'>";
-                html += "       <img src='assets/img/empresas/seur.png' alt='' width='180px' height='100px'>";
+                html += "       <img src='assets/img/empresas/"+ fotoEmp +"' alt='' width='180px' height='100px'>";
                 html += "   </div>";
                 html += "   <div class='informacionEmpresa'>";
                 html += "       <div class='puesto'>";
@@ -283,7 +283,7 @@ function fMostrarTodas() {
 function fMostrarActivas() {
     cifEmp = JSON.parse(localStorage.getItem("empresa"));
     fotoEmp = JSON.parse(localStorage.getItem("empresaFoto"));
-    const URL = "http://localhost:8080/oferta/todasOfertasNoCaducadas/"+ cifEmp;
+    const URL = "http://localhost:8083/oferta/todasOfertasNoCaducadas/"+ cifEmp;
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -292,7 +292,7 @@ function fMostrarActivas() {
                 html += "<div class='ofertaDestacada'>";
                 html += "   <div class='circleDestacada'>Activas</div>";
                 html += "   <div class='image'>";
-                html += "       <img src='assets/img/empresas/seur.png' alt='' width='180px' height='100px'>";
+                html += "       <img src='assets/img/empresas/"+ fotoEmp +"' alt='' width='180px' height='100px'>";
                 html += "   </div>";
                 html += "   <div class='informacionEmpresa'>";
                 html += "       <div class='puesto'>";
@@ -322,7 +322,7 @@ function fMostrarActivas() {
 function fMostrarFinalizadas() {
     cifEmp = JSON.parse(localStorage.getItem("empresa"));
     fotoEmp = JSON.parse(localStorage.getItem("empresaFoto"));
-    const URL = "http://localhost:8080/oferta/todasOfertasCaducadas/"+ cifEmp;
+    const URL = "http://localhost:8083/oferta/todasOfertasCaducadas/"+ cifEmp;
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -331,7 +331,7 @@ function fMostrarFinalizadas() {
                 html += "<div class='ofertaDestacada'>";
                 html += "   <div class='circleDestacada'>Finalizadas</div>";
                 html += "   <div class='image'>";
-                html += "       <img src='assets/img/empresas/seur.png' alt='' width='180px' height='100px'>";
+                html += "       <img src='assets/img/empresas/"+ fotoEmp +"' alt='' width='180px' height='100px'>";
                 html += "   </div>";
                 html += "   <div class='informacionEmpresa'>";
                 html += "       <div class='puesto'>";
@@ -355,4 +355,100 @@ function fMostrarFinalizadas() {
             });
             document.querySelector("#boxOfertas").innerHTML = html;
         });
+}
+
+// publicar Ofertaç
+
+function fPublicarOfertaNueva(){
+    fechaActual = new Date();
+    fechaActualD = fechaActual.getDate();
+    fechaActualDia = fechaActualD.toString();
+    if(fechaActualDia.length == 1){
+        fechaActualD = "0" + fechaActualD;
+    }
+    fechaActualM = fechaActual.getMonth()-1;
+    fechaActualMes = fechaActualM.toString();
+    if(fechaActualMes.length == 1){
+        fechaActualM = "0" + fechaActualM;
+    }
+    fechaActualY = fechaActual.getFullYear();
+    fechaPublicacion = fechaActualY +"-"+fechaActualM+"-"+fechaActualD;
+    let idOferta = JSON.parse(localStorage.getItem("idOferta"));
+
+    tituloOf = document.getElementById("tituloOf").value;
+    fechCaducidad = document.getElementById("fechCaducidad").value;
+    provincia2 = document.getElementById("provincia2").value;
+    localidad = document.getElementById("localidad").value;
+    descripcionOfert = document.getElementById("descripcionOfert").value;
+    tCandidato = document.getElementById("tCandidato").value;
+    tContrato = document.getElementById("tContrato").value;
+    carnet = document.getElementById("carnet").value;
+    geografico = document.getElementById("geografico").value;
+
+    const crearOferta = {
+        "idOferta": 0,
+        "tituloOferta": tituloOf,
+        "fechaPublicacion": fechaPublicacion,
+        "fechaCaducidad": fechCaducidad,
+        "localidad": localidad,
+        "tipoCandidato": tCandidato,
+        "valoracion": "s",
+        "idProvincia": provincia2,
+        "idCarnet": carnet,
+        "idEmpresa": idOferta,
+        "idAmbito": 2
+    }
+    console.log(crearOferta);
+    const URL = "http://localhost:8083/oferta/registro";
+    fetch(URL, {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: "POST",
+        body: JSON.stringify(crearOferta)
+    })
+    .then(res => res.json())
+    .then(data => {console.log(data)
+    });
+
+
+}
+
+
+function fActualizarCuenta(){
+    email = document.getElementById("email");
+    password = document.getElementById("password");
+    password2 = document.getElementById("password2");
+
+
+    if(password == password2){
+
+        const actualizarCuenta = {
+            "email": email,
+            "contrasena": password
+        }
+        console.log(actualizarCuenta);
+        const URL = "http://localhost:8083/oferta/registro";
+        fetch(URL, {
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            method: "POST",
+            body: JSON.stringify(crearOferta)
+        })
+        .then(res => res.json())
+        .then(data => {console.log(data)
+        });
+
+    }
+
+
+}
+function fActualizarDatos(){
+
+}
+function fActualizarInformacion(){
+
 }
