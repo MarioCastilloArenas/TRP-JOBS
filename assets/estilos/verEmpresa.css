@@ -40,11 +40,13 @@ section{
 }
 #paqueteEmpresa{
     width: 70%;
-    border: solid black;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     margin: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 8rem;
+    padding: 1.5rem;
 }
 #paqueteEmpresa>div{
     width: 90%;
@@ -62,7 +64,8 @@ section{
     display: flex;
     flex-direction: row;
     align-items: center;
-    border-bottom: solid rgba(0, 0, 0, 0.200);
+    border-bottom: solid rgba(128, 128, 128, 0.174) 1px;
+   
 }
 #tipoEmpresa>div{
     width: 50%;
@@ -73,7 +76,7 @@ section{
     display: flex;
     flex-direction: row;
     align-items: center;
-    border-bottom: solid rgba(0, 0, 0, 0.200);
+    border-bottom: solid rgba(128, 128, 128, 0.174) 1px;
 }
 #nombreEmpresa>div{
     width: 50%;
@@ -84,7 +87,7 @@ section{
     display: flex;
     flex-direction: row;
     align-items: center;
-    border-bottom: solid rgba(0, 0, 0, 0.200);
+    border-bottom: solid rgba(128, 128, 128, 0.174) 1px;
 }
 #direccionEmpresa>div{
     width: 50%;
@@ -95,7 +98,7 @@ section{
     display: flex;
     flex-direction: row;
     align-items: center;
-    border-bottom: solid rgba(0, 0, 0, 0.200); 
+    border-bottom: solid rgba(128, 128, 128, 0.174) 1px;
 }
 #provinciaEmpresa>div{
     width: 50%;
@@ -106,7 +109,7 @@ section{
     display: flex;
     flex-direction: row;
     align-items: center;
-    border-bottom: solid rgba(0, 0, 0, 0.200);
+    border-bottom: solid rgba(128, 128, 128, 0.174) 1px;
 }
 #codigoPostal>div{
     width: 50%;
@@ -117,7 +120,7 @@ section{
     display: flex;
     flex-direction: row;
     align-items: center;
-    border-bottom: solid rgba(0, 0, 0, 0.200); 
+    border-bottom: solid rgba(128, 128, 128, 0.174) 1px;
 }
 #webSite>div{
     width: 50%;
@@ -128,13 +131,14 @@ section{
     display: flex;
     flex-direction: row;
     align-items: center;
-    border-bottom: solid rgba(0, 0, 0, 0.200); 
+    border-bottom: solid rgba(128, 128, 128, 0.174) 1px;
 }
 #telefono>div{
     width: 50%;
     display: flex;
     justify-content: start;
 }
+
 .oferta{
     background-color: white;
     border-radius: 10px;
@@ -297,7 +301,7 @@ section{
 
 #descripcionD{
     margin-top: 20px;
-    border-top: solid  rgba(0, 0, 0, 0.200);
-    border-bottom: solid  rgba(0, 0, 0, 0.200);
+    border-top: solid rgba(128, 128, 128, 0.174) 1px;
+    border-bottom: solid rgba(128, 128, 128, 0.174) 1px;
     padding: 2rem;
 }

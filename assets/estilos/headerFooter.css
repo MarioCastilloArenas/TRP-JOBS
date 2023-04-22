@@ -6,6 +6,7 @@ header{
     border-bottom: solid rgba(0, 0, 0, 0.397);
     background-color: whitesmoke;
 }
+
 #logo{
     display: flex;
     font-size: 40px;
@@ -13,6 +14,7 @@ header{
     align-items: center;
     justify-content: left;
     font-weight: bold;
+    cursor: pointer;
 }
 #logoUser{
     display: flex;
@@ -52,6 +54,10 @@ header{
     align-items: center;
     justify-content: center;
     width: 120px;
+    background-color: transparent;
+}
+#sobreNosotros:hover{
+    color: #ffb11a;
 }
 #trabajadores{
     display: flex;
@@ -65,6 +71,7 @@ header{
 }
 #trabajadores:hover{
     cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 #empresas{
     display: flex;
@@ -79,6 +86,7 @@ header{
 }
 #empresas:hover{
     cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 #logoUser>i{
     font-size: 45px;
@@ -92,6 +100,7 @@ header{
 }
 #btn-menu :hover{
     cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 #container_menu{
     position: absolute;

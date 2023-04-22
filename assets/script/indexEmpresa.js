@@ -48,7 +48,7 @@ function fMostrarMisOfertas() {
     fieldset3.style.display = 'none';
 
 
-    
+
 }
 function fPublicarOferta() {
     let fieldset = document.getElementById('empresaContenido1');
@@ -88,16 +88,12 @@ function fcargarDatosIndexEmpresa() {
 
 
 
-        document.getElementById("nomComercial").value = empresa.nombreComercial;
-        document.getElementById("descripcion").value = empresa.descripcionEmpresa;
-        document.getElementById("sitioWeb").value = empresa.sitioWeb;
-        document.getElementById("telefono").value = empresa.telefono;
-        document.getElementById("logo").value = empresa.logo;
-
-        provinciasTodas();
-        carnetTodos();
-        geograficoTodos();
-    });
+            document.getElementById("nomComercial").value = empresa.nombreComercial;
+            document.getElementById("descripcion").value = empresa.descripcionEmpresa;
+            document.getElementById("sitioWeb").value = empresa.sitioWeb;
+            document.getElementById("telefono").value = empresa.telefono;
+            document.getElementById("logo").value = empresa.logo;
+        });
     fMostrarTodas();
 }
 
@@ -107,8 +103,8 @@ function tipoActividadEmpresarial(idActiv){
         .then((response) => response.json())
         .then((data) => {
             // let TipoActividadEmpresas=document.getElementById('TipoActividadEmpresa');
-            data.forEach(element => { 
-                if(element.idActividad == idActiv){
+            data.forEach(element => {
+                if (element.idActividad == idActiv) {
                     let select = document.getElementById("TipoActividadEmpresa");
                     // let opcion = new Option(element.provincia,element.provincia);
                     let opcion = document.createElement('option');
@@ -116,14 +112,14 @@ function tipoActividadEmpresarial(idActiv){
                     opcion.innerHTML = element.actividad
                     opcion.selected = "true";
                     select.appendChild(opcion);
-                } else{
+                } else {
                     let select = document.getElementById("TipoActividadEmpresa");
                     // let opcion = new Option(element.provincia,element.provincia);
                     let opcion = document.createElement('option');
                     opcion.value = element.idActividad
                     opcion.innerHTML = element.actividad
                     select.appendChild(opcion);
-                    
+
                 }
             });
         })
@@ -274,7 +270,6 @@ function fMostrarTodas() {
                 html += "       </div>";
                 html += "   </div>";
                 html += "</div>";
-                html += "<div class='txtTrabajadoresIns'>Ver trabajadores inscritos a la oferta</div>";
             });
             document.querySelector("#boxOfertas").innerHTML = html;
         });
@@ -313,7 +308,6 @@ function fMostrarActivas() {
                 html += "       </div>";
                 html += "   </div>";
                 html += "</div>";
-                html += "<div class='txtTrabajadoresIns'>Ver trabajadores inscritos a la oferta</div>";
             });
             document.querySelector("#boxOfertas").innerHTML = html;
         });

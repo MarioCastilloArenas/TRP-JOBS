@@ -131,7 +131,7 @@ section{
 }
 .exp{
     color: rgba(0, 0, 0, 0.500);
-    width:100px;
+    width:fit-content;
     margin-left: 20px;
     border-bottom: solid  rgba(0, 0, 0, 0.407);
 }

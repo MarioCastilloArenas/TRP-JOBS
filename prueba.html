@@ -144,40 +144,45 @@
     </div>
     <script>
       function calcularDiferenciaFechas() {
-        let fechaInicio = new Date(document.getElementById('fechaInicio').value);
-let fechaFin = new Date(document.getElementById('fechaFin').value);
+        let fechaInicio = new Date(
+          document.getElementById("fechaInicio").value
+        );
+        let fechaFin = new Date(document.getElementById("fechaFin").value);
 
-// calcular la diferencia en milisegundos
-let diferencia = fechaFin.getTime() - fechaInicio.getTime();
+        // calcular la diferencia en milisegundos
+        let diferencia = fechaFin.getTime() - fechaInicio.getTime();
 
-// convertir la diferencia en días
-let dias = Math.round(diferencia / (1000 * 60 * 60 * 24));
+        // convertir la diferencia en días
+        let dias = Math.round(diferencia / (1000 * 60 * 60 * 24));
 
-// obtener los años completos entre las fechas
-let anos = Math.floor(dias / 365);
+        // obtener los años completos entre las fechas
+        let anos = Math.floor(dias / 365);
 
-// obtener los meses completos restantes
-let meses = Math.floor((dias % 365) / 30);
+        // obtener los meses completos restantes
+        let meses = Math.floor((dias % 365) / 30);
 
-// obtener los días restantes
-let diasRestantes = dias - (anos * 365) - (meses * 30);
+        // obtener los días restantes
+        let diasRestantes = dias - anos * 365 - meses * 30;
 
-// obtener la fecha mayor para redondear
-let fechaMayor = fechaInicio > fechaFin ? fechaInicio : fechaFin;
+        // obtener la fecha mayor para redondear
+        let fechaMayor = fechaInicio > fechaFin ? fechaInicio : fechaFin;
 
-// redondear la diferencia al día mayor
-if (fechaMayor === fechaInicio) {
-  fechaInicio.setDate(fechaInicio.getDate() + diasRestantes);
-  fechaInicio.setMonth(fechaInicio.getMonth() + meses);
-  fechaInicio.setFullYear(fechaInicio.getFullYear() + anos);
-  console.log(`La diferencia es de ${anos} años, ${meses} meses y ${diasRestantes} días.`);
-} else {
-  fechaFin.setDate(fechaFin.getDate() + diasRestantes);
-  fechaFin.setMonth(fechaFin.getMonth() + meses);
-  fechaFin.setFullYear(fechaFin.getFullYear() + anos);
-  console.log(`La diferencia es de ${anos} años, ${meses} meses y ${diasRestantes} días.`);
-}
-
+        // redondear la diferencia al día mayor
+        if (fechaMayor === fechaInicio) {
+          fechaInicio.setDate(fechaInicio.getDate() + diasRestantes);
+          fechaInicio.setMonth(fechaInicio.getMonth() + meses);
+          fechaInicio.setFullYear(fechaInicio.getFullYear() + anos);
+          console.log(
+            `La diferencia es de ${anos} años, ${meses} meses y ${diasRestantes} días.`
+          );
+        } else {
+          fechaFin.setDate(fechaFin.getDate() + diasRestantes);
+          fechaFin.setMonth(fechaFin.getMonth() + meses);
+          fechaFin.setFullYear(fechaFin.getFullYear() + anos);
+          console.log(
+            `La diferencia es de ${anos} años, ${meses} meses y ${diasRestantes} días.`
+          );
+        }
       }
     </script>
   </body>

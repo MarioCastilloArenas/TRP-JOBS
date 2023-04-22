@@ -14,3 +14,11 @@ function fEnviarSobreNosotros(){
 function fverOferta(){
     window.location.href = "verOferta.html";
 }
+
+function GoIndex(){
+    window.location.href = "index.html";
+}
+
+function goOferta(){
+    window.location = "#boxOfertas";
+}

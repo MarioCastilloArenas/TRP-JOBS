@@ -5,7 +5,7 @@ function fEnviarRegistroEmpresa() {
     document.location = "RegistroEmpresa.html";
 }
 
-function fIniciarSesionTrabajador(){}
+function fIniciarSesionTrabajador() { }
 
 
 function fIniciarSesionTrabajador() {

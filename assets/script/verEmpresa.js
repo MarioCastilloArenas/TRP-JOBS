@@ -3,9 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
     fverEmpresa(cif)
     mostrarOfertaEmpresa(cif);
     //fverEmpresa("A28985992")
+    //verOfertas(cif)
 });
 
-function fverEmpresa(cifv) {
+function fverEmpresa(cif) {
 
     let url = "http://localhost:8083/empresa/" + cifv;
     fetch(url)
@@ -15,7 +16,7 @@ function fverEmpresa(cifv) {
             console.log(empresa)
             let logoEmpresa = document.getElementById("logoEmpresa");
             let img = document.createElement("img");
-            img.src="assets/img/empresas/"+empresa.logo
+            img.src = "assets/img/empresas/" + empresa.logo
             logoEmpresa.appendChild(img);
 
             let tipoEmpresaM = document.getElementById("tipoEmpresaM");
@@ -34,6 +35,7 @@ function fverEmpresa(cifv) {
             tlf.innerHTML = empresa.telefono
             let descripcionD = document.getElementById("descripcionD");
             descripcionD.innerHTML = empresa.descripcionEmpresa
+
             
 
         })

@@ -7,8 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (URLactual == '/RegistroTrabajador.html') {
         tipoDeCarnet();
         ambitosGeograficos();
-        provincias();
-        tipoActividadEmpresarial();
     }
 });
 /* ------ METODOS FORMULARIO EMPRESAAAAA----------- */
@@ -17,6 +15,7 @@ function provincias() {
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
+            console.log(data);
             let provincias = document.getElementById('provincia');
             data.forEach(element => {
                 let opcion = document.createElement('option')
@@ -46,19 +45,12 @@ function tipoDeCarnet() {
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
-            let TipoCarnet = document.getElementById('tipoCarnet uno');
+            let TipoCarnet = document.getElementById('tipoCarnet');
             data.forEach(element => {
                 let opcion = document.createElement('option')
                 opcion.value = element.idCarnet
                 opcion.innerHTML = element.carnet
                 TipoCarnet.appendChild(opcion);
-            });
-            let TipoCarnet1 = document.getElementById('tipoCarnet dos');
-            data.forEach(element => {
-                let opcion = document.createElement('option')
-                opcion.value = element.idCarnet
-                opcion.innerHTML = element.carnet
-                TipoCarnet1.appendChild(opcion);
             });
         })
 }
@@ -157,6 +149,7 @@ async function LoginEmpresa() {
         document.getElementById("pasoAColor2").className = 'activate';
     }
 }
+
 async function infoProfesionalEmpresa() {
     let fieldset = document.getElementById('paso2');
     let cif = document.getElementById('cif');
@@ -243,11 +236,14 @@ async function infoProfesionalEmpresa() {
         document.getElementById("pasoAColor1").className = 'pass'
         document.getElementById("pasoAColor2").className = 'pass';
         document.getElementById("pasoAColor3").className = 'activate';
+        ;
+
     }
 
 
 }
-async function webEmpresarial(e) {
+
+async function webEmpresarial() {
     let nomComercial = document.getElementById('nomComercial');
     let nomComercialValor = nomComercial.value.trim();
     let descripcion = document.getElementById('descripcion');
@@ -256,11 +252,10 @@ async function webEmpresarial(e) {
     let sitioWebValor = sitioWeb.value;
     let telefono = document.getElementById('telefono');
     let telefonoValor = telefono.value.trim();
-    const arc = document.getElementById("logoEmpresaB");
-    const arcv = arc.value.trim();
-    const arcvi = arcv.split('\\').pop();
+    let logo = document.getElementById('logo');
+    let logoValor = logo.value;
     let bolean = true;
-    
+
     if (nomComercialValor === '') {
         enviarError(nomComercial, "Rellene este campo");
         bolean = false;
@@ -307,42 +302,41 @@ async function webEmpresarial(e) {
         empresa.nombreComercial = nomComercialValor;
         empresa.sitioWeb = sitioWebValor;
         empresa.telefono = telefonoValor;
-        empresa.logo = arcvi;
+        empresa.logo = logoValor;
         localStorage.setItem('empresa', JSON.stringify(empresa))
-        console.log(empresa);
-
+        adddbddEmpresa();
         let addEmpresa;
         try {
             addEmpresa = await adddbddEmpresa(empresa);
             console.log(addEmpresa, empresa);
-            if (addEmpresa.cif == null) {
+            if (addEmpresa == null) {
                 document.getElementById('mensaje3').innerHTML = '¡Ups, ya existe un usuario con su cuenta, pruebe iniciar sesion!'
             } else {
+                addLogoEmpresa();
                 let fieldset3 = document.getElementById('paso3');
                 let fieldset4 = document.getElementById('paso4');
                 fieldset3.className = 'fieldset';
-                fieldset4.className = 'fieldset activo'
+                fieldset4.classList = 'fieldset activo'
                 document.getElementById("pasoAColor1").className = 'pass'
-                document.getElementById("pasoAColor2").className = 'pass';
-                document.getElementById("pasoAColor3").className = 'pass';
+                document.getElementById("pasoAColor2").className = 'pass'
+                document.getElementById("pasoAColor3").className = 'pass'
                 document.getElementById("pasoAColor4").className = 'activate'
-                document.getElementById("NombreEmpresa2").innerHTML = addEmpresa.nombreComercial;
-                document.getElementById("actividadEmpresa2").innerHTML = addEmpresa.tipoActividadEmpresarial.actividad;
-                document.getElementById("infoEmpresa2").innerHTML = addEmpresa.descripcion;
-                document.getElementById("provinciaEmpresa2").innerHTML = addEmpresa.provincia.provincia;
-                document.getElementById("sitioWebEmpresa2").innerHTML = addEmpresa.sitioWeb;
-                addLogoEmpresa();
-                e = e || window.event;
-                e.preventDefault();
+                document.getElementById('mensaje4').innerHTML = '¡Estamos felices de que ya forma parte de nuestro equipo!'
+                document.getElementById('NombreEmpresa').innerHTML = empresa.nomComercial;;
+                document.getElementById('actividadEmpresa').innerHTML = empresa.actividadEmpresa.actividad;
+                document.getElementById('infoEmpresa').innerHTML = empresa.descripcionEmpresa;
+                document.getElementById('provinciaEmpresa').innerHTML = empresa.provincia.provincia;
+                document.getElementById('sitioWebEmpresa').innerHTML = empresa.sitioWeb;
             }
         } catch (error) {
             throw new Error('Ha ocurrido un error');
         }
     }
+
 }
 function addLogoEmpresa() {
     // Obtener el archivo de entrada
-    var archivo = document.getElementById("logoEmpresaB").files[0];
+    var archivo = document.getElementById("logo").files[0];
     // Verificar si se seleccionó un archivo
     if (archivo) {
         // Crear un objeto FormData
@@ -464,8 +458,7 @@ async function LoginTrabajador() {
 
     }
 }
-async function infoPersonalTrabajador(e) {
-    let bolean = true;
+async function infoPersonalTrabajador() {
     let fieldset = document.getElementById('paso2');
     let dni = document.getElementById('dni');
     let dniValor = dni.value.trim();
@@ -513,7 +506,7 @@ async function infoPersonalTrabajador(e) {
         funciona(apellidos);
     }
     let fechaNacimiento = document.getElementById('fechaNacimiento')
-    let fechaNacimientoValor = fechaNacimiento.value.trim();
+    let fechaNacimientoValor = apellidos.value.trim();
     if (calcularEdad(fechaNacimientoValor) >= 18) {
         funciona(fechaNacimiento);
     } else {
@@ -559,26 +552,25 @@ async function infoPersonalTrabajador(e) {
         funciona(presentacion);
     }
 
-    let arc = document.getElementById('fotoTrabajador');
-    const arcv = arc.value.trim();
-    const arcvi = arcv.split('\\').pop();
-    
+    let fotoTrabajador = document.getElementById('fotoTrabajador');
+    let fotoTrabajadorValor = fotoTrabajador.value.trim();
+
     if (bolean == true) {
         let trabajador = JSON.parse(localStorage.getItem('trabajador'));
         trabajador.dni = dniValor;
         trabajador.nombre = nombreValor;
-        trabajador.apellidos = apellidosValor;
         trabajador.fechaNacimiento = fechaNacimientoValor;
         trabajador.nacionalidad = nacionalidadValor;
         trabajador.provincia = provinciaL;
         trabajador.codigoPostal = codigoPostalValor;
         trabajador.presentacion = presentacionValor;
-        trabajador.fotoTrabajador = arcvi;
+        trabajador.fotoTrabajador = fotoTrabajadorValor;
         localStorage.setItem('trabajador', JSON.stringify(trabajador));
-
+        addbbtrabajador();
         let addbbtrabajador;
         try {
-            addbbtrabajador = await addTrabajador(trabajador);
+            addbbtrabajador = await addbbtrabajador();
+            addFotoTrabajador();
             console.log(addbbtrabajador, trabajador);
             if (addbbtrabajador.dni == null) {
                 document.getElementById('mensaje2').innerHTML = '¡Ups, ya existe un usuario con su cuenta, pruebe iniciar sesion!'
@@ -587,11 +579,8 @@ async function infoPersonalTrabajador(e) {
                 let fieldset3 = document.getElementById('paso3');
                 fieldset3.classList = 'fieldset activo'
                 document.getElementById("pasoAColor1").className = 'pass'
-                document.getElementById("pasoAColor2").className = 'pass';
-                document.getElementById("pasoAColor3").className = 'activate';
-                addFotoTrabajador();
-                e = e || window.event;
-                e.preventDefault();
+                document.getElementById("pasoAColor2").className = 'pass'
+                document.getElementById("pasoAColor3").className = 'activate'
             }
         } catch (error) {
             throw new Error('Ha ocurrido un error');
@@ -626,8 +615,8 @@ function addFotoTrabajador() {
         };
     }
 }
-function addTrabajador(trabajador) {
-    
+function addbbtrabajador() {
+    let trabajador = JSON.parse(localStorage.getItem('trabajador'));
     return new Promise((resolve, reject) => {
         const URL = "http://localhost:8083/trabajador/registro/";
         fetch(URL, {
@@ -640,11 +629,10 @@ function addTrabajador(trabajador) {
         })
             .then((response) => response.json())
             .then((trabajador) => { resolve(trabajador); })
-            .catch((error) => reject(error));
+            .catch((error) => reject(error));;
     });
 }
-async function infoProfesionalTrabajador(e) {
-    let bolean = true;
+async function infoProfesionalTrabajador() {
     let fieldset = document.getElementById('paso3');
     let tipoProfesion = document.querySelectorAll('input[name="tipoProfesion"]');
     let tipoProfesionValor;
@@ -656,7 +644,7 @@ async function infoProfesionalTrabajador(e) {
 
     let ambitosGeograficos = document.getElementById('ambitosGeograficos').value;
     let ambitosGeograficosV;
-    try { ambitosGeograficosV = await buscarAmbito(ambitosGeograficos); } catch (error) { throw new Error('Ha ocurrido un error'); }
+    try { ambitosGeograficosV = await buscarAmbitob(ambitosGeograficos); } catch (error) { throw new Error('Ha ocurrido un error'); }
 
 
     let tarjetaTacografo = document.querySelectorAll('input[name="tarjetaTacografo"]');
@@ -681,7 +669,8 @@ async function infoProfesionalTrabajador(e) {
         }
     }
     let paisCarnet = document.getElementById('paisCarnet');
-    let paisCarnetValor = paisCarnet.value.trim();
+    let paisCarnetValor = paisCarnet.valor.trim();
+
     if (paisCarnetValor === '') {
         enviarError(paisCarnet, "Rellene este campo");
         bolean = false;
@@ -696,50 +685,46 @@ async function infoProfesionalTrabajador(e) {
     let tipoCarnetV;
     try { tipoCarnetV = await buscarCarnet(tipoCarnet); } catch (error) { throw new Error('Ha ocurrido un error'); }
 
-    let trabajador = JSON.parse(localStorage.getItem('trabajador'));
-    let trabajadorV;
-    try { trabajadorV = await buscarTrabajador(trabajador.dni); } catch (error) { throw new Error('Ha ocurrido un error'); }
-    console.log(trabajadorV);  
     if (bolean == true) {
+        let trabajador = JSON.parse(localStorage.getItem('trabajador'));
         let datosProfesionalesTrabajador =
         {
-            idDatosProfesionales: 0,
+            dni: trabajador.dni,
             certificadoCap: certificadoCapValor,
             mercanciasPeligrosas: mercanciasPeligrosasValor,
             paisCarnet: paisCarnetValor,
             tarjetaTacografo: tarjetaTacografoValor,
             tipoProfesion: tipoProfesionValor,
-            ambitoGeografico: {
-                idAmbito: ambitosGeograficosV.idAmbito,
-                ambito: ambitosGeograficosV.ambito},
-            tipoCarnet: {
-                idCarnet: tipoCarnetV.idCarnet,
-                carnet: tipoCarnetV.carnet
-            },
-            trabajador: JSON.parse(trabajadorV)
+            ambitoGeografico: ambitosGeograficosV,
+            tipoCarnet: tipoCarnetV,
+            trabajador: trabajador
         }
-        console.log(datosProfesionalesTrabajador);
         localStorage.setItem('datosProfesionalesTrabajador', JSON.stringify(datosProfesionalesTrabajador))
 
+        addbbdatosProfesionalesTrabajador();
         let addbbdatosProfesionalesTrabajador;
         try {
-            addbbdatosProfesionalesTrabajador = await adddatosProfesionalesTrabajador(datosProfesionalesTrabajador);
+            addbbdatosProfesionalesTrabajador = await addbbdatosProfesionalesTrabajador();
+            if (addbbdatosProfesionalesTrabajador.dni == null) {
+                document.getElementById('mensaje3').innerHTML = '¡Ups, ya existe un usuario con su cuenta, pruebe iniciar sesion!'
+            } else {
                 fieldset.className = 'fieldset';
-                let fieldset4 = document.getElementById('paso4');
-                fieldset4.classList = 'fieldset activo'
+                let fieldset3 = document.getElementById('paso3');
+                fieldset3.classList = 'fieldset activo'
                 document.getElementById("pasoAColor1").className = 'pass'
                 document.getElementById("pasoAColor2").className = 'pass'
                 document.getElementById("pasoAColor3").className = 'pass'
                 document.getElementById("pasoAColor4").className = 'activate'
-                e = e || window.event;
-                e.preventDefault();
+
+            }
         } catch (error) {
             throw new Error('Ha ocurrido un error');
         }
     }
 }
 
-function adddatosProfesionalesTrabajador(datosProfesionalesTrabajador) {
+function addbbdatosProfesionalesTrabajador() {
+    let datosProfesionalesTrabajador = JSON.parse(localStorage.getItem('datosProfesionalesTrabajador'));
     return new Promise((resolve, reject) => {
         const URL = "http://localhost:8083/trabajador/registroDatosProfesionales/";
         fetch(URL, {
@@ -756,8 +741,7 @@ function adddatosProfesionalesTrabajador(datosProfesionalesTrabajador) {
     });
 }
 
-async function añadirExperiencia(e) {
-    let bolean = true;
+async function añadirExperiencia() {
     let nomEmpresa = document.getElementById('nomEmpresa');
     let nomEmpresaValor = nomEmpresa.value.trim();
     if (nomEmpresaValor === '') {
@@ -780,39 +764,39 @@ async function añadirExperiencia(e) {
     } else {
         funciona(duracion);
     }
-    let tipoCarnet = document.getElementById('tipoCarnet dos').value;
+    let tipoCarnet = document.getElementById('tipoCarnet').value;
     let tipoCarnetV;
     try { tipoCarnetV = await buscarCarnet(tipoCarnet); } catch (error) { throw new Error('Ha ocurrido un error'); }
 
-    let tipoEspecialidad = document.getElementById('TipoActividadEmpresa').value;
+    let tipoEspecialidad = document.getElementById('tipoCarnet').value;
     let TipoEspecialidadV;
     try { TipoEspecialidadV = await buscarTipoEspecialidad(tipoEspecialidad); } catch (error) { throw new Error('Ha ocurrido un error'); }
-    
-    let trabajador = JSON.parse(localStorage.getItem('trabajador')); 
+
+    let trabajador = JSON.parse(localStorage.getItem('trabajador'));
     let trabajadorV;
     try { trabajadorV = await buscarTrabajador(trabajador.dni); } catch (error) { throw new Error('Ha ocurrido un error'); }
-    if(bolean == true) {
-        let experiencia ={
-            nombreEmpresa: nomEmpresaValor,
-            duracion: duracionValor,
-            tipoCarnet: tipoCarnetV,
-            tipoEspecialidad: TipoEspecialidadV,
-            trabajador: JSON.parse(trabajadorV)
+    let experiencia = {
+        nombreEmpresa: nomEmpresaValor,
+        duracion: duracionValor,
+        tipoCarnet: tipoCarnetV,
+        tipoEspecialidad: TipoEspecialidadV,
+        trabajador: trabajadorV
+    }
+    let addExperiencia;
+    try {
+        addExperiencia = await addExperiencia(experiencia);
+        if (addExperiencia.dni == null) {
+            document.getElementById('mensaje4').innerHTML = '¡Pruebe agregar de nuevo la experiencia, esa ya existe!'
+        } else {
+            document.getElementById('mensaje4').innerHTML = '¡Experiencia agregada con existo'
         }
-        console.log(experiencia);
-        let addiExperiencia;
-        try {
-            addiExperiencia = await addExperiencia(experiencia);
-            console.log(addiExperiencia);
-            document.getElementById('mensaje4').innerHTML = '¡Experiencia agregada con existo!'
-            let inputs = document.querySelectorAll("input");
-            for (let i = 0; i < inputs.length; i++) {
+        let inputs = document.querySelectorAll("input");
+        for (let i = 0; i < inputs.length; i++) {
             inputs[i].value = "";
-            }
-
-        } catch (error) {
-            throw new Error('Ha ocurrido un error');
         }
+
+    } catch (error) {
+        throw new Error('Ha ocurrido un error');
     }
 }
 
@@ -832,37 +816,31 @@ function addExperiencia(experiencia) {
             .catch((error) => reject(error));;
     });
 }
-async function formSiguiente(e) {
-    let fieldset = document.getElementById('paso4');
+async function formSiguiente() {
+    let fieldset3 = document.getElementById('paso4');
     if (document.getElementById("no_experiencia").checked) {
-                fieldset.className = 'fieldset';
-                let fieldset3 = document.getElementById('paso5');
-                fieldset3.classList = 'fieldset activo'
-                document.getElementById("pasoAColor1").className = 'pass'
-                document.getElementById("pasoAColor2").className = 'pass'
-                document.getElementById("pasoAColor3").className = 'pass'
-                document.getElementById("pasoAColor4").className = 'pass'
-                document.getElementById("pasoAColor5").className = 'activate'
+        fieldset.className = 'fieldset';
+        let fieldset3 = document.getElementById('paso5');
+        fieldset3.classList = 'fieldset activo'
+        document.getElementById("pasoAColor1").className = 'pass'
+        document.getElementById("pasoAColor2").className = 'pass'
+        document.getElementById("pasoAColor3").className = 'pass'
+        document.getElementById("pasoAColor4").className = 'pass'
+        document.getElementById("pasoAColor5").className = 'activate'
     } else {
         let trabajador = JSON.parse(localStorage.getItem('trabajador'));
-        console.log(trabajador);
-        let experienciaV;
         try { experienciaV = await buscarExperiencias(trabajador.dni); } catch (error) { throw new Error('Ha ocurrido un error'); }
-        if (experienciaV == null || experienciaV == '' || experienciaV.length == 0){
+        if (experienciaV == null || experienciaV == '' || experienciaV.length == 0) {
             document.getElementById('mensaje4').innerHTML = '¡Marque no tengo experiencia para seguir!'
-            e = e || window.event;
-            e.preventDefault();
-        } else{ 
+        } else {
             fieldset.className = 'fieldset';
             let fieldset3 = document.getElementById('paso5');
             fieldset3.classList = 'fieldset activo'
             document.getElementById("pasoAColor1").className = 'pass'
-                document.getElementById("pasoAColor2").className = 'pass'
-                document.getElementById("pasoAColor3").className = 'pass'
-                document.getElementById("pasoAColor4").className = 'pass'
-                document.getElementById("pasoAColor5").className = 'activate'
-                document.getElementById("mensaje4").innerHTML="¡Felicidades "+trabajador.nombre +" "+ trabajador.apellidos +"!"
-
+            document.getElementById("pasoAColor2").className = 'pass'
+            document.getElementById("pasoAColor3").className = 'pass'
+            document.getElementById("pasoAColor4").className = 'pass'
+            document.getElementById("pasoAColor5").className = 'activate'
         }
     }
 }
@@ -1110,6 +1088,7 @@ function buscarExistenciaTrabajador(emailv) {
 function buscarTrabajador(dniv) {
 
     const URL = "http://localhost:8083/trabajador/" + dniv;
+    //const URL = "http://localhost:8080/trabajador/dni=" + dniv;
     return new Promise((resolve, reject) => {
         fetch(URL)
             .then((response) => response.text())
