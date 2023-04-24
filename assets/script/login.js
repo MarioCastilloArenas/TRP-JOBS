@@ -52,7 +52,7 @@ function fIniciarSesionUsuario() {
         contrasenai.style.borderColor = 'black';
     }
 
-    const URL = "http://localhost:8083/trabajador/email=" + emailv + "/contrasena=" + contrasenamd;
+    const URL = "http://localhost:8080/trabajador/email=" + emailv + "/contrasena=" + contrasenamd;
     console.log("hola");
     fetch(URL)
         .then((response) => response.json())
@@ -104,7 +104,7 @@ function fIniciarSesionEmpresa() {
     } else {
         contrasenai.style.borderColor = 'black';
     }
-    const URL = "http://localhost:8083/empresa/email=" + emailv + "/contrasena=" + contrasenamd;
+    const URL = "http://localhost:8080/empresa/email=" + emailv + "/contrasena=" + contrasenamd;
     console.log("hola");
     fetch(URL)
         .then((response) => response.json())

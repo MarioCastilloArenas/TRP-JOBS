@@ -13,11 +13,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Expletus+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="assets/script/formulario.js"></script>
-    <script src="index.js"></script>
 </head>
 <body>
     <header>
-        <div id="logo" onclick="GoIndex()" >
+        <div id="logo" >
             <p class="animacionLogo">TRP JOBS</p>
         </div>
         <div id="info">
@@ -64,8 +63,8 @@
         <div id="formulario">
             <div id="progreso">
                 <div class="container">
-                    <div class="infoPaso">
-                        <div class="paso " id="pasoAColor1">
+                    <div class="infoPaso" id="pasoAColor1">
+                        <div class="paso " >
                             Paso 1
                         </div>
                         <div class="nombrePaso">
@@ -74,8 +73,8 @@
                     </div>
                 </div>       
                 <div class="container">
-                    <div class="infoPaso  ">
-                        <div class="paso" id="pasoAColor2">
+                    <div class="infoPaso id="pasoAColor2"">
+                        <div class="paso" >
                             Paso 2
                         </div>
                         <div class="nombrePaso">
@@ -84,8 +83,8 @@
                     </div>
                 </div>        
                 <div class="container ">
-                    <div class="infoPaso">
-                        <div class="paso" id="pasoAColor3">
+                    <div class="infoPaso" id="pasoAColor3">
+                        <div class="paso" >
                             Paso 3
                         </div>
                         <div class="nombrePaso">
@@ -94,8 +93,8 @@
                     </div>
                 </div>     
                 <div class="container ">
-                    <div class="infoPaso" >
-                        <div class="paso" id="pasoAColor4">
+                    <div class="infoPaso" id="pasoAColor4">
+                        <div class="paso" >
                             Paso 4
                         </div>
                         <div class="nombrePaso">
@@ -104,8 +103,8 @@
                     </div>
                 </div>
                 <div class="container ">
-                    <div class="infoPaso" >
-                        <div class="paso" id="pasoAColor5">
+                    <div class="infoPaso" id="pasoAColor5">
+                        <div class="paso" >
                             Paso 5
                         </div>
                         <div class="nombrePaso">
@@ -156,7 +155,7 @@
                             <h3 id="mensaje2"></h3>
                             <div class="form-item">
                                 <label for="dni">DNI:</label>
-                                <input type="text" id="cif" required>
+                                <input type="text" id="dni" required>
                                 <i id="good" class='bx bx-check-circle'></i>
                                 <i id="error"  class='bx bx-error-circle'></i>
                                 <small>Rellene este campo</small>
@@ -203,7 +202,7 @@
                             </div> 
                             <div class="form-item">
                                 <label for="presentacion">Presentación:</label>
-                                <input type="number" id="presentacion">
+                                <input type="text" id="presentacion">
                                 <i id="good" class="fa-solid fa-circle-check"></i>
                                 <i id="error" class="fa-solid fa-circle-exclamation"></i>
                                 <small>Rellene este campo</small>
@@ -213,11 +212,11 @@
                                 <input type="file" id="fotoTrabajador">
                             </div>
                             <div class="form-boton-item">
-                                <button id="botonSiguiente2" onclick="infoPersonalTrabajador()"> Siguiente </button>
+                                <button id="botonSiguiente2" onclick="infoPersonalTrabajador(event)"> Siguiente </button>
                             </div>
                     </div>
                 </div>
-                <div class="fieldset" id="paso3">
+                <div class="fieldset " id="paso3">
                     <div class="tituloRelleno">
                         <h2>DATOS LABORALES</h2>
                     </div>
@@ -250,7 +249,7 @@
                             </div>
                             <div class="form-item">
                                 <label for="tipoCarnet">Tipo Carnet:</label>
-                                <select id="tipoCarnet">
+                                <select id="tipoCarnet uno">
                                 </select>
                             </div>
                             <div class="form-item">
@@ -261,10 +260,10 @@
                                 <small>Rellene este campo</small>
                             </div>
                             
-                        <button onclick="infoProfesionalTrabajador()"> Siguiente </button>
+                        <button onclick="infoProfesionalTrabajador(event)"> Siguiente </button>
                     </div>
                 </div>
-                <div class="fieldset activo" id="paso4">
+                <div class="fieldset" id="paso4">
                     <div class="tituloRelleno">
                         <h2>EXPERIENCIA LABORAL</h2>
                     </div>
@@ -279,54 +278,45 @@
                             <small>Rellene este campo</small>
                         </div>
                         <div class="form-item">
-                            <label for="duracion">Fecha Inicio:</label>
+                            <label for="duracion">Duración:</label>
                             <input type="text" name="duracion" id="duracion" required >
+                            <i id="good" class='bx bx-check-circle'></i>
+                            <i id="error"  class='bx bx-error-circle'></i>
                             <small>rellene este campo</small>
                         </div>
                         <div class="form-item">
-                            <label for="TipoCarnet">Carnet Tipo:</label>
-                            <select id="TipoCarnet">
+                            <label for="tipoCarnet">Tipo Carnet:</label>
+                            <select id="tipoCarnet dos">
                             </select>
                         </div>
                         <div class="form-item">
-                            <label for="TipoEspecialidad">Tipo Especialidad:</label>
-                            <select id="TipoEspecialidad">
+                            <label for="TipoActividadEmpresa">Tipo especializadad:</label>
+                            <select id="TipoActividadEmpresa">
                             </select>
                         </div>
-                        <div><button onclick="añadirExperiencia()">Añadir Experiencia</button></div>
+                        <div><button onclick="añadirExperiencia(event)">Añadir Experiencia</button></div>
                         
-                        <button onclick="formSiguiente()"> Siguiente </button>
+                        <button onclick="formSiguiente(event)"> Siguiente </button>
                     </div>
                 </div>
-                <div class="fieldset " id="paso5"> 
+                <div class="fieldset activo " id="paso5"> 
                     <div class="tituloRelleno">
                         <h2>RESUMEN</h2>
                     </div>
                     <div class="rellenar">
                         <h3 id="mensaje4"> ¡Estamos felices de que ya forma parte de nuestro equipo! </h3>
-                        <h4>Te mostraremos los datos de tu empresa, los cuales podran ver los trabajadores.</h4>
-                        <h4>Te recordamos que podras modificar cualquiera de los datos de tu empresa, en el apartado <b>Mis Datos</b>.</h4>
-                        <h4>Esperamos que formes el mejor equipo posible en el menor tiempo posible.</h4>
-                        <div class="">
-                            <b>Nombre Comercial</b>
-                            <p id="NombreEmpresa"></p>
+                        <h4>Estas un paso más cerca de conseguir un empleo</h4>
+                        <h4>Te recordamos que podras modificar cualquiera de tus datos, en el apartado <b>Mis Datos</b>.</h4>
+                        <h4>Te dejamos cuatro consejos para conseguir empleo rapidamente:</h4>
+                        <div class="infor">
+                            <ol>
+                                <li> <b>Completa tu perfil:</b> Asegúrate de que tu perfil en la web de empleo esté completo y actualizado. Incluye una foto profesional, tu experiencia laboral, habilidades, educación, certificaciones y cualquier otra información relevante. Esto ayudará a que los empleadores te encuentren y te consideren para posibles oportunidades.</li>
+                                <li><b>Personaliza tu búsqueda: </b>Aprovecha las opciones de filtrado que ofrecen las webs de empleo para personalizar tu búsqueda de acuerdo a tus intereses y habilidades. Además, lee cuidadosamente las descripciones de los trabajos para asegurarte de que cumples con los requisitos y que realmente te interesa el puesto.</li>
+                                <li><b>Mantén una buena comunicación: </b>Si recibes una oferta de trabajo o una entrevista, asegúrate de responder de manera oportuna y profesional. Si no estás interesado en la oferta, agradece de manera cortés y respetuosa. Mantén una buena comunicación con los potenciales para establecer una relación sólida.</li>
+                                <li><b>Sé proactivo:</b> No esperes a que las ofertas lleguen a ti, sé proactivo y busca oportunidades en la web de empleo. Además, puedes utilizar las redes sociales para conectarte con empresas y profesionales de tu sector. Asiste a eventos y conferencias relacionadas con tu campo para establecer contactos y aprender sobre nuevas oportunidades laborales.</li>
+                            </ol>
                         </div>
-                        <div class="">
-                            <b>Actividad Empresarial</b>
-                            <p id="actividadEmpresa"></p>
-                        </div>
-                        <div class="">
-                            <b>Descripcion</b>
-                            <p id="infoEmpresa"></p>
-                        </div>
-                        <div class="">
-                            <b>Provincia</b>
-                            <p id="provinciaEmpresa"></p>
-                        </div>
-                        <div class="">
-                            <b>Sitio Web</b>
-                            <p id="sitioWebEmpresa"></p>
-                        </div>
+                        <a href="loginUsuario.html"> ¡Empezar ahora!</a> 
                     </div>
                 </div>
             </div>
