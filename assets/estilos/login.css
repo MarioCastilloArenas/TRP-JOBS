@@ -1,79 +1,78 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Expletus Sans', cursive;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
 }
 
-body{
-
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 100px 1fr 200px;
-    grid-template-areas: 
-        "zheader"
-        "zsection"
-        "zfooter";
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 1fr 200px;
+  grid-template-areas:
+    "zheader"
+    "zsection"
+    "zfooter";
 }
-section{
-
-    grid-area: zsection;
-    /* display: flex;
+section {
+  grid-area: zsection;
+  /* display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center; */
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
-.form_container{
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(/assets/img/fondoLoger.jpg);
-    background-position: center;
-    background-size: cover;
-    /* position: absolute;
+.form_container {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(/assets/img/fondoLoger.jpg);
+  background-position: center;
+  background-size: cover;
+  /* position: absolute;
     background-color: bisque; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.form_box{
-    width: 370px;
-    height: 485px;/*455*/
-    position: relative;
-    margin: 100px 0;
-    /* margin: 100px auto; */
-    background: #fcfbfbcb;
-    padding: 5px;
-    border-radius: 10px;
-    overflow: hidden;
+.form_box {
+  width: 370px;
+  height: 485px; /*455*/
+  position: relative;
+  margin: 100px 0;
+  /* margin: 100px auto; */
+  background: #fcfbfbcb;
+  padding: 5px;
+  border-radius: 10px;
+  overflow: hidden;
 }
-.button_box{
-    width: 240px;
-    margin: 30px auto;
-    position: relative;
-    /* box-shadow: 0 0 20px 9px #e0e0e0; */
-    border-radius: 30px;
+.button_box {
+  width: 240px;
+  margin: 30px auto;
+  position: relative;
+  /* box-shadow: 0 0 20px 9px #e0e0e0; */
+  border-radius: 30px;
 }
-.boton_btn{
-    padding: 10px 22px;
-    cursor: pointer;
-    background: transparent;
-    border: 0px;
-    outline: none;
-    position: relative;
+.boton_btn {
+  padding: 10px 22px;
+  cursor: pointer;
+  background: transparent;
+  border: 0px;
+  outline: none;
+  position: relative;
 }
-#opcion{
-    top: 0;
-    left: 0;
-    position: absolute;
-    width: 120px;
-    height: 100%;
-    background-color: #ffb11a;
-    border-radius: 30px;
-    transition: 0.8s;
+#opcion {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 120px;
+  height: 100%;
+  background-color: #ffb11a;
+  border-radius: 30px;
+  transition: 0.8s;
 }
 /* .redes_sociales{
     margin: 30px auto;
@@ -90,62 +89,59 @@ section{
 
 } */
 
-.formulario_input{
-    top: 100px;/*180px*/
-    position: absolute;
-    width: 280px;
-    transition: 0.8s;
+.formulario_input {
+  top: 100px; /*180px*/
+  position: absolute;
+  width: 280px;
+  transition: 0.8s;
 }
-.input_field{
-    width: 100%;
-    padding: 10px 0;
-    margin: 5px 0;
-    border-left: 0;
-    border-top: 0;
-    border-right: 0;
-    border-bottom: 2px solid #061536;
-    outline: none;
-    background: transparent;
+.input_field {
+  width: 100%;
+  padding: 10px 0;
+  margin: 5px 0;
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 2px solid #061536;
+  outline: none;
+  background: transparent;
 }
-.submit_btn{
-    width: 85%;
-    padding: 10px 30px;
-    cursor: pointer;
-    display: block;
-    margin: auto;
-    background-color: #ffb11a;
-    border: 0px;
-    outline: none;
-    border-radius: 30px;
-    margin-bottom: 10px;
+.submit_btn {
+  width: 85%;
+  padding: 10px 30px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  background-color: #ffb11a;
+  border: 0px;
+  outline: none;
+  border-radius: 30px;
+  margin-bottom: 10px;
 }
-.check_box{
-    margin: 30px 10px 30px 0;
-
+.check_box {
+  margin: 30px 10px 30px 0;
 }
-#terminos{
-    color: black;
-    font-size: 12px;
-    bottom: 123.5px;
-    position: absolute;
-}
-
-#loginUsuario{
-    left: 50px;
-    top: 140px;
-}
-input::placeholder{
-    color: black;
+#terminos {
+  color: black;
+  font-size: 12px;
+  bottom: 123.5px;
+  position: absolute;
 }
 
-
-#loginEmpresa{
-    top: 140px;
-    left: 450px;
+#loginUsuario {
+  left: 50px;
+  top: 140px;
 }
-input{
-    color: black;
-    
+input::placeholder {
+  color: black;
+}
+
+#loginEmpresa {
+  top: 140px;
+  left: 450px;
+}
+input {
+  color: black;
 }
 /* #errorLogin{
     top: 100px;

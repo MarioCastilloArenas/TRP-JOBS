@@ -1,120 +1,299 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Expletus Sans', cursive;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
 }
-body{
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 100px 1fr 200px;
-    grid-template-areas: 
-        "zheader"
-        "zsection"
-        "zfooter";
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 1fr 200px;
+  grid-template-areas:
+    "zheader"
+    "zsection"
+    "zfooter";
 }
 
-.banner{
-    background-image: url(/assets/img/header.jpg);
-    background-size: cover;
-    background-position: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    background-blend-mode: multiply; 
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 50px;
-    gap: 20px;
+.banner {
+  background-image: url(/assets/img/header.jpg);
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: multiply;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+  gap: 20px;
 }
-.banner > h1 , 
+.banner > h1,
 .banner > p {
-    color: white;
-    text-align: justify;
+  color: white;
+  text-align: justify;
 }
-#formulario{
-    width: 100%;
-    display: flex;
-    flex-direction: column ;
-    align-items: flex-start;
-    justify-content:center;
+#formulario {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
-#progreso{
-    /* background-image: url(/assets/img/orange-wave-background-henrik-lehnerer.jpg) ;
+#progreso {
+  /* background-image: url(/assets/img/orange-wave-background-henrik-lehnerer.jpg) ;
     background-repeat: no-repeat;
     background-size: cover; */
-    padding: 10px 20px ;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    gap: 10px;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
 }
-.container{
-    width: 20%;
-}
-
-.infoPaso{
-    border-radius: 4px;
-    background-image: linear-gradient(180deg,#fff,#f5f5fa);
-    box-shadow: rgba(121, 121, 120, 0.35) 0px 1px 5px;
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.pass{
-    border-radius: 4px;
-    background-image: linear-gradient(180deg,#ea8b0e22,#e8ccb11e);;
-    box-shadow: 0 8px 22px 0 rgba(38, 22, 14, 0.199), 0 4px 6px 0 rgba(42, 42, 44, 0.445);
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #ff8903;
-    text-align: center;
-}
-.activate{
-    border-radius: 4px;
-    background-image: linear-gradient(180deg,#ea8b0e22,#e8ccb11e);;
-    box-shadow: 0 8px 22px 0 rgba(38, 22, 14, 0.199), 0 4px 6px 0 rgba(42, 42, 44, 0.445);
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #32d32f;
-    font-weight: 800;
-    text-align: center;
+.container {
+  width: 20%;
 }
 
-.infoPaso>div, .activate>div, .pass>div{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.infoPaso {
+  border-radius: 4px;
+  background-image: linear-gradient(180deg, #fff, #f5f5fa);
+  box-shadow: rgba(121, 121, 120, 0.35) 0px 1px 5px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.paso{ 
-    height: 40%;
+.pass {
+  border-radius: 4px;
+  background-image: linear-gradient(180deg, #ea8b0e22, #e8ccb11e);
+  box-shadow: 0 8px 22px 0 rgba(38, 22, 14, 0.199),
+    0 4px 6px 0 rgba(42, 42, 44, 0.445);
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ff8903;
+  text-align: center;
 }
-.nombrePaso{
-    height: 60%;
-    width: 100%;
-    text-align: center;
+.activate {
+  border-radius: 4px;
+  background-image: linear-gradient(180deg, #ea8b0e22, #e8ccb11e);
+  box-shadow: 0 8px 22px 0 rgba(38, 22, 14, 0.199),
+    0 4px 6px 0 rgba(42, 42, 44, 0.445);
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #32d32f;
+  font-weight: 800;
+  text-align: center;
 }
-.contenido{
-    padding: 20px ;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
+
+.infoPaso > div,
+.activate > div,
+.pass > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.fieldset{
-    display: none;
+.paso {
+  height: 40%;
+}
+.nombrePaso {
+  height: 60%;
+  width: 100%;
+  text-align: center;
+}
+.contenido {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.fieldset {
+  display: none;
 }
 .activo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 4px;
+  background-image: linear-gradient(180deg, #ffffff2f, #f5f5fa21);
+  box-shadow: rgba(226, 135, 8, 0.253) 0px 1px 5px;
+}
+.tituloRelleno {
+  padding-bottom: 10px;
+}
+h3 {
+  color: red;
+  font-weight: 100;
+  font-size: 15px;
+}
+.rellenar {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: first baseline;
+  gap: 20px;
+}
+.rellenar > div {
+  padding: 0 20px;
+}
+.form-item {
+  height: 100px;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  width: 100%;
+  position: relative;
+}
+
+.form-item label {
+  display: inline-block;
+  margin-bottom: 5px;
+  color: #000000;
+}
+
+.form-item input,
+select {
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  display: block;
+  font-family: inherit;
+  font-size: 14px;
+  padding: 10px;
+  width: 100%;
+}
+
+.form-item input:focus {
+  outline: 0;
+  /*border-color: red;*/
+}
+
+.form-item i {
+  visibility: hidden;
+  position: absolute;
+  top: 40px;
+  right: 25px;
+}
+
+.form-item small {
+  color: #100707;
+  position: absolute;
+  bottom: 10px;
+  left: 30px;
+  visibility: hidden;
+}
+
+button {
+  margin-top: 20px;
+  width: 100%;
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 12px;
+  color: rgb(20, 20, 20);
+  padding: 8px 24px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  background-image: linear-gradient(180deg, #fff, #f5f5fa);
+  box-shadow: 0 4px 11px 0 rgb(37 44 97 / 15%),
+    0 1px 3px 0 rgb(93 100 148 / 20%);
+  transition: all 0.2s ease-out;
+}
+button:hover {
+  background-image: linear-gradient(180deg, #ff8903, #7a7a7b0f);
+  box-shadow: 0 8px 22px 0 rgb(37 44 97 / 15%),
+    0 4px 6px 0 rgb(93 100 148 / 20%);
+}
+
+@media (min-width: 1100px) {
+  section {
+    grid-area: zsection;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #formulario {
+    width: 90%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    background-image: linear-gradient(180deg, #ffffff2f, #f5f5fa21);
+    box-shadow: rgba(226, 135, 8, 0.253) 0px 1px 5px;
+  }
+
+  #progreso {
+    background-image: url(/assets/img/orange-wave-background-henrik-lehnerer.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 20%;
+    height: 100%;
+    padding-left: 20px;
+    border-radius: 4px;
+    background-image: white;
+    box-shadow: none;
+  }
+
+  .container {
+    width: 100%;
+    height: 100px;
+  }
+
+  .contenido {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+  }
+
+  .infoPaso {
+    border-radius: 0;
+    background-image: linear-gradient(180deg, #9090900f, #ff7f080f);
+    box-shadow: 0 8px 22px 0 rgba(14, 17, 38, 0.066),
+      0 4px 6px 0 rgba(163, 163, 168, 0.043);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .activate {
+    border-radius: 0;
+    background-image: linear-gradient(180deg, #ff770009, #ff7f0821);
+    box-shadow: 0 8px 22px 0 rgba(14, 17, 38, 0.379),
+      0 4px 6px 0 rgba(177, 177, 181, 0.043);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .activo {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -125,208 +304,34 @@ body{
     flex-direction: column;
     justify-content: center;
     border-radius: 4px;
-    background-image: linear-gradient(180deg,#ffffff2f,#f5f5fa21);
-    box-shadow: rgba(226, 135, 8, 0.253) 0px 1px 5px;
-}
-.tituloRelleno{
-    padding-bottom: 10px;
-}
-h3{
-    color: red;
-    font-weight: 100;
-    font-size: 15px;
-}
-.rellenar{
+    background-image: none;
+    box-shadow: none;
+  }
+  .rellenar {
     width: 100%;
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: first baseline;
+    align-items: center;
     gap: 20px;
-}
-.rellenar>div{
-    padding: 0 20px;
-    
-}
-.form-item {
-    height: 100px;
-    margin-bottom: 10px;
-    padding-bottom: 20px;
-    width: 100%;
+  }
+  .form-item {
     position: relative;
-}
-
-.form-item label {
-    display: inline-block;
-    margin-bottom: 5px;
-    color: #000000;
-}
-
-.form-item input , select {
-    border: 2px solid #f0f0f0;
-    border-radius: 4px;
-    display: block;
-    font-family: inherit;
-    font-size: 14px;
-    padding: 10px;
-    width: 100%;
-}
-
-.form-item input:focus {
-    outline: 0;
-    /*border-color: red;*/
-}
-
-.form-item i {
-    visibility: hidden; 
+    margin-bottom: 20px;
+    height: 90px;
+  }
+  .form-item i {
+    visibility: hidden;
     position: absolute;
     top: 40px;
-    right: 25px;
-}
-
-
-.form-item small {
+    right: 30px;
+  }
+  .form-item small {
     color: #100707;
     position: absolute;
-    bottom: 10px;
+    bottom: 0px;
     left: 30px;
     visibility: hidden;
+  }
 }
-
-button {
-    margin-top: 20px;
-    width: 100%;
-    display: inline-block;
-    outline: 0;
-    border: 0;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 12px;
-    color: rgb(20, 20, 20);
-    padding: 8px 24px;
-    border-radius: 50px;
-    text-transform: uppercase;
-    background-image: linear-gradient(180deg,#fff,#f5f5fa);
-    box-shadow: 0 4px 11px 0 rgb(37 44 97 / 15%), 0 1px 3px 0 rgb(93 100 148 / 20%);
-    transition: all .2s ease-out;
-}
-button:hover {
-    background-image: linear-gradient(180deg,#ff8903,#7a7a7b0f); 
-    box-shadow: 0 8px 22px 0 rgb(37 44 97 / 15%), 0 4px 6px 0 rgb(93 100 148 / 20%);
-}
-
-@media (min-width : 1100px) {
-    section{
-        grid-area: zsection;
-        display: flex;
-        flex-wrap: nowrap;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        
-    }
-    #formulario{
-        width: 90%;
-        margin-top:50px ;
-        margin-bottom: 50px;
-        display: flex;
-        flex-direction: row ;
-        align-items: center;
-        justify-content:center;
-        border-radius: 4px;
-        background-image: linear-gradient(180deg,#ffffff2f,#f5f5fa21);
-        box-shadow: rgba(226, 135, 8, 0.253) 0px 1px 5px;
-    }
-
-    #progreso{
-        background-image: url(/assets/img/orange-wave-background-henrik-lehnerer.jpg) ;
-            background-repeat: no-repeat;
-            background-size: cover; 
-        width: 100%;
-        display: flex;
-        flex-direction:column ;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-        width: 20%;
-        height: 100%;
-        padding-left: 20px;
-        border-radius: 4px;
-        background-image: white;
-        box-shadow: none;
-    }
-    
-    .container{
-        width: 100%;
-        height: 100px;
-        
-    }
-
-    .contenido{
-        padding: 20px ;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        width: 80%;
-    }
-    
-    .infoPaso{
-        border-radius: 0;
-        background-image: linear-gradient(180deg,#9090900f,#ff7f080f);;
-        box-shadow: 0 8px 22px 0 rgba(14, 17, 38, 0.066), 0 4px 6px 0 rgba(163, 163, 168, 0.043);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    .activate{
-        border-radius: 0;
-        background-image: linear-gradient(180deg,#ff770009,#ff7f0821);;
-        box-shadow: 0 8px 22px 0 rgba(14, 17, 38, 0.379), 0 4px 6px 0 rgba(177, 177, 181, 0.043);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    .activo {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 20px 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        border-radius: 4px;
-        background-image: none;
-        box-shadow: none;
-    }
-    .rellenar{
-        width: 100%;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-    }
-    .form-item{
-        position: relative;
-        margin-bottom: 20px;
-        height: 90px;
-    }
-    .form-item i {
-        visibility: hidden; 
-        position: absolute;
-        top: 40px;
-        right: 30px;
-    }
-    .form-item small {
-        color: #100707;
-        position: absolute;
-        bottom: 0px;
-        left: 30px;
-        visibility: hidden;
-    }
-} 

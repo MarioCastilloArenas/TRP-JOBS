@@ -1,4 +1,7 @@
 /**---------------------Header--------------------**/
+*{
+    font-family: 'Lato', sans-serif; 
+}
 header{
     grid-area: zheader;
     display: flex;
