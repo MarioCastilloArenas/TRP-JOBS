@@ -115,7 +115,7 @@
                                             <i id="error"  class='bx bx-error-circle'></i>
                                             <small>Rellene este campo</small>
                                         </div>
-                                        <button id="botonSiguiente" onclick="LoginEmpresa()"> Actualizar </button>
+                                        <button id="botonSiguiente" onclick="fActualizarCuenta()"> Actualizar </button>
                                     </div>
                                 </div>
                                 <div class="fieldset  " id="paso2">
@@ -164,7 +164,7 @@
                                                 <small>Rellene este campo</small>
                                             </div> 
                                             <div class="form-boton-item">
-                                                <button id="botonSiguiente" onclick="infoProfesionalEmpresa()">Actualizar</button>
+                                                <button id="botonSiguiente" onclick="fActualizarDatos()">Actualizar</button>
                                             </div>
                                     </div>
                                 </div>
@@ -207,7 +207,7 @@
                                                 <label for="logo">Imagen de Empresa:</label>
                                                 <input type="file" id="logo">
                                             </div>
-                                            <button id="botonSiguiente" onclick="webEmpresarial()">Actualizar</button>
+                                            <button id="botonSiguiente" onclick="fActualizarInformacion()">Actualizar</button>
                                     </div>
                                 </div>
                             </div>
@@ -289,7 +289,73 @@
                                 <div class="btnMenuUsuario" onclick="fMostrarFinalizadas();">Finalizadas</div>
                             </div>
                             <div class="empresaContenidoOpcionesTxt">
-                                <div>En proceso............PublicarOferta</div>
+                                <div class="fieldset activo" id="paso1">
+                                    <!-- paso1  -->
+                                    <!-- <div class="tituloRelleno">
+                                        <h2>información personal</h2>
+                                    </div> -->
+                                    <div class="rellenar">
+                                        <h3 id="mensaje1"></h3>
+                                        <div class="form-item">
+                                            <label for="tituloOf">Título de la ofeta:</label>
+                                            <input type="text" id="tituloOf" required>
+                                            <i id="good" class='bx bx-check-circle'></i>
+                                            <i id="error"  class='bx bx-error-circle'></i>
+                                            <small>Rellene este campo</small>
+                                        </div>
+                                        <div class="form-item">
+                                            <label for="fechCaducidad">Fecha de caducidad:</label>
+                                            <input type="date" id="fechCaducidad" required>
+                                            <i id="good" class='bx bx-check-circle'></i>
+                                            <i id="error"  class='bx bx-error-circle'></i>
+                                            <small>Rellene este campo</small>
+                                        </div>
+                                        <div class="form-item">
+                                            <label for="localidad">Localidad:</label>
+                                            <input type="text" id="localidad" required>
+                                            <i id="good" class='bx bx-check-circle'></i>
+                                            <i id="error"  class='bx bx-error-circle'></i>
+                                            <small>Rellene este campo</small>
+                                        </div>
+                                        <div class="form-item">
+                                            <label for="provincia">Provincia:</label>
+                                            <select id="provincia2">
+                                            </select>
+                                        </div>
+                                        <div class="form-item">
+                                            <label for="descripcionOfert">Descripción:</label>
+                                            <input type="text" id="descripcionOfert" required>
+                                            <i id="good" class='bx bx-check-circle'></i>
+                                            <i id="error"  class='bx bx-error-circle'></i>
+                                            <small>Rellene este campo</small>
+                                        </div>
+                                        <div class="form-item">
+                                            <label for="tCandidato">Tipo de candidato:</label>
+                                            <input type="text" id="tCandidato" required>
+                                            <i id="good" class='bx bx-check-circle'></i>
+                                            <i id="error"  class='bx bx-error-circle'></i>
+                                            <small>Rellene este campo</small>
+                                        </div>
+                                        <div class="form-item">
+                                            <label for="tContrato">Tipo de contrato:</label>
+                                            <input type="text" id="tContrato" required>
+                                            <i id="good" class='bx bx-check-circle'></i>
+                                            <i id="error"  class='bx bx-error-circle'></i>
+                                            <small>Rellene este campo</small>
+                                        </div>
+                                        <div class="form-item">
+                                            <label for="carnet">Carnet:</label>
+                                            <select id="carnet">
+                                            </select>
+                                        </div>
+                                        <div class="form-item">
+                                            <label for="geografico">Ámbito Geográfico:</label>
+                                            <select id="geografico">
+                                            </select>
+                                        </div>
+                                        <button id="botonSiguiente" onclick="fPublicarOfertaNueva()"> Publicar Oferta </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

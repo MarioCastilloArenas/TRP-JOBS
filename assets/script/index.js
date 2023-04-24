@@ -19,8 +19,8 @@ function fverOferta() {
     window.location.href = "verOferta.html";
 }
 
-function verOfertas() {
-    const URL = "http://localhost:8080/oferta/noCaducadas";
+function verOfertas(){
+    const URL = "http://localhost:8083/oferta/noCaducadas";
     fetch(URL)
         .then((response) => response.json())
         .then((oferta) => {
@@ -91,8 +91,8 @@ function vermas(ciudad) {
     window.location.href = "verOfertas.html";
 }
 
-function contenidoSlider() {
-    const URL = "http://localhost:8080/empresa/todas";
+function contenidoSlider(){
+    const URL = "http://localhost:8083/empresa/todas";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {

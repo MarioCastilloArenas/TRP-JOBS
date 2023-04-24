@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function fverTrabajador(dniv) {
 
-    let url = "http://localhost:8080/trabajador/" + dniv;
+    let url = "http://localhost:8083/trabajador/" + dniv;
     fetch(url)
         .then(res => res.json())
         .then(trabajador => {
@@ -31,6 +31,12 @@ function fverTrabajador(dniv) {
             provincia.innerHTML = trabajador.provincia.provincia
             let txtPresentacion = document.getElementById("txtPresentacion");
             txtPresentacion.innerHTML = trabajador.presentacion
+
+    //         let url = "http://localhost:8083/trabajador/datosProfesionales/" + dniv;
+    // fetch(url)
+    //     .then(res => res.json())
+    //     .then(datosTrabajador => {
+    //         console.log(datosTrabajador)
 
             let url = "http://localhost:8080/trabajador/datosProfesionales/" + dniv;
             fetch(url)
