@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+    let dni = localStorage.getItem('dni');
+    // fverTrabajador(dni)
     fverTrabajador("12345678A")
 });
 
@@ -13,10 +15,9 @@ function fverTrabajador(dniv) {
             let img = document.createElement("img");
             img.src = "assets/img/trabajadores/" + trabajador.fotoTrabajador;
             fotoCurr.appendChild(img);
-
             let nombre2 = document.getElementById("nombre2");
             nombre2.innerHTML = trabajador.nombre
-            let apellido2 = document.getElementById("apellido2");
+            let apellido2 = documentz.getElementById("apellido2");
             apellido2.innerHTML = trabajador.apellidos
             let nombre = document.getElementById("nombre");
             nombre.innerHTML = trabajador.nombre
@@ -82,7 +83,7 @@ function fverTrabajador(dniv) {
         .then(res => res.json())
         .then(experiencia => {
             cajaExp = document.getElementById("caja")
-          
+
             for (const exp of experiencia) {
                 let div = document.createElement("div")
                 let html = '<div class="exp">' + '<h2>' + exp.nombreEmpresa + '</h2>' + '</div>';

@@ -43,8 +43,6 @@ html{
     flex-direction: column;
     align-items: flex-end;
     color: white;
-  
-    
 }
 
 #TxtTitulo{
@@ -84,7 +82,7 @@ html{
     align-items: center;
     font-size: 15px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    border-radius: 25px;
+    border-radius: 5px;
 }
 
 #TxtBannerEmpresa{
@@ -98,8 +96,7 @@ html{
     font-size: 15px;
     background-color: rgba(255, 255, 255, 0.504);
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    border-radius: 25px;
-
+    border-radius: 5px;
 }
 
 .emojiBenner {
@@ -112,7 +109,6 @@ html{
 }
 
 .parrafoBanner {
-
     width: 75%;
     height: 100%;
     display: flex;
@@ -121,7 +117,6 @@ html{
 }
 
 .parrafoBanner:hover {
-
     color: black;
     cursor: pointer;
     transition: 0.7 s;
@@ -155,15 +150,11 @@ html{
 
 @media (max-width: 600px) {
     #banner>#TxtTitulo{
-
         font-size: 35px;
-        
     }   
 
     #containerTxtBanner{
-
         gap: 3%;
-
     }
     #TxtBannerConductor{
         font-weight: bold;
@@ -173,37 +164,23 @@ html{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-      
     }
 
     #TxtBannerConductor>div>p{
-       
         font-size: 10px;
-      
     }
 
     #TxtBannerConductor>div>i{
-       
         font-size: 30px;
-      
     }
 
-
-    
     #TxtBannerEmpresa>div>p{
-       
         font-size: 10px;
-      
     }
 
     #TxtBannerEmpresa>div>i{
-       
         font-size: 30px;
-      
     }
-
-
-
 
     #TxtBannerEmpresa{
         font-weight: bold;
@@ -213,7 +190,6 @@ html{
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-      
     } 
  } 
 
@@ -223,11 +199,13 @@ html{
         font-size: 45px;
         
     }   
+    
     #containerTxtBanner{
         
         gap: 3%;
 
     }
+
     #TxtBannerConductor{
         font-weight: bold;
         height: 50%;
@@ -537,9 +515,16 @@ section{
     height: 50px;
     background-color: #ffb11a;
     border: none;
-    border-radius: 30px;
+    border-radius: 5px;
     width: 150px;
     margin-top: 2rem;    
+
+}
+
+
+#botonvermas:hover{
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;    
 
 }
 
@@ -896,7 +881,7 @@ color: #ffb11a;
 
 #cuadrosSeccion>div>div>div>button{
 
-    border-radius: 30px;
+    border-radius: 5px;
     background-color: #ffb11a;
     width: 130px;
     height: 40px;
@@ -909,7 +894,7 @@ color: #ffb11a;
 #cuadrosSeccion>div>div>div>button:hover{
 
     cursor: pointer;
-    
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
 }
 

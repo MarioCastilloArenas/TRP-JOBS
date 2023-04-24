@@ -54,7 +54,6 @@ header{
     align-items: center;
     justify-content: center;
     width: 120px;
-    background-color: transparent;
 }
 #sobreNosotros:hover{
     color: #ffb11a;
@@ -67,7 +66,7 @@ header{
     height: 45px;
     background-color: #ffb11a;
     color: rgb(0, 0, 0);
-    border-radius: 40px;
+    border-radius: 5px;
 }
 #trabajadores:hover{
     cursor: pointer;
@@ -82,7 +81,7 @@ header{
     background-color: transparent;
     border: 2px solid black;
     color: black;
-    border-radius: 40px;
+    border-radius: 5px;
 }
 #empresas:hover{
     cursor: pointer;

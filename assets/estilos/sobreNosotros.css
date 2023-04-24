@@ -168,3 +168,211 @@ section{
         font-size: 16px;
     }
 }
+
+#cuadrosSeccion{
+
+    width: 100%;
+    /* background-image: url(/assets/img/pexels-matt-hardy-2624031.jpg); */
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(253,187,45,1) 64%);
+    height: 600px;
+    filter: blur();
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1%;
+}
+
+#cuadrosSeccion>div{
+    box-shadow: rgba(0, 0, 0, 0.7) 0px 5px 15px;
+    background-color: #ffffffbb;
+    border-radius: 10px;
+    width: 450px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.cuadroConductor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding: 20px;
+    border: solid #ffb11a;
+    width: 100%;
+    height: 12.5%;
+    border: none;
+}
+
+.cuadroConductor>p{
+    display: flex;
+    flex-direction: row;
+    padding: 40px;
+    gap: 10px;
+    align-items: center;
+}
+
+
+.cuadroConductor>i{
+
+    font-size: 50px;
+}
+
+.cuadroConductor>h4{
+
+color: #ffb11a;
+
+}
+
+
+.cuadroEmpresas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+    height: 12.5%;
+}
+
+
+
+.cuadroEmpresas>p{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 40px;
+    gap: 10px;
+   
+}
+
+.cuadroEmpresas>i{
+
+    font-size: 50px;
+
+}
+
+.cuadroEmpresas>h4{
+
+    color: #ffb11a;
+    
+    }
+    
+.cuadroBot>div{
+   
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#cuadrosSeccion>div>div>div>button{
+
+    border-radius: 5px;
+    background-color: #ffb11a;
+    width: 130px;
+    height: 40px;
+    border: none;
+    
+
+}
+
+
+#cuadrosSeccion>div>div>div>button:hover{
+
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+
+@media (max-width:1000px) {
+
+    /* #cuadrosSeccion{
+
+        height: 600px;
+
+   
+    } */
+    
+    #cuadrosSeccion>div{
+    
+        height: 500px;
+        width: 40%;
+  
+    
+    }
+
+    #cuadrosSeccion>div>div{
+        
+        width: 100%;
+        font-size: 13px;
+  
+    }
+
+    .cuadroBot>div{
+   
+        width: 400;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    
+    }
+
+    #cuadrosSeccion>div>div>div>button{
+
+        font-size: 10px;
+        width: 80px;
+        height: 20px;        
+    
+    }
+    
+}
+
+@media (max-width:600px) {
+
+    #cuadrosSeccion{
+
+        height: 1100px;
+        gap: 0.5%;
+        background-position-x: -590px;
+    }
+    
+    #cuadrosSeccion>div{
+    
+        
+        width: 60%;
+      
+  
+    
+    }
+
+    #cuadrosSeccion>div>div{
+        
+        width: 100%;
+        font-size: 13px;
+  
+    }
+
+    .cuadroBot>div{
+   
+        width: 400;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    
+    }
+
+    #cuadrosSeccion>div>div>div>button{
+
+        font-size: 10px;
+        width: 80px;
+        height: 20px;        
+    
+    }
+    
+}

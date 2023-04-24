@@ -17,7 +17,7 @@
   </head>
   <body>
     <header>
-      <div id="logo">
+      <div id="logo" onclick="GoIndex()">
         <p class="animacionLogo">TRP JOBS</p>
       </div>
       <div id="info">
@@ -80,6 +80,66 @@
         empleo o a encontrar el mejor talento para tu empresa de transporte o
         logística.
       </div>
+
+      <div id="cuadrosSeccion">
+        <div id="conductores">
+            <div class="cuadroConductor">
+                <i class='bx bx-id-card'></i>  
+            </div>
+            <div class="cuadroConductor">
+                <h1>Para conductores</h1>
+            </div>
+            <div class="cuadroConductor">
+                <h4>Tu nuevo empleo a un par de clicks</h4>
+            </div>
+            <div class="cuadroConductor">
+                <P><b><i class='bx bx-chevron-right'></i> Crea tu cuenta</b> <small> completamente gratis</small></P>
+            </div>
+            <div class="cuadroConductor">
+                <P><b><i class='bx bx-chevron-right'></i> Busca</b> <small>entre las ofertas de empleo publicadas </small></P>
+            </div>
+            <div class="cuadroConductor">
+                <P><b><i class='bx bx-chevron-right'></i> Inscribete</b><small> en todas las que te interesen </small></P>
+            </div>
+            <div class="cuadroConductor">
+                <P><b><i class='bx bx-chevron-right'></i> Recibe </b><small>respuesta de la empresa </small></P>
+            </div>
+            <div class="cuadroBot">
+                <div>
+                    <button onclick="enviarInicioTrabajadores();"> CONDUCTORES</button>
+                </div>
+            </div>
+        </div>
+        <div id="empresa">
+            <div class="cuadroEmpresas"> 
+                <i class='bx bx-dollar-circle'></i>
+            </div>
+            <div class="cuadroEmpresas">
+                <h1>Para empresas</h1>
+            </div>
+            <div class="cuadroEmpresas">
+                <h4>Tu nuevo empleo a un par de clicks</h4>
+            </div>
+            <div class="cuadroEmpresas">
+                <P><b> <i class='bx bx-chevron-right'></i> Crea tu cuenta</b> <small> completamente gratis</small></P>
+            </div>
+            <div class="cuadroEmpresas">
+                <P><b><i class='bx bx-chevron-right'></i>  Publica</b> <small> las ofertas que necesites</small></P>
+            </div>
+            <div class="cuadroEmpresas">
+                <P><b> <i class='bx bx-chevron-right'></i> Recibe</b> <small> solicitudes de conductores interesados</small></P>
+            </div>
+            <div class="cuadroEmpresas">
+                <P><b> <i class='bx bx-chevron-right'></i> Selecciona</b> <small> y contacta al candidato ideal</small></P>
+            </div>
+            <div class="cuadroBot">
+               <div>
+                    <button onclick="enviarInicioEmpresas();"> EMPRESAS </button>
+               </div> 
+            </div>
+        </div>
+    </div>
+
     </section>
     <footer>
       <div class="footer_logo">
