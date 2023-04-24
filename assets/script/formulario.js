@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 /* ------ METODOS FORMULARIO EMPRESAAAAA----------- */
 function provincias() {
-    const URL = "http://localhost:8083/provincias/";
+    const URL = "http://localhost:8080/provincias/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -27,7 +27,7 @@ function provincias() {
 }
 function tipoActividadEmpresarial() {
 
-    const URL = "http://localhost:8083/tipoActividadEmpresa/";
+    const URL = "http://localhost:8080/tipoActividadEmpresa/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -41,7 +41,7 @@ function tipoActividadEmpresarial() {
         })
 }
 function tipoDeCarnet() {
-    const URL = "http://localhost:8083/tipoCarnets/";
+    const URL = "http://localhost:8080/tipoCarnets/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -55,7 +55,7 @@ function tipoDeCarnet() {
         })
 }
 function ambitosGeograficos() {
-    const URL = "http://localhost:8083/ambitosGeograficos/";
+    const URL = "http://localhost:8080/ambitosGeograficos/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -346,7 +346,7 @@ function addLogoEmpresa() {
         // Crear un objeto XMLHttpRequest
         var xhr = new XMLHttpRequest();
         // Configurar la solicitud
-        xhr.open("POST", "http://localhost:8083/empresa/subir/logo");
+        xhr.open("POST", "http://localhost:8080/empresa/subir/logo");
         // Enviar el objeto FormData al servidor
         xhr.send(formData);
         // Manejar la respuesta del servidor
@@ -364,7 +364,7 @@ function addLogoEmpresa() {
 }
 function adddbddEmpresa(empresa) {
     return new Promise((resolve, reject) => {
-        const URL = "http://localhost:8083/empresa/registro/";
+        const URL = "http://localhost:8080/empresa/registro/";
         fetch(URL, {
             headers: {
                 'Accept': 'application/json',
@@ -599,7 +599,7 @@ function addFotoTrabajador() {
         // Crear un objeto XMLHttpRequest
         var xhr = new XMLHttpRequest();
         // Configurar la solicitud
-        xhr.open("POST", "http://localhost:8083/empresa/subir/imagen");
+        xhr.open("POST", "http://localhost:8080/empresa/subir/imagen");
         // Enviar el objeto FormData al servidor
         xhr.send(formData);
         // Manejar la respuesta del servidor
@@ -618,7 +618,7 @@ function addFotoTrabajador() {
 function addbbtrabajador() {
     let trabajador = JSON.parse(localStorage.getItem('trabajador'));
     return new Promise((resolve, reject) => {
-        const URL = "http://localhost:8083/trabajador/registro/";
+        const URL = "http://localhost:8080/trabajador/registro/";
         fetch(URL, {
             headers: {
                 'Accept': 'application/json',
@@ -726,7 +726,7 @@ async function infoProfesionalTrabajador() {
 function addbbdatosProfesionalesTrabajador() {
     let datosProfesionalesTrabajador = JSON.parse(localStorage.getItem('datosProfesionalesTrabajador'));
     return new Promise((resolve, reject) => {
-        const URL = "http://localhost:8083/trabajador/registroDatosProfesionales/";
+        const URL = "http://localhost:8080/trabajador/registroDatosProfesionales/";
         fetch(URL, {
             headers: {
                 'Accept': 'application/json',
@@ -802,7 +802,7 @@ async function añadirExperiencia() {
 
 function addExperiencia(experiencia) {
     return new Promise((resolve, reject) => {
-        const URL = "http://localhost:8083/trabajador/registroExperiencia/";
+        const URL = "http://localhost:8080/trabajador/registroExperiencia/";
         fetch(URL, {
             headers: {
                 'Accept': 'application/json',
@@ -975,7 +975,7 @@ function calcularEdad(fecha_nacimiento) {
 
 /*------- FUNCION BUSQUEDA EN LA BBDD ------ */
 function buscarProvincia(id) {
-    const URL = "http://localhost:8083/provincia/" + id;
+    const URL = "http://localhost:8080/provincia/" + id;
     return new Promise((resolve, reject) => {
         fetch(URL)
             .then((response) => response.json())
@@ -985,7 +985,7 @@ function buscarProvincia(id) {
 
 }
 function buscarExperiencias(dni) {
-    const URL = "http://localhost:8083/trabajador/experiencias/" + dni;
+    const URL = "http://localhost:8080/trabajador/experiencias/" + dni;
     return new Promise((resolve, reject) => {
         fetch(URL)
             .then((response) => response.json())
@@ -995,7 +995,7 @@ function buscarExperiencias(dni) {
 
 }
 function buscarCarnet(id) {
-    const URL = "http://localhost:8083/carnet/" + id;
+    const URL = "http://localhost:8080/carnet/" + id;
     return new Promise((resolve, reject) => {
         fetch(URL)
             .then((response) => response.json())
@@ -1005,7 +1005,7 @@ function buscarCarnet(id) {
 }
 
 function buscarAmbito(id) {
-    const URL = "http://localhost:8083/ambito/" + id;
+    const URL = "http://localhost:8080/ambito/" + id;
     return new Promise((resolve, reject) => {
         fetch(URL)
             .then((response) => response.json())
@@ -1014,7 +1014,7 @@ function buscarAmbito(id) {
     });
 }
 function buscarTipoEspecialidad(id) {
-    const URL = "http://localhost:8083/tipoEspecialidad/" + id;
+    const URL = "http://localhost:8080/tipoEspecialidad/" + id;
     return new Promise((resolve, reject) => {
         fetch(URL)
             .then((response) => response.json())
@@ -1026,7 +1026,7 @@ function buscarTipoEspecialidad(id) {
 
 /* EMPRESA  */
 function buscarTipoActividadEmpresa(id) {
-    const URL = "http://localhost:8083/tipoActividadEmpresarial/" + id;
+    const URL = "http://localhost:8080/tipoActividadEmpresarial/" + id;
     return new Promise((resolve, reject) => {
         fetch(URL)
             .then((response) => response.json())
@@ -1036,7 +1036,7 @@ function buscarTipoActividadEmpresa(id) {
 }
 function buscarExistenciaEmpresa(emailv) {
 
-    const URL = "http://localhost:8083/empresa/email=" + emailv;
+    const URL = "http://localhost:8080/empresa/email=" + emailv;
     return new Promise((resolve, reject) => {
         fetch(URL)
             .then((response) => response.json())
@@ -1051,7 +1051,7 @@ function buscarExistenciaEmpresa(emailv) {
     });
 }
 function buscarEmpresa(cifv) {
-    const URL = "http://localhost:8083/empresa/cif=" + cifv;
+    const URL = "http://localhost:8080/empresa/cif=" + cifv;
     return new Promise((resolve, reject) => {
         fetch(URL)
             .then((response) => response.text())
@@ -1071,7 +1071,7 @@ function buscarEmpresa(cifv) {
 /* TRABAJADOR */
 function buscarExistenciaTrabajador(emailv) {
 
-    const URL = "http://localhost:8083/trabajador/email=" + emailv;
+    const URL = "http://localhost:8080/trabajador/email=" + emailv;
     return new Promise((resolve, reject) => {
         fetch(URL)
             .then((response) => response.json())
@@ -1087,7 +1087,7 @@ function buscarExistenciaTrabajador(emailv) {
 }
 function buscarTrabajador(dniv) {
 
-    const URL = "http://localhost:8083/trabajador/" + dniv;
+    const URL = "http://localhost:8080/trabajador/" + dniv;
     //const URL = "http://localhost:8080/trabajador/dni=" + dniv;
     return new Promise((resolve, reject) => {
         fetch(URL)

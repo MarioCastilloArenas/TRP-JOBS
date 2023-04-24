@@ -50,8 +50,8 @@ async function buscar() {
         throw new Error('Ha ocurrido un error');
     }
 }
-function provincias (){
-    const URL = "http://localhost:8083/oferta/provinciasEnOfertas";
+function provincias() {
+    const URL = "http://localhost:8080/oferta/provinciasEnOfertas";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -98,8 +98,8 @@ function provincias (){
             provincias.appendChild(div1);
         })
 }
-function tipoDeCarnet (){ 
-    const URL = "http://localhost:8083/tipoCarnets/";
+function tipoDeCarnet() {
+    const URL = "http://localhost:8080/tipoCarnets/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -121,8 +121,8 @@ function tipoDeCarnet (){
             TipoCarnet.appendChild(div1)
         })
 }
-function ambitosGeograficos(){ 
-    const URL = "http://localhost:8083/ambitosGeograficos/";
+function ambitosGeograficos() {
+    const URL = "http://localhost:8080/ambitosGeograficos/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -188,8 +188,8 @@ function filtros() {
         filtros.style.display = 'none';
     }
 }
-function verOfertas(){
-    const URL = "http://localhost:8083/oferta/noCaducadas";
+function verOfertas() {
+    const URL = "http://localhost:8080/oferta/noCaducadas";
     fetch(URL)
         .then((response) => response.json())
         .then((oferta) => {
@@ -263,26 +263,26 @@ async function aplicarFiltros() {
 }
 
 async function fetchOfertas() {
-        const URL = "http://localhost:8083/oferta/noCaducadas";
-        try {
-            const response = await fetch(URL);
-            const ofertas = await response.json();
-            return ofertas;
-        } catch (error) {
-            throw new Error('Error al obtener las ofertas');
-        }
+    const URL = "http://localhost:8080/oferta/noCaducadas";
+    try {
+        const response = await fetch(URL);
+        const ofertas = await response.json();
+        return ofertas;
+    } catch (error) {
+        throw new Error('Error al obtener las ofertas');
+    }
 }
 
-function fBuscar(texto){
+function fBuscar(texto) {
     console.log(texto);
-    if (texto.length == 0){
+    if (texto.length == 0) {
         verOfertas();
-    }else{
-    fetch(URL = " http://localhost:8083/oferta/buscar/"+texto )
-    .then((response) => response.json())
-    .then((data) => {
-        pintar(data);
-    });
+    } else {
+        fetch(URL = " http://localhost:8080/oferta/buscar/" + texto)
+            .then((response) => response.json())
+            .then((data) => {
+                pintar(data);
+            });
     }
 }
 
@@ -371,16 +371,16 @@ function contadorFecha(fecha) {
 
 }
 
-function verOferta(id){
-    fetch(URL = " http://localhost:8083/oferta/"+id )
-    .then((response) => response.json())
-    .then((oferta) => {
-        let tituloof= document.getElementById('tituloof');
-            tituloof.innerHTML=oferta.tituloOferta;
+function verOferta(id) {
+    fetch(URL = " http://localhost:8080/oferta/" + id)
+        .then((response) => response.json())
+        .then((oferta) => {
+            let tituloof = document.getElementById('tituloof');
+            tituloof.innerHTML = oferta.tituloOferta;
             contadorFecha(oferta.fechaCaducidad);
-        localStorage.setItem ('empresaFoto',JSON.stringify(oferta.empresa.logo))
-        let logo= document.getElementById('logoEmpresa');
-            logo.innerHTML='<img src="assets/img/empresas/'+oferta.empresa.logo +'" alt="" width="180px" height="100px">'
+            localStorage.setItem('empresaFoto', JSON.stringify(oferta.empresa.logo))
+            let logo = document.getElementById('logoEmpresa');
+            logo.innerHTML = '<img src="assets/img/empresas/' + oferta.empresa.logo + '" alt="" width="180px" height="100px">'
 
             const months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
             const formatDate = (date) => {

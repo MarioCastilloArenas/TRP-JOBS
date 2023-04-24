@@ -19,8 +19,8 @@ function fverOferta() {
     window.location.href = "verOferta.html";
 }
 
-function verOfertas(){
-    const URL = "http://localhost:8083/oferta/noCaducadas";
+function verOfertas() {
+    const URL = "http://localhost:8080/oferta/noCaducadas";
     fetch(URL)
         .then((response) => response.json())
         .then((oferta) => {
@@ -48,7 +48,7 @@ function pintar(ofertasFiltradas) {
             html += '</div>'
             html += '<div class="informacionEmpresa">'
             html += '<div class="puesto">' + key.descripcion + '</div>'
-            html += '<div class="nombrEmpresa">' + '</div>'
+            html += '<div class="nombrEmpresa">' + key.empresa.nombreComercial+'</div>'
             html += '</div>'
             html += '<div class="localidad">'
             html += '<div class="mapa">'
@@ -65,6 +65,7 @@ function pintar(ofertasFiltradas) {
         }
         i++;
     }
+
     let boton = document.createElement('button');
     boton.id = 'botonvermas'
     boton.style.width = '16660px;'
@@ -91,8 +92,8 @@ function vermas(ciudad) {
     window.location.href = "verOfertas.html";
 }
 
-function contenidoSlider(){
-    const URL = "http://localhost:8083/empresa/todas";
+function contenidoSlider() {
+    const URL = "http://localhost:8080/empresa/todas";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {

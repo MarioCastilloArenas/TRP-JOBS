@@ -110,6 +110,8 @@ section{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    padding-bottom: 3rem;
+    gap: 2rem;
 }
 
 .experiencia>div{
@@ -149,6 +151,9 @@ section{
     display: flex;
     flex-wrap: wrap;
 }
+#paisDelCarnet{
+    padding-bottom: 3rem;
+}
 .ejemplo>div{
     margin-top: 40px;
     margin-bottom: 40px;
@@ -171,17 +176,30 @@ section{
     width: 100px;
     height: 30px;
 }
+
+.carnet{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+.carnet>div{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+}
 .enabled{
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-color: rgba(255, 166, 0, 0.613);
 }
 .disabled{
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    margin-right: 20px;
+    width: 40px;
+    height: 40px;
 }
 @media (max-width: 1000px){
     .nombre{

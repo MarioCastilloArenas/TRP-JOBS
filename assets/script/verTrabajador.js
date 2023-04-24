@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function fverTrabajador(dniv) {
 
-    let url = "http://localhost:8083/trabajador/" + dniv;
+    let url = "http://localhost:8080/trabajador/" + dniv;
     fetch(url)
         .then(res => res.json())
         .then(trabajador => {
@@ -15,10 +15,6 @@ function fverTrabajador(dniv) {
             let img = document.createElement("img");
             img.src = "assets/img/trabajadores/" + trabajador.fotoTrabajador;
             fotoCurr.appendChild(img);
-            let nombre2 = document.getElementById("nombre2");
-            nombre2.innerHTML = trabajador.nombre
-            let apellido2 = documentz.getElementById("apellido2");
-            apellido2.innerHTML = trabajador.apellidos
             let nombre = document.getElementById("nombre");
             nombre.innerHTML = trabajador.nombre
             let apellido = document.getElementById("apellido");
@@ -32,11 +28,11 @@ function fverTrabajador(dniv) {
             let txtPresentacion = document.getElementById("txtPresentacion");
             txtPresentacion.innerHTML = trabajador.presentacion
 
-    //         let url = "http://localhost:8083/trabajador/datosProfesionales/" + dniv;
-    // fetch(url)
-    //     .then(res => res.json())
-    //     .then(datosTrabajador => {
-    //         console.log(datosTrabajador)
+            //         let url = "http://localhost:8080/trabajador/datosProfesionales/" + dniv;
+            // fetch(url)
+            //     .then(res => res.json())
+            //     .then(datosTrabajador => {
+            //         console.log(datosTrabajador)
 
             let url = "http://localhost:8080/trabajador/datosProfesionales/" + dniv;
             fetch(url)
@@ -80,6 +76,37 @@ function fverTrabajador(dniv) {
                     else {
                         nomID.className = "enabled";
                     }
+
+                    switch (datosTrabajador.tipoCarnet.idCarnet) {
+                        case 1:
+                            document.getElementById("numero1").className = "enabled";
+                            break;
+                        case 2:
+                            document.getElementById("numero2").className = "enabled";
+                            break;
+                        case 3:
+                            document.getElementById("numero3").className = "enabled";
+                            break;
+                        case 4:
+                            document.getElementById("numero4").className = "enabled";
+                            break;
+                        case 5:
+                            document.getElementById("numero5").className = "enabled";
+                            break;
+                        case 6:
+                            document.getElementById("numero6").className = "enabled";
+                            break;
+                        case 7:
+                            document.getElementById("numero7").className = "enabled";
+                            break;
+                        case 8:
+                            document.getElementById("numero8").className = "enabled";
+                            break;
+
+                    }
+
+                    let pais = document.getElementById("paisCarnet");
+                    pais.innerHTML = datosTrabajador.paisCarnet
 
                 })
         })

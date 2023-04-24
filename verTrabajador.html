@@ -1,127 +1,138 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <link rel="stylesheet" href="assets/estilos/headerFooter.css">
-    <link rel="stylesheet" href="assets/estilos/verTrabajdor.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Expletus+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <script src='main.js'></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="assets/estilos/headerFooter.css" />
+    <link rel="stylesheet" href="assets/estilos/verTrabajdor.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Expletus+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <script src="main.js"></script>
     <script src="assets/script/verTrabajador.js"></script>
     <script src="index.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <!-- <a href="index.html"> -->
-        <div id="logo" onclick="GoIndex()" >
-            <p class="animacionLogo">TRP JOBS</p>
-        </div>
-        <!-- </a> -->
-        <div id="info">
-            <div id="boxInfo">
-                <div id="sobreNosotros"> Sobre nosotros</div>
-                <div id="trabajadores" onclick="enviarInicioTrabajadores();"> Trabajadores </div>
-                <div id="empresas" onclick="enviarInicioEmpresas();"> Empresas </div>
-                <div id="logoUser"> <i class='bx bx-user-circle'></i> </div>
-                <div id="navMenu">
-                    <div class="btn-menu">
-                        <label for="btn-menu">
-                            <span class="material-symbols-outlined">
-                                menu
-                            </span>
-                        </label>
-                    </div>
-                </div>
+      <!-- <a href="index.html"> -->
+      <div id="logo" onclick="GoIndex()">
+        <p class="animacionLogo">TRP JOBS</p>
+      </div>
+      <!-- </a> -->
+      <div id="info">
+        <div id="boxInfo">
+          <div id="sobreNosotros">Sobre nosotros</div>
+          <div id="trabajadores" onclick="enviarInicioTrabajadores();">
+            Trabajadores
+          </div>
+          <div id="empresas" onclick="enviarInicioEmpresas();">Empresas</div>
+          <div id="logoUser"><i class="bx bx-user-circle"></i></div>
+          <div id="navMenu">
+            <div class="btn-menu">
+              <label for="btn-menu">
+                <span class="material-symbols-outlined"> menu </span>
+              </label>
             </div>
+          </div>
         </div>
+      </div>
     </header>
     <nav>
-        <!-- estás viendo la información de
+      <!-- estás viendo la información de
         <div id="nombre2"></div>
         <div id="apellido2"> </div> -->
     </nav>
     <section>
-        <div class="encajePagina">
-            <div class="cabeceraCurr">
-                <div id="fotoCurr">
-                </div>
-                <div class="nombreApeCorr">
-                    <div class="encajeDatos">
-                        <div id="nombre"></div>
-                        <div id="apellido"> </div>
-                    </div>
-                    <div class="contacto">
-                        <div id="correo"></div>
-                        <div id="numeroTLF"></div>
-                        <div id="provincia"></div>
-                    </div>
-                </div>
+      <div class="encajePagina">
+        <div class="cabeceraCurr">
+          <div id="fotoCurr"></div>
+          <div class="nombreApeCorr">
+            <div class="encajeDatos">
+              <div id="nombre"></div>
+              <div id="apellido"></div>
             </div>
-            <div class="infoCurr">
-                <div class="experiencia">
-                    <div class="presentacion">
-                        <h3>Presentación</h3>
-                        <div id="txtPresentacion">
-                        </div>
-                    </div>
-                    <div class="tipodeProfesion">
-                        <h3>Tipo de Profesión</h3>
-                        <div class="tipoDeProf">
-                            <button  id="autonomoID"class="asalariado">Autonomo</button>
-                            <button  id="asalariadoID" class="asalariado">Asalariado</button>                            
-                        </div>
-                    </div>
-                    <div class="tarjetaTacografo">
-                        <h3>Tarjeta tacógrafo</h3>
-                        <div class="tarjetaTac">
-                            <button id="siID" class="disabled">Si</button>
-                            <button id="noID" class="disabled">No</button>
-                        </div>
-                    </div>
-                    <div class="certificadoCap">
-                        <h3>Cerfiticado CAP</h3>
-                        <div class="Cap">
-                            <button id="sicID" class="disabled">Si</button>
-                            <button id="nocID" class="disabled">No</button>
-                        </div>
-                    </div>
-                    <div class="mercanciasPeligrosas">
-                        <h3>Mercancías peligrosas</h3>
-                        <div class="peligrosas">
-                            <button id="simID" class="disabled">Si</button>
-                            <button id="nomID" class="disabled">No</button>
-                        </div>
-                    </div>
-                    <div class="tipoDeCarnet">
-                        <h3>Tipo de carnet</h3>
-                        <div class="carnet">
-                            <button>a</button>
-                            <button>b</button>
-                            <button>c</button>
-                            <button>d</button>
-                            <button>e</button>
-                            <button>f</button>
-                        </div>
-                    </div>
-                    <div class="paisDelCarnet">
-                        <h3>País del carnet</h3>
-                        <div class="paisCarnet">
-                            España
-                        </div>
-                    </div>
+            <div class="contacto">
+              <div id="correo"></div>
+              <div id="numeroTLF"></div>
+              <div id="provincia"></div>
+            </div>
+          </div>
+        </div>
+        <div class="infoCurr">
+          <div class="experiencia">
+            <div class="presentacion">
+              <h3>Presentación</h3>
+              <div id="txtPresentacion"></div>
+            </div>
+            <div class="tipodeProfesion">
+              <h3>Tipo de Profesión</h3>
+              <div class="tipoDeProf">
+                <button id="autonomoID" class="asalariado">Autonomo</button>
+                <button id="asalariadoID" class="asalariado">Asalariado</button>
+              </div>
+            </div>
+            <div class="tarjetaTacografo">
+              <h3>Tarjeta tacógrafo</h3>
+              <div class="tarjetaTac">
+                <button id="siID" class="disabled">Si</button>
+                <button id="noID" class="disabled">No</button>
+              </div>
+            </div>
+            <div class="certificadoCap">
+              <h3>Cerfiticado CAP</h3>
+              <div class="Cap">
+                <button id="sicID" class="disabled">Si</button>
+                <button id="nocID" class="disabled">No</button>
+              </div>
+            </div>
+            <div class="mercanciasPeligrosas">
+              <h3>Mercancías peligrosas</h3>
+              <div class="peligrosas">
+                <button id="simID" class="disabled">Si</button>
+                <button id="nomID" class="disabled">No</button>
+              </div>
+            </div>
+            <div class="tipoDeCarnet">
+              <h3>Tipo de carnet</h3>
+              <div class="carnet">
+                <div>
+                  <button id="numero1" class="disabled">C1</button>
+                  <button id="numero2" class="disabled">C1+E</button>
+                  <button id="numero3" class="disabled">C</button>
+                  <button id="numero4" class="disabled">C+E</button>
                 </div>
-                <div class="infoTrabajador" id="caja">
-                    <div class="titulo">
-                        <p>EXPERIENCIA LABORAL</p>
-                    </div>
-                    <!-- <div>
+                <div>
+                  <button id="numero5" class="disabled">D1</button>
+                  <button id="numero6" class="disabled">D1+E</button>
+                  <button id="numero7" class="disabled">D</button>
+                  <button id="numero8" class="disabled">D+E</button>
+                </div>
+              </div>
+            </div>
+            <div class="paisDelCarnet">
+              <h3>País del carnet</h3>
+              <div id="paisCarnet"></div>
+            </div>
+          </div>
+          <div class="infoTrabajador" id="caja">
+            <div class="titulo">
+              <p>EXPERIENCIA LABORAL</p>
+            </div>
+            <!-- <div>
                         <div class="exp">
                             <h2>FED EX</h2>
                         </div>
@@ -132,7 +143,7 @@
                             </div>
                             <div class="miCarnet">
                                 <h3>Mi carnet más usado</h3> -->
-                                <!-- <p> B </p>
+            <!-- <p> B </p>
                             </div>
                             <div class="tipoEspecialidad">
                                 <h3>Tipo de especialidad</h3>
@@ -156,7 +167,7 @@
                             <h3>Tipo de especialidad</h3>
                             <p>Transporte de carga</p>
                         </div> -->
-                    <!-- </div>  
+            <!-- </div>  
                     <div class="exp">
                         <h2>CORREOS</h2>
                     </div>  
@@ -177,7 +188,7 @@
                     <div class="exp">
                         <h2>AMAZON</h2>
                     </div>                    -->
-                    <!-- <div class="ejemplo">
+            <!-- <div class="ejemplo">
                         <div class="tiempoTr">
                             <h3>Tiempo Trabajado</h3>
                             <p>10 años</p>
@@ -191,29 +202,33 @@
                             <p>Transporte de carga</p>
                         </div>
                     </div>   -->
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </section>
     <footer>
-        <div class="footer_logo">
-            <h2 id="texto_tdr" data-text="&nbsp;TDR Jobs&nbsp;">&nbsp;TDR Jobs&nbsp;</h2>
-        </div> 
-        <div class="footer_opcion">
-            <a href="">para conductores</a>
-            <a href="">para empresas</a>
-            <a href="">ver ofertas</a>
-        </div>
-        <div class="footer_contacto">
-            <p> contacto</p>
-            <p><i class='bx bx-phone-call'></i> 666 666 666</p>
-            <p><i class='bx bx-envelope' ></i> info@trpjobs.com </p>
-        </div>
-        <div class="footer_social">
-            <a href="https://www.whatsapp.com/"><i class='bx bxl-whatsapp'></i></a>
-            <a href="https://es.linkedin.com/"><i class='bx bxl-linkedin' ></i></a>
-            <a href="https://es-es.facebook.com/"><i class='bx bxl-facebook-circle' ></i></a>
-        </div>
-    </footer>   
-</body>
+      <div class="footer_logo">
+        <h2 id="texto_tdr" data-text="&nbsp;TDR Jobs&nbsp;">
+          &nbsp;TDR Jobs&nbsp;
+        </h2>
+      </div>
+      <div class="footer_opcion">
+        <a href="">para conductores</a>
+        <a href="">para empresas</a>
+        <a href="">ver ofertas</a>
+      </div>
+      <div class="footer_contacto">
+        <p>contacto</p>
+        <p><i class="bx bx-phone-call"></i> 666 666 666</p>
+        <p><i class="bx bx-envelope"></i> info@trpjobs.com</p>
+      </div>
+      <div class="footer_social">
+        <a href="https://www.whatsapp.com/"><i class="bx bxl-whatsapp"></i></a>
+        <a href="https://es.linkedin.com/"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://es-es.facebook.com/"
+          ><i class="bx bxl-facebook-circle"></i
+        ></a>
+      </div>
+    </footer>
+  </body>
 </html>

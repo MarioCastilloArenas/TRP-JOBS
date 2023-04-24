@@ -6,13 +6,13 @@ document.addEventListener("DOMContentLoaded", () => {
     //verOfertas(cif)
 });
 
-function fverEmpresa(cif) {
+function fverEmpresa(cifv) {
 
-    let url = "http://localhost:8083/empresa/" + cifv;
+    let url = "http://localhost:8080/empresa/" + cifv;
     fetch(url)
         .then(res => res.json())
         .then(empresa => {
-            
+
             console.log(empresa)
             let logoEmpresa = document.getElementById("logoEmpresa");
             let img = document.createElement("img");
@@ -36,11 +36,11 @@ function fverEmpresa(cif) {
             let descripcionD = document.getElementById("descripcionD");
             descripcionD.innerHTML = empresa.descripcionEmpresa
 
-            
+
 
         })
 
-    // const URL = "http://localhost:8083/oferta/noCaducadas";
+    // const URL = "http://localhost:8080/oferta/noCaducadas";
     // fetch(URL)
     // .then((response) => response.json())
     // .then((oferta) => {
@@ -60,12 +60,12 @@ function fverEmpresa(cif) {
     //         div.appendChild(oferta)  
     //     }
     // });
-    
+
 
 }
-function mostrarOfertaEmpresa(cifv){
+function mostrarOfertaEmpresa(cifv) {
     fotoEmp = JSON.parse(localStorage.getItem("empresaFoto"));
-    const URL = "http://localhost:8083/oferta/todasOfertasNoCaducadas/"+ cifv;
+    const URL = "http://localhost:8080/oferta/todasOfertasNoCaducadas/" + cifv;
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -74,7 +74,7 @@ function mostrarOfertaEmpresa(cifv){
                 html += "<div class='ofertaDestacada'>";
                 html += "   <div class='circleDestacada'>Destacadas</div>";
                 html += "   <div class='image'>";
-                html += "       <img src='assets/img/empresas/"+ fotoEmp +"' alt='' width='180px' height='100px'>";
+                html += "       <img src='assets/img/empresas/" + fotoEmp + "' alt='' width='180px' height='100px'>";
                 html += "   </div>";
                 html += "   <div class='informacionEmpresa'>";
                 html += "       <div class='puesto'>";
