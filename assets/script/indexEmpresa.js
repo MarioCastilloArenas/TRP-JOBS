@@ -316,7 +316,11 @@ function fMostrarActivas() {
 function fMostrarFinalizadas() {
     cifEmp = JSON.parse(localStorage.getItem("empresa"));
     fotoEmp = JSON.parse(localStorage.getItem("empresaFoto"));
+<<<<<<< HEAD
     const URL = "http://localhost:8080/oferta/todasOfertasCaducadas/" + cifEmp;
+=======
+    const URL = "http://localhost:8080/oferta/todasOfertasCaducadas/"+ cifEmp;
+>>>>>>> 22c305ef5f2a5f054a7a5278035bf52147cd1896
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
