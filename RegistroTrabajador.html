@@ -1,454 +1,383 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="assets/estilos/headerFooter.css" />
-    <link rel="stylesheet" href="assets/estilos/formulario.css" />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    />
-    <script src="assets/script/formulario.js"></script>
-  </head>
-  <body>
-    <header>
-      <div id="logo">
-        <p class="animacionLogo">TRP JOBS</p>
-      </div>
-      <div id="info">
-        <div id="boxInfo">
-          <div id="sobreNosotros" onclick="fEnviarSobreNosotros();">
-            Sobre nosotros
-          </div>
-          <div id="trabajadores" onclick="enviarInicioTrabajadores();">
-            Trabajadores
-          </div>
-          <div id="empresas" onclick="enviarInicioEmpresas();">Empresas</div>
-          <div id="logoUser"><i class="bx bx-user-circle"></i></div>
-          <div id="navMenu">
-            <div class="btn-menu">
-              <label for="btn-menu">
-                <span class="material-symbols-outlined"> menu </span>
-              </label>
-            </div>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/estilos/headerFooter.css" />
+  <link rel="stylesheet" href="assets/estilos/formulario.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <script src="assets/script/formulario.js"></script>
+</head>
+
+<body>
+  <header>
+    <div id="logo">
+      <p class="animacionLogo">TRP JOBS</p>
+    </div>
+    <div id="info">
+      <div id="boxInfo">
+        <div id="sobreNosotros" onclick="fEnviarSobreNosotros();"> Sobre nosotros</div>
+        <div id="trabajadores" onclick="enviarInicioTrabajadores();"> Trabajadores </div>
+        <div id="empresas" onclick="enviarInicioEmpresas();"> Empresas </div>
+        <div id="navMenu">
+          <div class="btn-menu">
+            <label for="btn-menu">
+              <span class="material-symbols-outlined">
+                menu
+              </span>
+            </label>
           </div>
         </div>
-      </div>
-    </header>
-    <input type="checkbox" id="btn-menu" />
-    <div id="container_menu">
-      <div class="cont_menu">
-        <nav>
-          <nav id="nav_sesion">
-            <a href="">SOBRE NOSOTROS</a>
-            <a href="loginUsuario.html">TRABAJADORES</a>
-            <a href="loginEmpresa.html">EMPRESAS</a>
-          </nav>
-        </nav>
-        <label for="btn-menu" class="">
-          <span class="material-symbols-outlined"> close </span>
-        </label>
       </div>
     </div>
-    <input type="checkbox" id="btn-sesion" />
-    <section>
-      <div class="banner">
-        <h1>
-          Regístrate en TRP JOBS - Encuentra tu trabajo ideal en el sector del
-          transporte
-        </h1>
-        <p>
-          Nuestra plataforma ofrece un buscador de empleo especializado en el
-          sector del transporte, donde podrás encontrar ofertas de trabajo
-          relevantes y atractivas en función de tus habilidades y experiencia.
-          Además, podrás crear un perfil personalizado para mostrar tus
-          habilidades y experiencia a las empresas que buscan candidatos en el
-          sector del transporte.<br /><b
-            >¡Regístrate ahora y comienza a buscar tu trabajo ideal en TRP
-            JOBS!</b
-          >
-        </p>
-      </div>
-      <div id="formulario">
-        <div id="progreso">
-          <div class="container">
-            <div class="infoPaso" id="pasoAColor1">
-              <div class="paso">Paso 1</div>
-              <div class="nombrePaso">Datos de registro.</div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="infoPaso" id="pasoAColor2">
-              <div class="paso">Paso 2</div>
-              <div class="nombrePaso">Información personal.</div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="infoPaso" id="pasoAColor3">
-              <div class="paso">Paso 3</div>
-              <div class="nombrePaso">Datos laborales.</div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="infoPaso" id="pasoAColor4">
-              <div class="paso">Paso 4</div>
-              <div class="nombrePaso">Experiencia laboral.</div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="infoPaso" id="pasoAColor5">
-              <div class="paso">Paso 5</div>
-              <div class="nombrePaso">Resumen</div>
-            </div>
+  </header>
+  <input type="checkbox" id="btn-menu">
+  <div id="container_menu">
+    <div class="cont_menu">
+      <nav>
+        <nav id="nav_sesion">
+          <a href="">SOBRE NOSOTROS</a>
+          <a href="loginUsuario.html">TRABAJADORES</a>
+          <a href="loginEmpresa.html">EMPRESAS</a>
+        </nav>
+      </nav>
+      <label for="btn-menu" class="">
+        <span class="material-symbols-outlined">
+          close
+        </span>
+      </label>
+    </div>
+  </div>
+  <input type="checkbox" id="btn-sesion">
+  <section>
+    <div class="banner">
+      <h1>
+        Regístrate en TRP JOBS - Encuentra tu trabajo ideal en el sector del
+        transporte
+      </h1>
+      <p>
+        Nuestra plataforma ofrece un buscador de empleo especializado en el
+        sector del transporte, donde podrás encontrar ofertas de trabajo
+        relevantes y atractivas en función de tus habilidades y experiencia.
+        Además, podrás crear un perfil personalizado para mostrar tus
+        habilidades y experiencia a las empresas que buscan candidatos en el
+        sector del transporte.<br /><b>¡Regístrate ahora y comienza a buscar tu trabajo ideal en TRP
+          JOBS!</b>
+      </p>
+    </div>
+    <div id="formulario">
+      <div id="progreso">
+        <div class="container">
+          <div class="infoPaso" id="pasoAColor1">
+            <div class="paso">Paso 1</div>
+            <div class="nombrePaso">Datos de registro.</div>
           </div>
         </div>
-        <div class="contenido">
-          <div class="fieldset" id="paso1">
-            <!-- paso1  -->
-            <div class="tituloRelleno">
-              <h2>DATOS DE REGISTRO</h2>
+        <div class="container">
+          <div class="infoPaso" id="pasoAColor2">
+            <div class="paso">Paso 2</div>
+            <div class="nombrePaso">Información personal.</div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="infoPaso" id="pasoAColor3">
+            <div class="paso">Paso 3</div>
+            <div class="nombrePaso">Datos laborales.</div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="infoPaso" id="pasoAColor4">
+            <div class="paso">Paso 4</div>
+            <div class="nombrePaso">Experiencia laboral.</div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="infoPaso" id="pasoAColor5">
+            <div class="paso">Paso 5</div>
+            <div class="nombrePaso">Resumen</div>
+          </div>
+        </div>
+      </div>
+      <div class="contenido">
+        <div class="fieldset" id="paso1">
+          <!-- paso1  -->
+          <div class="tituloRelleno">
+            <h2>DATOS DE REGISTRO</h2>
+          </div>
+          <div class="rellenar">
+            <h3 id="mensaje1"></h3>
+            <div class="form-item">
+              <label for="email">Email:</label>
+              <input type="text" id="email" />
+              <i id="good" class="bx bx-check-circle"></i>
+              <i id="error" class="bx bx-error-circle"></i>
+              <small>Rellene este campo</small>
             </div>
-            <div class="rellenar">
-              <h3 id="mensaje1"></h3>
-              <div class="form-item">
-                <label for="email">Email:</label>
-                <input type="text" id="email" />
-                <i id="good" class="bx bx-check-circle"></i>
-                <i id="error" class="bx bx-error-circle"></i>
-                <small>Rellene este campo</small>
-              </div>
-              <div class="form-item">
-                <label for="password">Clave:</label>
-                <input type="password" id="password" required />
-                <i id="good" class="bx bx-check-circle"></i>
-                <i id="error" class="bx bx-error-circle"></i>
-                <small>Rellene este campo</small>
-              </div>
-              <div class="form-item">
-                <label for="password2">Confirme su clave:</label>
-                <input type="password" id="password2" required />
-                <i id="good" class="bx bx-check-circle"></i>
-                <i id="error" class="bx bx-error-circle"></i>
-                <small>Rellene este campo</small>
-              </div>
-              <button id="botonSiguiente" onclick="LoginTrabajador()">
+            <div class="form-item">
+              <label for="password">Clave:</label>
+              <input type="password" id="password" required />
+              <i id="good" class="bx bx-check-circle"></i>
+              <i id="error" class="bx bx-error-circle"></i>
+              <small>Rellene este campo</small>
+            </div>
+            <div class="form-item">
+              <label for="password2">Confirme su clave:</label>
+              <input type="password" id="password2" required />
+              <i id="good" class="bx bx-check-circle"></i>
+              <i id="error" class="bx bx-error-circle"></i>
+              <small>Rellene este campo</small>
+            </div>
+            <button id="botonSiguiente" onclick="LoginTrabajador()">
+              Siguiente
+            </button>
+          </div>
+        </div>
+        <div class="fieldset" id="paso2">
+          <!--Poner contraseña-->
+          <!-- paso2  -->
+          <div class="tituloRelleno">
+            <h2>INFORMACIÓN PROFESIONAL</h2>
+          </div>
+          <div class="rellenar">
+            <h3 id="mensaje2"></h3>
+            <div class="form-item">
+              <label for="dni">DNI:</label>
+              <input type="text" id="dni" required />
+              <i id="good" class="bx bx-check-circle"></i>
+              <i id="error" class="bx bx-error-circle"></i>
+              <small>Rellene este campo</small>
+            </div>
+            <div class="form-item">
+              <label for="nombre">Nombre:</label>
+              <input type="text" id="nombre" required />
+              <i id="good" class="bx bx-check-circle"></i>
+              <i id="error" class="bx bx-error-circle"></i>
+              <small>Rellene este campo</small>
+            </div>
+            <div class="form-item">
+              <label for="apellidos">Apellidos:</label>
+              <input type="text" id="apellidos" required />
+              <i id="good" class="bx bx-check-circle"></i>
+              <i id="error" class="bx bx-error-circle"></i>
+              <small>Rellene este campo</small>
+            </div>
+            <div class="form-item">
+              <label for="fechaNacimiento">Fecha Nacimiento</label>
+              <input type="date" id="fechaNacimiento" />
+              <i id="good" class="fa-solid fa-circle-check"></i>
+              <i id="error" class="fa-solid fa-circle-exclamation"></i>
+              <small>Rellene este campo</small>
+            </div>
+            <div class="form-item">
+              <label for="nacionalidad">Nacionalidad:</label>
+              <input type="text" id="nacionalidad" required />
+              <i id="good" class="bx bx-check-circle"></i>
+              <i id="error" class="bx bx-error-circle"></i>
+              <small>Rellene este campo</small>
+            </div>
+            <div class="form-item">
+              <label for="provincia">Provincia:</label>
+              <select id="provincia"></select>
+            </div>
+            <div class="form-item">
+              <label for="codigoPostal">Codigo Postal:</label>
+              <input type="number" id="codigoPostal" required />
+              <i id="good" class="bx bx-check-circle"></i>
+              <i id="error" class="bx bx-error-circle"></i>
+              <small>Rellene este campo</small>
+            </div>
+            <div class="form-item">
+              <label for="presentacion">Presentación:</label>
+              <input type="text" id="presentacion" />
+              <i id="good" class="fa-solid fa-circle-check"></i>
+              <i id="error" class="fa-solid fa-circle-exclamation"></i>
+              <small>Rellene este campo</small>
+            </div>
+            <div class="form-item">
+              <label for="fotoTrabajador">Imagen:</label>
+              <input type="file" id="fotoTrabajador" />
+            </div>
+            <div class="form-boton-item">
+              <button id="botonSiguiente2" onclick="infoPersonalTrabajador(event)">
                 Siguiente
               </button>
             </div>
           </div>
-          <div class="fieldset" id="paso2">
-            <!--Poner contraseña-->
-            <!-- paso2  -->
-            <div class="tituloRelleno">
-              <h2>INFORMACIÓN PROFESIONAL</h2>
-            </div>
-            <div class="rellenar">
-              <h3 id="mensaje2"></h3>
-              <div class="form-item">
-                <label for="dni">DNI:</label>
-                <input type="text" id="dni" required />
-                <i id="good" class="bx bx-check-circle"></i>
-                <i id="error" class="bx bx-error-circle"></i>
-                <small>Rellene este campo</small>
-              </div>
-              <div class="form-item">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" required />
-                <i id="good" class="bx bx-check-circle"></i>
-                <i id="error" class="bx bx-error-circle"></i>
-                <small>Rellene este campo</small>
-              </div>
-              <div class="form-item">
-                <label for="apellidos">Apellidos:</label>
-                <input type="text" id="apellidos" required />
-                <i id="good" class="bx bx-check-circle"></i>
-                <i id="error" class="bx bx-error-circle"></i>
-                <small>Rellene este campo</small>
-              </div>
-              <div class="form-item">
-                <label for="fechaNacimiento">Fecha Nacimiento</label>
-                <input type="date" id="fechaNacimiento" />
-                <i id="good" class="fa-solid fa-circle-check"></i>
-                <i id="error" class="fa-solid fa-circle-exclamation"></i>
-                <small>Rellene este campo</small>
-              </div>
-              <div class="form-item">
-                <label for="nacionalidad">Nacionalidad:</label>
-                <input type="text" id="nacionalidad" required />
-                <i id="good" class="bx bx-check-circle"></i>
-                <i id="error" class="bx bx-error-circle"></i>
-                <small>Rellene este campo</small>
-              </div>
-              <div class="form-item">
-                <label for="provincia">Provincia:</label>
-                <select id="provincia"></select>
-              </div>
-              <div class="form-item">
-                <label for="codigoPostal">Codigo Postal:</label>
-                <input type="number" id="codigoPostal" required />
-                <i id="good" class="bx bx-check-circle"></i>
-                <i id="error" class="bx bx-error-circle"></i>
-                <small>Rellene este campo</small>
-              </div>
-              <div class="form-item">
-                <label for="presentacion">Presentación:</label>
-                <input type="text" id="presentacion" />
-                <i id="good" class="fa-solid fa-circle-check"></i>
-                <i id="error" class="fa-solid fa-circle-exclamation"></i>
-                <small>Rellene este campo</small>
-              </div>
-              <div class="form-item">
-                <label for="fotoTrabajador">Imagen:</label>
-                <input type="file" id="fotoTrabajador" />
-              </div>
-              <div class="form-boton-item">
-                <button
-                  id="botonSiguiente2"
-                  onclick="infoPersonalTrabajador(event)"
-                >
-                  Siguiente
-                </button>
-              </div>
-            </div>
+        </div>
+        <div class="fieldset" id="paso3">
+          <div class="tituloRelleno">
+            <h2>DATOS LABORALES</h2>
           </div>
-          <div class="fieldset" id="paso3">
-            <div class="tituloRelleno">
-              <h2>DATOS LABORALES</h2>
+          <div class="rellenar">
+            <h3 id="mensaje3"></h3>
+            <div class="form-item">
+              <p id="identificador">Tipo profesional</p>
+              <label><input type="radio" name="tipoProfesion" value="Asaliariado" checked />
+                Asaliariado</label>
+              <label><input type="radio" name="tipoProfesion" value="Autonomo" />Autonomo</label>
             </div>
-            <div class="rellenar">
-              <h3 id="mensaje3"></h3>
-              <div class="form-item">
-                <p id="identificador">Tipo profesional</p>
-                <label
-                  ><input
-                    type="radio"
-                    name="tipoProfesion"
-                    value="Asaliariado"
-                    checked
-                  />
-                  Asaliariado</label
-                >
-                <label
-                  ><input
-                    type="radio"
-                    name="tipoProfesion"
-                    value="Autonomo"
-                  />Autonomo</label
-                >
-              </div>
-              <div class="form-item">
-                <label for="ambitosGeograficos">Ambitos Geograficos:</label>
-                <select id="ambitosGeograficos"></select>
-              </div>
-              <div class="form-item">
-                <p id="identificador">Tarjeta tacografo</p>
-                <label
-                  ><input
-                    type="radio"
-                    name="tarjetaTacografo"
-                    value="si"
-                    checked
-                  />Si</label
-                >
-                <label
-                  ><input
-                    type="radio"
-                    name="tarjetaTacografo"
-                    value="no"
-                  />No</label
-                >
-              </div>
-              <div class="form-item">
-                <p id="identificador">Certificado CAP</p>
-                <label
-                  ><input
-                    type="radio"
-                    name="certificadoCap"
-                    value="si"
-                    checked
-                  />Si</label
-                >
-                <label
-                  ><input
-                    type="radio"
-                    name="certificadoCap"
-                    value="no"
-                  />No</label
-                >
-              </div>
-              <div class="form-item">
-                <p id="identificador">Mercancías peligrosas</p>
-                <label
-                  ><input
-                    type="radio"
-                    name="mercanciasPeligrosas"
-                    value="si"
-                  />Si</label
-                >
-                <label
-                  ><input
-                    type="radio"
-                    name="mercanciasPeligrosas"
-                    value="no"
-                    checked
-                  />No</label
-                >
-              </div>
-              <div class="form-item">
-                <label for="tipoCarnet">Tipo Carnet:</label>
-                <select id="tipoCarnet uno"></select>
-              </div>
-              <div class="form-item">
-                <label for="paisCarnet">Pais del carnet:</label>
-                <input type="text" id="paisCarnet" required />
-                <i id="good" class="bx bx-check-circle"></i>
-                <i id="error" class="bx bx-error-circle"></i>
-                <small>Rellene este campo</small>
-              </div>
+            <div class="form-item">
+              <label for="ambitosGeograficos">Ambitos Geograficos:</label>
+              <select id="ambitosGeograficos"></select>
+            </div>
+            <div class="form-item">
+              <p id="identificador">Tarjeta tacografo</p>
+              <label><input type="radio" name="tarjetaTacografo" value="si" checked />Si</label>
+              <label><input type="radio" name="tarjetaTacografo" value="no" />No</label>
+            </div>
+            <div class="form-item">
+              <p id="identificador">Certificado CAP</p>
+              <label><input type="radio" name="certificadoCap" value="si" checked />Si</label>
+              <label><input type="radio" name="certificadoCap" value="no" />No</label>
+            </div>
+            <div class="form-item">
+              <p id="identificador">Mercancías peligrosas</p>
+              <label><input type="radio" name="mercanciasPeligrosas" value="si" />Si</label>
+              <label><input type="radio" name="mercanciasPeligrosas" value="no" checked />No</label>
+            </div>
+            <div class="form-item">
+              <label for="tipoCarnet">Tipo Carnet:</label>
+              <select id="tipoCarnet uno"></select>
+            </div>
+            <div class="form-item">
+              <label for="paisCarnet">Pais del carnet:</label>
+              <input type="text" id="paisCarnet" required />
+              <i id="good" class="bx bx-check-circle"></i>
+              <i id="error" class="bx bx-error-circle"></i>
+              <small>Rellene este campo</small>
+            </div>
 
-              <button onclick="infoProfesionalTrabajador(event)">
-                Siguiente
+            <button onclick="infoProfesionalTrabajador(event)">
+              Siguiente
+            </button>
+          </div>
+        </div>
+        <div class="fieldset" id="paso4">
+          <div class="tituloRelleno">
+            <h2>EXPERIENCIA LABORAL</h2>
+          </div>
+          <div class="rellenar">
+            <h3 id="mensaje4"></h3>
+            <label><input type="checkbox" id="no_experiencia" value="no_experiencia" />No tengo experiencia.</label>
+            <div class="form-item">
+              <label for="nomEmpresa">Nombre Empresa:</label>
+              <input type="text" id="nomEmpresa" required />
+              <i id="good" class="bx bx-check-circle"></i>
+              <i id="error" class="bx bx-error-circle"></i>
+              <small>Rellene este campo</small>
+            </div>
+            <div class="form-item">
+              <label for="duracion">Duración:</label>
+              <input type="text" name="duracion" id="duracion" required />
+              <i id="good" class="bx bx-check-circle"></i>
+              <i id="error" class="bx bx-error-circle"></i>
+              <small>rellene este campo</small>
+            </div>
+            <div class="form-item">
+              <label for="tipoCarnet">Tipo Carnet:</label>
+              <select id="tipoCarnet dos"></select>
+            </div>
+            <div class="form-item">
+              <label for="TipoActividadEmpresa">Tipo especializadad:</label>
+              <select id="TipoActividadEmpresa"></select>
+            </div>
+            <div>
+              <button onclick="añadirExperiencia(event)">
+                Añadir Experiencia
               </button>
             </div>
-          </div>
-          <div class="fieldset" id="paso4">
-            <div class="tituloRelleno">
-              <h2>EXPERIENCIA LABORAL</h2>
-            </div>
-            <div class="rellenar">
-              <h3 id="mensaje4"></h3>
-              <label
-                ><input
-                  type="checkbox"
-                  id="no_experiencia"
-                  value="no_experiencia"
-                />No tengo experiencia.</label
-              >
-              <div class="form-item">
-                <label for="nomEmpresa">Nombre Empresa:</label>
-                <input type="text" id="nomEmpresa" required />
-                <i id="good" class="bx bx-check-circle"></i>
-                <i id="error" class="bx bx-error-circle"></i>
-                <small>Rellene este campo</small>
-              </div>
-              <div class="form-item">
-                <label for="duracion">Duración:</label>
-                <input type="text" name="duracion" id="duracion" required />
-                <i id="good" class="bx bx-check-circle"></i>
-                <i id="error" class="bx bx-error-circle"></i>
-                <small>rellene este campo</small>
-              </div>
-              <div class="form-item">
-                <label for="tipoCarnet">Tipo Carnet:</label>
-                <select id="tipoCarnet dos"></select>
-              </div>
-              <div class="form-item">
-                <label for="TipoActividadEmpresa">Tipo especializadad:</label>
-                <select id="TipoActividadEmpresa"></select>
-              </div>
-              <div>
-                <button onclick="añadirExperiencia(event)">
-                  Añadir Experiencia
-                </button>
-              </div>
 
-              <button onclick="formSiguiente(event)">Siguiente</button>
-            </div>
+            <button onclick="formSiguiente(event)">Siguiente</button>
           </div>
-          <div class="fieldset activo" id="paso5">
-            <div class="tituloRelleno">
-              <h2>RESUMEN</h2>
+        </div>
+        <div class="fieldset activo" id="paso5">
+          <div class="tituloRelleno">
+            <h2>RESUMEN</h2>
+          </div>
+          <div class="rellenar">
+            <h3 id="mensaje4">
+              ¡Estamos felices de que ya forma parte de nuestro equipo!
+            </h3>
+            <h4>Estas un paso más cerca de conseguir un empleo</h4>
+            <h4>
+              Te recordamos que podras modificar cualquiera de tus datos, en
+              el apartado <b>Mis Datos</b>.
+            </h4>
+            <h4>
+              Te dejamos cuatro consejos para conseguir empleo rapidamente:
+            </h4>
+            <div class="infor">
+              <ol>
+                <li>
+                  <b>Completa tu perfil:</b> Asegúrate de que tu perfil en la
+                  web de empleo esté completo y actualizado. Incluye una foto
+                  profesional, tu experiencia laboral, habilidades, educación,
+                  certificaciones y cualquier otra información relevante. Esto
+                  ayudará a que los empleadores te encuentren y te consideren
+                  para posibles oportunidades.
+                </li>
+                <li>
+                  <b>Personaliza tu búsqueda: </b>Aprovecha las opciones de
+                  filtrado que ofrecen las webs de empleo para personalizar tu
+                  búsqueda de acuerdo a tus intereses y habilidades. Además,
+                  lee cuidadosamente las descripciones de los trabajos para
+                  asegurarte de que cumples con los requisitos y que realmente
+                  te interesa el puesto.
+                </li>
+                <li>
+                  <b>Mantén una buena comunicación: </b>Si recibes una oferta
+                  de trabajo o una entrevista, asegúrate de responder de
+                  manera oportuna y profesional. Si no estás interesado en la
+                  oferta, agradece de manera cortés y respetuosa. Mantén una
+                  buena comunicación con los potenciales para establecer una
+                  relación sólida.
+                </li>
+                <li>
+                  <b>Sé proactivo:</b> No esperes a que las ofertas lleguen a
+                  ti, sé proactivo y busca oportunidades en la web de empleo.
+                  Además, puedes utilizar las redes sociales para conectarte
+                  con empresas y profesionales de tu sector. Asiste a eventos
+                  y conferencias relacionadas con tu campo para establecer
+                  contactos y aprender sobre nuevas oportunidades laborales.
+                </li>
+              </ol>
             </div>
-            <div class="rellenar">
-              <h3 id="mensaje4">
-                ¡Estamos felices de que ya forma parte de nuestro equipo!
-              </h3>
-              <h4>Estas un paso más cerca de conseguir un empleo</h4>
-              <h4>
-                Te recordamos que podras modificar cualquiera de tus datos, en
-                el apartado <b>Mis Datos</b>.
-              </h4>
-              <h4>
-                Te dejamos cuatro consejos para conseguir empleo rapidamente:
-              </h4>
-              <div class="infor">
-                <ol>
-                  <li>
-                    <b>Completa tu perfil:</b> Asegúrate de que tu perfil en la
-                    web de empleo esté completo y actualizado. Incluye una foto
-                    profesional, tu experiencia laboral, habilidades, educación,
-                    certificaciones y cualquier otra información relevante. Esto
-                    ayudará a que los empleadores te encuentren y te consideren
-                    para posibles oportunidades.
-                  </li>
-                  <li>
-                    <b>Personaliza tu búsqueda: </b>Aprovecha las opciones de
-                    filtrado que ofrecen las webs de empleo para personalizar tu
-                    búsqueda de acuerdo a tus intereses y habilidades. Además,
-                    lee cuidadosamente las descripciones de los trabajos para
-                    asegurarte de que cumples con los requisitos y que realmente
-                    te interesa el puesto.
-                  </li>
-                  <li>
-                    <b>Mantén una buena comunicación: </b>Si recibes una oferta
-                    de trabajo o una entrevista, asegúrate de responder de
-                    manera oportuna y profesional. Si no estás interesado en la
-                    oferta, agradece de manera cortés y respetuosa. Mantén una
-                    buena comunicación con los potenciales para establecer una
-                    relación sólida.
-                  </li>
-                  <li>
-                    <b>Sé proactivo:</b> No esperes a que las ofertas lleguen a
-                    ti, sé proactivo y busca oportunidades en la web de empleo.
-                    Además, puedes utilizar las redes sociales para conectarte
-                    con empresas y profesionales de tu sector. Asiste a eventos
-                    y conferencias relacionadas con tu campo para establecer
-                    contactos y aprender sobre nuevas oportunidades laborales.
-                  </li>
-                </ol>
-              </div>
-              <a href="loginUsuario.html"> ¡Empezar ahora!</a>
-            </div>
+            <a href="loginUsuario.html"> ¡Empezar ahora!</a>
           </div>
         </div>
       </div>
-    </section>
-    <footer>
-      <div class="footer_logo">
-        <h2 id="texto_tdr" data-text="&nbsp;TDR Jobs&nbsp;">
-          &nbsp;TDR Jobs&nbsp;
-        </h2>
-      </div>
-      <div class="footer_opcion">
-        <a href="">para conductores</a>
-        <a href="">para empresas</a>
-        <a href="">ver ofertas</a>
-      </div>
-      <div class="footer_contacto">
-        <p>contacto</p>
-        <p><i class="bx bx-phone-call"></i> 666 666 666</p>
-        <p><i class="bx bx-envelope"></i> info@trpjobs.com</p>
-      </div>
-      <div class="footer_social">
-        <a href="https://www.whatsapp.com/"><i class="bx bxl-whatsapp"></i></a>
-        <a href="https://es.linkedin.com/"><i class="bx bxl-linkedin"></i></a>
-        <a href="https://es-es.facebook.com/"
-          ><i class="bx bxl-facebook-circle"></i
-        ></a>
-      </div>
-    </footer>
-  </body>
+    </div>
+  </section>
+  <footer>
+    <div class="footer_logo">
+      <h2 id="texto_tdr" data-text="&nbsp;TDR Jobs&nbsp;">
+        &nbsp;TDR Jobs&nbsp;
+      </h2>
+    </div>
+    <div class="footer_opcion">
+      <a href="">para conductores</a>
+      <a href="">para empresas</a>
+      <a href="">ver ofertas</a>
+    </div>
+    <div class="footer_contacto">
+      <p>contacto</p>
+      <p><i class="bx bx-phone-call"></i> 666 666 666</p>
+      <p><i class="bx bx-envelope"></i> info@trpjobs.com</p>
+    </div>
+    <div class="footer_social">
+      <a href="https://www.whatsapp.com/"><i class="bx bxl-whatsapp"></i></a>
+      <a href="https://es.linkedin.com/"><i class="bx bxl-linkedin"></i></a>
+      <a href="https://es-es.facebook.com/"><i class="bx bxl-facebook-circle"></i></a>
+    </div>
+  </footer>
+</body>
+
 </html>

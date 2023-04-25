@@ -62,7 +62,7 @@ function fMostrarExperiencia() {
 
 function fcargarDatosIndexTrabajador() {
     dniUsu = JSON.parse(localStorage.getItem("usuario"));
-    const URL = "http://localhost:8080/trabajador/" + dniUsu;
+    const URL = "http://localhost:8083/trabajador/" + dniUsu;
     fetch(URL)
         .then((response) => response.json())
         .then((trabajador) => {
@@ -90,7 +90,7 @@ function fcargarDatosIndexTrabajador() {
 
 }
 function provincias(idProv) {
-    const URL = "http://localhost:8080/provincias/";
+    const URL = "http://localhost:8083/provincias/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {

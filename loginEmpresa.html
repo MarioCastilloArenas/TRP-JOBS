@@ -1,127 +1,127 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/assets/estilos/login.css">
-    <link rel="stylesheet" href="/assets/estilos/headerFooter.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Expletus+Sans&display=swap" rel="stylesheet">
-    <script src="index.js"></script>
-    <link rel="stylesheet" href="assets/estilos/loginEmpresa.css">
-    <script src="assets/script/login.js"></script>
-</head>
-<body>
-    <header>
-        <div id="logo" onclick="GoIndex()">
-            <p class="animacionLogo">TRP JOBS</p>
-            <!-- <marquee behavior="" direction="right">
-                <div class="logoCamion">
-                </div>
-            </marquee> -->
-        </div>
-        <div id="info">
-            <div id="boxInfo">
-                <div id="sobreNosotros"> Sobre nosotros</div>
-                <div id="trabajadores"> Trabajadores </div>
-                <div id="empresas"> Empresas </div>
-                <div id="logoUser"> <i class='bx bx-user-circle'></i> </div>
-                <div id="navMenu">
-                    <div class="btn-menu">
-                        <label for="btn-menu">
-                            <span class="material-symbols-outlined">
-                                menu
-                            </span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <input type="checkbox" id="btn-menu">
-    <div id="container_menu">
-        <div class="cont_menu">
-            <nav>
-                <nav id="nav_sesion">
-                    <a href="">SOBRE NOSOTROS</a>
-                    <a href="">TRABAJADORES</a>
-                    <a href="">EMPRESAS</a>
-                </nav>
-            </nav>
-            <label for="btn-menu" class="">
-                <span class="material-symbols-outlined">
-                    close
-                </span>
-            </label>
-        </div>
-    </div>
-    <input type="checkbox" id="btn-sesion">
-    <section>
-        <div class="form_container">
-            <div class="form_box">
-                <div class="button_box">
-                    <div id="opcion"></div>
-                        <button type="button" class="boton_btn" onclick="btnEmpresa()">Empresa</button>
-                        <button type="button" class="boton_btn" onclick="btnUsuario()">Usuario</button> 
-                </div>
-                <div id="msg"></div>
-                <div id="loginEmpresa" class="formulario_input">
-                    <input id="email" type="text" placeholder="Email" name="email" required class="input_field">
-                    <input id="password" type="password" placeholder="Contraseña" name="password" required class="input_field">
-                    <input type="checkbox" class="check_box"><span id="terminos">Recordar Contraseña</span>
-                    <button type="submit" class="submit_btn" onclick="fIniciarSesionEmpresa();">Acceder</button>
-                    <button type="submit" class="submit_btn" onclick="fRegistrarseEmpresas();">Registrarse</button>
-                </div>
-                <div id="loginUsuario" class="formulario_input">
-                    <input id="emailL" type="text" placeholder="Email" name="email" required class="input_field">
-                    <input id="passwordL" type="password" placeholder="Contraseña" name="password" required class="input_field">
-                    <input type="checkbox" class="check_box"><span id="terminos">Recordar Contraseña</span>
-                    <button type="submit" class="submit_btn" onclick="fIniciarSesionUsuario();">Acceder</button>
-                    <button type="submit" class="submit_btn"  onclick="fRegistrarseTrabajador();">Registrarse</button>
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer>
-        <div class="footer_logo">
-            <h2 id="texto_tdr" data-text="&nbsp;TDR Jobs&nbsp;">&nbsp;TDR Jobs&nbsp;</h2>
-        </div> 
-        <div class="footer_opcion">
-            <a href="">para conductores</a>
-            <a href="">para empresas</a>
-            <a href="">ver ofertas</a>
-        </div>
-        <div class="footer_contacto">
-            <p> contacto</p>
-            <p><i class='bx bx-phone-call'></i> 666 666 666</p>
-            <p><i class='bx bx-envelope' ></i> info@trpjobs.com </p>
-        </div>
-        <div class="footer_social">
-            <a href="https://www.whatsapp.com/"><i class='bx bxl-whatsapp'></i></a>
-            <a href="https://es.linkedin.com/"><i class='bx bxl-linkedin' ></i></a>
-            <a href="https://es-es.facebook.com/"><i class='bx bxl-facebook-circle' ></i></a>
-        </div>
 
-    </footer>
-    <script>
-        var x = document.getElementById("loginUsuario");
-        var y = document.getElementById("loginEmpresa");
-        var z = document.getElementById("opcion");
-        function btnUsuario(){
-            x.style.left = "50px";
-            y.style.left = "-400px";
-            z.style.left = "120px";
-        }
-        function btnEmpresa(){
-            
-            x.style.left = "450px";
-            y.style.left = "50px";
-            z.style.left = "0px";
-        }
-    </script>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/assets/estilos/login.css">
+  <link rel="stylesheet" href="/assets/estilos/headerFooter.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Expletus+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <script src="index.js"></script>
+  <link rel="stylesheet" href="assets/estilos/loginEmpresa.css">
+  <script src="assets/script/login.js"></script>
+</head>
+
+<body>
+  <header>
+    <div id="logo">
+      <p class="animacionLogo">TRP JOBS</p>
+    </div>
+    <div id="info">
+      <div id="boxInfo">
+        <div id="sobreNosotros" onclick="fEnviarSobreNosotros();"> Sobre nosotros</div>
+        <div id="trabajadores" onclick="enviarInicioTrabajadores();"> Trabajadores </div>
+        <div id="empresas" onclick="enviarInicioEmpresas();"> Empresas </div>
+        <div id="navMenu">
+          <div class="btn-menu">
+            <label for="btn-menu">
+              <span class="material-symbols-outlined">
+                menu
+              </span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <input type="checkbox" id="btn-menu">
+  <div id="container_menu">
+    <div class="cont_menu">
+      <nav>
+        <nav id="nav_sesion">
+          <a href="">SOBRE NOSOTROS</a>
+          <a href="loginUsuario.html">TRABAJADORES</a>
+          <a href="loginEmpresa.html">EMPRESAS</a>
+        </nav>
+      </nav>
+      <label for="btn-menu" class="">
+        <span class="material-symbols-outlined">
+          close
+        </span>
+      </label>
+    </div>
+  </div>
+  <input type="checkbox" id="btn-sesion">
+  <section>
+    <div class="form_container">
+      <div class="form_box">
+        <div class="button_box">
+          <div id="opcion"></div>
+          <button type="button" class="boton_btn" onclick="btnEmpresa()">Empresa</button>
+          <button type="button" class="boton_btn" onclick="btnUsuario()">Usuario</button>
+        </div>
+        <div id="msg"></div>
+        <div id="loginEmpresa" class="formulario_input">
+          <input id="email" type="text" placeholder="Email" name="email" required class="input_field">
+          <input id="password" type="password" placeholder="Contraseña" name="password" required class="input_field">
+          <input type="checkbox" class="check_box"><span id="terminos">Recordar Contraseña</span>
+          <button type="submit" class="submit_btn" onclick="fIniciarSesionEmpresa();">Acceder</button>
+          <button type="submit" class="submit_btn" onclick="fRegistrarseEmpresas();">Registrarse</button>
+        </div>
+        <div id="loginUsuario" class="formulario_input">
+          <input id="emailL" type="text" placeholder="Email" name="email" required class="input_field">
+          <input id="passwordL" type="password" placeholder="Contraseña" name="password" required class="input_field">
+          <input type="checkbox" class="check_box"><span id="terminos">Recordar Contraseña</span>
+          <button type="submit" class="submit_btn" onclick="fIniciarSesionUsuario();">Acceder</button>
+          <button type="submit" class="submit_btn" onclick="fRegistrarseTrabajador();">Registrarse</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="footer_logo">
+      <h2 id="texto_tdr" data-text="&nbsp;TDR Jobs&nbsp;">&nbsp;TDR Jobs&nbsp;</h2>
+    </div>
+    <div class="footer_opcion">
+      <a href="">para conductores</a>
+      <a href="">para empresas</a>
+      <a href="">ver ofertas</a>
+    </div>
+    <div class="footer_contacto">
+      <p> contacto</p>
+      <p><i class='bx bx-phone-call'></i> 666 666 666</p>
+      <p><i class='bx bx-envelope'></i> info@trpjobs.com </p>
+    </div>
+    <div class="footer_social">
+      <a href="https://www.whatsapp.com/"><i class='bx bxl-whatsapp'></i></a>
+      <a href="https://es.linkedin.com/"><i class='bx bxl-linkedin'></i></a>
+      <a href="https://es-es.facebook.com/"><i class='bx bxl-facebook-circle'></i></a>
+    </div>
+
+  </footer>
+  <script>
+    var x = document.getElementById("loginUsuario");
+    var y = document.getElementById("loginEmpresa");
+    var z = document.getElementById("opcion");
+    function btnUsuario() {
+      x.style.left = "50px";
+      y.style.left = "-400px";
+      z.style.left = "120px";
+    }
+    function btnEmpresa() {
+
+      x.style.left = "450px";
+      y.style.left = "50px";
+      z.style.left = "0px";
+    }
+  </script>
 </body>
+
 </html>

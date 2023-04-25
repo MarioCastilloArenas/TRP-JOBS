@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
 }
+
 body {
   min-height: 100vh;
   display: grid;
@@ -28,11 +29,13 @@ body {
   padding: 50px;
   gap: 20px;
 }
-.banner > h1,
-.banner > p {
+
+.banner>h1,
+.banner>p {
   color: white;
   text-align: justify;
 }
+
 #formulario {
   width: 100%;
   display: flex;
@@ -40,6 +43,7 @@ body {
   align-items: flex-start;
   justify-content: center;
 }
+
 #progreso {
   /* background-image: url(/assets/img/orange-wave-background-henrik-lehnerer.jpg) ;
     background-repeat: no-repeat;
@@ -51,6 +55,7 @@ body {
   width: 100%;
   gap: 10px;
 }
+
 .container {
   width: 20%;
 }
@@ -65,6 +70,7 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 .pass {
   border-radius: 4px;
   background-image: linear-gradient(180deg, #ea8b0e22, #e8ccb11e);
@@ -78,6 +84,7 @@ body {
   color: #ff8903;
   text-align: center;
 }
+
 .activate {
   border-radius: 4px;
   background-image: linear-gradient(180deg, #ea8b0e22, #e8ccb11e);
@@ -93,21 +100,24 @@ body {
   text-align: center;
 }
 
-.infoPaso > div,
-.activate > div,
-.pass > div {
+.infoPaso>div,
+.activate>div,
+.pass>div {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .paso {
   height: 40%;
 }
+
 .nombrePaso {
   height: 60%;
   width: 100%;
   text-align: center;
 }
+
 .contenido {
   padding: 20px;
   display: flex;
@@ -115,9 +125,11 @@ body {
   justify-content: center;
   width: 100%;
 }
+
 .fieldset {
   display: none;
 }
+
 .activo {
   width: 100%;
   display: flex;
@@ -132,14 +144,17 @@ body {
   background-image: linear-gradient(180deg, #ffffff2f, #f5f5fa21);
   box-shadow: rgba(226, 135, 8, 0.253) 0px 1px 5px;
 }
+
 .tituloRelleno {
   padding-bottom: 10px;
 }
+
 h3 {
   color: red;
   font-weight: 100;
   font-size: 15px;
 }
+
 .rellenar {
   width: 100%;
   padding: 20px;
@@ -149,9 +164,11 @@ h3 {
   align-items: first baseline;
   gap: 20px;
 }
-.rellenar > div {
+
+.rellenar>div {
   padding: 0 20px;
 }
+
 .form-item {
   height: 100px;
   margin-bottom: 10px;
@@ -215,6 +232,7 @@ button {
     0 1px 3px 0 rgb(93 100 148 / 20%);
   transition: all 0.2s ease-out;
 }
+
 button:hover {
   background-image: linear-gradient(180deg, #ff8903, #7a7a7b0f);
   box-shadow: 0 8px 22px 0 rgb(37 44 97 / 15%),
@@ -230,6 +248,7 @@ button:hover {
     justify-content: center;
     align-items: center;
   }
+
   #formulario {
     width: 90%;
     margin-top: 50px;
@@ -283,6 +302,7 @@ button:hover {
     align-items: center;
     justify-content: center;
   }
+
   .activate {
     border-radius: 0;
     background-image: linear-gradient(180deg, #ff770009, #ff7f0821);
@@ -293,6 +313,7 @@ button:hover {
     align-items: center;
     justify-content: center;
   }
+
   .activo {
     width: 100%;
     display: flex;
@@ -307,6 +328,7 @@ button:hover {
     background-image: none;
     box-shadow: none;
   }
+
   .rellenar {
     width: 100%;
     padding: 20px;
@@ -316,17 +338,20 @@ button:hover {
     align-items: center;
     gap: 20px;
   }
+
   .form-item {
     position: relative;
     margin-bottom: 20px;
     height: 90px;
   }
+
   .form-item i {
     visibility: hidden;
     position: absolute;
     top: 40px;
     right: 30px;
   }
+
   .form-item small {
     color: #100707;
     position: absolute;

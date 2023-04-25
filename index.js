@@ -1,3 +1,8 @@
+document.addEventListener("DOMContentLoaded", () => {
+  
+});
+
+
 function enviarInicioTrabajadores(){
     if(JSON.parse(localStorage.getItem("usuario")) == null){
         document.location = "loginUsuario.html";

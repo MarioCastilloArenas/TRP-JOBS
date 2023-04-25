@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
 }
+
 body {
   min-height: 100vh;
   display: grid;
@@ -15,25 +16,27 @@ body {
     "zfooter";
   overflow-x: hidden;
 }
+
 .banner {
   padding: 5% 10%;
   height: 150px;
   background: rgb(255, 255, 255);
-  background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(253, 187, 45, 1) 64%
-  );
+  background: linear-gradient(0deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(253, 187, 45, 1) 64%);
 }
+
 .contenedor {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 #boxFiltos {
   display: flex;
   align-items: flex-start;
 }
+
 #botones {
   display: flex;
   flex-direction: column;
@@ -41,6 +44,7 @@ body {
   gap: 20px;
   padding: 1%;
 }
+
 button,
 input[type="text"] {
   display: inline-block;
@@ -57,16 +61,19 @@ input[type="text"] {
     0 1px 3px 0 rgb(93 100 148 / 20%);
   transition: all 0.2s ease-out;
 }
+
 button:hover,
 select:hover {
   box-shadow: 0 8px 22px 0 rgb(37 44 97 / 15%),
     0 4px 6px 0 rgb(93 100 148 / 20%);
 }
+
 .ordenarpor {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 span {
   border: #ffb11a solid;
   position: absolute;
@@ -85,37 +92,43 @@ span {
   flex-wrap: wrap;
   width: 80%;
 }
-#filtros > div {
+
+#filtros>div {
   display: flex;
   flex-wrap: wrap;
   align-items: start;
   padding: 20px;
 }
-#filtros > div > div:first-child {
+
+#filtros>div>div:first-child {
   width: 100%;
 }
-#filtros > div > div:first-child > div {
+
+#filtros>div>div:first-child>div {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   overflow-wrap: normal;
 }
-#filtros > div > div:first-child > div > #unfiltro {
+
+#filtros>div>div:first-child>div>#unfiltro {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-#filtros > div > div {
+#filtros>div>div {
   width: 50%;
   padding: 10px;
   display: flex;
   flex-direction: column;
 }
-#filtros > div > div > p {
+
+#filtros>div>div>p {
   padding-bottom: 10px;
   font-weight: 600;
 }
+
 .unfiltro {
   display: flex;
   flex-direction: row;
@@ -133,6 +146,7 @@ span {
   align-items: center;
   gap: 20px;
 }
+
 .oferta {
   background-color: white;
   border-radius: 10px;
@@ -152,11 +166,12 @@ span {
   box-shadow: rgba(29, 29, 29, 0.228) 0px 5px 8px 8px;
   cursor: pointer;
 }
-.nombreEmpresa > p {
+
+.nombreEmpresa>p {
   color: gray;
 }
 
-.nombreEmpresa > p:hover {
+.nombreEmpresa>p:hover {
   cursor: pointer;
   color: rgba(0, 0, 0, 0.739);
 }
@@ -171,26 +186,30 @@ span {
   padding: 15px;
 }
 
-.puesto > p {
+.puesto>p {
   font-weight: bold;
   font-size: larger;
 }
-.datos_oferta > div {
+
+.datos_oferta>div {
   display: flex;
 }
 
 img {
   width: 180px;
 }
+
 #enlace {
   padding-top: 10px;
   cursor: pointer;
   color: #e09a0e;
 }
+
 #enlace:hover,
 #enlace:focus {
   color: #ffb11a;
 }
+
 /* Ordenadores de sobremesa y portátiles */
 @media (min-width: 1100px) {
   .oferta {
@@ -198,9 +217,11 @@ img {
     flex-direction: row;
     padding: 25px;
   }
+
   #botones {
     display: none;
   }
+
   .contenedor {
     display: flex;
     flex-direction: row;
@@ -208,10 +229,12 @@ img {
     padding-top: 50px;
     padding-bottom: 100px;
   }
+
   #boxFiltos {
     position: absolute;
     right: 5%;
   }
+
   #filtros {
     position: sticky;
     z-index: 1;
@@ -224,28 +247,33 @@ img {
     width: 20%;
     padding-left: 20px;
   }
-  #filtros > div {
+
+  #filtros>div {
     display: flex;
     flex-wrap: wrap;
     align-items: start;
     padding: 0;
     width: 100%;
   }
+
   button {
     width: 100%;
   }
-  #filtros > div > div:first-child > div {
+
+  #filtros>div>div:first-child>div {
     width: 100%;
     display: flex;
     flex-direction: column;
   }
-  #filtros > div > div {
+
+  #filtros>div>div {
     width: 100%;
     padding: 10px;
     display: flex;
     flex-direction: column;
   }
-  #filtros > div > div > div {
+
+  #filtros>div>div>div {
     width: 100%;
   }
 
@@ -259,6 +287,7 @@ img {
   #boxOfertas {
     width: 80%;
   }
+
   .oferta {
     width: 90%;
   }
@@ -266,17 +295,21 @@ img {
   .datos_oferta:first-child {
     width: 20%;
   }
+
   .datos_oferta:nth-child(2) {
     width: 55%;
   }
+
   .datos_oferta:nth-child(3) {
     width: 20%;
   }
-  #tipoCarnet > div {
+
+  #tipoCarnet>div {
     display: flex;
     flex-wrap: wrap;
   }
-  #tipoCarnet > div > .unfiltro {
+
+  #tipoCarnet>div>.unfiltro {
     width: 50%;
     display: flex;
     flex-direction: row;

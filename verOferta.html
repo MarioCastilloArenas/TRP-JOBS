@@ -1,139 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/estilos/headerFooter.css">
-    <link rel="stylesheet" href="assets/estilos/verOferta.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Expletus+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <script src="/assets/script/ofertas.js"></script>
-    <script src="index.js"></script>
-    <title>Document</title>
-</head>
-<body>
-    <header>
-        <div id="logo" onclick="GoIndex()" >
-          <p class="animacionLogo">TRP JOBS</p>
-        </div>
-        <div id="info">
-          <div id="boxInfo">
-            <div id="trabajadores" onclick="enviarInicioTrabajadores();">
-              Trabajadores
-            </div>
-            <div id="empresas" onclick="enviarInicioEmpresas();">Empresas</div>
-            <div id="logoUser"><i class="bx bx-user-circle"></i></div>
-            <div id="navMenu">
-              <div class="btn-menu">
-                <label for="btn-menu">
-                  <span class="material-symbols-outlined"> menu </span>
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-    </header>
-    <section>
-      <div class="banner">
-          <h1 id="tituloof"></h1>
-      </div>
-      <div class="contenedor">
-          <div id="boxInscripción">
-            <p>ESTA OFERTA TERMINA EN....</p>
-            <div id="contador">
-              <div class="boxContador">
-                <span id="days"></span>
-                <p>Días</p>
-              </div>
-              <div class="boxContador">
-                <span id="hours"></span>
-                <p>Horas</p>
-              </div>
-              <div class="boxContador">
-                <span id="minutes"></span>
-                <p>Minutos</p>
-              </div>
-              <div class="boxContador">
-                <span id="seconds"></span>
-                <p>Segundos</p>
-              </div>
-            </div>
-            <div id="botonInscripcion">inscribirse a esta oferta</div>
-          </div>
-          <div id="boxOferta">
-            <div id="logoEmpresa">
-            </div>
-            <div class=boxEmpresa> 
-              <div id="fechaPublicacion">
-                <div class="titulo">Fecha publicación</div>
-                <p></p>
-              </div>
-              <div id="fechaCaducidad">
-                <div class="titulo">Fecha caducidad</div>
-                <p></p>
-              </div>
-            </div>
-            <div class=boxEmpresa>
-              <div id="localidad">
-                <div class="titulo">Localidad</div>
-                <p></p>
-              </div>
-              <div id="ambitosGeograficos">
-                <div class="titulo">Ámbitos geográfico</div>
-                <p></p>
-              </div>
-            </div>
-            <div class=boxEmpresa>
-              <div id="tipoCandidato">
-                <div class="titulo">Tipo de candidato</div>
-                <p></p>
-              </div>
-              <div id="tipoCarnet">
-                <div class="titulo">Tipo de carnet</div>
-                <p></p>
-              </div>
-            </div>
-            <div id="descripcion">
-              <div class="titulo">Descripción</div>
-              <p></p>
-            </div>
-            <div id="tipoContrato">
-              <div class="titulo">tipo de contrato</div>
-              <p>fecha</p>
-            </div>
 
-            <h1>Datos Empresa</h1>
-            <div id="empresa" class="oscuro">
-              <div class="titulo">Empresa</div>
-              <p>emp</p>
-            </div>
-            <button id="botonEmpresa">Ver más sobre esta empresa</button>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/estilos/headerFooter.css">
+  <link rel="stylesheet" href="assets/estilos/verOferta.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <script src="/assets/script/ofertas.js"></script>
+  <script src="index.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <header>
+    <div id="logo">
+      <p class="animacionLogo">TRP JOBS</p>
+    </div>
+    <div id="info">
+      <div id="boxInfo">
+        <div id="sobreNosotros" onclick="fEnviarSobreNosotros();"> Sobre nosotros</div>
+        <div id="trabajadores" onclick="enviarInicioTrabajadores();"> Trabajadores </div>
+        <div id="empresas" onclick="enviarInicioEmpresas();"> Empresas </div>
+        <div id="navMenu">
+          <div class="btn-menu">
+            <label for="btn-menu">
+              <span class="material-symbols-outlined">
+                menu
+              </span>
+            </label>
           </div>
+        </div>
       </div>
-    </section>
-    <footer>
-        <div class="footer_logo">
-            <h2 id="texto_tdr" data-text="&nbsp;TDR Jobs&nbsp;">&nbsp;TDR Jobs&nbsp;</h2>
-        </div> 
-        <div class="footer_opcion">
-            <a href="">para conductores</a>
-            <a href="">para empresas</a>
-            <a href="">ver ofertas</a>
+    </div>
+  </header>
+  <input type="checkbox" id="btn-menu">
+  <div id="container_menu">
+    <div class="cont_menu">
+      <nav>
+        <nav id="nav_sesion">
+          <a href="">SOBRE NOSOTROS</a>
+          <a href="loginUsuario.html">TRABAJADORES</a>
+          <a href="loginEmpresa.html">EMPRESAS</a>
+        </nav>
+      </nav>
+      <label for="btn-menu" class="">
+        <span class="material-symbols-outlined">
+          close
+        </span>
+      </label>
+    </div>
+  </div>
+  <input type="checkbox" id="btn-sesion">
+  <section>
+    <div class="banner">
+      <h1 id="tituloof"></h1>
+    </div>
+    <div class="contenedor">
+      <div id="boxInscripción">
+        <p>ESTA OFERTA TERMINA EN....</p>
+        <div id="contador">
+          <div class="boxContador">
+            <span id="days"></span>
+            <p>Días</p>
+          </div>
+          <div class="boxContador">
+            <span id="hours"></span>
+            <p>Horas</p>
+          </div>
+          <div class="boxContador">
+            <span id="minutes"></span>
+            <p>Minutos</p>
+          </div>
+          <div class="boxContador">
+            <span id="seconds"></span>
+            <p>Segundos</p>
+          </div>
         </div>
-        <div class="footer_contacto">
-            <p> contacto</p>
-            <p><i class='bx bx-phone-call'></i> 666 666 666</p>
-            <p><i class='bx bx-envelope' ></i> info@trpjobs.com </p>
+        <div id="botonInscripcion">inscribirse a esta oferta</div>
+      </div>
+      <div id="boxOferta">
+        <div id="logoEmpresa">
         </div>
-        <div class="footer_social">
-            <a href="https://www.whatsapp.com/"><i class='bx bxl-whatsapp'></i></a>
-            <a href="https://es.linkedin.com/"><i class='bx bxl-linkedin' ></i></a>
-            <a href="https://es-es.facebook.com/"><i class='bx bxl-facebook-circle' ></i></a>
+        <div class=boxEmpresa>
+          <div id="fechaPublicacion">
+            <div class="titulo">Fecha publicación</div>
+            <p></p>
+          </div>
+          <div id="fechaCaducidad">
+            <div class="titulo">Fecha caducidad</div>
+            <p></p>
+          </div>
         </div>
-    </footer>   
+        <div class=boxEmpresa>
+          <div id="localidad">
+            <div class="titulo">Localidad</div>
+            <p></p>
+          </div>
+          <div id="ambitosGeograficos">
+            <div class="titulo">Ámbitos geográfico</div>
+            <p></p>
+          </div>
+        </div>
+        <div class=boxEmpresa>
+          <div id="tipoCandidato">
+            <div class="titulo">Tipo de candidato</div>
+            <p></p>
+          </div>
+          <div id="tipoCarnet">
+            <div class="titulo">Tipo de carnet</div>
+            <p></p>
+          </div>
+        </div>
+        <div id="descripcion">
+          <div class="titulo">Descripción</div>
+          <p></p>
+        </div>
+        <div id="tipoContrato">
+          <div class="titulo">tipo de contrato</div>
+          <p>fecha</p>
+        </div>
+
+        <h1>Datos Empresa</h1>
+        <div id="empresa" class="oscuro">
+          <div class="titulo">Empresa</div>
+          <p>emp</p>
+        </div>
+        <button id="botonEmpresa">Ver más sobre esta empresa</button>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="footer_logo">
+      <h2 id="texto_tdr" data-text="&nbsp;TDR Jobs&nbsp;">&nbsp;TDR Jobs&nbsp;</h2>
+    </div>
+    <div class="footer_opcion">
+      <a href="">para conductores</a>
+      <a href="">para empresas</a>
+      <a href="">ver ofertas</a>
+    </div>
+    <div class="footer_contacto">
+      <p> contacto</p>
+      <p><i class='bx bx-phone-call'></i> 666 666 666</p>
+      <p><i class='bx bx-envelope'></i> info@trpjobs.com </p>
+    </div>
+    <div class="footer_social">
+      <a href="https://www.whatsapp.com/"><i class='bx bxl-whatsapp'></i></a>
+      <a href="https://es.linkedin.com/"><i class='bx bxl-linkedin'></i></a>
+      <a href="https://es-es.facebook.com/"><i class='bx bxl-facebook-circle'></i></a>
+    </div>
+  </footer>
 </body>
+
 </html>

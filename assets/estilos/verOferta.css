@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
 }
+
 body {
   min-height: 100vh;
   display: grid;
@@ -15,22 +16,23 @@ body {
     "zfooter";
   overflow-x: hidden;
 }
+
 .banner {
   width: 100%;
   padding: 5% 10%;
   background: rgb(255, 255, 255);
-  background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(253, 187, 45, 1) 64%
-  );
+  background: linear-gradient(0deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(253, 187, 45, 1) 64%);
 }
+
 section {
   grid-area: zsection;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .contenedor {
   display: flex;
   flex-direction: column;
@@ -38,6 +40,7 @@ section {
   margin: 30px;
   gap: 30px;
 }
+
 #boxOferta {
   width: 100%;
   background-color: white;
@@ -51,15 +54,17 @@ section {
   padding: 50px 40px;
 }
 
-#boxOferta > div:first-child {
+#boxOferta>div:first-child {
   padding-bottom: 30px;
   border: none;
 }
-#boxOferta > div {
+
+#boxOferta>div {
   border-bottom: solid rgba(128, 128, 128, 0.174) 1px;
   width: 100%;
   padding: 10px;
 }
+
 .oscuro {
   background-color: rgba(207, 207, 207, 0.267);
 }
@@ -67,17 +72,21 @@ section {
 h1 {
   padding: 20px 0;
 }
+
 .boxEmpresa {
   display: flex;
   flex-direction: row;
 }
-.boxEmpresa > div {
+
+.boxEmpresa>div {
   width: 50%;
 }
+
 .titulo {
   font-weight: 700;
   color: black;
 }
+
 button,
 #botonInscripcion {
   margin-top: 20px;
@@ -97,6 +106,7 @@ button,
     0 1px 3px 0 rgb(93 100 148 / 20%);
   transition: all 0.2s ease-out;
 }
+
 #botonInscripcion {
   display: flex;
   align-items: center;
@@ -104,11 +114,13 @@ button,
   font-size: 19px;
   background-image: linear-gradient(180deg, #ff8903, #7a7a7b0f);
 }
+
 #botonInscripcion:hover {
   box-shadow: 0 8px 22px 0 rgb(37 44 97 / 15%),
     0 4px 6px 0 rgb(93 100 148 / 20%);
   background-image: linear-gradient(180deg, #ff2903, #ff290340);
 }
+
 button:hover {
   box-shadow: 0 8px 22px 0 rgb(37 44 97 / 15%),
     0 4px 6px 0 rgb(93 100 148 / 20%);
@@ -120,11 +132,13 @@ button:hover {
   flex-direction: column;
   gap: 20px;
 }
+
 #contador {
   width: 100%;
   display: flex;
   gap: 9px;
 }
+
 .boxContador {
   width: 100%;
   border-radius: 4px;
@@ -134,9 +148,11 @@ button:hover {
   display: flex;
   flex-direction: column;
 }
+
 .BOTON {
   border: solid red;
 }
+
 span {
   display: flex;
   align-items: center;
@@ -144,12 +160,14 @@ span {
   font-size: 30px;
   color: rgba(0, 0, 0, 0.758);
 }
-.boxContador > p {
+
+.boxContador>p {
   display: flex;
   align-items: center;
   justify-content: center;
   color: rgba(253, 187, 45, 1);
 }
+
 /* Ordenadores de sobremesa y portátiles */
 @media (min-width: 1100px) {
   .contenedor {
@@ -160,14 +178,17 @@ span {
     gap: 30px;
     width: 90%;
   }
+
   #boxInscripción {
     width: 30%;
     padding: 10px;
   }
+
   #boxOferta {
     width: 70%;
     padding: 40px;
   }
+
   #botonInscripcion {
     display: flex;
     align-items: center;

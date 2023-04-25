@@ -1,90 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/estilos/headerFooter.css">
-    <link rel="stylesheet" href="assets/estilos/verEmpresa.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Expletus+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <script src="assets/script/verEmpresa.js"></script>
-    <script src="index.js"></script>
-    <title>Document</title>
-</head>
-<body>
-    <header>
-        <div id="logo" onclick="GoIndex()">
-          <p class="animacionLogo">TRP JOBS</p>
-        </div>
-        <div id="info">
-          <div id="boxInfo">
-            <div id="trabajadores" onclick="enviarInicioTrabajadores();">
-              Trabajadores
-            </div>
-            <div id="empresas" onclick="enviarInicioEmpresas();">Empresas</div>
-            <div id="logoUser"><i class="bx bx-user-circle"></i></div>
-            <div id="navMenu">
-              <div class="btn-menu">
-                <label for="btn-menu">
-                  <span class="material-symbols-outlined"> menu </span>
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-    </header>
 
-    <nav>
-      
-       
-    </nav>
-    <section id="section">
-      <div id="paquete">
-        <div id="paqueteEmpresa">
-          <div id="logoEmpresa">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/estilos/headerFooter.css">
+  <link rel="stylesheet" href="assets/estilos/verEmpresa.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <script src="assets/script/verEmpresa.js"></script>
+  <script src="index.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <header>
+    <div id="logo">
+      <p class="animacionLogo">TRP JOBS</p>
+    </div>
+    <div id="info">
+      <div id="boxInfo">
+        <div id="sobreNosotros" onclick="fEnviarSobreNosotros();"> Sobre nosotros</div>
+        <div id="trabajadores" onclick="enviarInicioTrabajadores();"> Trabajadores </div>
+        <div id="empresas" onclick="enviarInicioEmpresas();"> Empresas </div>
+        <div id="navMenu">
+          <div class="btn-menu">
+            <label for="btn-menu">
+              <span class="material-symbols-outlined">
+                menu
+              </span>
+            </label>
           </div>
-          <div id="tipoEmpresa">
-            <div class="title">Tipo de actividad:</div>
-            <div id="tipoEmpresaM"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <input type="checkbox" id="btn-menu">
+  <div id="container_menu">
+    <div class="cont_menu">
+      <nav>
+        <nav id="nav_sesion">
+          <a href="">SOBRE NOSOTROS</a>
+          <a href="loginUsuario.html">TRABAJADORES</a>
+          <a href="loginEmpresa.html">EMPRESAS</a>
+        </nav>
+      </nav>
+      <label for="btn-menu" class="">
+        <span class="material-symbols-outlined">
+          close
+        </span>
+      </label>
+    </div>
+  </div>
+  <input type="checkbox" id="btn-sesion">
+
+  <nav>
+
+
+  </nav>
+  <section id="section">
+    <div id="paquete">
+      <div id="paqueteEmpresa">
+        <div id="logoEmpresa">
+        </div>
+        <div id="tipoEmpresa">
+          <div class="title">Tipo de actividad:</div>
+          <div id="tipoEmpresaM"></div>
+        </div>
+        <div id="nombreEmpresa">
+          <div class="title">Nombre:</div>
+          <div id="nombreEmpresaN"></div>
+        </div>
+        <div id="direccionEmpresa">
+          <div class="title">Dirección:</div>
+          <div id="direccionEmpresaD"></div>
+        </div>
+        <div id="provinciaEmpresa">
+          <div class="title">Provincia:</div>
+          <div id="provinciaP"></div>
+        </div>
+        <div id="codigoPostal">
+          <div class="title">Codigo Postal:</div>
+          <div id="cp"></div>
+        </div>
+        <div id="webSite">
+          <div class="title">Sitio web:</div>
+          <div id="webSiteW"></div>
+        </div>
+        <div id="telefono">
+          <div class="title"> teléfono:</div>
+          <div id="tlf"></div>
+        </div>
+        <div id="descripcion">
+          <div class="title"> Descripcion:</div>
+          <div id="descripcionD"></div>
+        </div>
+        <div id="listadoDeOfertas">
+          <div class="title"> Listado de ofertas:</div>
+          <div id="boxOfertas">
+
           </div>
-          <div id="nombreEmpresa">
-            <div class="title">Nombre:</div>
-            <div id="nombreEmpresaN"></div>
-          </div>
-          <div id="direccionEmpresa">
-            <div class="title">Dirección:</div>
-            <div id="direccionEmpresaD"></div>
-          </div>
-          <div id="provinciaEmpresa">
-            <div class="title">Provincia:</div>
-            <div id="provinciaP"></div>
-          </div>
-          <div id="codigoPostal">
-            <div class="title">Codigo Postal:</div>
-            <div id="cp"></div>
-          </div>
-          <div id="webSite">
-            <div class="title">Sitio web:</div>
-            <div id="webSiteW"></div>
-          </div>
-          <div id="telefono">
-            <div class="title"> teléfono:</div>
-            <div id="tlf"></div>
-          </div>
-          <div id="descripcion">
-            <div class="title"> Descripcion:</div>
-            <div id="descripcionD"></div>
-          </div>
-          <div id="listadoDeOfertas">
-            <div class="title"> Listado de ofertas:</div>
-            <div id="boxOfertas">
-              
-            </div>
-            <!-- <div class="oferta" onclick="fverOferta();">
+          <!-- <div class="oferta" onclick="fverOferta();">
                
               <div class="image">
                   <img src="assets/img/OIP.jpg" alt="" width="180px" height="100px">
@@ -109,7 +130,7 @@
               </div>
           </a>
           </div> -->
-            <!-- <div class="ofertaDestacada">
+          <!-- <div class="ofertaDestacada">
               <div class="circleDestacada">Destacada</div>
               <div class="image">
                   <img src="assets/img/empresas/bdtrans.jpg" alt="" width="150px" height="100px">
@@ -133,29 +154,30 @@
                   </div>
               </div>
           </div> -->
-          </div>
         </div>
       </div>
-    </section>
-    <footer>
-        <div class="footer_logo">
-            <h2 id="texto_tdr" data-text="&nbsp;TRP Jobs&nbsp;">&nbsp;TRP Jobs&nbsp;</h2>
-        </div> 
-        <div class="footer_opcion">
-            <a href="">para conductores</a>
-            <a href="">para empresas</a>
-            <a href="">ver ofertas</a>
-        </div>
-        <div class="footer_contacto">
-            <p> contacto</p>
-            <p><i class='bx bx-phone-call'></i> 666 666 666</p>
-            <p><i class='bx bx-envelope' ></i> info@trpjobs.com </p>
-        </div>
-        <div class="footer_social">
-            <a href="https://www.whatsapp.com/"><i class='bx bxl-whatsapp'></i></a>
-            <a href="https://es.linkedin.com/"><i class='bx bxl-linkedin' ></i></a>
-            <a href="https://es-es.facebook.com/"><i class='bx bxl-facebook-circle' ></i></a>
-        </div>
-    </footer>   
+    </div>
+  </section>
+  <footer>
+    <div class="footer_logo">
+      <h2 id="texto_tdr" data-text="&nbsp;TRP Jobs&nbsp;">&nbsp;TRP Jobs&nbsp;</h2>
+    </div>
+    <div class="footer_opcion">
+      <a href="">para conductores</a>
+      <a href="">para empresas</a>
+      <a href="">ver ofertas</a>
+    </div>
+    <div class="footer_contacto">
+      <p> contacto</p>
+      <p><i class='bx bx-phone-call'></i> 666 666 666</p>
+      <p><i class='bx bx-envelope'></i> info@trpjobs.com </p>
+    </div>
+    <div class="footer_social">
+      <a href="https://www.whatsapp.com/"><i class='bx bxl-whatsapp'></i></a>
+      <a href="https://es.linkedin.com/"><i class='bx bxl-linkedin'></i></a>
+      <a href="https://es-es.facebook.com/"><i class='bx bxl-facebook-circle'></i></a>
+    </div>
+  </footer>
 </body>
+
 </html>

@@ -23,6 +23,7 @@ section {
   background-color: whitesmoke;
   align-items: center;
 }
+
 /* #section1{
     width: 70%;
     text-align: center;
@@ -43,6 +44,7 @@ section {
   justify-content: center;
   align-items: center;
 }
+
 #txtImg1 {
   background-color: rgba(0, 0, 0, 0.6);
   width: 100%;
@@ -51,6 +53,7 @@ section {
   justify-content: start;
   align-items: end;
 }
+
 #texto {
   width: 40%;
   text-align: center;
@@ -59,6 +62,7 @@ section {
   margin-left: 100px;
   margin-bottom: 250px;
 }
+
 .sectionCont {
   width: 70%;
   text-align: center;
@@ -82,6 +86,7 @@ section {
   justify-content: center;
   align-items: center;
 }
+
 #txtImg2 {
   background-color: rgba(0, 0, 0, 0.6);
   width: 100%;
@@ -90,6 +95,7 @@ section {
   justify-content: end;
   align-items: end;
 }
+
 #texto2 {
   width: 40%;
   text-align: center;
@@ -98,18 +104,22 @@ section {
   margin-right: 100px;
   margin-bottom: 200px;
 }
+
 @media (max-width: 800px) {
   .sectionCont {
     font-size: 16px;
   }
+
   #sectionImg1 {
     background-position-y: 0px;
   }
+
   #txtImg1 {
     display: flex;
     justify-content: start;
     align-items: center;
   }
+
   #texto {
     width: 30%;
     margin-left: 100px;
@@ -118,14 +128,17 @@ section {
     color: rgb(255, 255, 255);
     font-size: 16px;
   }
+
   #sectionImg2 {
     background-position-y: 0px;
   }
+
   #txtImg2 {
     display: flex;
     justify-content: end;
     align-items: end;
   }
+
   #texto2 {
     width: 30%;
     text-align: center;
@@ -140,6 +153,7 @@ section {
     justify-content: center;
     align-items: center;
   }
+
   #texto {
     width: 50%;
     margin: 0;
@@ -153,6 +167,7 @@ section {
     justify-content: center;
     align-items: center;
   }
+
   #texto2 {
     width: 50%;
     margin: 0;
@@ -168,11 +183,9 @@ section {
   /* background-repeat: no-repeat; */
   /* background-size: cover; */
   background: rgb(255, 255, 255);
-  background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(253, 187, 45, 1) 64%
-  );
+  background: linear-gradient(0deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(253, 187, 45, 1) 64%);
   height: 600px;
   filter: blur();
   display: flex;
@@ -182,7 +195,7 @@ section {
   gap: 1%;
 }
 
-#cuadrosSeccion > div {
+#cuadrosSeccion>div {
   box-shadow: rgba(0, 0, 0, 0.7) 0px 5px 15px;
   background-color: #ffffffbb;
   border-radius: 10px;
@@ -204,7 +217,7 @@ section {
   border: none;
 }
 
-.cuadroConductor > p {
+.cuadroConductor>p {
   display: flex;
   flex-direction: row;
   padding: 40px;
@@ -212,11 +225,11 @@ section {
   align-items: center;
 }
 
-.cuadroConductor > i {
+.cuadroConductor>i {
   font-size: 50px;
 }
 
-.cuadroConductor > h4 {
+.cuadroConductor>h4 {
   color: #ffb11a;
 }
 
@@ -229,7 +242,7 @@ section {
   height: 12.5%;
 }
 
-.cuadroEmpresas > p {
+.cuadroEmpresas>p {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -237,22 +250,22 @@ section {
   gap: 10px;
 }
 
-.cuadroEmpresas > i {
+.cuadroEmpresas>i {
   font-size: 50px;
 }
 
-.cuadroEmpresas > h4 {
+.cuadroEmpresas>h4 {
   color: #ffb11a;
 }
 
-.cuadroBot > div {
+.cuadroBot>div {
   width: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#cuadrosSeccion > div > div > div > button {
+#cuadrosSeccion>div>div>div>button {
   border-radius: 5px;
   background-color: #ffb11a;
   width: 130px;
@@ -260,7 +273,7 @@ section {
   border: none;
 }
 
-#cuadrosSeccion > div > div > div > button:hover {
+#cuadrosSeccion>div>div>div>button:hover {
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -273,24 +286,24 @@ section {
    
     } */
 
-  #cuadrosSeccion > div {
+  #cuadrosSeccion>div {
     height: 500px;
     width: 40%;
   }
 
-  #cuadrosSeccion > div > div {
+  #cuadrosSeccion>div>div {
     width: 100%;
     font-size: 13px;
   }
 
-  .cuadroBot > div {
+  .cuadroBot>div {
     width: 400;
     display: flex;
     justify-content: center;
     text-align: center;
   }
 
-  #cuadrosSeccion > div > div > div > button {
+  #cuadrosSeccion>div>div>div>button {
     font-size: 10px;
     width: 80px;
     height: 20px;
@@ -304,23 +317,23 @@ section {
     background-position-x: -590px;
   }
 
-  #cuadrosSeccion > div {
+  #cuadrosSeccion>div {
     width: 60%;
   }
 
-  #cuadrosSeccion > div > div {
+  #cuadrosSeccion>div>div {
     width: 100%;
     font-size: 13px;
   }
 
-  .cuadroBot > div {
+  .cuadroBot>div {
     width: 400;
     display: flex;
     justify-content: center;
     text-align: center;
   }
 
-  #cuadrosSeccion > div > div > div > button {
+  #cuadrosSeccion>div>div>div>button {
     font-size: 10px;
     width: 80px;
     height: 20px;

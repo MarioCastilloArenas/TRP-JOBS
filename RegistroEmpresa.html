@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -11,12 +12,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Expletus+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="assets/script/formulario.js"></script>
     <script src="index.js"></script>
 </head>
+
 <body>
     <header>
-        <div id="logo" onclick="GoIndex()">
+        <div id="logo">
             <p class="animacionLogo">TRP JOBS</p>
         </div>
         <div id="info">
@@ -24,7 +28,6 @@
                 <div id="sobreNosotros" onclick="fEnviarSobreNosotros();"> Sobre nosotros</div>
                 <div id="trabajadores" onclick="enviarInicioTrabajadores();"> Trabajadores </div>
                 <div id="empresas" onclick="enviarInicioEmpresas();"> Empresas </div>
-                <div id="logoUser"> <i class='bx bx-user-circle'></i> </div>
                 <div id="navMenu">
                     <div class="btn-menu">
                         <label for="btn-menu">
@@ -55,11 +58,14 @@
         </div>
     </div>
     <input type="checkbox" id="btn-sesion">
-    <section>  
+    <section>
         <div class="banner">
             <h1>Registra tu empresa en TRP JOBS </h1>
-            <p>Registra y publica ofertas de trabajo para encontrar a los mejores candidatos en el sector del transporte.<br> Nuestra plataforma te permitirá llegar a una audiencia especializada y encontrar al personal que necesitas para hacer crecer tu negocio.<br><b>¡Regístrate ahora y comienza a publicar tus ofertas de trabajo en TRP JOBS!</b></p>
-        </div> 
+            <p>Registra y publica ofertas de trabajo para encontrar a los mejores candidatos en el sector del
+                transporte.<br> Nuestra plataforma te permitirá llegar a una audiencia especializada y encontrar al
+                personal que necesitas para hacer crecer tu negocio.<br><b>¡Regístrate ahora y comienza a publicar tus
+                    ofertas de trabajo en TRP JOBS!</b></p>
+        </div>
         <div id="formulario">
             <div id="progreso">
                 <div class="container">
@@ -71,7 +77,7 @@
                             Cuenta
                         </div>
                     </div>
-                </div>       
+                </div>
                 <div class="container">
                     <div class="infoPaso" id="pasoAColor2">
                         <div class="paso">
@@ -81,7 +87,7 @@
                             Datos empresa
                         </div>
                     </div>
-                </div>        
+                </div>
                 <div class="container">
                     <div class="infoPaso" id="pasoAColor3">
                         <div class="paso">
@@ -91,17 +97,17 @@
                             Información empresa
                         </div>
                     </div>
-                </div>     
+                </div>
                 <div class="container">
                     <div class="infoPaso" id="pasoAColor4">
-                        <div class="paso" >
+                        <div class="paso">
                             Paso 4
                         </div>
                         <div class="nombrePaso">
                             Resumen
                         </div>
                     </div>
-                </div>          
+                </div>
             </div>
             <div class="contenido">
                 <div class="fieldset activo" id="paso1">
@@ -110,78 +116,79 @@
                         <h2>Cuenta</h2>
                     </div>
                     <div class="rellenar">
-                            <h3 id="mensaje1"></h3>
-                            <div class="form-item">
-                                <label for="email">Email:</label>
-                                <input type="text" id="email" >
-                                <i id="good" class='bx bx-check-circle'></i>
-                                <i id="error"  class='bx bx-error-circle'></i>
-                                <small>Rellene este campo</small>
-                            </div>
-                            <div class="form-item">
-                                <label for="password">Clave:</label>
-                                <input type="password" id="password" required>
-                                <i id="good" class='bx bx-check-circle'></i>
-                                <i id="error"  class='bx bx-error-circle'></i>
-                                <small>Rellene este campo</small>
-                            </div>
-                            <div class="form-item">
-                                <label for="password2">Confirme su clave:</label>
-                                <input type="password" id="password2" required>
-                                <i id="good" class='bx bx-check-circle'></i>
-                                <i id="error"  class='bx bx-error-circle'></i>
-                                <small>Rellene este campo</small>
-                            </div>
-                            <button id="botonSiguiente" onclick="LoginEmpresa()"> Siguiente </button>
+                        <h3 id="mensaje1"></h3>
+                        <div class="form-item">
+                            <label for="email">Email:</label>
+                            <input type="text" id="email">
+                            <i id="good" class='bx bx-check-circle'></i>
+                            <i id="error" class='bx bx-error-circle'></i>
+                            <small>Rellene este campo</small>
                         </div>
+                        <div class="form-item">
+                            <label for="password">Clave:</label>
+                            <input type="password" id="password" required>
+                            <i id="good" class='bx bx-check-circle'></i>
+                            <i id="error" class='bx bx-error-circle'></i>
+                            <small>Rellene este campo</small>
+                        </div>
+                        <div class="form-item">
+                            <label for="password2">Confirme su clave:</label>
+                            <input type="password" id="password2" required>
+                            <i id="good" class='bx bx-check-circle'></i>
+                            <i id="error" class='bx bx-error-circle'></i>
+                            <small>Rellene este campo</small>
+                        </div>
+                        <button id="botonSiguiente" onclick="LoginEmpresa()"> Siguiente </button>
+                    </div>
                 </div>
                 <div class="fieldset " id="paso2">
                     <!-- paso2  -->
                     <div class="tituloRelleno">
-                        <h2>Datos de la empresa: </h2><!--informacion de la empresa -->
+                        <h2>Datos de la empresa: </h2>
+                        <!--informacion de la empresa -->
                     </div>
                     <div class="rellenar">
-                            <h3 id="mensaje2"></h3>
-                            <div class="form-item">
-                                <label for="cif">CIF:</label>
-                                <input type="text" id="cif" required>
-                                <i id="good" class='bx bx-check-circle'></i>
-                                <i id="error"  class='bx bx-error-circle'></i>
-                                <small>Rellene este campo</small>
-                            </div>
-                            <div class="form-item">
-                                <label for="nomFiscal">Nombre Fiscal:</label>
-                                <input type="text" id="nomFiscal" required>
-                                <i id="good" class='bx bx-check-circle'></i>
-                                <i id="error"  class='bx bx-error-circle'></i>
-                                <small>Rellene este campo</small>
-                            </div>
-                            <div class="form-item">
-                                <label for="TipoActividadEmpresa">Tipo Actividad Empresarial:</label>
-                                <select id="TipoActividadEmpresa">
-                                </select>
-                            </div>
-                            <div class="form-item">
-                                <label for="direccion">Dirección:</label>
-                                <input type="text" id="direccion" required>
-                                <i id="good" class='bx bx-check-circle'></i>
-                                <i id="error"  class='bx bx-error-circle'></i>
-                                <small>Rellene este campo</small>
-                            </div>
-                            <div class="form-item">
-                                <label for="provincia">Provincia:</label>
-                                <select id="provincia">
-                                </select>
-                            </div>
-                            <div class="form-item">
-                                <label for="codigoPostal">Codigo Postal:</label>
-                                <input type="number" id="codigoPostal" required>
-                                <i id="good" class='bx bx-check-circle'></i>
-                                <i id="error"  class='bx bx-error-circle'></i>
-                                <small>Rellene este campo</small>
-                            </div> 
-                            <button id="botonSiguiente2" onclick="infoProfesionalEmpresa()"> Siguiente </button>
-                        
+                        <h3 id="mensaje2"></h3>
+                        <div class="form-item">
+                            <label for="cif">CIF:</label>
+                            <input type="text" id="cif" required>
+                            <i id="good" class='bx bx-check-circle'></i>
+                            <i id="error" class='bx bx-error-circle'></i>
+                            <small>Rellene este campo</small>
+                        </div>
+                        <div class="form-item">
+                            <label for="nomFiscal">Nombre Fiscal:</label>
+                            <input type="text" id="nomFiscal" required>
+                            <i id="good" class='bx bx-check-circle'></i>
+                            <i id="error" class='bx bx-error-circle'></i>
+                            <small>Rellene este campo</small>
+                        </div>
+                        <div class="form-item">
+                            <label for="TipoActividadEmpresa">Tipo Actividad Empresarial:</label>
+                            <select id="TipoActividadEmpresa">
+                            </select>
+                        </div>
+                        <div class="form-item">
+                            <label for="direccion">Dirección:</label>
+                            <input type="text" id="direccion" required>
+                            <i id="good" class='bx bx-check-circle'></i>
+                            <i id="error" class='bx bx-error-circle'></i>
+                            <small>Rellene este campo</small>
+                        </div>
+                        <div class="form-item">
+                            <label for="provincia">Provincia:</label>
+                            <select id="provincia">
+                            </select>
+                        </div>
+                        <div class="form-item">
+                            <label for="codigoPostal">Codigo Postal:</label>
+                            <input type="number" id="codigoPostal" required>
+                            <i id="good" class='bx bx-check-circle'></i>
+                            <i id="error" class='bx bx-error-circle'></i>
+                            <small>Rellene este campo</small>
+                        </div>
+                        <button id="botonSiguiente2" onclick="infoProfesionalEmpresa()"> Siguiente </button>
+
                     </div>
                 </div>
                 <div class="fieldset" id="paso3">
@@ -191,39 +198,39 @@
                     </div>
                     <div class="rellenar">
                         <h3 id="mensaje3"></h3>
-                            <div class="form-item">
-                                <label for="nomComercial">Nombre Comercial:</label>
-                                <input type="text" id="nomComercial" required>
-                                <i id="good" class='bx bx-check-circle'></i>
-                                <i id="error"  class='bx bx-error-circle'></i>
-                                <small>Rellene este campo</small>
-                            </div>
-                            <div class="form-item">
-                                <label for="descripcion">Descripcion:</label>
-                                <input type="text" id="descripcion" required></input>
-                                <i id="good" class='bx bx-check-circle'></i>
-                                <i id="error"  class='bx bx-error-circle'></i>
-                                <small>Rellene este campo</small>
-                            </div>
-                            <div class="form-item">
-                                <label for="sitioWeb">Sitio Web:</label>
-                                <input type="text" id="sitioWeb" required>
-                                <i id="good" class='bx bx-check-circle'></i>
-                                <i id="error"  class='bx bx-error-circle'></i>
-                                <small>Rellene este campo</small>
-                            </div>
-                            <div class="form-item">
-                                <label for="telefono">Telefono:</label>
-                                <input type="text" id="telefono" required>
-                                <i id="good" class='bx bx-check-circle'></i>
-                                <i id="error"  class='bx bx-error-circle'></i>
-                                <small>Rellene este campo</small>
-                            </div>
-                            <div class="form-item">
-                                <label for="logo">Imagen de Empresa:</label>
-                                <input type="file" id="logo">
-                            </div>
-                            <button onclick="webEmpresarial()"> Siguiente </button>
+                        <div class="form-item">
+                            <label for="nomComercial">Nombre Comercial:</label>
+                            <input type="text" id="nomComercial" required>
+                            <i id="good" class='bx bx-check-circle'></i>
+                            <i id="error" class='bx bx-error-circle'></i>
+                            <small>Rellene este campo</small>
+                        </div>
+                        <div class="form-item">
+                            <label for="descripcion">Descripcion:</label>
+                            <input type="text" id="descripcion" required></input>
+                            <i id="good" class='bx bx-check-circle'></i>
+                            <i id="error" class='bx bx-error-circle'></i>
+                            <small>Rellene este campo</small>
+                        </div>
+                        <div class="form-item">
+                            <label for="sitioWeb">Sitio Web:</label>
+                            <input type="text" id="sitioWeb" required>
+                            <i id="good" class='bx bx-check-circle'></i>
+                            <i id="error" class='bx bx-error-circle'></i>
+                            <small>Rellene este campo</small>
+                        </div>
+                        <div class="form-item">
+                            <label for="telefono">Telefono:</label>
+                            <input type="text" id="telefono" required>
+                            <i id="good" class='bx bx-check-circle'></i>
+                            <i id="error" class='bx bx-error-circle'></i>
+                            <small>Rellene este campo</small>
+                        </div>
+                        <div class="form-item">
+                            <label for="logo">Imagen de Empresa:</label>
+                            <input type="file" id="logo">
+                        </div>
+                        <button onclick="webEmpresarial()"> Siguiente </button>
                     </div>
                 </div>
                 <div class="fieldset " id="paso4">
@@ -234,7 +241,8 @@
                     <div class="rellenar">
                         <h3 id="mensaje4"> ¡Estamos felices de que ya forma parte de nuestro equipo! </h3>
                         <h4>Te mostraremos los datos de tu empresa, los cuales podran ver los trabajadores.</h4>
-                        <h4>Te recordamos que podras modificar cualquiera de los datos de tu empresa, en el apartado <b>Mis Datos</b>.</h4>
+                        <h4>Te recordamos que podras modificar cualquiera de los datos de tu empresa, en el apartado
+                            <b>Mis Datos</b>.</h4>
                         <h4>Esperamos que formes el mejor equipo posible en el menor tiempo posible.</h4>
                         <div class="">
                             <b>Nombre Comercial</b>
@@ -265,7 +273,7 @@
     <footer>
         <div class="footer_logo">
             <h2 id="texto_tdr" data-text="&nbsp;TDR Jobs&nbsp;">&nbsp;TDR Jobs&nbsp;</h2>
-        </div> 
+        </div>
         <div class="footer_opcion">
             <a href="">para conductores</a>
             <a href="">para empresas</a>
@@ -274,13 +282,14 @@
         <div class="footer_contacto">
             <p> contacto</p>
             <p><i class='bx bx-phone-call'></i> 666 666 666</p>
-            <p><i class='bx bx-envelope' ></i> info@trpjobs.com </p>
+            <p><i class='bx bx-envelope'></i> info@trpjobs.com </p>
         </div>
         <div class="footer_social">
             <a href="https://www.whatsapp.com/"><i class='bx bxl-whatsapp'></i></a>
-            <a href="https://es.linkedin.com/"><i class='bx bxl-linkedin' ></i></a>
-            <a href="https://es-es.facebook.com/"><i class='bx bxl-facebook-circle' ></i></a>
+            <a href="https://es.linkedin.com/"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://es-es.facebook.com/"><i class='bx bxl-facebook-circle'></i></a>
         </div>
     </footer>
 </body>
+
 </html>

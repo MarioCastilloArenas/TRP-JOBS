@@ -25,17 +25,17 @@ nav {
   align-items: center;
   font-size: 40px;
   background: rgb(255, 255, 255);
-  background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(253, 187, 45, 1) 64%
-  );
+  background: linear-gradient(0deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(253, 187, 45, 1) 64%);
 }
+
 section {
   grid-area: zsection;
   display: flex;
   justify-content: center;
 }
+
 .encajePagina {
   margin-top: 50px;
   margin-bottom: 50px;
@@ -43,12 +43,14 @@ section {
   border: solid rgba(0, 0, 0, 0.407);
   border-radius: 10px;
 }
+
 .cabeceraCurr {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   border-bottom: solid rgba(0, 0, 0, 0.407);
 }
+
 #fotoCurr {
   width: 30%;
   padding: 30px;
@@ -57,21 +59,25 @@ section {
   align-items: center;
   border-right: solid rgba(0, 0, 0, 0.407);
 }
-#fotoCurr > img {
+
+#fotoCurr>img {
   border-radius: 50%;
   width: 200px;
   height: 200px;
 }
+
 .nombreApeCorr {
   width: 70%;
   display: flex;
   flex-wrap: wrap;
 }
+
 .encajeDatos {
   width: 70%;
   display: flex;
   flex-wrap: wrap;
 }
+
 #nombre {
   width: 100%;
   display: flex;
@@ -80,6 +86,7 @@ section {
   margin-left: 60px;
   color: black;
 }
+
 #apellido {
   width: 100%;
   display: flex;
@@ -88,22 +95,26 @@ section {
   margin-left: 60px;
   color: #ffb31aa8;
 }
+
 .contacto {
   width: 30%;
   display: flex;
   flex-wrap: wrap;
 }
-.contacto > div {
+
+.contacto>div {
   width: 100%;
   display: flex;
   align-items: center;
   font-size: 15px;
 }
+
 .infoCurr {
   width: 100%;
   display: flex;
   flex-direction: row;
 }
+
 .experiencia {
   width: 30%;
   border-right: solid rgba(0, 0, 0, 0.407);
@@ -115,16 +126,17 @@ section {
   gap: 2rem;
 }
 
-.experiencia > div {
+.experiencia>div {
   width: 80%;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.experiencia > div > div {
+.experiencia>div>div {
   width: 100%;
 }
+
 .infoTrabajador {
   display: flex;
   flex-wrap: wrap;
@@ -132,6 +144,7 @@ section {
   flex-direction: column;
   padding: 30px;
 }
+
 .exp {
   color: rgba(0, 0, 0, 0.5);
   width: fit-content;
@@ -146,31 +159,37 @@ section {
   font-size: 40px;
   text-align: center;
 }
+
 .ejemplo {
   margin: 20px;
   gap: 20px;
   display: flex;
   flex-wrap: wrap;
 }
+
 #paisDelCarnet {
   padding-bottom: 3rem;
 }
-.ejemplo > div {
+
+.ejemplo>div {
   margin-top: 40px;
   margin-bottom: 40px;
   width: 30%;
 }
-.presentacion > div {
+
+.presentacion>div {
   width: 80%;
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
 .autonomo {
   border-radius: 10px;
   width: 100px;
   height: 30px;
   background-color: rgba(255, 166, 0, 0.613);
 }
+
 .asalariado {
   border-radius: 10px;
   margin-top: 10px;
@@ -184,137 +203,169 @@ section {
   justify-content: flex-start;
   gap: 1rem;
 }
-.carnet > div {
+
+.carnet>div {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: flex-start;
   gap: 1rem;
 }
+
 .enabled {
   border-radius: 50%;
   width: 40px;
   height: 40px;
   background-color: rgba(255, 166, 0, 0.613);
 }
+
 .disabled {
   border-radius: 50%;
   width: 40px;
   height: 40px;
 }
+
 @media (max-width: 1000px) {
   .nombre {
     font-size: 30px;
   }
+
   .apellido {
     font-size: 30px;
   }
+
   .datosDeContacto {
     font-size: 13px;
     margin-right: 10px;
   }
+
   .titulo {
     color: rgb(0, 0, 0);
     margin-left: 20px;
     margin-bottom: 50px;
     font-size: 30px;
   }
+
   .asalariado {
     margin-top: 20px;
   }
 }
+
 @media (max-width: 900px) {
-  .ejemplo > div > h3 {
+  .ejemplo>div>h3 {
     font-size: 15px;
   }
-  .ejemplo > div > p {
+
+  .ejemplo>div>p {
     font-size: 15px;
   }
+
   .nombre {
     font-size: 25px;
   }
+
   .apellido {
     font-size: 25px;
   }
-  #fotoCurr > img {
+
+  #fotoCurr>img {
     width: 100px;
     height: 100px;
   }
+
   .datosDeContacto {
     font-size: 9px;
   }
+
   .titulo {
     color: rgb(0, 0, 0);
     margin-left: 20px;
     margin-bottom: 50px;
     font-size: 30px;
   }
+
   .ejemplo {
     display: flex;
     flex-direction: column;
   }
-  .ejemplo > div {
+
+  .ejemplo>div {
     margin-top: 20px;
     width: 100%;
   }
+
   .txtPresentacion {
     font-size: 15px;
   }
-  .experiencia > div > h3 {
+
+  .experiencia>div>h3 {
     font-size: 15px;
   }
+
   .asalariado {
     margin-top: 20px;
   }
 }
+
 @media (max-width: 600px) {
   .nombre {
     font-size: 20px;
   }
+
   .apellido {
     font-size: 20px;
   }
-  #fotoCurr > img {
+
+  #fotoCurr>img {
     width: 100px;
     height: 100px;
   }
+
   .datosDeContacto {
     font-size: 7px;
   }
+
   .titulo {
     color: rgb(0, 0, 0);
     margin-left: 20px;
     margin-bottom: 50px;
     font-size: 30px;
   }
+
   .ejemplo {
     display: flex;
     flex-direction: column;
   }
+
   .txtPresentacion {
     font-size: 15px;
   }
-  .experiencia > div > h3 {
+
+  .experiencia>div>h3 {
     font-size: 15px;
   }
+
   .autonomo {
     border-radius: 5px;
     width: 80px;
     height: 20px;
     background-color: rgba(255, 166, 0, 0.613);
   }
+
   .asalariado {
     border-radius: 5px;
     margin-top: 20px;
     width: 80px;
     height: 20px;
   }
+
   .enabled {
     border-radius: 50%;
     width: 25px;
     height: 25px;
     background-color: rgba(255, 166, 0, 0.613);
   }
+
   .disabled {
     border-radius: 50%;
     width: 25px;

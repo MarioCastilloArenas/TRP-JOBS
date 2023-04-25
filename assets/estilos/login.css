@@ -15,6 +15,7 @@ body {
     "zsection"
     "zfooter";
 }
+
 section {
   grid-area: zsection;
   /* display: flex;
@@ -38,9 +39,11 @@ section {
   justify-content: center;
   align-items: center;
 }
+
 .form_box {
   width: 370px;
-  height: 485px; /*455*/
+  height: 485px;
+  /*455*/
   position: relative;
   margin: 100px 0;
   /* margin: 100px auto; */
@@ -49,6 +52,7 @@ section {
   border-radius: 10px;
   overflow: hidden;
 }
+
 .button_box {
   width: 240px;
   margin: 30px auto;
@@ -56,6 +60,7 @@ section {
   /* box-shadow: 0 0 20px 9px #e0e0e0; */
   border-radius: 30px;
 }
+
 .boton_btn {
   padding: 10px 22px;
   cursor: pointer;
@@ -64,6 +69,7 @@ section {
   outline: none;
   position: relative;
 }
+
 #opcion {
   top: 0;
   left: 0;
@@ -74,6 +80,7 @@ section {
   border-radius: 30px;
   transition: 0.8s;
 }
+
 /* .redes_sociales{
     margin: 30px auto;
     text-align: center;
@@ -90,11 +97,13 @@ section {
 } */
 
 .formulario_input {
-  top: 100px; /*180px*/
+  top: 100px;
+  /*180px*/
   position: absolute;
   width: 280px;
   transition: 0.8s;
 }
+
 .input_field {
   width: 100%;
   padding: 10px 0;
@@ -106,6 +115,7 @@ section {
   outline: none;
   background: transparent;
 }
+
 .submit_btn {
   width: 85%;
   padding: 10px 30px;
@@ -118,9 +128,11 @@ section {
   border-radius: 30px;
   margin-bottom: 10px;
 }
+
 .check_box {
   margin: 30px 10px 30px 0;
 }
+
 #terminos {
   color: black;
   font-size: 12px;
@@ -132,6 +144,7 @@ section {
   left: 50px;
   top: 140px;
 }
+
 input::placeholder {
   color: black;
 }
@@ -140,9 +153,11 @@ input::placeholder {
   top: 140px;
   left: 450px;
 }
+
 input {
   color: black;
 }
+
 /* #errorLogin{
     top: 100px;
     text-align: center;

@@ -5,11 +5,11 @@ let intervalo = null;
 let step = 0.3;
 
 const start = () => {
-    intervalo = setInterval( function() {
-        slider.scrollLeft =  slider.scrollLeft + step;
-        if(slider.scrollLeft === maxSliderLeft){
+    intervalo = setInterval(function () {
+        slider.scrollLeft = slider.scrollLeft + step;
+        if (slider.scrollLeft === maxSliderLeft) {
             step = step * -1;
-        } else if(slider.scrollLeft === 0){
+        } else if (slider.scrollLeft === 0) {
             step = step * -1;
         }
 
@@ -17,7 +17,7 @@ const start = () => {
 };
 
 const stop = () => {
-    clearInterval(intervalo);  
+    clearInterval(intervalo);
 };
 
 slider.addEventListener("mouseover", () => {

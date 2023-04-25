@@ -1,441 +1,354 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- <link rel="stylesheet" href="assets/estilos/index.css"> -->
-    <link rel="stylesheet" href="assets/estilos/indexTransportista.css" />
-    <link rel="stylesheet" href="assets/estilos/headerFooter.css" />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap"
-      rel="stylesheet"
-    />
-    <script src="index.js"></script>
-    <script src="assets/script/indexTransportista.js"></script>
-  </head>
-  <body onload="fcargarDatosIndexTrabajador();">
-    <header>
-      <div id="logo" onclick="GoIndex()">
-        <p class="animacionLogo">TRP JOBS</p>
-      </div>
-      <div id="info">
-        <div id="boxInfo">
-          <div id="sobreNosotros" onclick="fEnviarSobreNosotros();">
-            Sobre nosotros
-          </div>
-          <div id="trabajadores" onclick="enviarInicioTrabajadores();">
-            Trabajadores
-          </div>
-          <div id="empresas" onclick="enviarInicioEmpresas();">Empresas</div>
-          <div id="logoUser"><i class="bx bx-user-circle"></i></div>
-          <div id="navMenu">
-            <div class="btn-menu">
-              <label for="btn-menu">
-                <span class="material-symbols-outlined"> menu </span>
-              </label>
-            </div>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="assets/estilos/indexTransportista.css" />
+  <link rel="stylesheet" href="assets/estilos/headerFooter.css" />
+
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <script src="index.js"></script>
+  <script src="assets/script/indexTransportista.js"></script>
+</head>
+
+<body onload="fcargarDatosIndexTrabajador();">
+  <header>
+    <div id="logo">
+      <p class="animacionLogo">TRP JOBS</p>
+    </div>
+    <div id="info">
+      <div id="boxInfo">
+        <div id="sobreNosotros" onclick="fEnviarSobreNosotros();"> Sobre nosotros</div>
+        <div id="trabajadores" onclick="enviarInicioTrabajadores();"> Trabajadores </div>
+        <div id="empresas" onclick="enviarInicioEmpresas();"> Empresas </div>
+        <div id="navMenu">
+          <div class="btn-menu">
+            <label for="btn-menu">
+              <span class="material-symbols-outlined">
+                menu
+              </span>
+            </label>
           </div>
         </div>
-      </div>
-    </header>
-    <input type="checkbox" id="btn-menu" />
-    <div id="container_menu">
-      <div class="cont_menu">
-        <nav>
-          <nav id="nav_sesion">
-            <a href="">SOBRE NOSOTROS</a>
-            <a href="loginUsuario.html">TRABAJADORES</a>
-            <a href="loginEmpresa.html">EMPRESAS</a>
-          </nav>
-        </nav>
-        <label for="btn-menu" class="">
-          <span class="material-symbols-outlined"> close </span>
-        </label>
       </div>
     </div>
-    <input type="checkbox" id="btn-sesion" />
-    <section>
-      <div>
-        <div id="UsuarioLogin">
-          <div id="logoIndexTransportista">
-            <i class="bx bx-user-circle"></i>
-          </div>
-          <h2>Mario Castillo</h2>
+  </header>
+  <input type="checkbox" id="btn-menu">
+  <div id="container_menu">
+    <div class="cont_menu">
+      <nav>
+        <nav id="nav_sesion">
+          <a href="">SOBRE NOSOTROS</a>
+          <a href="loginUsuario.html">TRABAJADORES</a>
+          <a href="loginEmpresa.html">EMPRESAS</a>
+        </nav>
+      </nav>
+      <label for="btn-menu" class="">
+        <span class="material-symbols-outlined">
+          close
+        </span>
+      </label>
+    </div>
+  </div>
+  <input type="checkbox" id="btn-sesion">
+  <section>
+    <div>
+      <div id="UsuarioLogin">
+        <div id="logoIndexTransportista">
+          <i class="bx bx-user-circle"></i>
         </div>
-        <div id="boxIndexUsuario">
-          <div id="boxNavUsuario">
-            <div class="navUsuario">
-              <div class="opcionesUsuario" onclick="fMostrarMisDatos();">
-                MIS DATOS
-              </div>
-              <div
-                class="opcionesUsuario"
-                onclick="fMostrarMisInscripciones();"
-              >
-                MIS INSCRIPCIONES
-              </div>
-              <div class="opcionesUsuario" onclick="fMostrarMisAlertas();">
-                MIS ALERTAS
-              </div>
-              <div class="opcionesUsuario" onclick="fCerrarSesion();">
-                CERRAR SESION
-              </div>
+        <h2>Mario Castillo</h2>
+      </div>
+      <div id="boxIndexUsuario">
+        <div id="boxNavUsuario">
+          <div class="navUsuario">
+            <div class="opcionesUsuario" onclick="fMostrarMisDatos();">
+              MIS DATOS
+            </div>
+            <div class="opcionesUsuario" onclick="fMostrarMisInscripciones();">
+              MIS INSCRIPCIONES
+            </div>
+            <div class="opcionesUsuario" onclick="fMostrarMisAlertas();">
+              MIS ALERTAS
+            </div>
+            <div class="opcionesUsuario" onclick="fCerrarSesion();">
+              CERRAR SESION
             </div>
           </div>
-          <div id="boxUsuario">
-            <div id="usuarioContenido1" class="boxUsuario activo">
-              <div class="usuarioContenidoTitutlo">
-                <h3>Mis datos</h3>
-              </div>
-              <div class="usuarioContenidoOpciones">
-                <div class="usuarioContenidoOpcionesBtn">
-                  <div class="btnMenuUsuario" onclick="fMostrarBasicos();">
-                    Básicos
-                  </div>
-                  <div
-                    class="btnMenuUsuario"
-                    onclick="fMostrarProfesionales();"
-                  >
-                    Profesionales
-                  </div>
-                  <div class="btnMenuUsuario" onclick="fMostrarExperiencia();">
-                    Experiencia
-                  </div>
+        </div>
+        <div id="boxUsuario">
+          <div id="usuarioContenido1" class="boxUsuario activo">
+            <div class="usuarioContenidoTitutlo">
+              <h3>Mis datos</h3>
+            </div>
+            <div class="usuarioContenidoOpciones">
+              <div class="usuarioContenidoOpcionesBtn">
+                <div class="btnMenuUsuario" onclick="fMostrarBasicos();">
+                  Básicos
                 </div>
-                <div class="usuarioContenidoOpcionesTxt">
-                  <div class="fieldset activo" id="paso1">
-                    <!--Poner contraseña-->
-                    <!-- paso2  -->
-                    <!-- <div class="tituloRelleno">
+                <div class="btnMenuUsuario" onclick="fMostrarProfesionales();">
+                  Profesionales
+                </div>
+                <div class="btnMenuUsuario" onclick="fMostrarExperiencia();">
+                  Experiencia
+                </div>
+              </div>
+              <div class="usuarioContenidoOpcionesTxt">
+                <div class="fieldset activo" id="paso1">
+                  <!--Poner contraseña-->
+                  <!-- paso2  -->
+                  <!-- <div class="tituloRelleno">
                                         <h2>INFORMACIÓN PROFESIONAL</h2>
                                     </div> -->
-                    <div class="rellenar2">
-                      <h3 id="mensaje2"></h3>
-                      <div class="form-item">
-                        <label for="dni">DNI:</label>
-                        <input type="text" id="cif" required value="hola" />
-                        <i id="good" class="bx bx-check-circle"></i>
-                        <i id="error" class="bx bx-error-circle"></i>
-                        <small>Rellene este campo</small>
-                      </div>
-                      <div class="form-item">
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" id="nombre" required />
-                        <i id="good" class="bx bx-check-circle"></i>
-                        <i id="error" class="bx bx-error-circle"></i>
-                        <small>Rellene este campo</small>
-                      </div>
-                      <div class="form-item">
-                        <label for="apellidos">Apellidos:</label>
-                        <input type="text" id="apellidos" required />
-                        <i id="good" class="bx bx-check-circle"></i>
-                        <i id="error" class="bx bx-error-circle"></i>
-                        <small>Rellene este campo</small>
-                      </div>
-                      <div class="form-item">
-                        <label for="password">Clave:</label>
-                        <input type="password" id="password" required />
-                        <i id="good" class="bx bx-check-circle"></i>
-                        <i id="error" class="bx bx-error-circle"></i>
-                        <small>Rellene este campo</small>
-                      </div>
-                      <div class="form-item">
-                        <label for="password2">Confirme su clave:</label>
-                        <input type="password" id="password2" required />
-                        <i id="good" class="bx bx-check-circle"></i>
-                        <i id="error" class="bx bx-error-circle"></i>
-                        <small>Rellene este campo</small>
-                      </div>
-                      <div class="form-item">
-                        <label for="fechaNacimiento">Fecha Nacimiento</label>
-                        <input type="date" id="fechaNacimiento" />
-                        <i id="good" class="fa-solid fa-circle-check"></i>
-                        <i
-                          id="error"
-                          class="fa-solid fa-circle-exclamation"
-                        ></i>
-                        <small>Rellene este campo</small>
-                      </div>
-                      <div class="form-item">
-                        <label for="nacionalidad">Nacionalidad:</label>
-                        <input type="text" id="nacionalidad" required />
-                        <i id="good" class="bx bx-check-circle"></i>
-                        <i id="error" class="bx bx-error-circle"></i>
-                        <small>Rellene este campo</small>
-                      </div>
-                      <div class="form-item">
-                        <label for="provincia">Provincia:</label>
-                        <select id="provincia"></select>
-                      </div>
-                      <div class="form-item">
-                        <label for="codigoPostal">Codigo Postal:</label>
-                        <input type="number" id="codigoPostal" required />
-                        <i id="good" class="bx bx-check-circle"></i>
-                        <i id="error" class="bx bx-error-circle"></i>
-                        <small>Rellene este campo</small>
-                      </div>
-                      <div class="form-item">
-                        <label for="presentacion">Presentación:</label>
-                        <input type="text" id="presentacion" />
-                        <i id="good" class="fa-solid fa-circle-check"></i>
-                        <i
-                          id="error"
-                          class="fa-solid fa-circle-exclamation"
-                        ></i>
-                        <small>Rellene este campo</small>
-                      </div>
-                      <div class="form-item">
-                        <label for="fotoTrabajador">Imagen:</label>
-                        <input type="file" id="fotoTrabajador" />
-                      </div>
-                      <div class="form-boton-item">
-                        <button
-                          id="botonSiguiente2"
-                          onclick="fActualizarDatosBasicos()"
-                        >
-                          Actualizar
-                        </button>
-                      </div>
+                  <div class="rellenar2">
+                    <h3 id="mensaje2"></h3>
+                    <div class="form-item">
+                      <label for="dni">DNI:</label>
+                      <input type="text" id="cif" required value="hola" />
+                      <i id="good" class="bx bx-check-circle"></i>
+                      <i id="error" class="bx bx-error-circle"></i>
+                      <small>Rellene este campo</small>
                     </div>
-                  </div>
-                  <div class="fieldset" id="paso2">
-                    <!-- <div class="tituloRelleno">
-                                        <h2>DATOS LABORALES</h2>
-                                    </div> -->
-                    <div class="rellenar">
-                      <h3 id="mensaje3"></h3>
-                      <div class="form-item">
-                        <p id="identificador">Tipo profesional</p>
-                        <label
-                          ><input
-                            type="radio"
-                            name="tipoProfesion"
-                            value="Asaliariado"
-                            checked
-                          />
-                          Asaliariado</label
-                        >
-                        <label
-                          ><input
-                            type="radio"
-                            name="tipoProfesion"
-                            value="Autonomo"
-                          />Autonomo</label
-                        >
-                      </div>
-                      <div class="form-item">
-                        <label for="ambitosGeograficos"
-                          >Ambitos Geograficos:</label
-                        >
-                        <select id="ambitosGeograficos"></select>
-                      </div>
-                      <div class="form-item">
-                        <p id="identificador">Tarjeta tacografo</p>
-                        <label
-                          ><input
-                            type="radio"
-                            name="tarjetaTacografo"
-                            value="si"
-                            checked
-                          />Si</label
-                        >
-                        <label
-                          ><input
-                            type="radio"
-                            name="tarjetaTacografo"
-                            value="no"
-                          />No</label
-                        >
-                      </div>
-                      <div class="form-item">
-                        <p id="identificador">Certificado CAP</p>
-                        <label
-                          ><input
-                            type="radio"
-                            name="certificadoCap"
-                            value="si"
-                            checked
-                          />Si</label
-                        >
-                        <label
-                          ><input
-                            type="radio"
-                            name="certificadoCap"
-                            value="no"
-                          />No</label
-                        >
-                      </div>
-                      <div class="form-item">
-                        <p id="identificador">Mercancías peligrosas</p>
-                        <label
-                          ><input
-                            type="radio"
-                            name="mercanciasPeligrosas"
-                            value="si"
-                          />Si</label
-                        >
-                        <label
-                          ><input
-                            type="radio"
-                            name="mercanciasPeligrosas"
-                            value="no"
-                            checked
-                          />No</label
-                        >
-                      </div>
-                      <div class="form-item">
-                        <label for="tipoCarnet">Tipo Carnet:</label>
-                        <select id="tipoCarnet"></select>
-                      </div>
-                      <div class="form-item">
-                        <label for="paisCarnet">Pais del carnet:</label>
-                        <input type="text" id="paisCarnet" required />
-                        <i id="good" class="bx bx-check-circle"></i>
-                        <i id="error" class="bx bx-error-circle"></i>
-                        <small>Rellene este campo</small>
-                      </div>
-
-                      <button onclick="infoProfesionalTrabajador()">
+                    <div class="form-item">
+                      <label for="nombre">Nombre:</label>
+                      <input type="text" id="nombre" required />
+                      <i id="good" class="bx bx-check-circle"></i>
+                      <i id="error" class="bx bx-error-circle"></i>
+                      <small>Rellene este campo</small>
+                    </div>
+                    <div class="form-item">
+                      <label for="apellidos">Apellidos:</label>
+                      <input type="text" id="apellidos" required />
+                      <i id="good" class="bx bx-check-circle"></i>
+                      <i id="error" class="bx bx-error-circle"></i>
+                      <small>Rellene este campo</small>
+                    </div>
+                    <div class="form-item">
+                      <label for="password">Clave:</label>
+                      <input type="password" id="password" required />
+                      <i id="good" class="bx bx-check-circle"></i>
+                      <i id="error" class="bx bx-error-circle"></i>
+                      <small>Rellene este campo</small>
+                    </div>
+                    <div class="form-item">
+                      <label for="password2">Confirme su clave:</label>
+                      <input type="password" id="password2" required />
+                      <i id="good" class="bx bx-check-circle"></i>
+                      <i id="error" class="bx bx-error-circle"></i>
+                      <small>Rellene este campo</small>
+                    </div>
+                    <div class="form-item">
+                      <label for="fechaNacimiento">Fecha Nacimiento</label>
+                      <input type="date" id="fechaNacimiento" />
+                      <i id="good" class="fa-solid fa-circle-check"></i>
+                      <i id="error" class="fa-solid fa-circle-exclamation"></i>
+                      <small>Rellene este campo</small>
+                    </div>
+                    <div class="form-item">
+                      <label for="nacionalidad">Nacionalidad:</label>
+                      <input type="text" id="nacionalidad" required />
+                      <i id="good" class="bx bx-check-circle"></i>
+                      <i id="error" class="bx bx-error-circle"></i>
+                      <small>Rellene este campo</small>
+                    </div>
+                    <div class="form-item">
+                      <label for="provincia">Provincia:</label>
+                      <select id="provincia"></select>
+                    </div>
+                    <div class="form-item">
+                      <label for="codigoPostal">Codigo Postal:</label>
+                      <input type="number" id="codigoPostal" required />
+                      <i id="good" class="bx bx-check-circle"></i>
+                      <i id="error" class="bx bx-error-circle"></i>
+                      <small>Rellene este campo</small>
+                    </div>
+                    <div class="form-item">
+                      <label for="presentacion">Presentación:</label>
+                      <input type="text" id="presentacion" />
+                      <i id="good" class="fa-solid fa-circle-check"></i>
+                      <i id="error" class="fa-solid fa-circle-exclamation"></i>
+                      <small>Rellene este campo</small>
+                    </div>
+                    <div class="form-item">
+                      <label for="fotoTrabajador">Imagen:</label>
+                      <input type="file" id="fotoTrabajador" />
+                    </div>
+                    <div class="form-boton-item">
+                      <button id="botonSiguiente2" onclick="fActualizarDatosBasicos()">
                         Actualizar
                       </button>
                     </div>
                   </div>
-                  <div class="fieldset" id="paso3">
-                    <!-- <div class="tituloRelleno">
+                </div>
+                <div class="fieldset" id="paso2">
+                  <!-- <div class="tituloRelleno">
+                                        <h2>DATOS LABORALES</h2>
+                                    </div> -->
+                  <div class="rellenar">
+                    <h3 id="mensaje3"></h3>
+                    <div class="form-item">
+                      <p id="identificador">Tipo profesional</p>
+                      <label><input type="radio" name="tipoProfesion" value="Asaliariado" checked />
+                        Asaliariado</label>
+                      <label><input type="radio" name="tipoProfesion" value="Autonomo" />Autonomo</label>
+                    </div>
+                    <div class="form-item">
+                      <label for="ambitosGeograficos">Ambitos Geograficos:</label>
+                      <select id="ambitosGeograficos"></select>
+                    </div>
+                    <div class="form-item">
+                      <p id="identificador">Tarjeta tacografo</p>
+                      <label><input type="radio" name="tarjetaTacografo" value="si" checked />Si</label>
+                      <label><input type="radio" name="tarjetaTacografo" value="no" />No</label>
+                    </div>
+                    <div class="form-item">
+                      <p id="identificador">Certificado CAP</p>
+                      <label><input type="radio" name="certificadoCap" value="si" checked />Si</label>
+                      <label><input type="radio" name="certificadoCap" value="no" />No</label>
+                    </div>
+                    <div class="form-item">
+                      <p id="identificador">Mercancías peligrosas</p>
+                      <label><input type="radio" name="mercanciasPeligrosas" value="si" />Si</label>
+                      <label><input type="radio" name="mercanciasPeligrosas" value="no" checked />No</label>
+                    </div>
+                    <div class="form-item">
+                      <label for="tipoCarnet">Tipo Carnet:</label>
+                      <select id="tipoCarnet"></select>
+                    </div>
+                    <div class="form-item">
+                      <label for="paisCarnet">Pais del carnet:</label>
+                      <input type="text" id="paisCarnet" required />
+                      <i id="good" class="bx bx-check-circle"></i>
+                      <i id="error" class="bx bx-error-circle"></i>
+                      <small>Rellene este campo</small>
+                    </div>
+
+                    <button onclick="infoProfesionalTrabajador()">
+                      Actualizar
+                    </button>
+                  </div>
+                </div>
+                <div class="fieldset" id="paso3">
+                  <!-- <div class="tituloRelleno">
                                         <h2>EXPERIENCIA LABORAL</h2>
                                     </div> -->
-                    <div class="rellenar">
-                      <h3 id="mensaje3"></h3>
-                      <label
-                        ><input
-                          type="checkbox"
-                          id="no_experiencia"
-                          value="no_experiencia"
-                        />No tengo experiencia.</label
-                      >
-                      <div>
-                        <div class="form-item">
-                          <label for="nomEmpresa">Nombre Empresa:</label>
-                          <input type="text" id="nomEmpresa" required />
-                          <i id="good" class="bx bx-check-circle"></i>
-                          <i id="error" class="bx bx-error-circle"></i>
-                          <small>Rellene este campo</small>
-                        </div>
-                        <div class="form-item">
-                          <label for="fechaInicio">Fecha Inicio:</label>
-                          <input
-                            type="month"
-                            name="fechaInicio"
-                            id="fechaInicio"
-                            required
-                          />
-                          <small>rellene este campo</small>
-                        </div>
-                        <div class="form-item">
-                          <label for="fechaFin">Fecha Fin:</label>
-                          <input
-                            type="month"
-                            name="fechaFin"
-                            id="fechaFin"
-                            required
-                          />
-                          <small>rellene este campo</small>
-                        </div>
-                        <div class="form-item">
-                          <label for="TipoCarnet">Carnet Tipo:</label>
-                          <select id="TipoCarnet"></select>
-                        </div>
-                        <div class="form-item">
-                          <label for="TipoEspecialidad"
-                            >Tipo Especialidad:</label
-                          >
-                          <select id="TipoEspecialidad"></select>
-                        </div>
-                        <button onclick="añadirExperiencia()"></button>
+                  <div class="rellenar">
+                    <h3 id="mensaje3"></h3>
+                    <label><input type="checkbox" id="no_experiencia" value="no_experiencia" />No tengo
+                      experiencia.</label>
+                    <div>
+                      <div class="form-item">
+                        <label for="nomEmpresa">Nombre Empresa:</label>
+                        <input type="text" id="nomEmpresa" required />
+                        <i id="good" class="bx bx-check-circle"></i>
+                        <i id="error" class="bx bx-error-circle"></i>
+                        <small>Rellene este campo</small>
                       </div>
-                      <button onclick="formEmpresa_webEmpresarial()">
-                        Siguiente
-                      </button>
+                      <div class="form-item">
+                        <label for="fechaInicio">Fecha Inicio:</label>
+                        <input type="month" name="fechaInicio" id="fechaInicio" required />
+                        <small>rellene este campo</small>
+                      </div>
+                      <div class="form-item">
+                        <label for="fechaFin">Fecha Fin:</label>
+                        <input type="month" name="fechaFin" id="fechaFin" required />
+                        <small>rellene este campo</small>
+                      </div>
+                      <div class="form-item">
+                        <label for="TipoCarnet">Carnet Tipo:</label>
+                        <select id="TipoCarnet"></select>
+                      </div>
+                      <div class="form-item">
+                        <label for="TipoEspecialidad">Tipo Especialidad:</label>
+                        <select id="TipoEspecialidad"></select>
+                      </div>
+                      <button onclick="añadirExperiencia()"></button>
                     </div>
+                    <button onclick="formEmpresa_webEmpresarial()">
+                      Siguiente
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
-            <div id="usuarioContenido2" class="boxUsuario">
-              <div class="usuarioContenidoTitutlo">
-                <h3>Mis Inscripciones</h3>
+          </div>
+          <div id="usuarioContenido2" class="boxUsuario">
+            <div class="usuarioContenidoTitutlo">
+              <h3>Mis Inscripciones</h3>
+            </div>
+            <div class="usuarioContenidoOpciones">
+              <div class="usuarioContenidoOpcionesBtn">
+                <div class="btnMenuUsuario2">
+                  <span class="material-symbols-outlined" id="logoActivo">
+                    event_available
+                  </span>
+                  <p>Oferta activa</p>
+                </div>
+                <div class="btnMenuUsuario2">
+                  <span class="material-symbols-outlined" id="logoFinalizado">
+                    event_busy
+                  </span>
+                  <p>Oferta finalizada</p>
+                </div>
               </div>
-              <div class="usuarioContenidoOpciones">
-                <div class="usuarioContenidoOpcionesBtn">
-                  <div class="btnMenuUsuario2">
-                    <span class="material-symbols-outlined" id="logoActivo">
-                      event_available
-                    </span>
-                    <p>Oferta activa</p>
-                  </div>
-                  <div class="btnMenuUsuario2">
-                    <span class="material-symbols-outlined" id="logoFinalizado">
-                      event_busy
-                    </span>
-                    <p>Oferta finalizada</p>
-                  </div>
-                </div>
-                <div class="usuarioConteidoOpcionesTxt">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit Hola
-                  como estas
-                </div>
+              <div class="usuarioConteidoOpcionesTxt">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit Hola
+                como estas
               </div>
             </div>
-            <div id="usuarioContenido3" class="boxUsuario">
-              <div class="usuarioContenidoTitutlo">
-                <h3>Mis Alertas</h3>
+          </div>
+          <div id="usuarioContenido3" class="boxUsuario">
+            <div class="usuarioContenidoTitutlo">
+              <h3>Mis Alertas</h3>
+            </div>
+            <div class="usuarioContenidoOpciones">
+              <div class="usuarioContenidoOpcionesBtn">
+                <div class="btnMenuUsuario">Prueba</div>
+                <div class="btnMenuUsuario">Prueba</div>
+                <div class="btnMenuUsuario">Prueba</div>
               </div>
-              <div class="usuarioContenidoOpciones">
-                <div class="usuarioContenidoOpcionesBtn">
-                  <div class="btnMenuUsuario">Prueba</div>
-                  <div class="btnMenuUsuario">Prueba</div>
-                  <div class="btnMenuUsuario">Prueba</div>
-                </div>
-                <div class="usuarioConteidoOpcionesTxt">
-                  En proceso: .......................................
-                </div>
+              <div class="usuarioConteidoOpcionesTxt">
+                En proceso: .......................................
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <footer>
-      <div class="footer_logo">
-        <h2 id="texto_tdr" data-text="&nbsp;TDR Jobs&nbsp;">
-          &nbsp;TDR Jobs&nbsp;
-        </h2>
-      </div>
-      <div class="footer_opcion">
-        <a href="">para conductores</a>
-        <a href="">para empresas</a>
-        <a href="">ver ofertas</a>
-      </div>
-      <div class="footer_contacto">
-        <p>contacto</p>
-        <p><i class="bx bx-phone-call"></i> 666 666 666</p>
-        <p><i class="bx bx-envelope"></i> info@trpjobs.com</p>
-      </div>
-      <div class="footer_social">
-        <a href="https://www.whatsapp.com/"><i class="bx bxl-whatsapp"></i></a>
-        <a href="https://es.linkedin.com/"><i class="bx bxl-linkedin"></i></a>
-        <a href="https://es-es.facebook.com/"
-          ><i class="bx bxl-facebook-circle"></i
-        ></a>
-      </div>
-    </footer>
-  </body>
+    </div>
+  </section>
+  <footer>
+    <div class="footer_logo">
+      <h2 id="texto_tdr" data-text="&nbsp;TDR Jobs&nbsp;">
+        &nbsp;TDR Jobs&nbsp;
+      </h2>
+    </div>
+    <div class="footer_opcion">
+      <a href="">para conductores</a>
+      <a href="">para empresas</a>
+      <a href="">ver ofertas</a>
+    </div>
+    <div class="footer_contacto">
+      <p>contacto</p>
+      <p><i class="bx bx-phone-call"></i> 666 666 666</p>
+      <p><i class="bx bx-envelope"></i> info@trpjobs.com</p>
+    </div>
+    <div class="footer_social">
+      <a href="https://www.whatsapp.com/"><i class="bx bxl-whatsapp"></i></a>
+      <a href="https://es.linkedin.com/"><i class="bx bxl-linkedin"></i></a>
+      <a href="https://es-es.facebook.com/"><i class="bx bxl-facebook-circle"></i></a>
+    </div>
+  </footer>
+</body>
+
 </html>
