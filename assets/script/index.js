@@ -20,7 +20,7 @@ function fverOferta() {
 }
 
 function verOfertas() {
-    const URL = "http://localhost:8083/oferta/noCaducadas";
+    const URL = "http://localhost:8080/oferta/noCaducadas";
     fetch(URL)
         .then((response) => response.json())
         .then((oferta) => {
@@ -93,7 +93,7 @@ function vermas(ciudad) {
 }
 
 function contenidoSlider() {
-    const URL = "http://localhost:8083/empresa/todas";
+    const URL = "http://localhost:8080/empresa/todas";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
