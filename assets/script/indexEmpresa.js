@@ -366,8 +366,53 @@ function fMostrarFinalizadas() {
 }
 
 // publicar Ofertaç
+function buscarProvincia(id) {
+    const URL = "http://localhost:8083/provincia/" + id;
+    return new Promise((resolve, reject) => {
+        fetch(URL)
+            .then((response) => response.json())
+            .then((provincia) => { resolve(provincia); })
+            .catch((error) => reject(error));
+    });
 
-function fPublicarOfertaNueva() {
+}
+function buscarAmbito(id) {
+    const URL = "http://localhost:8083/ambito/" + id;
+    return new Promise((resolve, reject) => {
+        fetch(URL)
+            .then((response) => response.json())
+            .then((ambito) => { resolve(ambito); })
+            .catch((error) => reject(error));
+    });
+}
+function buscarCarnet(id) {
+    const URL = "http://localhost:8083/carnet/" + id;
+    return new Promise((resolve, reject) => {
+        fetch(URL)
+            .then((response) => response.json())
+            .then((carnet) => { resolve(carnet); })
+            .catch((error) => reject(error));
+    });
+}
+function buscarEmpresa(cifv) {
+    const URL = "http://localhost:8083/empresa/" + cifv;
+    return new Promise((resolve, reject) => {
+        fetch(URL)
+            .then((response) => response.text())
+            .then((empresa) => {
+                if (empresa == "") {
+                    resolve(null);
+                } else {
+                    empresa = JSON.parse(empresa)
+                    console.log(empresa);
+                    resolve(empresa);
+                }
+            })
+            .catch((error) => reject(error));
+    });
+}
+
+async function fPublicarOfertaNueva() {
     fechaActual = new Date();
     fechaActualD = fechaActual.getDate();
     fechaActualDia = fechaActualD.toString();
@@ -381,30 +426,46 @@ function fPublicarOfertaNueva() {
     }
     fechaActualY = fechaActual.getFullYear();
     fechaPublicacion = fechaActualY + "-" + fechaActualM + "-" + fechaActualD;
-    let idOferta = JSON.parse(localStorage.getItem("idOferta"));
-
+    let idEmpresa = JSON.parse(localStorage.getItem("empresa"));
+    console.log(idEmpresa);
+    
+    let idEmpresaV;
+    try { idEmpresaV = await buscarEmpresa(idEmpresa); } catch (error) { throw new Error('Ha ocurrido un error'); }
+    console.log(idEmpresaV);
     tituloOf = document.getElementById("tituloOf").value;
     fechCaducidad = document.getElementById("fechCaducidad").value;
-    provincia2 = document.getElementById("provincia2").value;
+    //provincia2 = document.getElementById("provincia2").value;
+    let provincia2 = document.getElementById('provincia2').value;
+    let provinciaV;
+    try { provinciaV = await buscarProvincia(provincia2); } catch (error) { throw new Error('Ha ocurrido un error'); }
     localidad = document.getElementById("localidad").value;
     descripcionOfert = document.getElementById("descripcionOfert").value;
     tCandidato = document.getElementById("tCandidato").value;
     tContrato = document.getElementById("tContrato").value;
-    carnet = document.getElementById("carnet").value;
-    geografico = document.getElementById("geografico").value;
+    let tipoCarnet = document.getElementById('carnet').value;
+    let tipoCarnetV;
+    try { tipoCarnetV = await buscarCarnet(tipoCarnet); } catch (error) { throw new Error('Ha ocurrido un error'); }
+    //carnet = document.getElementById("carnet").value;
+    //geografico = document.getElementById("geografico").value;
+    let geografico = document.getElementById('geografico').value;
+    let geograficoV;
+    try { geograficoV = await buscarAmbito(geografico); } catch (error) { throw new Error('Ha ocurrido un error'); }
 
     const crearOferta = {
-        "idOferta": 0,
-        "tituloOferta": tituloOf,
-        "fechaPublicacion": fechaPublicacion,
-        "fechaCaducidad": fechCaducidad,
-        "localidad": localidad,
-        "tipoCandidato": tCandidato,
-        "valoracion": "s",
-        "idProvincia": provincia2,
-        "idCarnet": carnet,
-        "idEmpresa": idOferta,
-        "idAmbito": geografico
+        idOferta: 0,
+        descripcion: "dsadasdsad",
+        experiencia: "No se requiere experiencia previa",
+        fechaCaducidad: fechCaducidad,
+        fechaPublicacion: fechaPublicacion,
+        localidad: localidad,
+        tipoCandidato: tCandidato,
+        tipoContrato: tCandidato,
+        tituloOferta: tituloOf,
+        valoracion: "s",
+        ambitoGeografico: geograficoV,
+        empresa: idEmpresaV,
+        provincia: provinciaV,
+        tipoCarnet:tipoCarnetV
     }
     console.log(crearOferta);
     const URL = "http://localhost:8083/oferta/registro";
@@ -425,37 +486,70 @@ function fPublicarOfertaNueva() {
 }
 
 
-function fActualizarCuenta() {
-    email = document.getElementById("email");
-    password = document.getElementById("password");
-    password2 = document.getElementById("password2");
+async function fActualizarDatosEmpresa() {
+    let bolean = true;
+    email = document.getElementById("email").value;
+    password = document.getElementById("password").value;
+    password2 = document.getElementById("password2").value;
+    contrasena = document.getElementById("password");
+    contrasena2 = document.getElementById("password2");
+    let idEmpresa = JSON.parse(localStorage.getItem("empresa"));
+    let idEmpresaV;
+    try { idEmpresaV = await buscarEmpresa(idEmpresa); } catch (error) { throw new Error('Ha ocurrido un error'); }
+    idEmpresaV.email = email;
 
-
-    if (password == password2) {
-
-        const actualizarCuenta = {
-            "email": email,
-            "contrasena": password
-        }
-        console.log(actualizarCuenta);
-        const URL = "http://localhost:8083/oferta/registro";
-        fetch(URL, {
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            method: "POST",
-            body: JSON.stringify(crearOferta)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-            });
-
+    if (password === '') {
+        enviarError(contrasena, "Rellene este campo");
+        bolean = false;
+    } else if (password.length > 8) {
+        bolean = false;
+        enviarError(contrasena, 'No debe tener más de 8 caracteres');
+    } else {
+        funciona(contrasena);
     }
+
+    if (password2 === '') {
+        enviarError(contrasena2, "Rellene este campo");
+        bolean = false;
+    } else if (password !== password2) {
+        bolean = false;
+        enviarError(contrasena2, 'Las contraseñas no coinciden');
+    } else {
+        funciona(contrasena2);
+    }
+    if (bolean == true) {
+        let password = md5(password2);
+        try { idEmpresaV = await buscarEmpresa(idEmpresa); } catch (error) { throw new Error('Ha ocurrido un error'); }
+        idEmpresaV.contrasena = password;
+        let actEmpresa;
+        try {
+            actEmpresa = await actulizarDatosEmpresa(idEmpresaV);
+            console.log(actEmpresa, idEmpresaV);
+        } catch (error) {
+                    throw new Error('Ha ocurrido un error');
+                }
+        }
 
 
 }
+
+function actulizarDatosEmpresa(empresa){
+        return new Promise((resolve, reject) => {
+            const URL = "http://localhost:8083/empresa/actualizar/";
+            fetch(URL, {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                method: "POST",
+                body: JSON.stringify(empresa)
+            })
+                .then((response) => response.json())
+                .then((empresa) => { resolve(empresa); })
+                .catch((error) => reject(error));;
+        });
+}
+
 function fActualizarDatos() {
 
 }
