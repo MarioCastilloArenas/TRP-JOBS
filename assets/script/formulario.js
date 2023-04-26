@@ -328,7 +328,7 @@ async function webEmpresarial(e) {
                 document.getElementById("pasoAColor4").className = 'activate'
                 document.getElementById("NombreEmpresa2").innerHTML = addEmpresa.nombreComercial;
                 document.getElementById("actividadEmpresa2").innerHTML = addEmpresa.tipoActividadEmpresarial.actividad;
-                document.getElementById("infoEmpresa2").innerHTML = addEmpresa.descripcion;
+                document.getElementById("infoEmpresa2").innerHTML = addEmpresa.descripcionEmpresa;                ;
                 document.getElementById("provinciaEmpresa2").innerHTML = addEmpresa.provincia.provincia;
                 document.getElementById("sitioWebEmpresa2").innerHTML = addEmpresa.sitioWeb;
                 addLogoEmpresa();
