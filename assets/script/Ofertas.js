@@ -51,7 +51,7 @@ async function buscar() {
     }
 }
 function provincias() {
-    const URL = "http://localhost:8080/oferta/provinciasEnOfertas";
+    const URL = "http://localhost:8083/oferta/provinciasEnOfertas";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -99,7 +99,7 @@ function provincias() {
         })
 }
 function tipoDeCarnet() {
-    const URL = "http://localhost:8080/tipoCarnets/";
+    const URL = "http://localhost:8083/tipoCarnets/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -122,7 +122,7 @@ function tipoDeCarnet() {
         })
 }
 function ambitosGeograficos() {
-    const URL = "http://localhost:8080/ambitosGeograficos/";
+    const URL = "http://localhost:8083/ambitosGeograficos/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -189,7 +189,7 @@ function filtros() {
     }
 }
 function verOfertas() {
-    const URL = "http://localhost:8080/oferta/noCaducadas";
+    const URL = "http://localhost:8083/oferta/noCaducadas";
     fetch(URL)
         .then((response) => response.json())
         .then((oferta) => {
@@ -263,7 +263,7 @@ async function aplicarFiltros() {
 }
 
 async function fetchOfertas() {
-    const URL = "http://localhost:8080/oferta/noCaducadas";
+    const URL = "http://localhost:8083/oferta/noCaducadas";
     try {
         const response = await fetch(URL);
         const ofertas = await response.json();
@@ -278,7 +278,7 @@ function fBuscar(texto) {
     if (texto.length == 0) {
         verOfertas();
     } else {
-        fetch(URL = " http://localhost:8080/oferta/buscar/" + texto)
+        fetch(URL = " http://localhost:8083/oferta/buscar/" + texto)
             .then((response) => response.json())
             .then((data) => {
                 pintar(data);
@@ -359,7 +359,7 @@ function contadorFecha(fecha) {
 }
 
 function verOferta(id) {
-    fetch(URL = " http://localhost:8080/oferta/" + id)
+    fetch(URL = " http://localhost:8083/oferta/" + id)
         .then((response) => response.json())
         .then((oferta) => {
             let tituloof = document.getElementById('tituloof');
@@ -444,7 +444,7 @@ async function inscribirseEnOferta(){
 
 function buscarTrabajador(dniv) {
 
-    const URL = "http://localhost:8080/trabajador/" + dniv;
+    const URL = "http://localhost:8083/trabajador/" + dniv;
     return new Promise((resolve, reject) => {
         fetch(URL)
             .then((response) => response.text())
@@ -462,7 +462,7 @@ function buscarTrabajador(dniv) {
 }
 
 function buscarOferta(id) {
-    const URL ="http://localhost:8080/oferta/" + id
+    const URL ="http://localhost:8083/oferta/" + id
     return new Promise((resolve, reject) => {
         fetch(URL)
             .then((response) => response.json())
@@ -473,7 +473,7 @@ function buscarOferta(id) {
 
 function InscrOferta(InscripcionOferta){
     return new Promise((resolve, reject) => {
-        const URL = "http://localhost:8080/oferta/registroInscripcionDeTrabajadorEnOferta";
+        const URL = "http://localhost:8083/oferta/registroInscripcionDeTrabajadorEnOferta";
         fetch(URL, {
             headers: {
                 'Accept': 'application/json',

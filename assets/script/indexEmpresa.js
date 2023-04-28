@@ -68,7 +68,7 @@ function fPublicarOferta() {
 
 function fcargarDatosIndexEmpresa() {
     cifEmp = JSON.parse(localStorage.getItem("empresa"));
-    const URL = "http://localhost:8080/empresa/" + cifEmp;
+    const URL = "http://localhost:8083/empresa/" + cifEmp;
     fetch(URL)
         .then((response) => response.json())
         .then((empresa) => {
@@ -104,7 +104,7 @@ function fcargarDatosIndexEmpresa() {
 }
 
 function tipoActividadEmpresarial(idActiv) {
-    const URL = "http://localhost:8080/tipoActividadEmpresa/";
+    const URL = "http://localhost:8083/tipoActividadEmpresa/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -132,7 +132,7 @@ function tipoActividadEmpresarial(idActiv) {
 }
 
 function tipoActividadEmpresarial(idActiv) {
-    const URL = "http://localhost:8080/tipoActividadEmpresa/";
+    const URL = "http://localhost:8083/tipoActividadEmpresa/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -159,7 +159,7 @@ function tipoActividadEmpresarial(idActiv) {
 }
 
 function provincias(idProv) {
-    const URL = "http://localhost:8080/provincias/";
+    const URL = "http://localhost:8083/provincias/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -186,7 +186,7 @@ function provincias(idProv) {
 }
 
 function provinciasTodas() {
-    const URL = "http://localhost:8080/provincias/";
+    const URL = "http://localhost:8083/provincias/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -204,7 +204,7 @@ function provinciasTodas() {
 }
 
 function carnetTodos() {
-    const URL = "http://localhost:8080/tipoCarnets/";
+    const URL = "http://localhost:8083/tipoCarnets/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -221,7 +221,7 @@ function carnetTodos() {
 }
 
 function geograficoTodos() {
-    const URL = "http://localhost:8080/ambitosGeograficos/";
+    const URL = "http://localhost:8083/ambitosGeograficos/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -247,7 +247,7 @@ function fCerrarSesion() {
 function fMostrarTodas() {
     cifEmp = JSON.parse(localStorage.getItem("empresa"));
     fotoEmp = JSON.parse(localStorage.getItem("empresaFoto"));
-    const URL = "http://localhost:8080/oferta/todasOfertas/" + cifEmp;
+    const URL = "http://localhost:8083/oferta/todasOfertas/" + cifEmp;
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -292,7 +292,7 @@ function verTrabajadoresIns(oferta){
 function fMostrarActivas() {
     cifEmp = JSON.parse(localStorage.getItem("empresa"));
     fotoEmp = JSON.parse(localStorage.getItem("empresaFoto"));
-    const URL = "http://localhost:8080/oferta/todasOfertasNoCaducadas/" + cifEmp;
+    const URL = "http://localhost:8083/oferta/todasOfertasNoCaducadas/" + cifEmp;
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -322,6 +322,7 @@ function fMostrarActivas() {
                 html += "       </div>";
                 html += "   </div>";
                 html += "</div>";
+                html += "   <div onclick='verTrabajadoresIns("+ element.idOferta +")'>Ver todos los trabajadores inscritos a esta oferta</div>";
             });
             document.querySelector("#boxOfertas").innerHTML = html;
         });
@@ -330,7 +331,7 @@ function fMostrarActivas() {
 function fMostrarFinalizadas() {
     cifEmp = JSON.parse(localStorage.getItem("empresa"));
     fotoEmp = JSON.parse(localStorage.getItem("empresaFoto"));
-    const URL = "http://localhost:8080/oferta/todasOfertasCaducadas/" + cifEmp;
+    const URL = "http://localhost:8083/oferta/todasOfertasCaducadas/" + cifEmp;
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -367,7 +368,7 @@ function fMostrarFinalizadas() {
 
 // publicar Ofertaç
 function buscarProvincia(id) {
-    const URL = "http://localhost:8080/provincia/" + id;
+    const URL = "http://localhost:8083/provincia/" + id;
     return new Promise((resolve, reject) => {
         fetch(URL)
             .then((response) => response.json())
@@ -377,7 +378,7 @@ function buscarProvincia(id) {
 
 }
 function buscarAmbito(id) {
-    const URL = "http://localhost:8080/ambito/" + id;
+    const URL = "http://localhost:8083/ambito/" + id;
     return new Promise((resolve, reject) => {
         fetch(URL)
             .then((response) => response.json())
@@ -386,7 +387,7 @@ function buscarAmbito(id) {
     });
 }
 function buscarCarnet(id) {
-    const URL = "http://localhost:8080/carnet/" + id;
+    const URL = "http://localhost:8083/carnet/" + id;
     return new Promise((resolve, reject) => {
         fetch(URL)
             .then((response) => response.json())
@@ -395,7 +396,7 @@ function buscarCarnet(id) {
     });
 }
 function buscarEmpresa(cifv) {
-    const URL = "http://localhost:8080/empresa/" + cifv;
+    const URL = "http://localhost:8083/empresa/" + cifv;
     return new Promise((resolve, reject) => {
         fetch(URL)
             .then((response) => response.text())
@@ -439,7 +440,8 @@ async function fPublicarOfertaNueva() {
     let provinciaV;
     try { provinciaV = await buscarProvincia(provincia2); } catch (error) { throw new Error('Ha ocurrido un error'); }
     localidad = document.getElementById("localidad").value;
-    descripcionOfert = document.getElementById("descripcionOfert").value;
+    descripcion = document.getElementById("descripcion2").value;
+    experiencia = document.getElementById("experiencia2").value;
     tCandidato = document.getElementById("tCandidato").value;
     tContrato = document.getElementById("tContrato").value;
     let tipoCarnet = document.getElementById('carnet').value;
@@ -453,8 +455,8 @@ async function fPublicarOfertaNueva() {
 
     const crearOferta = {
         idOferta: 0,
-        descripcion: "dsadasdsad",
-        experiencia: "No se requiere experiencia previa",
+        descripcion: descripcion,
+        experiencia: experiencia,
         fechaCaducidad: fechCaducidad,
         fechaPublicacion: fechaPublicacion,
         localidad: localidad,
@@ -468,7 +470,7 @@ async function fPublicarOfertaNueva() {
         tipoCarnet:tipoCarnetV
     }
     console.log(crearOferta);
-    const URL = "http://localhost:8080/oferta/registro";
+    const URL = "http://localhost:8083/oferta/registro";
     fetch(URL, {
         headers: {
             'Accept': 'application/json',
@@ -535,7 +537,7 @@ async function fActualizarDatosEmpresa() {
 
 function actulizarDatosEmpresa(empresa){
         return new Promise((resolve, reject) => {
-            const URL = "http://localhost:8080/empresa/actualizar/";
+            const URL = "http://localhost:8083/empresa/actualizar/";
             fetch(URL, {
                 headers: {
                     'Accept': 'application/json',
@@ -550,9 +552,208 @@ function actulizarDatosEmpresa(empresa){
         });
 }
 
-function fActualizarDatos() {
+async function fActualizarDatos() {
+    cifValor = document.getElementById("cif").value;
+    nomFiscalValor = document.getElementById("nomFiscal").value;
+    TipoActividadEmpresa = document.getElementById("TipoActividadEmpresa").value;
+    direccionValor = document.getElementById("direccion").value;
+    provincia = document.getElementById("provincia").value;
+    codigoPostalValor = document.getElementById("codigoPostal").value;
+
+    cif = document.getElementById("cif");
+    nomFiscal = document.getElementById("nomFiscal");
+    TipoActividadEmpresaS = document.getElementById("TipoActividadEmpresa");
+    direccion = document.getElementById("direccion");
+    provinciaS = document.getElementById("provincia");
+    codigoPostal = document.getElementById("codigoPostal");
+    let bolean = true;
+
+    let idEmpresa = JSON.parse(localStorage.getItem("empresa"));
+    let idEmpresaV;
+    try { idEmpresaV = await buscarEmpresa(idEmpresa); } catch (error) { throw new Error('Ha ocurrido un error'); }
+    idEmpresaV.email = email;
+
+    // if (cifValor === '') {
+    //     enviarError(cif, "Rellene este campo");
+    //     bolean = false;
+    // } else if (!validarCIF(cifValor)) {
+    //     enviarError(cif, 'Cif invalido');
+    // } else {
+    //     try {
+    //         let idEmpresaV = await buscarEmpresa(idEmpresa);
+    //         console.log(idEmpresaV);
+    //         if (idEmpresaV == null) {
+    //             funciona(cif);
+    //         } else {
+    //             enviarError(cif, 'Cif existente');
+    //             document.getElementById('mensaje2').innerHTML = 'Esta empresa ya forma parte de nuestro equipo, prueba a iniciar sesion.'
+    //             bolean = false;
+    //         }
+    //     } catch (error) {
+    //         throw new Error('Ha ocurrido un error');
+    //     }
+    // }
+
+    if (nomFiscalValor === '') {
+        enviarError(nomFiscal, "Rellene este campo");
+        bolean = false;
+    } else if (nomFiscalValor.length >= 50) {
+        enviarError(nomFiscal, "No puede tener tantos caracateres");
+        bolean = false;
+    } else {
+        funciona(nomFiscal);
+    }
+
+    if (direccionValor === '') {
+        enviarError(direccion, "Rellene este campo");
+        bolean = false;
+    } else if (direccionValor.length >= 50) {
+        enviarError(nomFiscal, "No puede tener tantos caracateres");
+        bolean = false;
+    } else {
+        funciona(direccion);
+    }
+    let provinciaL;
+    try { provinciaL = await buscarProvincia(provincia); } catch (error) { throw new Error('Ha ocurrido un error'); }
+
+    if (codigoPostalValor === '') {
+        enviarError(codigoPostal, "Rellene este campo");
+        bolean = false;
+    } else if (!validarCodigoPostal(codigoPostalValor, provincia)) {
+        enviarError(codigoPostal, 'Codigo Postal invalido');
+    } else {
+        funciona(codigoPostal);
+    }
+
+    let TipoActividadEmpresaL;
+    try { TipoActividadEmpresaL = await buscarTipoActividadEmpresa(TipoActividadEmpresa); } catch (error) { throw new Error('Ha ocurrido un error'); }
+
+    if (bolean == true) {
+        try { idEmpresaV = await buscarEmpresa(idEmpresa); } catch (error) { throw new Error('Ha ocurrido un error'); }
+        idEmpresaV.cif = cifValor;
+        idEmpresaV.nombreFiscal = nomFiscalValor;
+        idEmpresaV.TipoActividadEmpresaS = TipoActividadEmpresa;
+        idEmpresaV.direccion = direccionValor;
+        idEmpresaV.provinciaS = provincia;
+        idEmpresaV.codigoPostal = codigoPostalValor;
+        let actEmpresa;
+        try {
+            actEmpresa = await actulizarDatosEmpresa(idEmpresaV);
+            console.log(actEmpresa, idEmpresaV);
+        } catch (error) {
+                    throw new Error('Ha ocurrido un error');
+                }
+    }
+
+
 
 }
-function fActualizarInformacion() {
+async function fActualizarInformacion() {
+    nomComercialValor = document.getElementById("nomComercial").value;
+    descripcionValor = document.getElementById("descripcion").value;
+    sitioWebValor = document.getElementById("sitioWeb").value;
+    telefonoValor = document.getElementById("telefono").value;
+    logoValor = document.getElementById("logo").value;
 
+    nomComercial = document.getElementById("nomComercial");
+    descripcion = document.getElementById("descripcion");
+    sitioWeb = document.getElementById("sitioWeb");
+    telefono = document.getElementById("telefono");
+    logo = document.getElementById("logo");
+    let bolean = true;
+
+    let idEmpresa = JSON.parse(localStorage.getItem("empresa"));
+    let idEmpresaV;
+    try { idEmpresaV = await buscarEmpresa(idEmpresa); } catch (error) { throw new Error('Ha ocurrido un error'); }
+    idEmpresaV.email = email;
+
+    if (nomComercialValor === '') {
+        enviarError(nomComercial, "Rellene este campo");
+        bolean = false;
+    } else if (nomComercialValor.length >= 50 || nomComercialValor.length < 3) {
+        enviarError(nomComercial, "El nombre comercial no es valido");
+        bolean = false;
+    } else {
+        funciona(nomComercial);
+    }
+
+    if (descripcionValor === '') {
+        enviarError(descripcion, "Rellene este campo");
+        bolean = false;
+    } else if (descripcionValor.length >= 1500 || descripcionValor.length <= 10) {
+        enviarError(descripcion, "Minimo 10 caracteres máximo 1500 caracteres.");
+        bolean = false;
+    } else {
+        funciona(descripcion);
+    }
+
+    // if (sitioWebValor === '') {
+    //     enviarError(sitioWeb, "Rellene este campo");
+    //     bolean = false;
+    // } else if (!esSitioWeb(sitioWebValor)) {
+    //     enviarError(sitioWeb, "No puede tener tantos caracateres");
+    //     bolean = false;
+    // } else {
+    //     funciona(sitioWeb);
+    // }
+
+    if (telefonoValor === '') {
+        enviarError(telefono, "Rellene este campo");
+        bolean = false;
+    } else if (comprobarTelefono(telefonoValor)) {
+        funciona(telefono);
+    } else {
+        enviarError(telefono, "No puede contener caracateres, solo números");
+        bolean = false;
+    }
+
+    if (bolean == true) {
+        try { idEmpresaV = await buscarEmpresa(idEmpresa); } catch (error) { throw new Error('Ha ocurrido un error'); }
+        idEmpresaV.nombreComercial = nomComercialValor;
+        idEmpresaV.descripcionEmpresa = descripcionValor;
+        idEmpresaV.sitioWeb = sitioWebValor;
+        idEmpresaV.telefono = telefonoValor;
+        idEmpresaV.logo = logoValor;
+        let actEmpresa;
+        try {
+            actEmpresa = await actulizarDatosEmpresa(idEmpresaV);
+            console.log(actEmpresa, idEmpresaV);
+        } catch (error) {
+                    throw new Error('Ha ocurrido un error');
+                }
+    }
+
+}
+function funciona(input) {
+
+    let formControl = input.parentElement;
+    let error = formControl.querySelector('#error');
+    error.style.visibility = 'hidden';
+    let small = formControl.querySelector('small');
+    small.style.visibility = 'hidden';
+    let good = formControl.querySelector('#good');
+    good.style.color = 'green'
+    good.style.visibility = 'visible'
+    let inputF = formControl.querySelector('input');
+    inputF.style.borderColor = 'green';
+}
+function enviarError(input, mensaje) {
+    //cogemos el input que sale el error
+    let formControl = input.parentElement;
+    // buscamos la i del error 
+    let error = formControl.querySelector('#error');
+    // cambiamos el estilo a visible para que se vea 
+
+    error.style.color = 'red'
+    error.style.visibility = 'visible';
+    let inputF = formControl.querySelector('input');
+    inputF.style.borderColor = 'red';
+    let small = formControl.querySelector('small');
+    small.style.color = 'red';
+    small.style.visibility = 'visible';
+    small.innerHTML = mensaje;
+}
+function esSitioWeb(cadena) {
+    const regex = /^www\..+\.[a-z]{2,}$/i;
+    return regex.test(cadena);
 }
