@@ -278,14 +278,10 @@ function fMostrarTodas() {
                 html += "   </div>";
                 
                 html += "</div>";
-                html += "   <div onclick='verTrabajadoresIns("+ element.idOferta +")'>Ver todos los trabajadores inscritos a esta oferta</div>";
+                html += "   <div class='verTrabajadores' onclick='verTrabajadoresIns("+ element.idOferta +")'>Ver todos los trabajadores inscritos a esta oferta</div>";
             });
             document.querySelector("#boxOfertas").innerHTML = html;
         });
-
-}
-function verTrabajadoresIns(oferta){
-    localStorage.setItem("oferta",oferta);
 
 }
 
@@ -322,12 +318,19 @@ function fMostrarActivas() {
                 html += "       </div>";
                 html += "   </div>";
                 html += "</div>";
-                html += "   <div onclick='verTrabajadoresIns("+ element.idOferta +")'>Ver todos los trabajadores inscritos a esta oferta</div>";
+                html += "   <div class='verTrabajadores' onclick='verTrabajadoresIns("+ element.idOferta +")'>Ver todos los trabajadores inscritos a esta oferta</div>";
             });
             document.querySelector("#boxOfertas").innerHTML = html;
         });
 
 }
+function verTrabajadoresIns(idOferta){
+    document.location="verTrabajadores.html";
+    localStorage.setItem('idOferta', idOferta)
+
+}
+
+
 function fMostrarFinalizadas() {
     cifEmp = JSON.parse(localStorage.getItem("empresa"));
     fotoEmp = JSON.parse(localStorage.getItem("empresaFoto"));
@@ -367,6 +370,16 @@ function fMostrarFinalizadas() {
 }
 
 // publicar Ofertaç
+function buscarTipoActividadEmpresa(id) {
+    const URL = "http://localhost:8083/tipoActividadEmpresarial/" + id;
+    return new Promise((resolve, reject) => {
+        fetch(URL)
+            .then((response) => response.json())
+            .then((TipoActividadEmpresarial) => { resolve(TipoActividadEmpresarial); })
+            .catch((error) => reject(error));
+    });
+}
+
 function buscarProvincia(id) {
     const URL = "http://localhost:8083/provincia/" + id;
     return new Promise((resolve, reject) => {
@@ -484,6 +497,8 @@ async function fPublicarOfertaNueva() {
             console.log(data)
         });
 
+    location.reload();
+
 
 }
 
@@ -531,6 +546,7 @@ async function fActualizarDatosEmpresa() {
                     throw new Error('Ha ocurrido un error');
                 }
         }
+        location.reload();
 
 
 }
@@ -558,13 +574,19 @@ async function fActualizarDatos() {
     TipoActividadEmpresa = document.getElementById("TipoActividadEmpresa").value;
     direccionValor = document.getElementById("direccion").value;
     provincia = document.getElementById("provincia").value;
+    console.log(provincia);
     codigoPostalValor = document.getElementById("codigoPostal").value;
 
     cif = document.getElementById("cif");
     nomFiscal = document.getElementById("nomFiscal");
-    TipoActividadEmpresaS = document.getElementById("TipoActividadEmpresa");
+    //TipoActividadEmpresaS = document.getElementById("TipoActividadEmpresa");
+    let TipoActividadEmpresaV;
+    try { TipoActividadEmpresaV = await buscarTipoActividadEmpresa(TipoActividadEmpresa); } catch (error) { throw new Error('Ha ocurrido un error'); }
     direccion = document.getElementById("direccion");
-    provinciaS = document.getElementById("provincia");
+    //let provincia2 = document.getElementById('provincia2').value;
+    let provinciaV;
+    try { provinciaV = await buscarProvincia(provincia); } catch (error) { throw new Error('Ha ocurrido un error'); }
+    //provinciaS = document.getElementById("provincia");
     codigoPostal = document.getElementById("codigoPostal");
     let bolean = true;
 
@@ -632,9 +654,9 @@ async function fActualizarDatos() {
         try { idEmpresaV = await buscarEmpresa(idEmpresa); } catch (error) { throw new Error('Ha ocurrido un error'); }
         idEmpresaV.cif = cifValor;
         idEmpresaV.nombreFiscal = nomFiscalValor;
-        idEmpresaV.TipoActividadEmpresaS = TipoActividadEmpresa;
+        idEmpresaV.tipoActividadEmpresarial = TipoActividadEmpresaV;
         idEmpresaV.direccion = direccionValor;
-        idEmpresaV.provinciaS = provincia;
+        idEmpresaV.provincia = provinciaV;
         idEmpresaV.codigoPostal = codigoPostalValor;
         let actEmpresa;
         try {
@@ -644,7 +666,7 @@ async function fActualizarDatos() {
                     throw new Error('Ha ocurrido un error');
                 }
     }
-
+    location.reload();
 
 
 }
@@ -722,6 +744,7 @@ async function fActualizarInformacion() {
                     throw new Error('Ha ocurrido un error');
                 }
     }
+    location.reload();
 
 }
 function funciona(input) {
