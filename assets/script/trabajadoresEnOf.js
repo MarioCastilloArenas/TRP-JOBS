@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-    verInscripcionEn(1);
+    let idOferta = JSON.parse(localStorage.getItem('idOferta'));
+    verInscripcionEn(idOferta);
 });
 
 
 function verInscripcionEn(oferta) {
-    const URL = "http://localhost:8080/oferta/inscripciones/" + oferta;
+    const URL = "http://localhost:8083/oferta/inscripciones/" + oferta;
     fetch(URL)
         .then((response) => response.json())
         .then((inscripciones) => {
@@ -88,7 +89,7 @@ function myFunction(val) {
     let inscripcion = JSON.parse(localStorage.getItem('inscripciones'));
     inscripcion.estadoInscripcion = val;
     localStorage.setItem('inscripciones', JSON.stringify(inscripcion))
-    const URL = "http://localhost:8080/oferta/actualizarInscripcion/";
+    const URL = "http://localhost:8083/oferta/actualizarInscripcion/";
     fetch(URL, {
         headers: {
             'Accept': 'application/json',
@@ -105,7 +106,7 @@ function myFunctioni(val) {
     let inscripcion = JSON.parse(localStorage.getItem('inscripciones'));
     inscripcion.observaciones = val;
     localStorage.setItem('inscripciones', JSON.stringify(inscripcion))
-    const URL = "http://localhost:8080/oferta/actualizarInscripcion/";
+    const URL = "http://localhost:8083/oferta/actualizarInscripcion/";
     fetch(URL, {
         headers: {
             'Accept': 'application/json',
