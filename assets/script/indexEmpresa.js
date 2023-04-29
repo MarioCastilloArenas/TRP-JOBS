@@ -260,10 +260,10 @@ function fMostrarTodas() {
                 html += "   </div>";
                 html += "   <div class='informacionEmpresa'>";
                 html += "       <div class='puesto'>";
-                html += "           " + element.tituloOferta + "";
+                html += "           " + element.descripcion + "";
                 html += "       </div>";
                 html += "       <div class='nombrEmpresa'>";
-                html += "           " + element.tituloOferta + "";
+                html += "           " + element.empresa.nombreComercial + "";
                 html += "       </div>";
                 html += "   </div>";
                 html += "   <div class='localidad'>";
@@ -301,10 +301,10 @@ function fMostrarActivas() {
                 html += "   </div>";
                 html += "   <div class='informacionEmpresa'>";
                 html += "       <div class='puesto'>";
-                html += "           " + element.tituloOferta + "";
+                html += "           " + element.descripcion + "";
                 html += "       </div>";
                 html += "       <div class='nombrEmpresa'>";
-                html += "           " + element.tituloOferta + "";
+                html += "           " + element.empresa.nombreComercial + "";
                 html += "       </div>";
                 html += "   </div>";
                 html += "   <div class='localidad'>";
@@ -347,10 +347,10 @@ function fMostrarFinalizadas() {
                 html += "   </div>";
                 html += "   <div class='informacionEmpresa'>";
                 html += "       <div class='puesto'>";
-                html += "           " + element.tituloOferta + "";
+                html += "           " + element.descripcion + "";
                 html += "       </div>";
                 html += "       <div class='nombrEmpresa'>";
-                html += "           " + element.tituloOferta + "";
+                html += "           " + element.empresa.nombreComercial + "";
                 html += "       </div>";
                 html += "   </div>";
                 html += "   <div class='localidad'>";

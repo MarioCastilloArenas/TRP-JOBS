@@ -460,6 +460,138 @@ input::file-selector-button {
   flex-direction: column;
 }
 
+/* Ofertas */
+#boxOfertas {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.oferta {
+  background-color: white;
+  border-radius: 10px;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  height: 150px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: rgba(0, 0, 0, 0.737);
+}
+
+.oferta:hover {
+  box-shadow: rgba(29, 29, 29, 0.228) 0px 5px 8px 8px;
+  cursor: pointer;
+}
+
+.oferta>.informacionEmpresa>div:hover {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.739);
+}
+
+.ofertaDestacada {
+  background-color: white;
+  border: 2px solid #ffb11a;
+  border-radius: 10px;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  height: 150px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: rgba(0, 0, 0, 0.737);
+  position: relative;
+}
+
+.circleDestacada {
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  border: 3px solid #ffb11a;
+  background-color: #ffb11a;
+  border-radius: 25px;
+  top: -15px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.ofertaDestacada:hover {
+  box-shadow: rgba(29, 29, 29, 0.228) 0px 5px 8px 8px;
+  cursor: pointer;
+}
+
+.ofertaDestacada>.informacionEmpresa>div:hover {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.739);
+}
+
+.image {
+  width: 25%;
+  display: grid;
+  place-content: center;
+}
+
+.puesto {
+  font-weight: bold;
+  font-size: larger;
+}
+
+.nombrEmpresa {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.informacionEmpresa {
+  width: 55%;
+  display: grid;
+  place-content: center;
+}
+
+.localidad {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.localidad>div {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#boxContacto {
+  border: solid black;
+  width: 40%;
+  margin-bottom: 50px;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-image: url(/assets/img/orange-wave-background-henrik-lehnerer.jpg);
+  background-size: cover;
+}
+
+.tituloContacto {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  color: #ffb11a;
+  margin-bottom: 20px;
+}
+.verTrabajadores{
+  cursor: pointer;
+}
+
+/* Ofertas */
+
 @media (min-width: 600px) {
   .navUsuario {
     width: 90%;
@@ -521,5 +653,79 @@ input::file-selector-button {
 @media (min-width: 1200px) {
   .btnMenuUsuario2 {
     width: 20%;
+  }
+}
+
+/*responsive ofertas*/
+@media (max-width: 1100px) {
+  #textoUbicaciones {
+    font-size: 20px;
+  }
+
+  .oferta {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+  .ofertaDestacada {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+  .image {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .informacionEmpresa {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .puesto {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nombrEmpresa {
+    width: 100%;
+    text-align: center;
+  }
+
+  .localidad {
+    width: 100%;
+    height: 55px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .mapa {
+    height: 25px;
+  }
+
+  .caducidad {
+    height: 25px;
+  }
+
+  .oferta {
+    height: 275px;
+  }
+
+  .ofertaDestacada {
+    height: 275px;
   }
 }

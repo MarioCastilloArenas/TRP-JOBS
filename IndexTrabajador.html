@@ -22,7 +22,7 @@
   <script src="assets/script/indexTransportista.js"></script>
 </head>
 
-<body onload="fcargarDatosIndexTrabajador();">
+<body>
   <header>
     <div id="logo">
       <p class="animacionLogo">TRP JOBS</p>
@@ -289,13 +289,13 @@
             </div>
             <div class="usuarioContenidoOpciones">
               <div class="usuarioContenidoOpcionesBtn">
-                <div class="btnMenuUsuario2">
+                <div class="btnMenuUsuario2" onclick="fInscripcionesActivas()">
                   <span class="material-symbols-outlined" id="logoActivo">
                     event_available
                   </span>
                   <p>Oferta activa</p>
                 </div>
-                <div class="btnMenuUsuario2">
+                <div class="btnMenuUsuario2" onclick="fInscripcionesFinalizadas();">
                   <span class="material-symbols-outlined" id="logoFinalizado">
                     event_busy
                   </span>
@@ -303,8 +303,9 @@
                 </div>
               </div>
               <div class="usuarioConteidoOpcionesTxt">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit Hola
-                como estas
+                <div id="boxOfertas">
+
+                </div>
               </div>
             </div>
           </div>
