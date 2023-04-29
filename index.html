@@ -6,7 +6,7 @@
     <title>TRP JOBS</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="assets/estilos/index.css">
-    <link rel="stylesheet" href="assets/estilos/headerFooter.css">
+    <link rel="stylesheet" href="assets/estilos/headerFooterIndex.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,27 +15,7 @@
     <script src="/assets/script/index.js"></script>
 </head>
 <body>
-    <header>
-        <div id="logo" >
-            <p class="animacionLogo">TRP JOBS</p>
-        </div>
-        <div id="info">
-            <div id="boxInfo">
-                <div id="sobreNosotros" onclick="fEnviarSobreNosotros();"> Sobre nosotros</div>
-                <div id="trabajadores" onclick="enviarInicioTrabajadores();"> Trabajadores </div>
-                <div id="empresas" onclick="enviarInicioEmpresas();"> Empresas </div>
-                <div id="navMenu">
-                    <div class="btn-menu">
-                        <label for="btn-menu">
-                            <span class="material-symbols-outlined">
-                                menu
-                            </span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    
     <input type="checkbox" id="btn-menu">
     <div id="container_menu">
         <div class="cont_menu">
@@ -55,6 +35,27 @@
     </div>
     <input type="checkbox" id="btn-sesion">
     <div id="bannerBox">
+        <header>
+            <div id="logo" >
+                <p class="animacionLogo">TRP JOBS</p>
+            </div>
+            <div id="info">
+                <div id="boxInfo">
+                    <div id="sobreNosotros" onclick="fEnviarSobreNosotros();"> Sobre nosotros</div>
+                    <div id="trabajadores" onclick="enviarInicioTrabajadores();"> Trabajadores </div>
+                    <div id="empresas" onclick="enviarInicioEmpresas();"> Empresas </div>
+                    <div id="navMenu">
+                        <div class="btn-menu">
+                            <label for="btn-menu">
+                                <span class="material-symbols-outlined">
+                                    menu
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
         <div id="banner">
             <!-- <video autoplay="autoplay" loop="loop" id="video_background" preload="auto" volume="50">
                     <source src="/assets/img/transporte.mp4" type="video/mp4" />
@@ -62,14 +63,14 @@
             <div id="TxtTitulo">
                 OFERTAS DE EMPLEO PARA <br> CONDUCTOR DE CAMION
             </div>
-            <div id="containerTxtBanner">
+            <!-- <div id="containerTxtBanner">
                 <div id="TxtBannerConductor">
                     <div class="parrafoBanner"> <p> Para conductores que buscan trabajo  </p> </div>
                 </div>
                 <div  id="TxtBannerEmpresa">
                     <div class="parrafoBanner"> <p> Para empresas que buscan conductores</p> </div>
                 </div>
-            </div>
+            </div> -->
             <div id="flechasNav">
                 <a href="#boxOfertas"><i class='bx bx-chevrons-down' id="flechasBanner"></i></a>
             </div>
