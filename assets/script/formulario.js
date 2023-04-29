@@ -1073,7 +1073,7 @@ function buscarExistenciaEmpresa(emailv) {
     });
 }
 function buscarEmpresa(cifv) {
-    const URL = "http://localhost:8083/empresa/cif=" + cifv;
+    const URL = "http://localhost:8083/empresa/" + cifv;
     return new Promise((resolve, reject) => {
         fetch(URL)
             .then((response) => response.text())
@@ -1110,7 +1110,6 @@ function buscarExistenciaTrabajador(emailv) {
 function buscarTrabajador(dniv) {
 
     const URL = "http://localhost:8083/trabajador/" + dniv;
-    //const URL = "http://localhost:8083/trabajador/dni=" + dniv;
     return new Promise((resolve, reject) => {
         fetch(URL)
             .then((response) => response.text())

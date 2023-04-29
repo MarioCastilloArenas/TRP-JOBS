@@ -503,32 +503,17 @@ async function fPublicarOfertaNueva() {
 }
 
 
-async function fActualizarCuenta() {
-    email = document.getElementById("email");
-    password = document.getElementById("password");
-    password2 = document.getElementById("password2");
-
-
-    if (password == password2) {
-
-        const actualizarCuenta = {
-            "email": email,
-            "contrasena": password
-        }
-        console.log(actualizarCuenta);
-        const URL = "http://localhost:8083/oferta/registro";
-        fetch(URL, {
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            method: "POST",
-            body: JSON.stringify(crearOferta)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-            });
+async function fActualizarDatosEmpresa() {
+    let bolean = true;
+    email = document.getElementById("email").value;
+    password = document.getElementById("password").value;
+    password2 = document.getElementById("password2").value;
+    contrasena = document.getElementById("password");
+    contrasena2 = document.getElementById("password2");
+    let idEmpresa = JSON.parse(localStorage.getItem("empresa"));
+    let idEmpresaV;
+    try { idEmpresaV = await buscarEmpresa(idEmpresa); } catch (error) { throw new Error('Ha ocurrido un error'); }
+    idEmpresaV.email = email;
 
     if (password === '') {
         enviarError(contrasena, "Rellene este campo");
@@ -581,7 +566,7 @@ function actulizarDatosEmpresa(empresa){
                 .then((empresa) => { resolve(empresa); })
                 .catch((error) => reject(error));;
         });
-}}
+}
 
 async function fActualizarDatos() {
     cifValor = document.getElementById("cif").value;

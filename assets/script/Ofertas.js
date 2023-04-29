@@ -285,19 +285,6 @@ function fBuscar(texto) {
             });
     }
 }
-
-function fBuscar(texto) {
-    console.log(texto);
-    if (texto.length == 0) {
-        verOfertas();
-    } else {
-        fetch(URL = " http://localhost:8083/oferta/buscar/" + texto)
-            .then((response) => response.json())
-            .then((data) => {
-                pintar(data);
-            });
-    }
-}
 function pintar(ofertasFiltradas) {
     let div = document.getElementById('boxOfertas')
     let cont = document.getElementById('cont');
