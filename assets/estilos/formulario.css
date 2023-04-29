@@ -73,7 +73,7 @@ body {
 
 .pass {
   border-radius: 4px;
-  background-image: linear-gradient(180deg, #ea8b0e29, #e8ccb1);
+  background-image: linear-gradient(180deg, #ea8b0e22, #e8ccb11e);
   box-shadow: 0 8px 22px 0 rgba(38, 22, 14, 0.199),
     0 4px 6px 0 rgba(42, 42, 44, 0.445);
   height: 100px;
