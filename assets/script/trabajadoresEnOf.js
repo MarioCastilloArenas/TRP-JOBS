@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    verInscripcionEn(1);
+    let idOferta = JSON.parse(localStorage.getItem('idOferta'));
+    verInscripcionEn(idOferta);
 });
 
 

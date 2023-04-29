@@ -116,121 +116,120 @@
                         <h2>Cuenta</h2>
                     </div>
                     <div class="rellenar">
-                        <h3 id="mensaje1"></h3>
-                        <div class="form-item">
-                            <label for="email">Email:</label>
-                            <input type="text" id="email">
-                            <i id="good" class='bx bx-check-circle'></i>
-                            <i id="error" class='bx bx-error-circle'></i>
-                            <small>Rellene este campo</small>
+                            <h3 id="mensaje1"></h3>
+                            <div class="form-item">
+                                <label for="email">Email:</label>
+                                <input type="text" id="email" >
+                                <i id="good" class='bx bx-check-circle'></i>
+                                <i id="error"  class='bx bx-error-circle'></i>
+                                <small>Rellene este campo</small>
+                            </div>
+                            <div class="form-item">
+                                <label for="password">Clave:</label>
+                                <input type="password" id="password" required>
+                                <i id="good" class='bx bx-check-circle'></i>
+                                <i id="error"  class='bx bx-error-circle'></i>
+                                <small>Rellene este campo</small>
+                            </div>
+                            <div class="form-item">
+                                <label for="password2">Confirme su clave:</label>
+                                <input type="password" id="password2" required>
+                                <i id="good" class='bx bx-check-circle'></i>
+                                <i id="error"  class='bx bx-error-circle'></i>
+                                <small>Rellene este campo</small>
+                            </div>
+                            <button id="botonSiguiente" onclick="LoginEmpresa()"> Siguiente </button>
                         </div>
-                        <div class="form-item">
-                            <label for="password">Clave:</label>
-                            <input type="password" id="password" required>
-                            <i id="good" class='bx bx-check-circle'></i>
-                            <i id="error" class='bx bx-error-circle'></i>
-                            <small>Rellene este campo</small>
-                        </div>
-                        <div class="form-item">
-                            <label for="password2">Confirme su clave:</label>
-                            <input type="password" id="password2" required>
-                            <i id="good" class='bx bx-check-circle'></i>
-                            <i id="error" class='bx bx-error-circle'></i>
-                            <small>Rellene este campo</small>
-                        </div>
-                        <button id="botonSiguiente" onclick="LoginEmpresa()"> Siguiente </button>
-                    </div>
                 </div>
                 <div class="fieldset " id="paso2">
                     <!-- paso2  -->
                     <div class="tituloRelleno">
-                        <h2>Datos de la empresa: </h2>
-                        <!--informacion de la empresa -->
+                        <h2>Datos de la empresa: </h2><!--informacion de la empresa -->
                     </div>
                     <div class="rellenar">
-                        <h3 id="mensaje2"></h3>
-                        <div class="form-item">
-                            <label for="cif">CIF:</label>
-                            <input type="text" id="cif" required>
-                            <i id="good" class='bx bx-check-circle'></i>
-                            <i id="error" class='bx bx-error-circle'></i>
-                            <small>Rellene este campo</small>
-                        </div>
-                        <div class="form-item">
-                            <label for="nomFiscal">Nombre Fiscal:</label>
-                            <input type="text" id="nomFiscal" required>
-                            <i id="good" class='bx bx-check-circle'></i>
-                            <i id="error" class='bx bx-error-circle'></i>
-                            <small>Rellene este campo</small>
-                        </div>
-                        <div class="form-item">
-                            <label for="TipoActividadEmpresa">Tipo Actividad Empresarial:</label>
-                            <select id="TipoActividadEmpresa">
-                            </select>
-                        </div>
-                        <div class="form-item">
-                            <label for="direccion">Dirección:</label>
-                            <input type="text" id="direccion" required>
-                            <i id="good" class='bx bx-check-circle'></i>
-                            <i id="error" class='bx bx-error-circle'></i>
-                            <small>Rellene este campo</small>
-                        </div>
-                        <div class="form-item">
-                            <label for="provincia">Provincia:</label>
-                            <select id="provincia">
-                            </select>
-                        </div>
-                        <div class="form-item">
-                            <label for="codigoPostal">Codigo Postal:</label>
-                            <input type="number" id="codigoPostal" required>
-                            <i id="good" class='bx bx-check-circle'></i>
-                            <i id="error" class='bx bx-error-circle'></i>
-                            <small>Rellene este campo</small>
-                        </div>
-                        <button id="botonSiguiente2" onclick="infoProfesionalEmpresa()"> Siguiente </button>
-
+                            <h3 id="mensaje2"></h3>
+                            <div class="form-item">
+                                <label for="cif">CIF:</label>
+                                <input type="text" id="cif" required>
+                                <i id="good" class='bx bx-check-circle'></i>
+                                <i id="error"  class='bx bx-error-circle'></i>
+                                <small>Rellene este campo</small>
+                            </div>
+                            <div class="form-item">
+                                <label for="nomFiscal">Nombre Fiscal:</label>
+                                <input type="text" id="nomFiscal" required>
+                                <i id="good" class='bx bx-check-circle'></i>
+                                <i id="error"  class='bx bx-error-circle'></i>
+                                <small>Rellene este campo</small>
+                            </div>
+                            <div class="form-item">
+                                <label for="TipoActividadEmpresa">Tipo Actividad Empresarial:</label>
+                                <select id="TipoActividadEmpresa">
+                                </select>
+                            </div>
+                            <div class="form-item">
+                                <label for="direccion">Dirección:</label>
+                                <input type="text" id="direccion" required>
+                                <i id="good" class='bx bx-check-circle'></i>
+                                <i id="error"  class='bx bx-error-circle'></i>
+                                <small>Rellene este campo</small>
+                            </div>
+                            <div class="form-item">
+                                <label for="provincia">Provincia:</label>
+                                <select id="provincia">
+                                </select>
+                            </div>
+                            <div class="form-item">
+                                <label for="codigoPostal">Codigo Postal:</label>
+                                <input type="number" id="codigoPostal" required>
+                                <i id="good" class='bx bx-check-circle'></i>
+                                <i id="error"  class='bx bx-error-circle'></i>
+                                <small>Rellene este campo</small>
+                            </div> 
+                            <button id="botonSiguiente2" onclick="infoProfesionalEmpresa()"> Siguiente </button>
+                        
                     </div>
                 </div>
-                <div class="fieldset" id="paso3">
+                <div class="fieldset " id="paso3">
                     <!-- paso3  -->
                     <div class="tituloRelleno">
                         <h2>Información empresa</h2>
                     </div>
                     <div class="rellenar">
                         <h3 id="mensaje3"></h3>
-                        <div class="form-item">
-                            <label for="nomComercial">Nombre Comercial:</label>
-                            <input type="text" id="nomComercial" required>
-                            <i id="good" class='bx bx-check-circle'></i>
-                            <i id="error" class='bx bx-error-circle'></i>
-                            <small>Rellene este campo</small>
-                        </div>
-                        <div class="form-item">
-                            <label for="descripcion">Descripcion:</label>
-                            <input type="text" id="descripcion" required></input>
-                            <i id="good" class='bx bx-check-circle'></i>
-                            <i id="error" class='bx bx-error-circle'></i>
-                            <small>Rellene este campo</small>
-                        </div>
-                        <div class="form-item">
-                            <label for="sitioWeb">Sitio Web:</label>
-                            <input type="text" id="sitioWeb" required>
-                            <i id="good" class='bx bx-check-circle'></i>
-                            <i id="error" class='bx bx-error-circle'></i>
-                            <small>Rellene este campo</small>
-                        </div>
-                        <div class="form-item">
-                            <label for="telefono">Telefono:</label>
-                            <input type="text" id="telefono" required>
-                            <i id="good" class='bx bx-check-circle'></i>
-                            <i id="error" class='bx bx-error-circle'></i>
-                            <small>Rellene este campo</small>
-                        </div>
-                        <div class="form-item">
-                            <label for="logo">Imagen de Empresa:</label>
-                            <input type="file" id="logo">
-                        </div>
-                        <button onclick="webEmpresarial()"> Siguiente </button>
+                            <div class="form-item">
+                                <label for="nomComercial">Nombre Comercial:</label>
+                                <input type="text" id="nomComercial" required>
+                                <i id="good" class='bx bx-check-circle'></i>
+                                <i id="error"  class='bx bx-error-circle'></i>
+                                <small>Rellene este campo</small>
+                            </div>
+                            <div class="form-item">
+                                <label for="descripcion">Descripcion:</label>
+                                <input type="text" id="descripcion" required></input>
+                                <i id="good" class='bx bx-check-circle'></i>
+                                <i id="error"  class='bx bx-error-circle'></i>
+                                <small>Rellene este campo</small>
+                            </div>
+                            <div class="form-item">
+                                <label for="sitioWeb">Sitio Web:</label>
+                                <input type="text" id="sitioWeb" required>
+                                <i id="good" class='bx bx-check-circle'></i>
+                                <i id="error"  class='bx bx-error-circle'></i>
+                                <small>Rellene este campo</small>
+                            </div>
+                            <div class="form-item">
+                                <label for="telefono">Telefono:</label>
+                                <input type="text" id="telefono" required>
+                                <i id="good" class='bx bx-check-circle'></i>
+                                <i id="error"  class='bx bx-error-circle'></i>
+                                <small>Rellene este campo</small>
+                            </div>
+                            <div class="form-item">
+                                <label for="logo">Imagen de Empresa:</label>
+                                <input type="file" id="logoEmpresaB">
+                            </div>
+                            <button onclick="webEmpresarial(event)"> Siguiente </button>
                     </div>
                 </div>
                 <div class="fieldset " id="paso4">
@@ -241,30 +240,32 @@
                     <div class="rellenar">
                         <h3 id="mensaje4"> ¡Estamos felices de que ya forma parte de nuestro equipo! </h3>
                         <h4>Te mostraremos los datos de tu empresa, los cuales podran ver los trabajadores.</h4>
-                        <h4>Te recordamos que podras modificar cualquiera de los datos de tu empresa, en el apartado
-                            <b>Mis Datos</b>.</h4>
+                        <div class="infor">
+                            <div class="infoclass">
+                                <b>Nombre Comercial</b>
+                                <p id="NombreEmpresa2">dsadasdasdas</p>
+                            </div>
+                            <div class="infoclass">
+                                <b>Actividad Empresarial</b>
+                                <p id="actividadEmpresa2">asdasda</p>
+                            </div>
+                            <div class="infoclass">
+                                <b>Descripcion</b>
+                                <p id="infoEmpresa2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ex vel. Ullam quod deleniti vel adipisci esse, quae temporibus aspernatur! Mollitia provident officiis quia laborum quam id maxime officia!
+                                Quos soluta sequi nobis expedita enim saepe nihil fugiat unde debitis deserunt iste voluptatum explicabo dolorem porro libero qui quibusdam, harum necessitatibus itaque, veritatis consectetur tempore autem blanditiis exercitationem! Blanditiis!</p>
+                            </div>
+                            <div class="infoclass">
+                                <b>Provincia</b>
+                                <p id="provinciaEmpresa2">saddadas</p>
+                            </div>
+                            <div class="infoclass">
+                                <b>Sitio Web</b>
+                                <p id="sitioWebEmpresa2">sadasdas</p>
+                            </div>
+                        </div>
+                        <h4>Te recordamos que podras modificar cualquiera de los datos de tu empresa, en el apartado <b>Mis Datos</b>.</h4>
                         <h4>Esperamos que formes el mejor equipo posible en el menor tiempo posible.</h4>
-                        <div class="">
-                            <b>Nombre Comercial</b>
-                            <p id="NombreEmpresa"></p>
-                        </div>
-                        <div class="">
-                            <b>Actividad Empresarial</b>
-                            <p id="actividadEmpresa"></p>
-                        </div>
-                        <div class="">
-                            <b>Descripcion</b>
-                            <p id="infoEmpresa"></p>
-                        </div>
-                        <div class="">
-                            <b>Provincia</b>
-                            <p id="provinciaEmpresa"></p>
-                        </div>
-                        <div class="">
-                            <b>Sitio Web</b>
-                            <p id="sitioWebEmpresa"></p>
-                        </div>
-                        <button> <a href="IndexEmpresa.html"> ¡Empezar ahora!</a></button>
+                        <a href="loginEmpresa.html"> ¡Empezar ahora!</a>  
                     </div>
                 </div>
             </div>

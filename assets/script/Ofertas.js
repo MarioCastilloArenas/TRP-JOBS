@@ -418,3 +418,86 @@ function verOferta(id) {
         });
 
 }
+
+async function inscribirseEnOferta(){
+    let idOferta = localStorage.getItem('idOferta');
+    let dniUSu = localStorage.getItem("usuario")
+
+    if ( dniUSu == null ){
+        document.getElementById('textito').innerHTML = 'Inicie sesion para registrarse.'
+    } else {
+        let idOferta = localStorage.getItem('idOferta');
+        let idOfertaV;
+        try { idOfertaV = await buscarOferta(idOferta); } catch (error) { throw new Error('Ha ocurrido un error'); }
+        let dniUSu = localStorage.getItem("usuario")
+        let dniUSuV;
+        try { dniUSuV = await buscarTrabajador(JSON.parse(dniUSu)); } catch (error) { throw new Error('Ha ocurrido un error'); }
+        let InscripcionOferta = {
+            idInscripcion: 0,
+            estadoInscripcion: null,
+            observaciones: null,
+            oferta: idOfertaV,
+            trabajador: JSON.parse(dniUSuV),
+        }
+        let addIns;
+        try {
+            addIns = await InscrOferta(InscripcionOferta);
+            if (addIns.idInscripcion == 0){
+                document.getElementById('textito').innerHTML = 'Ya esta inscrito a esta oferta.'
+            }else{
+                document.getElementById('textito').innerHTML = 'Se ha inscrito con exito.'
+            }
+
+        } catch (error) {
+            throw new Error('Ha ocurrido un error');
+        }
+
+    }
+}
+
+function buscarTrabajador(dniv) {
+
+    const URL = "http://localhost:8083/trabajador/" + dniv;
+    return new Promise((resolve, reject) => {
+        fetch(URL)
+            .then((response) => response.text())
+            .then((trabajador) => {
+                if (trabajador == "") {
+                    resolve(null);
+                } else {
+                    empresa = JSON.parse(trabajador)
+                    console.log(trabajador);
+                    resolve(trabajador);
+                }
+            })
+            .catch((error) => reject(error));
+    });
+}
+
+function buscarOferta(id) {
+    const URL ="http://localhost:8083/oferta/" + id
+    return new Promise((resolve, reject) => {
+        fetch(URL)
+            .then((response) => response.json())
+            .then((oferta) => { resolve(oferta); })
+            .catch((error) => reject(error));
+    });
+}
+
+function InscrOferta(InscripcionOferta){
+    return new Promise((resolve, reject) => {
+        const URL = "http://localhost:8083/oferta/registroInscripcionDeTrabajadorEnOferta";
+        fetch(URL, {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            method: "POST",
+            body: JSON.stringify(InscripcionOferta)
+        })
+            .then((response) => response.json())
+            .then((InscripcionOferta) => { resolve(InscripcionOferta); })
+            .catch((error) => reject(error));;
+    });
+}
+
