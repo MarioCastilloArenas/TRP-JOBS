@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function fverTrabajador(dniv) {
 
-    let url = "http://localhost:8083/trabajador/" + dniv;
+    let url = "http://localhost:8080/trabajador/" + dniv;
     fetch(url)
         .then(res => res.json())
         .then(trabajador => {
@@ -28,13 +28,13 @@ function fverTrabajador(dniv) {
             let txtPresentacion = document.getElementById("txtPresentacion");
             txtPresentacion.innerHTML = trabajador.presentacion
 
-            //         let url = "http://localhost:8083/trabajador/datosProfesionales/" + dniv;
+            //         let url = "http://localhost:8080/trabajador/datosProfesionales/" + dniv;
             // fetch(url)
             //     .then(res => res.json())
             //     .then(datosTrabajador => {
             //         console.log(datosTrabajador)
 
-            let url = "http://localhost:8083/trabajador/datosProfesionales/" + dniv;
+            let url = "http://localhost:8080/trabajador/datosProfesionales/" + dniv;
             fetch(url)
                 .then(res => res.json())
                 .then(datosTrabajador => {
@@ -111,7 +111,7 @@ function fverTrabajador(dniv) {
                 })
         })
 
-    let url2 = "http://localhost:8083/trabajador/experiencias/" + dniv;
+    let url2 = "http://localhost:8080/trabajador/experiencias/" + dniv;
     fetch(url2)
         .then(res => res.json())
         .then(experiencia => {

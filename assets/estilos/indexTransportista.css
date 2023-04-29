@@ -116,7 +116,9 @@ section {
 .usuarioContenidoOpciones {
   border-radius: 4px;
   background-image: linear-gradient(180deg, #ffffff2f, #f5f5fa21);
-  box-shadow: rgba(226, 135, 8, 0.253) 0px 1px 5px;
+  /* box-shadow: rgba(226, 135, 8, 0.253) 0px 1px 5px; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
 }
 
 .usuarioContenidoOpcionesBtn {
@@ -146,6 +148,8 @@ section {
   box-shadow: 0 4px 11px 0 rgb(37 44 97 / 15%),
     0 1px 3px 0 rgb(93 100 148 / 20%);
   transition: all 0.2s ease-out;
+  display: flex;
+  justify-content: center;
 }
 
 .btnMenuUsuario2 {
@@ -266,6 +270,7 @@ section {
   width: 100%;
   background-color: transparent;
   font-family: inherit;
+  height: 40px;
   border: 1px solid #00000031;
 }
 
@@ -281,7 +286,7 @@ section {
 }
 
 #botonSiguiente2 {
-  width: 100%;
+  width: 150;
   display: inline-block;
   outline: 0;
   border: 0;
@@ -305,6 +310,8 @@ input::file-selector-button {
   justify-content: center;
   align-items: center;
   width: 50%;
+  background-color: whitesmoke;
+  border: 1px solid rgba(0, 0, 0, 0.255);
 }
 
 .form-item #logo {

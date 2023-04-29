@@ -68,7 +68,7 @@ function fPublicarOferta() {
 
 function fcargarDatosIndexEmpresa() {
     cifEmp = JSON.parse(localStorage.getItem("empresa"));
-    const URL = "http://localhost:8083/empresa/" + cifEmp;
+    const URL = "http://localhost:8080/empresa/" + cifEmp;
     fetch(URL)
         .then((response) => response.json())
         .then((empresa) => {
@@ -104,7 +104,7 @@ function fcargarDatosIndexEmpresa() {
 }
 
 function tipoActividadEmpresarial(idActiv) {
-    const URL = "http://localhost:8083/tipoActividadEmpresa/";
+    const URL = "http://localhost:8080/tipoActividadEmpresa/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -132,7 +132,7 @@ function tipoActividadEmpresarial(idActiv) {
 }
 
 function tipoActividadEmpresarial(idActiv) {
-    const URL = "http://localhost:8083/tipoActividadEmpresa/";
+    const URL = "http://localhost:8080/tipoActividadEmpresa/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -159,7 +159,7 @@ function tipoActividadEmpresarial(idActiv) {
 }
 
 function provincias(idProv) {
-    const URL = "http://localhost:8083/provincias/";
+    const URL = "http://localhost:8080/provincias/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -186,7 +186,7 @@ function provincias(idProv) {
 }
 
 function provinciasTodas() {
-    const URL = "http://localhost:8083/provincias/";
+    const URL = "http://localhost:8080/provincias/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -204,7 +204,7 @@ function provinciasTodas() {
 }
 
 function carnetTodos() {
-    const URL = "http://localhost:8083/tipoCarnets/";
+    const URL = "http://localhost:8080/tipoCarnets/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -221,7 +221,7 @@ function carnetTodos() {
 }
 
 function geograficoTodos() {
-    const URL = "http://localhost:8083/ambitosGeograficos/";
+    const URL = "http://localhost:8080/ambitosGeograficos/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -247,7 +247,7 @@ function fCerrarSesion() {
 function fMostrarTodas() {
     cifEmp = JSON.parse(localStorage.getItem("empresa"));
     fotoEmp = JSON.parse(localStorage.getItem("empresaFoto"));
-    const URL = "http://localhost:8083/oferta/todasOfertas/" + cifEmp;
+    const URL = "http://localhost:8080/oferta/todasOfertas/" + cifEmp;
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -292,7 +292,7 @@ function verTrabajadoresIns(oferta){
 function fMostrarActivas() {
     cifEmp = JSON.parse(localStorage.getItem("empresa"));
     fotoEmp = JSON.parse(localStorage.getItem("empresaFoto"));
-    const URL = "http://localhost:8083/oferta/todasOfertasNoCaducadas/" + cifEmp;
+    const URL = "http://localhost:8080/oferta/todasOfertasNoCaducadas/" + cifEmp;
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -330,7 +330,7 @@ function fMostrarActivas() {
 function fMostrarFinalizadas() {
     cifEmp = JSON.parse(localStorage.getItem("empresa"));
     fotoEmp = JSON.parse(localStorage.getItem("empresaFoto"));
-    const URL = "http://localhost:8083/oferta/todasOfertasCaducadas/" + cifEmp;
+    const URL = "http://localhost:8080/oferta/todasOfertasCaducadas/" + cifEmp;
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -407,7 +407,7 @@ function fPublicarOfertaNueva() {
         "idAmbito": geografico
     }
     console.log(crearOferta);
-    const URL = "http://localhost:8083/oferta/registro";
+    const URL = "http://localhost:8080/oferta/registro";
     fetch(URL, {
         headers: {
             'Accept': 'application/json',
@@ -438,7 +438,7 @@ function fActualizarCuenta() {
             "contrasena": password
         }
         console.log(actualizarCuenta);
-        const URL = "http://localhost:8083/oferta/registro";
+        const URL = "http://localhost:8080/oferta/registro";
         fetch(URL, {
             headers: {
                 'Accept': 'application/json',
