@@ -96,7 +96,7 @@
                                         <h3 id="mensaje1"></h3>
                                         <div class="form-item">
                                             <label for="email">Email:</label>
-                                            <input type="text" id="email" disabled>
+                                            <input type="text" id="email">
                                             <i id="good" class='bx bx-check-circle'></i>
                                             <i id="error" class='bx bx-error-circle'></i>
                                             <small>Rellene este campo</small>
@@ -115,7 +115,7 @@
                                             <i id="error" class='bx bx-error-circle'></i>
                                             <small>Rellene este campo</small>
                                         </div>
-                                        <button id="botonSiguiente" onclick="fActualizarDatosEmpresa()"> Actualizar </button>
+                                        <button id="botonSiguiente" onclick="fActualizarCuenta()"> Actualizar </button>
                                     </div>
                                 </div>
                                 <div class="fieldset  " id="paso2">
@@ -127,7 +127,7 @@
                                         <h3 id="mensaje2"></h3>
                                         <div class="form-item">
                                             <label for="cif">CIF:</label>
-                                            <input type="text" id="cif" required disabled>
+                                            <input type="text" id="cif" required>
                                             <i id="good" class='bx bx-check-circle'></i>
                                             <i id="error" class='bx bx-error-circle'></i>
                                             <small>Rellene este campo</small>
@@ -285,9 +285,9 @@
                         </div>
                         <div class="empresaContenidoOpciones">
                             <div class="empresaContenidoOpcionesBtn">
-                                <div class="btnMenuUsuario">Oferta</div>
-                                <!-- <div class="btnMenuUsuario" onclick="fMostrarPendientes();">Pendientes</div>
-                                <div class="btnMenuUsuario" onclick="fMostrarFinalizadas();">Finalizadas</div> -->
+                                <div class="btnMenuUsuario" onclick="fMostrarTodas();">Todas</div>
+                                <div class="btnMenuUsuario" onclick="fMostrarPendientes();">Pendientes</div>
+                                <div class="btnMenuUsuario" onclick="fMostrarFinalizadas();">Finalizadas</div>
                             </div>
                             <div class="empresaContenidoOpcionesTxt">
                                 <div class="fieldset activo" id="paso1">
@@ -312,20 +312,6 @@
                                             <small>Rellene este campo</small>
                                         </div>
                                         <div class="form-item">
-                                            <label for="descripcion2">Descripcion:</label>
-                                            <input type="text" id="descripcion2" required>
-                                            <i id="good" class='bx bx-check-circle'></i>
-                                            <i id="error" class='bx bx-error-circle'></i>
-                                            <small>Rellene este campo</small>
-                                        </div>
-                                        <div class="form-item">
-                                            <label for="experiencia2">Experiencia:</label>
-                                            <input type="text" id="experiencia2" required>
-                                            <i id="good" class='bx bx-check-circle'></i>
-                                            <i id="error" class='bx bx-error-circle'></i>
-                                            <small>Rellene este campo</small>
-                                        </div>
-                                        <div class="form-item">
                                             <label for="localidad">Localidad:</label>
                                             <input type="text" id="localidad" required>
                                             <i id="good" class='bx bx-check-circle'></i>
@@ -337,13 +323,13 @@
                                             <select id="provincia2">
                                             </select>
                                         </div>
-                                        <!-- <div class="form-item">
+                                        <div class="form-item">
                                             <label for="descripcionOfert">Descripción:</label>
                                             <input type="text" id="descripcionOfert" required>
                                             <i id="good" class='bx bx-check-circle'></i>
                                             <i id="error" class='bx bx-error-circle'></i>
                                             <small>Rellene este campo</small>
-                                        </div> -->
+                                        </div>
                                         <div class="form-item">
                                             <label for="tCandidato">Tipo de candidato:</label>
                                             <input type="text" id="tCandidato" required>
