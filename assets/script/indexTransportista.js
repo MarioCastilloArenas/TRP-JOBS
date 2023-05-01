@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     fcargarDatosIndexTrabajador();
+    fCargarDatosExperiencia();
+    fcargarDatosProfesionales();
 });
 function fMostrarMisDatos() {
     let fieldset = document.getElementById('usuarioContenido1');
@@ -80,15 +82,16 @@ function fcargarDatosIndexTrabajador() {
             document.getElementById("apellidos").value = trabajador.apellidos;
             document.getElementById("password").value = trabajador.contrasena;
             document.getElementById("password2").value = trabajador.contrasena;
-
             document.getElementById("fechaNacimiento").value = trabajador.fechaNacimiento;
             document.getElementById("nacionalidad").value = trabajador.nacionalidad;
-
             provincias(idProv);
-
             // document.getElementById("provincia").selected = trabajador.idProvincia;
             document.getElementById("codigoPostal").value = trabajador.codigoPostal;
             document.getElementById("presentacion").value = trabajador.presentacion;
+
+
+
+
         });
         fInscripcionesActivas();
 
@@ -101,7 +104,6 @@ function provincias(idProv) {
             data.forEach(element => {
                 if (element.idProvincia == idProv) {
                     let select = document.getElementById("provincia");
-                    // let opcion = new Option(element.provincia,element.provincia);
                     let opcion = document.createElement('option');
                     opcion.value = element.idProvincia
                     opcion.innerHTML = element.provincia
@@ -109,14 +111,12 @@ function provincias(idProv) {
                     select.appendChild(opcion);
                 } else {
                     let select = document.getElementById("provincia");
-                    // let opcion = new Option(element.provincia,element.provincia);
                     let opcion = document.createElement('option');
                     opcion.value = element.idProvincia
                     opcion.innerHTML = element.provincia
                     select.appendChild(opcion);
                 }
             });
-            // document.getElementById("usuarioContenidoOpcionesTxt").innerHTML = html2 
         })
 }
 
@@ -126,16 +126,15 @@ function fActualizarDatosBasicos() {
 
 function fInscripcionesActivas(){
     dni = JSON.parse(localStorage.getItem("usuario"));
-    // fotoEmp = JSON.parse(localStorage.getItem("empresaFoto"));
     const URL = "http://localhost:8083/oferta/inscripcionesUsuarioActivas/" + dni;
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
             let html = "";
-            console.log(data);
+            
             // console.log(data[0].oferta);
             data.forEach(element => {
-                console.log(element.oferta.empresa);
+                
                 html += "<div class='ofertaDestacada'>";
                 html += "   <div class='circleDestacada'>Activas</div>";
                 html += "   <div class='image'>";
@@ -168,16 +167,15 @@ function fInscripcionesActivas(){
 
 function fInscripcionesFinalizadas(){
     dni = JSON.parse(localStorage.getItem("usuario"));
-    // fotoEmp = JSON.parse(localStorage.getItem("empresaFoto"));
     const URL = "http://localhost:8083/oferta/inscripcionesUsuarioCaducadas/" + dni;
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
             let html = "";
-            console.log(data);
+            
             // console.log(data[0].oferta);
             data.forEach(element => {
-                console.log(element.oferta.empresa);
+               
                 html += "<div class='ofertaDestacada'>";
                 html += "   <div class='circleDestacada'>Finalizadas</div>";
                 html += "   <div class='image'>";
@@ -206,5 +204,194 @@ function fInscripcionesFinalizadas(){
             document.querySelector("#boxOfertas").innerHTML = html;
         });
 
+}
+
+function fCargarDatosExperiencia(){
+    dni = JSON.parse(localStorage.getItem("usuario"));
+    const URL = "http://localhost:8083/trabajador/experiencias/" + dni;
+    fetch(URL)
+        .then((response) => response.json())
+        .then((data) => {
+            let html = "";
+            
+            // console.log(data[0].oferta);
+            if(data == null){
+                html += "<h3 id='mensaje3'></h3>";
+                html += "<label><input type='checkbox' id='no_experiencia' value='no_experiencia' checked='true'/>No tengo experiencia</label>";
+            } else {
+                data.forEach(element => {
+                    
+                    html += "<h3 id='mensaje3'></h3>";
+                    //html += "<label><input type='checkbox' id='no_experiencia' value='no_experiencia'/>No tengo experiencia</label>";
+                    html += "<div>";
+                    html +="    <div class='form-item'>";
+                    html +="        <label for='nomEmpresa'>Nombre Empresa:</label>";
+                    html +="        <input type='text' id='nomEmpresa' value='"+ element.nombreEmpresa +"' required/>";
+                    html +="        <i id='good' class='bx bx-check-circle'></i>";
+                    html +="        <i id='error' class='bx bx-error-circle'></i>";
+                    html +="        <small>Rellene este campo</small>";
+                    html +="    </div>";
+                    html +="    <div class='form-item'>";
+                    html +="        <label for='duracion'>Duración:</label>";
+                    html +="        <input type='text' name='duracion' id='duracion' value='"+ element.duracion +"' required >";
+                    html +="        <i id='good' class='bx bx-check-circle'></i>";
+                    html +="        <i id='error'  class='bx bx-error-circle'></i>";
+                    html +="        <small>rellene este campo</small>";
+                    html +="    </div>";
+                    html +="    <div class='form-item'>";
+                    html +="        <label for='TipoCarnet'>Carnet Tipo:</label>";
+                    html +="        <select class='TipoCarnet' value='"+ element.tipoEspecialidad.especialidad +"'></select>";
+                    html +="    </div>";
+                    html +="    <div class='form-item>";
+                    html +="        <label for='TipoEspecialidad'>Tipo Especialidad:</label>";
+                    html +="        <select class='TipoEspecialidad'></select>";
+                    html +="    </div>";
+                    html += "</div>";
+                    html += "<br>";
+                    html += "<button id='botonSiguiente2'>Actualizar</button>"
+                    html += "<br>";
+                    html += "<hr width='100%' style='border-color:#ffb31aa8'>";
+                    html += "<br>";
+                    tipoCarnetExperiencias(element.tipoCarnet.idCarnet);
+                    tipoEspecialidadExperiencias(element.tipoEspecialidad.idTipo)
+                });
+                
+            }
+            
+            document.querySelector("#datosExperiencia").innerHTML = html;
+        });
+
+}
+
+function tipoCarnetExperiencias(idCarnet) {
+    const URL = "http://localhost:8083/tipoCarnets/";
+    fetch(URL)
+        .then((response) => response.json())
+        .then((data) => {
+            data.forEach(element => {
+                if (element.idCarnet == idCarnet) {
+                    let select = document.querySelector(".TipoCarnet");
+                    let opcion = document.createElement('option');
+                    opcion.value = element.idCarnet
+                    opcion.innerHTML = element.carnet
+                    opcion.selected = "true";
+                    select.appendChild(opcion);
+                } else {
+                    let select = document.querySelector(".TipoCarnet");
+                    let opcion = document.createElement('option');
+                    opcion.value = element.idCarnet
+                    opcion.innerHTML = element.carnet
+                    select.appendChild(opcion);
+                }
+            });
+           
+        })
+}
+function tipoEspecialidadExperiencias(idEspecialidad) {
+    const URL = "http://localhost:8083/tipoEspecialidades/";
+    fetch(URL)
+        .then((response) => response.json())
+        .then((data) => {
+            data.forEach(element => {
+                if (element.idEspecialidad == idEspecialidad) {
+                    let select = document.querySelector(".TipoEspecialidad");
+                    let opcion = document.createElement('option');
+                    opcion.value = element.idTipo
+                    opcion.innerHTML = element.especialidad
+                    opcion.selected = "true";
+                    select.appendChild(opcion);
+                } else {
+                    let select = document.querySelector(".TipoEspecialidad");
+                    let opcion = document.createElement('option');
+                    opcion.value = element.idTipo
+                    opcion.innerHTML = element.especialidad
+                    select.appendChild(opcion);
+                }
+            });
+           
+        })
+}
+function fcargarDatosProfesionales() {
+    dniUsu = JSON.parse(localStorage.getItem("usuario"));
+    const URL = "http://localhost:8083/trabajador/datosProfesionales/" + dniUsu;
+    fetch(URL)
+        .then((response) => response.json())
+        .then((data) => {
+            
+            // document.getElementById("cif").value = trabajador.dni;
+            // document.getElementById("nombre").value = trabajador.nombre;
+            // document.getElementById("apellidos").value = trabajador.apellidos;
+            // document.getElementById("password").value = trabajador.contrasena;
+            tipoCarnetProfesionales(data.tipoCarnet.idCarnet);
+            tipoAmbitoProfesionales(data.ambitoGeografico.idAmbito);
+            if(data.tarjetaTacografo == document.getElementById("tarjetaTacografoT").value){
+                document.getElementById("tarjetaTacografoT").checked = true;
+            } else {
+                document.getElementById("tarjetaTacografoF").checked = true;
+            }
+
+            if(data.certificadoCap == document.getElementById("certificadoCapT").value){
+                document.getElementById("certificadoCapT").checked = true;
+            } else {
+                document.getElementById("certificadoCapF").checked = true;
+            }
+
+            if(data.mercanciasPeligrosas == document.getElementById("mercanciasPeligrosasT").value){
+                document.getElementById("mercanciasPeligrosasT").checked = true;
+            } else {
+                document.getElementById("mercanciasPeligrosasF").checked = true;
+            }
+            // document.getElementById("fechaNacimiento").value = trabajador.fechaNacimiento;
+            document.getElementById("paisCarnet").value = data.paisCarnet;
+        });
+
+}
+function tipoAmbitoProfesionales(idAmbito) {
+    const URL = "http://localhost:8083/ambitosGeograficos/";
+    fetch(URL)
+        .then((response) => response.json())
+        .then((data) => {
+            data.forEach(element => {
+                if (element.idAmbito == idAmbito) {
+                    let select = document.querySelector("#ambitosGeograficos");
+                    let opcion = document.createElement('option');
+                    opcion.value = element.idAmbito;
+                    opcion.innerHTML = element.ambito
+                    opcion.selected = "true";
+                    select.appendChild(opcion);
+                } else {
+                    let select = document.querySelector("#ambitosGeograficos");
+                    let opcion = document.createElement('option');
+                    opcion.value = element.idAmbito;
+                    opcion.innerHTML = element.ambito
+                    select.appendChild(opcion);
+                }
+            });
+           
+        })
+}
+function tipoCarnetProfesionales(idCarnet) {
+    const URL = "http://localhost:8083/tipoCarnets/";
+    fetch(URL)
+        .then((response) => response.json())
+        .then((data) => {
+            data.forEach(element => {
+                if (element.idCarnet == idCarnet) {
+                    let select = document.querySelector("#tipoCarnet");
+                    let opcion = document.createElement('option');
+                    opcion.value = element.idCarnet
+                    opcion.innerHTML = element.carnet
+                    opcion.selected = "true";
+                    select.appendChild(opcion);
+                } else {
+                    let select = document.querySelector("#tipoCarnet");
+                    let opcion = document.createElement('option');
+                    opcion.value = element.idCarnet
+                    opcion.innerHTML = element.carnet
+                    select.appendChild(opcion);
+                }
+            });
+           
+        })
 }
 

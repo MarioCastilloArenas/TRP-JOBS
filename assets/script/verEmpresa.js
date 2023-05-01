@@ -74,7 +74,7 @@ function mostrarOfertaEmpresa(cifv) {
                 html += "<div class='ofertaDestacada'>";
                 html += "   <div class='circleDestacada'>Destacadas</div>";
                 html += "   <div class='image'>";
-                html += "       <img src='assets/img/empresas/" + fotoEmp + "' alt='' width='180px' height='100px'>";
+                html += "       <img src='assets/img/empresas/" + element.empresa.logo + "' alt='' width='180px' height='100px'>";
                 html += "   </div>";
                 html += "   <div class='informacionEmpresa'>";
                 html += "       <div class='puesto'>";
