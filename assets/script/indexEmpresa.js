@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
     carnetTodos();
     geograficoTodos()
 });
+// function fVolverIndex(){
+//     document.location = "index.html";
+// }
 
 function fMostrarCuenta() {
     let fieldset = document.getElementById('paso1');

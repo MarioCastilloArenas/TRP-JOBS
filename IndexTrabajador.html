@@ -20,12 +20,14 @@
 
   <script src="index.js"></script>
   <script src="assets/script/indexTransportista.js"></script>
+  <script src="assets/script/LoginOrNot.js"></script>
+
 </head>
 
 <body>
   <header>
     <div id="logo">
-      <p class="animacionLogo">TRP JOBS</p>
+      <p class="animacionLogo" onclick="fVolverIndex();">TRP JOBS</p>
     </div>
     <div id="info">
       <div id="boxInfo">
@@ -115,7 +117,7 @@
                     <h3 id="mensaje2"></h3>
                     <div class="form-item">
                       <label for="dni">DNI:</label>
-                      <input type="text" id="cif" required value="hola" />
+                      <input type="text" id="cif" required disabled/>
                       <i id="good" class="bx bx-check-circle"></i>
                       <i id="error" class="bx bx-error-circle"></i>
                       <small>Rellene este campo</small>
@@ -199,9 +201,8 @@
                     <h3 id="mensaje3"></h3>
                     <div class="form-item">
                       <p id="identificador">Tipo profesional</p>
-                      <label><input type="radio" name="tipoProfesion" value="Asaliariado" checked />
-                        Asaliariado</label>
-                      <label><input type="radio" name="tipoProfesion" value="Autonomo" />Autonomo</label>
+                      <label><input type="radio" name="tipoProfesion" id="tipoProfesionAs" value="asalariado"/>Asaliariado</label>
+                      <label><input type="radio" name="tipoProfesion" id="tipoProfesionAu" value="autonomo" />Autonomo</label>
                     </div>
                     <div class="form-item">
                       <label for="ambitosGeograficos">Ambitos Geograficos:</label>
