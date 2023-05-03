@@ -67,7 +67,7 @@ function fMostrarExperiencia() {
 
 function fcargarDatosIndexTrabajador() {
     dniUsu = JSON.parse(localStorage.getItem("usuario"));
-    const URL = "http://localhost:8083/trabajador/" + dniUsu;
+    const URL = "http://localhost:8080/trabajador/" + dniUsu;
     fetch(URL)
         .then((response) => response.json())
         .then((trabajador) => {
@@ -97,7 +97,7 @@ function fcargarDatosIndexTrabajador() {
 
 }
 function provincias(idProv) {
-    const URL = "http://localhost:8083/provincias/";
+    const URL = "http://localhost:8080/provincias/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -126,7 +126,7 @@ function fActualizarDatosBasicos() {
 
 function fInscripcionesActivas(){
     dni = JSON.parse(localStorage.getItem("usuario"));
-    const URL = "http://localhost:8083/oferta/inscripcionesUsuarioActivas/" + dni;
+    const URL = "http://localhost:8080/oferta/inscripcionesUsuarioActivas/" + dni;
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -167,7 +167,7 @@ function fInscripcionesActivas(){
 
 function fInscripcionesFinalizadas(){
     dni = JSON.parse(localStorage.getItem("usuario"));
-    const URL = "http://localhost:8083/oferta/inscripcionesUsuarioCaducadas/" + dni;
+    const URL = "http://localhost:8080/oferta/inscripcionesUsuarioCaducadas/" + dni;
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -208,7 +208,7 @@ function fInscripcionesFinalizadas(){
 
 function fCargarDatosExperiencia(){
     dni = JSON.parse(localStorage.getItem("usuario"));
-    const URL = "http://localhost:8083/trabajador/experiencias/" + dni;
+    const URL = "http://localhost:8080/trabajador/experiencias/" + dni;
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -262,7 +262,7 @@ function fCargarDatosExperiencia(){
 
 // function fCargarDatosExperiencia(){
 //     dni = JSON.parse(localStorage.getItem("usuario"));
-//     const URL = "http://localhost:8083/trabajador/experiencias/" + dni;
+//     const URL = "http://localhost:8080/trabajador/experiencias/" + dni;
 //     fetch(URL)
 //         .then((response) => response.json())
 //         .then((data) => {
@@ -318,7 +318,7 @@ function fCargarDatosExperiencia(){
 // }
 
 function tipoCarnetExperiencias(idCarnet) {
-    const URL = "http://localhost:8083/tipoCarnets/";
+    const URL = "http://localhost:8080/tipoCarnets/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -337,7 +337,7 @@ function tipoCarnetExperiencias(idCarnet) {
         });
 }
 function tipoEspecialidadExperiencias(idEspecialidad) {
-    const URL = "http://localhost:8083/tipoEspecialidades/";
+    const URL = "http://localhost:8080/tipoEspecialidades/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -356,7 +356,7 @@ function tipoEspecialidadExperiencias(idEspecialidad) {
         });
 }
 // function tipoEspecialidadExperiencias(idEspecialidad) {
-//     const URL = "http://localhost:8083/tipoEspecialidades/";
+//     const URL = "http://localhost:8080/tipoEspecialidades/";
 //     fetch(URL)
 //         .then((response) => response.json())
 //         .then((data) => {
@@ -382,7 +382,7 @@ function tipoEspecialidadExperiencias(idEspecialidad) {
 
 
 // function tipoCarnetExperiencias(idCarnet) {
-//     const URL = "http://localhost:8083/tipoCarnets/";
+//     const URL = "http://localhost:8080/tipoCarnets/";
 //     fetch(URL)
 //         .then((response) => response.json())
 //         .then((data) => {
@@ -411,7 +411,7 @@ function tipoEspecialidadExperiencias(idEspecialidad) {
 
 
 // function tipoCarnetExperiencias(idCarnet) {
-//     const URL = "http://localhost:8083/tipoCarnets/";
+//     const URL = "http://localhost:8080/tipoCarnets/";
 //     fetch(URL)
 //         .then((response) => response.json())
 //         .then((data) => {
@@ -442,7 +442,7 @@ function tipoEspecialidadExperiencias(idEspecialidad) {
 //         })
 // }
 // function tipoEspecialidadExperiencias(idEspecialidad) {
-//     const URL = "http://localhost:8083/tipoEspecialidades/";
+//     const URL = "http://localhost:8080/tipoEspecialidades/";
 //     fetch(URL)
 //         .then((response) => response.json())
 //         .then((data) => {
@@ -467,7 +467,7 @@ function tipoEspecialidadExperiencias(idEspecialidad) {
 // }
 function fcargarDatosProfesionales() {
     dniUsu = JSON.parse(localStorage.getItem("usuario"));
-    const URL = "http://localhost:8083/trabajador/datosProfesionales/" + dniUsu;
+    const URL = "http://localhost:8080/trabajador/datosProfesionales/" + dniUsu;
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -505,7 +505,7 @@ function fcargarDatosProfesionales() {
 
 }
 function tipoAmbitoProfesionales(idAmbito) {
-    const URL = "http://localhost:8083/ambitosGeograficos/";
+    const URL = "http://localhost:8080/ambitosGeograficos/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -529,7 +529,7 @@ function tipoAmbitoProfesionales(idAmbito) {
         })
 }
 function tipoCarnetProfesionales(idCarnet) {
-    const URL = "http://localhost:8083/tipoCarnets/";
+    const URL = "http://localhost:8080/tipoCarnets/";
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
@@ -549,7 +549,6 @@ function tipoCarnetProfesionales(idCarnet) {
                     select.appendChild(opcion);
                 }
             });
-           
         })
 }
 async function fActualizarDatosBasicos(){
@@ -569,6 +568,7 @@ async function fActualizarDatosBasicos(){
     } else {
         funciona(nombre);
     }
+    console.log(nombreValor);
     let apellidos = document.getElementById('apellidos');
     let apellidosValor = apellidos.value.trim();
     if (apellidosValor === '') {
@@ -632,12 +632,13 @@ async function fActualizarDatosBasicos(){
     const arcvi = arcv.split('\\').pop();
     
     if (bolean == true) {
-        try { dniUsuV = await buscarTrabajador(dniUsu); } catch (error) { throw new Error('Ha ocurrido un error'); }
+        dniUsuV = JSON.parse(dniUsuV)
         dniUsuV.nombre = nombreValor;
+        console.log(dniUsuV);
         let actUsuario;
         try {
             actUsuario = await actulizarDatosUsuarioBasicos(dniUsuV);
-            console.log(actUsuario, dniUsuV);
+            console.log("hey", actUsuario, dniUsuV);
         } catch (error) {
                     throw new Error('Ha ocurrido un error');
                 }
@@ -647,7 +648,7 @@ async function fActualizarDatosBasicos(){
 }
 function buscarTrabajador(dniv) {
 
-    const URL = "http://localhost:8083/trabajador/" + dniv;
+    const URL = "http://localhost:8080/trabajador/" + dniv;
     return new Promise((resolve, reject) => {
         fetch(URL)
             .then((response) => response.text())
@@ -688,7 +689,7 @@ function calcularEdad(fecha_nacimiento) {
 
 }
 function buscarProvincia(id) {
-    const URL = "http://localhost:8083/provincia/" + id;
+    const URL = "http://localhost:8080/provincia/" + id;
     return new Promise((resolve, reject) => {
         fetch(URL)
             .then((response) => response.json())
@@ -716,7 +717,7 @@ function validarCodigoPostal(cp, provincia) {
 }
 function actulizarDatosUsuarioBasicos(dni){
     return new Promise((resolve, reject) => {
-        const URL = "http://localhost:8083/trabajador/actualizar/";
+        const URL = "http://localhost:8080/trabajador/actualizar/";
         fetch(URL, {
             headers: {
                 'Accept': 'application/json',
