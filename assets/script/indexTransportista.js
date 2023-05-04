@@ -708,6 +708,24 @@ function buscarTrabajador(dniv) {
             .catch((error) => reject(error));
     });
 }
+function buscarTrabajadorDatosProfe(dniv) {
+
+    const URL = "http://localhost:8083/trabajador/datosProfesionales/" + dniv;
+    return new Promise((resolve, reject) => {
+        fetch(URL)
+            .then((response) => response.text())
+            .then((trabajador) => {
+                if (trabajador == "") {
+                    resolve(null);
+                } else {
+                    empresa = JSON.parse(trabajador)
+                    console.log(trabajador);
+                    resolve(trabajador);
+                }
+            })
+            .catch((error) => reject(error));
+    });
+}
 function funciona(input) {
 
     let formControl = input.parentElement;
@@ -795,7 +813,7 @@ function actulizarDatosUsuarioProfesionales(dni){
 async function actualizarDatosProfesionalesUsu(){
     let dniUsu = JSON.parse(localStorage.getItem("usuario"));
     let dniUsuV;
-    try { dniUsuV = await buscarTrabajador(dniUsu); } catch (error) { throw new Error('Ha ocurrido un error'); }
+    try { dniUsuV = await buscarTrabajadorDatosProfe(dniUsu); } catch (error) { throw new Error('Ha ocurrido un error'); }
     //dniUsuV.email = email;
 
     if(document.getElementById("tipoProfesionAs").checked == true){
