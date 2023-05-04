@@ -821,8 +821,48 @@ async function actualizarDatosProfesionalesUsu(){
     } else if(document.getElementById("tipoProfesionAu").checked == true){
         tipoProfesionValor = document.getElementById("tipoProfesionAu").value;
     }
+
+    geografico = document.getElementById("ambitosGeograficos").value;
+    let geograficoV;
+    try { geograficoV = await buscarAmbito(geografico); } catch (error) { throw new Error('Ha ocurrido un error'); }
+    //provinciaS = document.getEle
+
+    if(document.getElementById("tarjetaTacografoT").checked == true){
+        tipoTacografoValor = document.getElementById("tarjetaTacografoT").value;
+    } else if(document.getElementById("tarjetaTacografoF").checked == true){
+        tipoTacografoValor = document.getElementById("tarjetaTacografoF").value;
+    }
+
+    if(document.getElementById("certificadoCapT").checked == true){
+        tipoCertificadoValor = document.getElementById("certificadoCapT").value;
+    } else if(document.getElementById("certificadoCapF").checked == true){
+        tipoCertificadoValor = document.getElementById("certificadoCapF").value;
+    }
+    if(document.getElementById("mercanciasPeligrosasT").checked == true){
+        tipoMercanciasValor = document.getElementById("mercanciasPeligrosasT").value;
+    } else if(document.getElementById("mercanciasPeligrosasF").checked == true){
+        tipoMercanciasValor = document.getElementById("mercanciasPeligrosasF").value;
+    }
+
+    tipoCarnet = document.getElementById("tipoCarnet").value;
+    console.log(tipoCarnet);
+    let tipoCarnetV;
+    try { tipoCarnetV = await buscarCarnet(tipoCarnet); } catch (error) { throw new Error('Ha ocurrido un error'); }
+    //provinciaS = document.getEle
+    console.log(tipoCarnetV);
+
+    paisCarnetValor = document.getElementById("paisCarnet").value;
+
+    
     dniUsuV = JSON.parse(dniUsuV)
-    dniUsu.tipoProfesion = tipoProfesionValor;
+    dniUsuV.tipoProfesion = tipoProfesionValor;
+    dniUsuV.ambitoGeografico = geograficoV;
+    dniUsuV.tarjetaTacografo = tipoTacografoValor;
+    dniUsuV.certificadoCap = tipoCertificadoValor;
+    dniUsuV.mercanciasPeligrosas = tipoMercanciasValor;
+    dniUsuV.tipoCarnet = tipoCarnetV;
+    dniUsuV.paisCarnet = paisCarnetValor;
+    
 
 
     let actUsuario;
@@ -832,7 +872,25 @@ async function actualizarDatosProfesionalesUsu(){
         } catch (error) {
                     throw new Error('Ha ocurrido un error');
                 }
-        
+       location.reload();
+}
+function buscarAmbito(id) {
+    const URL = "http://localhost:8083/ambito/" + id;
+    return new Promise((resolve, reject) => {
+        fetch(URL)
+            .then((response) => response.json())
+            .then((ambito) => { resolve(ambito); })
+            .catch((error) => reject(error));
+    });
+}
+function buscarCarnet(id) {
+    const URL = "http://localhost:8083/carnet/" + id;
+    return new Promise((resolve, reject) => {
+        fetch(URL)
+            .then((response) => response.json())
+            .then((carnet) => { resolve(carnet); })
+            .catch((error) => reject(error));
+    });
 }
 
 /* ---------- SEGURIDAD ----------- */
