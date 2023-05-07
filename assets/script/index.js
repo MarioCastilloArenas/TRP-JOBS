@@ -100,9 +100,11 @@ function contenidoSlider() {
             let html = "";
             for (let i = 0; i < 3; i++) {
                 data.forEach(element => {
-                    html += "<div class='sliderBox' onclick='fverEmpresa(\"" + element.cif + "\")'>";
-                    html += "<img src='assets/img/empresas/" + element.logo + "' alt=''>";
-                    html += "</div>";
+                    if(element.logo != "empresa.png"){
+                        html += "<div class='sliderBox' onclick='fverEmpresa(\"" + element.cif + "\")'>";
+                        html += "<img src='assets/img/empresas/" + element.logo + "' alt=''>";
+                        html += "</div>";
+                    }
                 });
                 document.querySelector(".sliderAnimate").innerHTML += html;
             }

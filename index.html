@@ -5,8 +5,8 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>TRP JOBS</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="assets/estilos/headerFooter.css">
     <link rel="stylesheet" href="assets/estilos/index.css">
-    <link rel="stylesheet" href="assets/estilos/headerFooterIndex.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,6 @@
     <script src="assets/script/LoginOrNot.js"></script>
 </head>
 <body>
-    
     <input type="checkbox" id="btn-menu">
     <div id="container_menu">
         <div class="cont_menu">
@@ -58,34 +57,18 @@
             </div>
         </header>
         <div id="banner">
-            <!-- <video autoplay="autoplay" loop="loop" id="video_background" preload="auto" volume="50">
-                    <source src="/assets/img/transporte.mp4" type="video/mp4" />
-            </video> -->
+           
             <div id="TxtTitulo">
-                OFERTAS DE EMPLEO PARA <br> CONDUCTOR DE CAMION
+               ¡CONSIGUE TRABAJO Y <br> CONDUCE TÚ CARRERA AL EXITO!
             </div>
-            <!-- <div id="containerTxtBanner">
-                <div id="TxtBannerConductor">
-                    <div class="parrafoBanner"> <p> Para conductores que buscan trabajo  </p> </div>
-                </div>
-                <div  id="TxtBannerEmpresa">
-                    <div class="parrafoBanner"> <p> Para empresas que buscan conductores</p> </div>
-                </div>
-            </div> -->
+          
             <div id="flechasNav">
                 <a href="#boxOfertas"><i class='bx bx-chevrons-down' id="flechasBanner"></i></a>
             </div>
         </div>
     </div>
     <section>
-        
-        <div id="boxOfertas">
-            <div class="tituloOferta">
-                <h3>Ofertas destacadas</h3> 
-                <p>En la sección de ofertas podrás disfrutar de todos tipos de ofertas de trabajo para conductores de camión. <br> <br> En esta sección encontrarás nuestra ofertas destacadas <br><br> <p id="aprovecha">¡Aprovecha la oportunidad! </p> </p> 
-            </div>
-        </div>
-        <!-- <div id="boxUbicaciones">
+        <div id="boxUbicaciones">
             <div id="tituloUbicaciones">
                 <h3>Ubicaciones</h3>
             </div>
@@ -93,82 +76,70 @@
                 <p>Busca las ofertas de trabajo de las localidades más populares</p>
             </div>
             <div id="imagenesUbicaciones">
-                <div id="barcelona">
-                    <h4 class="tituloImagenesUbi">BARCzELONA</h4>
-                    <img src="assets/img/barcelona2_A.jpg" alt="">
+                <div class="box_img">
+                    <h4 class="tituloImagenesUbi">BARCELONA</h4>
+                    <img src="assets/img/barcelona2.jpg" alt="">
                     <div class="imagenesUbicacionButton" onclick="vermas('barcelona');">Ver más</div>
                 </div>
-                <div>
-                    <h4 class="tituloImagenesUbi">BILBAO</h4>
-                    <img src="assets/img/bilbao1_A.jpg">
-                    <div class="imagenesUbicacionButton"onclick="vermas('bilbao');" >Ver más</div>
-                </div>
-                <div>
+                <div class="box_img">
                     <h4 class="tituloImagenesUbi">MADRID</h4>
                     <img loading="lazy" src="assets/img/madrid2_A.jpg" alt="">
                     <div class="imagenesUbicacionButton" onclick="vermas('madrid');">Ver más</div>
                 </div>
+                <div class="box_img">
+                    <h4 class="tituloImagenesUbi">BILBAO</h4>
+                    <img src="assets/img/bilbao1_A.jpg">
+                    <div class="imagenesUbicacionButton"onclick="vermas('bilbao');" >Ver más</div>
+                </div>
+        
             </div>
-        </div> -->
+        </div>
+        <div id="boxOfertas">
+            <div class="tituloOferta">
+                <h3>Ofertas destacadas</h3> 
+                <p id="aprovecha">¡Aprovecha la oportunidad! </p>  
+            </div>
+        </div>
+        
         <div class="slider">
             <div class="sliderAnimate">
             
             </div>
         </div>
+    
         <div id="cuadrosSeccion">
-            <div id="conductores">
-                <div class="cuadroConductor">
-                    <h1>Para conductores</h1>
-                </div>
-                <div class="cuadroConductor">
-                    <h4>Tu nuevo empleo a un par de clicks</h4>
-                </div>
-                <div class="cuadroConductor">
-                    <P><b><i class='bx bx-chevron-right'></i> Crea tu cuenta</b> <small> completamente gratis</small></P>
-                </div>
-                <div class="cuadroConductor">
-                    <P><b><i class='bx bx-chevron-right'></i> Busca</b> <small>entre las ofertas de empleo publicadas </small></P>
-                </div>
-                <div class="cuadroConductor">
-                    <P><b><i class='bx bx-chevron-right'></i> Inscribete</b><small> en todas las que te interesen </small></P>
-                </div>
-                <div class="cuadroConductor">
-                    <P><b><i class='bx bx-chevron-right'></i> Recibe </b><small>respuesta de la empresa </small></P>
-                </div>
-                <div class="cuadroBot">
-                    <div>
+            <div>
+                <div class="card">
+                        <h1>CONDUCTORES</h1>
+                    <div class="card__body" >   
+                        <h4 class="card__title">Tu nuevo empleo a un par de clicks</h4>
+                        <div>
+                            <p><b><i class='bx bx-chevron-right'></i> Crea tu cuenta</b> <small> completamente gratis</small></p>
+                            <p><b><i class='bx bx-chevron-right'></i> Busca</b> <small>entre las ofertas de empleo publicadas </small></p>
+                            <p><b><i class='bx bx-chevron-right'></i> Inscribete</b><small> en todas las que te interesen </small></p>
+                            <p><b><i class='bx bx-chevron-right'></i> Recibe </b><small>respuesta de la empresa </small></p>
+                        </div>
                         <button onclick="enviarInicioTrabajadores();"> CONDUCTORES</button>
                     </div>
                 </div>
-            </div>
-            <div id="empresa">
-                <div class="cuadroEmpresas">
-                    <h1>Para empresas</h1>
+                <div class="card1">
+                    <h1>EMPRESAS</h1>
+                <div class="card__body" >   
+                    <h4 class="card__title">Forma el equipo de tus sueños en un par de clicks</h4>
+                    <div>
+                        <p><b> <i class='bx bx-chevron-right'></i> Crea tu cuenta</b> <small> completamente gratis</small></p>
+                        <p><b><i class='bx bx-chevron-right'></i>  Publica</b> <small> las ofertas que necesites</small></p>
+                        <p><b> <i class='bx bx-chevron-right'></i> Recibe</b> <small> solicitudes de conductores interesados</small></p>
+                        <p><b> <i class='bx bx-chevron-right'></i> Selecciona</b> <small> y contacta al candidato ideal</small></p>
+                    </div>
+                    <button onclick="enviarInicioEmpresas();"> EMPRESAS </button>
                 </div>
-                <div class="cuadroEmpresas">
-                    <h4>Tu nuevo empleo a un par de clicks</h4>
-                </div>
-                <div class="cuadroEmpresas">
-                    <P><b> <i class='bx bx-chevron-right'></i> Crea tu cuenta</b> <small> completamente gratis</small></P>
-                </div>
-                <div class="cuadroEmpresas">
-                    <P><b><i class='bx bx-chevron-right'></i>  Publica</b> <small> las ofertas que necesites</small></P>
-                </div>
-                <div class="cuadroEmpresas">
-                    <P><b> <i class='bx bx-chevron-right'></i> Recibe</b> <small> solicitudes de conductores interesados</small></P>
-                </div>
-                <div class="cuadroEmpresas">
-                    <P><b> <i class='bx bx-chevron-right'></i> Selecciona</b> <small> y contacta al candidato ideal</small></P>
-                </div>
-                <div class="cuadroBot">
-                   <div>
-                        <button onclick="enviarInicioEmpresas();"> EMPRESAS </button>
-                   </div> 
                 </div>
             </div>
         </div>
     </section>
-    <footer>
+    <footer> 
+ 
         <div class="footer_logo">
             <h2 id="texto_tdr" data-text="&nbsp;TDR Jobs&nbsp;">&nbsp;TDR Jobs&nbsp;</h2>
         </div> 
@@ -187,7 +158,9 @@
             <a href="https://es.linkedin.com/"><i class='bx bxl-linkedin' ></i></a>
             <a href="https://es-es.facebook.com/"><i class='bx bxl-facebook-circle' ></i></a>
         </div>
-    </footer>
+    
+        
+    </footer> 
     <script src="/assets/script/slider.js"></script>
 </body>
 </html>
