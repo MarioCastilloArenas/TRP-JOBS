@@ -57,7 +57,13 @@ section {
   width: 100%;
   /* justify-content: center; */
 }
-
+#inputEstadoInscripcion{
+  margin-top: 10px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 25px;
+  background-color: #ffb11a;
+}
 .navUsuario {
   width: 100%;
   display: flex;

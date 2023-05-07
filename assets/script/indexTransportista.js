@@ -134,6 +134,7 @@ function fInscripcionesActivas(){
             
             // console.log(data[0].oferta);
             data.forEach(element => {
+                console.log(data)
                 
                 html += "<div class='ofertaDestacada'>";
                 html += "   <div class='circleDestacada'>Activas</div>";
@@ -156,6 +157,13 @@ function fInscripcionesActivas(){
                 html += "       <div class='caducidad'>";
                 html += "           <i class='bx bx-calendar'></i><br>";
                 html += "           <p>" + element.oferta.fechaCaducidad + "</p>";
+                html += "       </div>";
+                html += "       <div class='estadoSolicitud'>";
+                if(element.estadoInscripcion == null){
+                html += "           <input id='inputEstadoInscripcion' disabled value='No modificado'></input>";
+                }else{
+                html += "           <input id='inputEstadoInscripcion' disabled value='"+element.estadoInscripcion+"'></input>";
+                }
                 html += "       </div>";
                 html += "   </div>";
                 html += "</div>";

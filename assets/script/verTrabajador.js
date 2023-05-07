@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     let dni = localStorage.getItem('dni');
-    // fverTrabajador(dni)
-    fverTrabajador("12345678A")
+    fverTrabajador(dni)
+    //fverTrabajador("12345678A")
 });
 
 function fverTrabajador(dniv) {

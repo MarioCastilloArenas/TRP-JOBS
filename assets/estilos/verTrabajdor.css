@@ -224,6 +224,9 @@ section {
   width: 40px;
   height: 40px;
 }
+.presentacion{
+  padding-top: 20px;
+}
 
 @media (max-width: 1000px) {
   .nombre {
