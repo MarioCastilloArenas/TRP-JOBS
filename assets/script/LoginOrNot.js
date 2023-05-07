@@ -19,6 +19,11 @@ function fLoginOrNot(){
             html+= "    </div>";
             html+= "</div>";
         document.getElementById("boxInfo").innerHTML = html;
+        let html2 = "";
+            html2 += "<a href='sobreNosotros.html'>Sobre Nosotros</a>";
+            html2 += "<a href='#' onclick='enviarInicioTrabajadores();'>Trabajadores</a>";
+        document.getElementById("nav_sesion").innerHTML = html2;
+
     }
     if(JSON.parse(localStorage.getItem("usuario")) == null && !(JSON.parse(localStorage.getItem("empresa")) == null)){
         let html = "";
@@ -36,6 +41,10 @@ function fLoginOrNot(){
             html+= "    </div>";
             html+= "</div>";
         document.getElementById("boxInfo").innerHTML = html;
+        let html2 = "";
+            html2 += "<a href='sobreNosotros.html'>Sobre Nosotros</a>";
+            html2 += "<a href='#' onclick='enviarInicioEmpresas();'>Empresa</a>";
+        document.getElementById("nav_sesion").innerHTML = html2;
 
     }
     if(JSON.parse(localStorage.getItem("usuario")) == null && JSON.parse(localStorage.getItem("empresa")) == null){
@@ -54,6 +63,11 @@ function fLoginOrNot(){
             html+= "    </div>";
             html+= "</div>";
         document.getElementById("boxInfo").innerHTML = html;
+        let html2 = "";
+            html2 += "<a href='sobreNosotros.html'>Sobre Nosotros</a>";
+            html2 += "<a href='#' onclick='enviarInicioTrabajadores();'>Trabajadores</a>";
+            html2 += "<a href='#' onclick='enviarInicioEmpresas();'>Empresa</a>";
+        document.getElementById("nav_sesion").innerHTML = html2;
 
     }
 }
