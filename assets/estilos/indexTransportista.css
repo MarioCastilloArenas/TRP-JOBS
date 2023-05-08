@@ -332,6 +332,10 @@ input::file-selector-button {
 
 .form-item textarea {}
 
+
+.form-item {
+  position: relative;
+}
 .form-item input[type="file"] {
   width: 100%;
 }
@@ -339,11 +343,10 @@ input::file-selector-button {
 .form-item input:focus {
   outline: 0;
 }
-
 .form-item i {
   visibility: hidden;
   position: absolute;
-  top: 30px;
+  top: 35px;
   right: 10px;
 }
 

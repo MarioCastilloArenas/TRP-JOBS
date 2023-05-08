@@ -234,6 +234,11 @@ section {
   flex-direction: column;
   /* border: 5px solid red; */
 }
+.form-item {
+  position: relative;
+  margin-bottom: 20px;
+  height: 90px;
+}
 
 .form-item label {
   display: inline-block;
@@ -309,7 +314,7 @@ input::file-selector-button {
 .form-item i {
   visibility: hidden;
   position: absolute;
-  top: 30px;
+  top: 35px;
   right: 10px;
 }
 
