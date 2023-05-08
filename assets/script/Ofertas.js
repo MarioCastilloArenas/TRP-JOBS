@@ -89,9 +89,10 @@ function provincias() {
                         y.innerHTML = element.provincia
                         div.appendChild(x);
                         div.appendChild(y);
-                        div1.appendChild(div)
+                        div1.appendChild(div);
                     }
                     div1.appendChild(divm)
+                    break;
                 }
                 i++;
             }
